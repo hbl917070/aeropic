@@ -1,0 +1,26 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*
+<!-- saved from url=(0014)about:internet -->
+*/
+.sp img {
+    max-width: calc( 95vw - 20px );
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+    /*margin-left:-500px !important;
+    margin-right:-500px !important;*/
+}
+
+.sp {
+    width: 95vw;
+    margin-bottom: 30px;
+    transition: none !important; /*動畫時間*/
+}
+
+    .sp .tit {
+        height: 40px;
+    }
+
+    .sp img, .sp .cont {
+        position: static !important;
+    }

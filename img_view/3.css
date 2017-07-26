@@ -1,0 +1,23 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*
+<!-- saved from url=(0014)about:internet -->
+*/
+.sp img {
+    max-width: calc( 30vw - 20px );
+    max-height: calc( 30vw - 20px );
+}
+
+.sp {
+    width: 30vw;
+    height: calc( 30vw + 40px );
+    margin: calc( 1vw / 2);
+}
+
+
+
+    .sp .cont {
+        height: calc( 30vw );
+    }
+
+      
