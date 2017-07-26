@@ -47,7 +47,7 @@ var b=this.options;b.raw&&b.windowBits>0?b.windowBits=-b.windowBits:b.gzip&&b.wi
 
 下面是才是主要語法，上面是必須引用的js，但因為P網不允許插入外部js，所以才直接整坨搬移過來
 
-作者：rndomhack
+作者：rndomhack（らんだむ）
 https://rndomhack.com/2014/06/25/pixiv-ugoira/
 
 
