@@ -1,5 +1,5 @@
-// ==UserScript==
-// @name        Pixiv°Ê¹Ï¤U¸ü
+ï»¿// ==UserScript==
+// @name        Pixivå‹•åœ–ä¸‹è¼‰
 // @namespace   Pixiv
 // @include     https://www.pixiv.net/member_illust.php?mode=medium&*
 // @version     1
@@ -9,11 +9,11 @@
 
 
 /*
-¥D­nµ{¦¡½X¦b³Ì¤U­±¡A¨ºÌ@À£ÁY¹Lªºµ{¦¡½X¥u¬O¥²­n¤Ş¥Îªº¤@­Ó®M¥ó
+ä¸»è¦ç¨‹å¼ç¢¼åœ¨æœ€ä¸‹é¢ï¼Œé‚£å¨å£“ç¸®éçš„ç¨‹å¼ç¢¼åªæ˜¯å¿…è¦å¼•ç”¨çš„ä¸€å€‹å¥—ä»¶
 */
 
 
-//¦pªG¤£¬O°Ê¹Ï´N¤£­n°õ¦æ
+//å¦‚æœä¸æ˜¯å‹•åœ–å°±ä¸è¦åŸ·è¡Œ
 var obj_player = document.getElementsByClassName("player")[0];
 if (obj_player != undefined && obj_player.getElementsByTagName("canvas")) {
 } else {
@@ -45,9 +45,9 @@ var b=this.options;b.raw&&b.windowBits>0?b.windowBits=-b.windowBits:b.gzip&&b.wi
 
 /*
 
-¤U­±¬O¤~¬O¥D­n»yªk¡A¤W­±¬O¥²¶·¤Ş¥Îªºjs¡A¦ı¦]¬°Pºô¤£¤¹³\´¡¤J¥~³¡js¡A©Ò¥H¤~ª½±µ¾ãÌ@·h²¾¹L¨Ó
+ä¸‹é¢æ˜¯æ‰æ˜¯ä¸»è¦èªæ³•ï¼Œä¸Šé¢æ˜¯å¿…é ˆå¼•ç”¨çš„jsï¼Œä½†å› ç‚ºPç¶²ä¸å…è¨±æ’å…¥å¤–éƒ¨jsï¼Œæ‰€ä»¥æ‰ç›´æ¥æ•´å¨æ¬ç§»éä¾†
 
-§@ªÌ¡Grndomhack
+ä½œè€…ï¼šrndomhack
 https://rndomhack.com/2014/06/25/pixiv-ugoira/
 
 
@@ -64,10 +64,10 @@ https://rndomhack.com/2014/06/25/pixiv-ugoira/
     var title = document.querySelector(".work-info .title");
     title.appendChild(document.createElement("br"));
     [{
-        name: "Zip(¤@¯ëµe½è)",
+        name: "Zip(ä¸€èˆ¬ç•«è³ª)",
         data: pixiv.context.ugokuIllustData
     },{
-        name: "ZipHQ(°ªµe½è)",
+        name: "ZipHQ(é«˜ç•«è³ª)",
         data: pixiv.context.ugokuIllustFullscreenData
     }].forEach(function(value) {
         var elem, elemtxt, click;
