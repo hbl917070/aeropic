@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <title>AeroPic</title>
 
-    <meta name="viewport" content="width=500, initial-scale=1, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
 
     <script src="js/angular.min.js"></script>
     <script src="js/angular-route.js"></script>
@@ -26,12 +26,14 @@
         .top {
             box-shadow: 0px 0px 8px rgba(0,0,0,0.8);
             background-color: rgba(0, 64, 26, 0.85);
-            height: 50px;
+            /*height: 50px;*/
             position: fixed;
             top: 0px;
             left: 0px;
             right: 0px;
-            min-width: 800px;
+            /*min-width: 800px;*/
+            overflow-y: auto;
+            overflow-y: hidden;
         }
 
             .top a {
@@ -46,15 +48,21 @@
                 text-decoration: none;
             }
 
+            .top table, .top tr, .top td {
+                border: none;
+                margin: 0px;
+                padding: 0px;
+                border-collapse:collapse;
+            }
 
-                .top a:hover {
-                    /*background-color:rgb(0, 105, 116);*/
-                    transform: scale(1.1);
-                }
+            .top a:hover {
+                /*background-color:rgb(0, 105, 116);*/
+                transform: scale(1.1);
+            }
 
-                .top a:active {
-                    transform: scale(1.1) translateY(3px);
-                }
+            .top a:active {
+                transform: scale(1.1) translateY(3px);
+            }
 
             .top .logo {
             }
@@ -118,15 +126,26 @@
         <div class="top">
             <div class="ddd">
 
-                <a href="#/" class="logo">
-                    <img src="imgs/logo.png" />
-                    AeroPic
-                </a>
 
-                <a id="top_1" href="#/">首頁</a>
-                <a id="top_download" href="#/download">下載</a>
-                <a id="top_explain" href="#/explain_soft">使用說明</a>
-                <a id="top_author" href="#/author">作者</a>
+
+                <table width="800">
+                    <tr>
+                        <td>
+                            <a href="#/" class="logo">
+                                <img src="imgs/logo.png" />
+                                AeroPic
+                            </a>
+                        </td>
+                        <td> <a id="top_1" href="#/">首頁</a></td>
+                        <td> <a id="top_download" href="#/download">下載</a></td>
+                        <td> <a id="top_explain" href="#/explain_soft">使用說明</a></td>
+                        <td> <a id="top_author" href="#/author">作者</a></td>
+                    </tr>
+                </table>
+
+
+
+
             </div>
 
         </div>
