@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <title>AeroPic</title>
 
+    <meta name="viewport" content="width=500, initial-scale=1, user-scalable=0">
+
     <script src="js/angular.min.js"></script>
     <script src="js/angular-route.js"></script>
 
@@ -15,7 +17,7 @@
             padding: 0px;
             font-family: "微軟正黑體";
             font-size: 18px;
-            background-color: rgb(222, 222, 222);
+            background-color: rgb(234, 234, 234);
         }
 
         body {
@@ -70,9 +72,16 @@
                     line-height: 50px;
                 }
 
-        .center {
+        #center {
         }
 
+            #center img {
+                max-width: 100%;
+            }
+
+            #center table {
+                border-collapse: collapse;
+            }
 
         .ddd {
             max-width: 960px;
@@ -115,9 +124,9 @@
                 </a>
 
                 <a id="top_1" href="#/">首頁</a>
-                <a id="top_2" href="#/p2">下載</a>
-                <a id="top_3" href="#/p3">使用說明</a>
-                <a id="top_4" href="#/p4">作者</a>
+                <a id="top_download" href="#/download">下載</a>
+                <a id="top_explain" href="#/explain_soft">使用說明</a>
+                <a id="top_author" href="#/author">作者</a>
             </div>
 
         </div>
@@ -126,7 +135,7 @@
 
 
         <!--顯示用的區域-->
-        <div ng-view></div>
+        <div id="center" ng-view></div>
 
 
         <script>
@@ -134,9 +143,12 @@
             .config(['$routeProvider', function ($routeProvider) {
                 $routeProvider
                 .when('/', { templateUrl: 'page/p1.html' })//載入網址
-                .when('/p2', { templateUrl: 'page/p2.html' })
-                .when('/p3', { templateUrl: 'page/p3.html' })
-                .when('/p4', { templateUrl: 'page/p4.html' })
+                .when('/download', { templateUrl: 'page/download.html' })
+
+                .when('/explain_soft', { templateUrl: 'page/explain_soft.html' })
+                .when('/explain_pixiv', { templateUrl: 'page/explain_pixiv.html' })
+
+                .when('/author', { templateUrl: 'page/author.html' })
                 //.when('/printers', { template: '這是打印機頁面' })//印出字串
                 .otherwise({ redirectTo: '/' });//其他
             }]);
@@ -144,7 +156,24 @@
 
     </div>
 
+
+
     <script>
+
+        setTimeout(function () {
+
+            var ar_a = document.getElementsByTagName("a");
+            for (var i = 0; i < ar_a.length; i++) {
+                //ar_a[i].setAttribute("target", "_blank");
+            }
+
+            var ar_img = document.getElementById("center").getElementsByTagName("img");
+            for (var i = 0; i < ar_img.length; i++) {
+                ar_img[i].outerHTML = "<a target='_blank' href='" + ar_img[i].src + "'>" + ar_img[i].outerHTML + "<a/>";
+            }
+
+        }, 500);
+
 
     </script>
 

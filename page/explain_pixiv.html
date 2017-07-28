@@ -1,0 +1,146 @@
+﻿<!--讓目前選擇的項目改變顏色-->
+<style>
+    #top_explain {
+        color: rgb(0, 255, 144);
+    }
+       #explain_menu_pixiv {
+        /*background-color: rgb(161, 161, 161);*/
+        outline :rgb(0, 165, 39) solid 5px;
+    }
+</style>
+
+
+
+
+    <div ng-include="'page/explain.html'"></div>
+
+
+
+
+<div class="ddd">
+
+
+
+    <style>
+         .box img {
+                box-shadow: 0px 0px 10px rgba(0,0,0,0.50);
+                margin-top: 10px;
+                max-width: 100%;
+            }
+    </style>
+
+
+
+
+    <div class="tit">方法1：使用瀏覽器插件</div>
+    <div class="box">
+
+        要下載 <a href="https://www.pixiv.net/">Pixiv</a>動圖 可以使用【
+        <a target="_blank" href="https://rndomhack.com/2016/01/15/px-downloader/">Px Downloader</a>
+        】這個瀏覽器附加原件
+        <br><br>
+
+        裡面是日文，懶得點進去看的話就直接下載：
+        <br>
+        <a href="https://chrome.google.com/webstore/detail/px-downloader/bcbibglkpaimhgmoomembjhclhipoack">Px Downloader(google chrome)</a>
+        <br>
+        <a href="https://addons.mozilla.org/ja/firefox/addon/px-downloader/">Px Downloader(firefox 火狐)</a>
+
+        <br><br><br>
+
+
+
+        安裝完後是中文的，保存動圖預設是儲存成GIF，如果要用【AeroPic】來瀏覽的話，可以改成【None(Zip)】。
+
+        <br><br><br>
+
+        對照表：<br>
+        <table border="1">
+            <tr>
+                <td></td>
+                <td>畫質</td>
+                <td>檔案大小</td>
+                <td>下載時間</td>
+                <td>普及性</td>
+            </tr>
+            <tr>
+                <td>Zip</td>
+                <td>高</td>
+                <td>小</td>
+                <td>0延遲</td>
+                <td>用AeroPic可以直接播放</td>
+            </tr>
+            <tr>
+                <td>GIF</td>
+                <td>低</td>
+                <td>大</td>
+                <td>很慢</td>
+                <td>普及性高，可張貼於各個論壇</td>
+            </tr>
+            <tr>
+                <td>APNG</td>
+                <td>高</td>
+                <td>大到嚇死人</td>
+                <td>普通</td>
+                <td>普及性低，chrome無法播放，且多數論壇都不支援</td>
+            </tr>
+            <tr>
+                <td> WebP</td>
+                <td>高</td>
+                <td>非常大</td>
+                <td>快</td>
+                <td>普及性低，只有chrome跟火狐可以播放，且多數論壇都不支援</td>
+            </tr>
+        </table>
+
+
+        <br><br><br>
+        截圖：
+        <br>
+        <img src="imgs/download_pixiv/1-1.jpg" />
+
+        <br><br><br>
+        安裝完後，標題的右下方會多出一個按鈕，點了就會下載<br>
+        <img src="imgs/download_pixiv/1-2.jpg" />
+
+
+    </div>
+
+
+
+
+    <div class="tit">方法2：使用js腳本</div>
+    <div class="box">
+
+
+        如果是Microsoft Edge或其他特殊瀏覽器，可以使用這個javascript腳本來下載zip。
+        <br>
+        這個js腳本跟上面的【Px Downloader】同樣都是<a href="https://twitter.com/rndomhack">rndomhack（らんだむ）</a>開發的。
+        <br><br>
+
+
+        安裝前請先確定有執行js的瀏覽器套件：<br>
+        【火狐】使用者：必須先安裝【<a href="https://addons.mozilla.org/zh-TW/firefox/addon/greasemonkey/">Greasemonkey</a>】或【<a href="https://addons.mozilla.org/zh-TW/firefox/addon/tampermonkey/">Tampermonkey</a>】
+        <br>
+        【google chrome】使用者：必須先安裝【<a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=zh-TW">Tampermonkey</a>】
+
+        <br><br><br>
+
+        腳本：<br>
+        <a href="https://hbl917070.github.io/aeropic/explain/pixiv_download_zip.user.js">https://hbl917070.github.io/aeropic/explain/pixiv_download_zip.user.js</a>
+
+
+        <br><br><br>
+
+        截圖：<br>
+        安裝完後，標題的下方會多出2個按鈕，點了就會下載<br>
+        <img src="imgs/download_pixiv/2-1.jpg" />
+
+
+    </div>
+
+
+
+
+
+</div>

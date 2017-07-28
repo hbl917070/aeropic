@@ -1,70 +1,220 @@
-﻿
-<!--讓目前選擇的項目改變顏色-->
+﻿<!--讓目前選擇的項目改變顏色-->
 <style>
     #top_1 {
         color: rgb(0, 255, 144);
     }
 </style>
 
+<script type="text/javascript">
+        alert()
 
+
+
+
+</script>
 
 <div class="ddd">
 
     <div class="tit">簡介</div>
     <div class="box">
 
-        AeroPic 是一款圖片檢視器
-        <br>
-        目的在於取代windows內建的圖片檢視軟體
+        <div style="font-size:24px;float:left;width:380px;">
+            AeroPic 是一款圖片檢視器
+            <br><br>
+            可取代windows內建的圖片檢視器
+            <br><br>
+            綠色，免安裝
+            <br><br>
 
-        <img src="imgs/1.jpg">
+            <a href="index.html#/download" class="a_download">下載</a>
+
+            <br><br>
+        </div>
+
+        <style>
+            .a_download {
+                padding: 10px 50px;
+                background-color: rgb(0, 161, 23);
+                color: #fff;
+                transition: all 0.3s;
+                display: inline-block;
+                text-decoration: none;
+            }
+
+                .a_download:hover {
+                    background-color: rgb(0, 116, 160);
+                    transform: scale(1.1) !important;
+                }
+        </style>
+
+        <img style="margin:auto;display:block;width:400px;" src="imgs/1.jpg">
 
     </div>
 
     <div class="tit">功能演示</div>
     <div class="box">
 
-        AeroPic 是一款圖片檢視器
-        <br>
-        目的在於取代windows內建的圖片檢視軟體
-        <br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體<br>
-        目的在於取代windows內建的圖片檢視軟體
+        <div style="text-align:center;overflow:auto;">
+
+            <style type="text/css">
+                @media screen and (max-width: 920px) {
+                    .div_demo {
+                        margin-bottom: 100px!important;
+                    }
+
+                        .div_demo img {
+                            width: 100%!important;
+                            float: inherit!important;
+                        }
+
+                        .div_demo .div_demo_t {
+                              width: 100%!important;
+                            float: inherit!important;
+                        }
+
+                    .div_demo_left .div_demo_t {
+                                 width: 100%!important;
+                            float: inherit!important;
+                    }
+
+                    .div_demo_left img {
+                            width: 100%!important;
+                            float: inherit!important;
+                    }
+                }
+
+
+
+                .div_demo {
+                    margin: 10px;
+                    padding: 5px;
+                    overflow: auto;
+                    margin-bottom: 150px;
+                }
+
+                    .div_demo img {
+                        width: 450px;
+                        float: left;
+                    }
+
+                    .div_demo .div_demo_t {
+                        float: right;
+                        width: 400px;
+                        /*background:rgb(255, 216, 0);*/
+                    }
+
+                .div_demo_left .div_demo_t {
+                    float: left;
+                }
+
+                .div_demo_left img {
+                    float: right;
+                }
+
+                .div_demo .div_demo_t h2 {
+                    font-size: 26px;
+                    margin-top: 0px;
+                    margin-bottom: 20px;
+                }
+            </style>
+
+            <div class="div_demo">
+                <div class="div_demo_t">
+                    <h2>毛玻璃UI</h2>
+                    整個程式的界面全部使用毛玻璃特效
+                </div>
+                <img src="imgs/home_demo/1.gif" />
+            </div>
+
+
+            <div class="div_demo div_demo_left">
+                <div class="div_demo_t">
+                    <h2>大量閱讀模式</h2>
+                    一次瀏覽大量圖片<br>
+                    專門為瀏覽漫畫設計的垂直捲動模式
+                </div>
+                <img src="imgs/home_demo/2.gif" />
+            </div>
+
+
+            <div class="div_demo">
+                <div class="div_demo_t">
+                    <h2>支援多樣格式</h2>
+                    支援格式：<br>JPG、PNG、GIF、BMP、TIF、ICO、PSD、SVG、APNG
+                </div>
+                <img src="imgs/home_demo/3.gif" />
+            </div>
+
+
+            <div class="div_demo div_demo_left">
+                <div class="div_demo_t">
+                    <h2>直接播放Pixiv動圖</h2>
+                    直接播放Pixiv動圖的zip壓縮檔
+                    <br>or<br>
+                    已解壓縮的Pixiv動圖資料夾
+                </div>
+                <img src="imgs/home_demo/4.gif" />
+            </div>
+
+
+            <div class="div_demo">
+                <div class="div_demo_t">
+                    <h2>直接線上搜圖</h2>
+                    直接對本機端的圖片進行線上搜圖
+                    <br>
+                    支援：Google搜圖、SauceNAO搜圖
+                </div>
+                <img src="imgs/home_demo/5.gif" />
+            </div>
+
+
+            <div class="div_demo div_demo_left">
+                <div class="div_demo_t">
+                    <h2>快速複製檔案</h2>
+                    直接複製檔案
+                    <br>or<br>
+                    複製檔名
+                    <br>or<br>
+                    複製完整路徑
+                </div>
+                <img src="imgs/home_demo/6.gif" />
+            </div>
+
+
+            <div class="div_demo">
+                <div class="div_demo_t">
+                    <h2>快速開啟檔案位置</h2>
+                    開啟檔案總管，並把焦點放在目前的圖片上面
+                </div>
+                <img src="imgs/home_demo/7.gif" />
+            </div>
+
+
+            <div class="div_demo div_demo_left">
+                <div class="div_demo_t">
+                    <h2>鎖定視窗在最上層</h2>
+                    將視窗鎖定在最上層後，AeroPic就不會被其他視窗蓋過去
+                </div>
+                <img src="imgs/home_demo/8.gif" />
+            </div>
+
+            <!--全視窗毛玻璃特製
+            大量閱讀模式
+            支援PSD、SVG、APNG
+            直接播放Pixiv動圖
+            直接線上搜圖
+            快速複製檔案
+            快速開啟檔案位置
+            鎖定視窗在最上層-->
+
+        </div>
     </div>
 
 
-    <div class="box">
 
-        AeroPic 是一款圖片檢視器
-        <br>
-        目的在於取代windows內建的圖片檢視軟體
-    </div>
+
 
 </div>
+
 
 

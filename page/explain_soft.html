@@ -1,0 +1,118 @@
+﻿<!--讓目前選擇的項目改變顏色-->
+<style>
+    #top_explain {
+        color: rgb(0, 255, 144);
+    }
+
+    #explain_menu_soft {
+        /*background-color: rgb(161, 161, 161);*/
+        outline :rgb(0, 165, 39) solid 5px;
+    }
+</style>
+
+
+
+<div ng-include="'page/explain.html'"></div>
+
+<div class="ddd">
+
+
+
+
+
+
+    <div class="tit">說明</div>
+    <div class="box">
+
+
+        soft
+
+    </div>
+
+
+
+
+
+
+    <div class="tit">快速鍵說明</div>
+    <div class="box">
+
+        <style>
+            .tab_keyboard td {
+                text-align: center;
+                padding: 5px 15px;
+            }
+
+            .tab_keyboard tr:hover {
+                background-color: #b4b4b4;
+            }
+
+            table {
+                border-collapse: collapse;
+            }
+        </style>
+
+        <table border='1' class='tab_keyboard'>
+            <tr style='background:#FFF;color:#000;'>
+                <td>操作</td>
+                <td>按鍵</td>
+            </tr>
+            <tr>
+                <td>下一張</td>
+                <td>方向鍵 →</td>
+            </tr>
+            <tr>
+                <td>上一張</td>
+                <td>方向鍵 ←</td>
+            </tr>
+            <tr>
+                <td>放大圖片</td>
+                <td> Shift 或 + </td>
+            </tr>
+            <tr>
+                <td>縮小圖片</td>
+                <td> Ctrl 或 -</td>
+            </tr>
+            <tr>
+                <td>P網動圖-下一幀</td>
+                <td> ] </td>
+            </tr>
+            <tr>
+                <td>P網動圖-上一幀</td>
+                <td> [ </td>
+            </tr>
+            <tr>
+                <td>圖片全滿</td>
+                <td>F</td>
+            </tr>
+            <tr>
+                <td>刪除圖片</td>
+                <td>Delete</td>
+            </tr>
+            <tr>
+                <td>開啟圖片目錄</td>
+                <td>O</td>
+            </tr>
+            <tr>
+                <td>進入 大量瀏覽模式</td>
+                <td>B</td>
+            </tr>
+            <tr>
+                <td>退出 大量瀏覽模式</td>
+                <td>Back Space</td>
+            </tr>
+            <tr>
+                <td>重新載入圖片</td>
+                <td>F5</td>
+            </tr>
+            <tr>
+                <td>關閉程式</td>
+                <td>Esc</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+</div>
