@@ -12,36 +12,54 @@
     <div class="tit">簡介</div>
     <div class="box">
 
-        <div style="font-size:24px;float:left;width:380px;">
-            AeroPic 是一款圖片檢視器
-            <br><br>
-            可取代windows內建的圖片檢視器
-            <br><br>
-            綠色，免安裝
-            <br><br>
+        <div style="overflow:auto;">
 
-            <a href="index.html#/download" class="a_download">下載</a>
+            <img class="img_t01" style="float:left;width:150px;margin:20px;" src="imgs/logo.png">
 
-            <br><br>
+            <div class="div_t02" style="font-size:24px;width :450px;margin-left:300px;margin-top:10px;">
+                AeroPic 是一款圖片檢視器
+                <br><br>
+                可取代 windows內建的圖片檢視器
+                <br><br>
+                綠色，免安裝
+                <br><br>
+                <a href="index.html#/download" class="a_download">下載</a>
+                <br><br>
+            </div>
+
+            <style>
+                @media screen and (max-width: 800px) {
+                    .img_t01 {
+                        float: initial !important;
+                        margin: 10px auto !important;
+                        display: block;
+                    }
+
+                    .div_t02 {
+                        margin: auto !important;
+                        float: initial !important;
+                        width: 100% !important;
+                        text-align: center;
+                    }
+                }
+
+
+                .a_download {
+                    padding: 10px 50px;
+                    background-color: rgb(0, 161, 23);
+                    color: #fff;
+                    transition: all 0.3s;
+                    display: inline-block;
+                    text-decoration: none;
+                }
+
+                    .a_download:hover {
+                        background-color: rgb(0, 116, 160);
+                        transform: scale(1.1) !important;
+                    }
+            </style>
         </div>
 
-        <style>
-            .a_download {
-                padding: 10px 50px;
-                background-color: rgb(0, 161, 23);
-                color: #fff;
-                transition: all 0.3s;
-                display: inline-block;
-                text-decoration: none;
-            }
-
-                .a_download:hover {
-                    background-color: rgb(0, 116, 160);
-                    transform: scale(1.1) !important;
-                }
-        </style>
-
-        <img style="margin:auto;display:block;width:400px;" src="imgs/1.jpg">
 
     </div>
 
@@ -53,27 +71,27 @@
             <style type="text/css">
                 @media screen and (max-width: 920px) {
                     .div_demo {
-                        margin-bottom: 100px!important;
+                        margin-bottom: 100px !important;
                     }
 
                         .div_demo img {
-                            width: 100%!important;
-                            float: inherit!important;
+                            width: 100% !important;
+                            float: inherit !important;
                         }
 
                         .div_demo .div_demo_t {
-                              width: 100%!important;
-                            float: inherit!important;
+                            width: 100% !important;
+                            float: inherit !important;
                         }
 
                     .div_demo_left .div_demo_t {
-                                 width: 100%!important;
-                            float: inherit!important;
+                        width: 100% !important;
+                        float: inherit !important;
                     }
 
                     .div_demo_left img {
-                            width: 100%!important;
-                            float: inherit!important;
+                        width: 100% !important;
+                        float: inherit !important;
                     }
                 }
 
@@ -209,6 +227,3 @@
 
 
 </div>
-
-
-
