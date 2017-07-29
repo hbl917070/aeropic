@@ -180,19 +180,42 @@
 
 
         <script>
-            angular.module('routingDemoApp', ['ngRoute'])
-            .config(['$routeProvider', function ($routeProvider) {
-                $routeProvider
-                .when('/', { templateUrl: 'page/p1.html' })//載入網址
-                .when('/download', { templateUrl: 'page/download.html' })
+            var app = angular.module('routingDemoApp', ['ngRoute'])
+                   .config(['$routeProvider', function ($routeProvider) {
+                       $routeProvider
+                       .when('/', { templateUrl: 'page/p1.html', controller: 'LoadedCtrl' })//載入網址
+                       .when('/download', { templateUrl: 'page/download.html', controller: 'LoadedCtrl' })
+                       .when('/explain_soft', { templateUrl: 'page/explain_soft.html', controller: 'LoadedCtrl' })
+                       .when('/explain_soft/:mes', { templateUrl: 'page/explain_soft.html', controller: 'VersionCtrl' })
+                       .when('/explain_pixiv', { templateUrl: 'page/explain_pixiv.html', controller: 'LoadedCtrl' })
+                       .when('/author', { templateUrl: 'page/author.html' })
+                       //.when('/printers', { template: '這是打印機頁面' })//印出字串
+                       .otherwise({ redirectTo: '/' });//其他
+                   }]);
 
-                .when('/explain_soft', { templateUrl: 'page/explain_soft.html' })
-                .when('/explain_pixiv', { templateUrl: 'page/explain_pixiv.html' })
+            //載入完成時
+            app.controller('LoadedCtrl', function ($scope, $routeParams) {
+             
+                fun_圖片自動加超連結();
 
-                .when('/author', { templateUrl: 'page/author.html' })
-                //.when('/printers', { template: '這是打印機頁面' })//印出字串
-                .otherwise({ redirectTo: '/' });//其他
-            }]);
+            });
+
+            //載入完成時
+            app.controller('VersionCtrl', function ($scope, $routeParams) {
+
+                alert($routeParams.mes);//取得網址參數
+
+                fun_圖片自動加超連結();
+            });
+
+
+            function fun_圖片自動加超連結() {
+                var ar_img = document.getElementById("center").getElementsByTagName("img");
+                for (var i = 0; i < ar_img.length; i++) {
+                    ar_img[i].outerHTML = "<a target='_blank' href='" + ar_img[i].src + "'>" + ar_img[i].outerHTML + "<a/>";
+                }
+            }
+
         </script>
 
     </div>
@@ -208,10 +231,7 @@
                 //ar_a[i].setAttribute("target", "_blank");
             }
 
-            var ar_img = document.getElementById("center").getElementsByTagName("img");
-            for (var i = 0; i < ar_img.length; i++) {
-                ar_img[i].outerHTML = "<a target='_blank' href='" + ar_img[i].src + "'>" + ar_img[i].outerHTML + "<a/>";
-            }
+
 
         }, 500);
 
