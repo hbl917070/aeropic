@@ -297,19 +297,11 @@ return new Array(nWidth, nHeight);
 
 var int_width_css = "";//記錄【鎖定寬度】的全域變數
 
-
-
-
-
+//4種顯示類型的CSS
 var s_css_01 = '.sp img { max-width: calc( 95vw - 20px ); margin-bottom: 10px !important; margin-top: 10px !important; /*margin-left:-500px !important; margin-right:-500px !important;*/}.sp { width: 95vw; margin-bottom: 30px; transition: none !important; /*動畫時間*/} .sp .tit { height: 40px; } .sp img, .sp .cont { position: static !important; }';
 var s_css_02 = ".sp img { max-width: calc( 45vw - 20px ); max-height: calc( 45vw - 20px );}.sp { width: 45vw; height: calc( 45vw + 40px ); margin: 1vw;} .sp .cont { height: calc( 45vw ); }";
 var s_css_03 = ".sp img { max-width: calc( 30vw - 20px ); max-height: calc( 30vw - 20px );}.sp { width: 30vw; height: calc( 30vw + 40px ); margin: calc( 1vw / 2);} .sp .cont { height: calc( 30vw ); }";
 var s_css_04 = ".sp img { max-width: calc( 22vw - 20px ); max-height: calc( 22vw - 20px );}.sp { width: 22vw; height: calc( 22vw + 40px ); margin: calc( 1vw / 2);} .sp .cont { height: calc( 22vw ); }";
-
-
-
-
-
 
 
 
@@ -340,16 +332,12 @@ document.getElementById("css").innerHTML = s_css_03;
 document.getElementById("css").innerHTML = s_css_04;
 }
 
-
 //更改選中的樣式
 var ar = new Array("r1", "r2", "r3", "r4");
 for (var i = 0 ; i < ar.length ; i++) {
 document.getElementById(ar[i]).className = "col";
 }
 document.getElementById(o).className = "col sel";
-
-
-
 }
 
 
@@ -484,7 +472,6 @@ window.document.documentElement.scrollTop = 0;//捲動至最上面
 window.document.body.scrollTop = 0;
 
 // fun_刷新()
-
 }
 
 
@@ -531,7 +518,6 @@ document.getElementById("select_page").value = int_flag;//設定目光前選擇�
 window.document.documentElement.scrollTop = 0;//捲動至最上面
 window.document.body.scrollTop = 0;
 //fun_刷新();
-
 }
 
 
@@ -1060,6 +1046,28 @@ return Number(nn.replace("px", ""));
 <!-- js 圖片檢視視窗-->
 <script type="text/javascript">
 
+
+
+
+///
+///由C#呼叫，返回【f】表示目前不可以退出
+///
+function fun_aeropic按下返回鍵() {
+
+if (text_目前焦點 != null) {//如果input text有焦點，就阻止C#的動作
+return "f";
+}
+
+if (bool_視窗開啟) {//如果圖片檢視窗口開啟，就關閉，並且阻止C#的動作
+//fun_close_imgbox();
+return "f";
+}
+
+return "t";
+}
+
+
+
 ///
 ///關閉視窗
 ///
@@ -1305,14 +1313,17 @@ e.preventDefault();
 }
 
 
+
+
 ///
 ///放開按鍵時
 ///
 document.onkeyup = function (e) {
 
 
-if (text_目前焦點 != null)
+if (text_目前焦點 != null) {
 return;
+}
 
 var currKey = 0, e = e || event;
 currKey = e.keyCode || e.which || e.charCode;
