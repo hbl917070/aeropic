@@ -2,10 +2,17 @@
 
 <html lang="zh-tw">
 <head>
+
     <meta charset="utf-8" />
     <title>AeroPic</title>
 
+    <link rel="Shortcut Icon" type="image/x-icon" href="imgs/logo.png" />
+    <meta name="Description" content="AeroPic，可取代windows內建的圖片檢視器" />
+    <meta name="KeyWords" content="AeroPic,hbl917070,圖片檢視器,圖片檢視軟體,秀圖軟體" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+
+
 
     <script src="js/angular.min.js"></script>
     <script src="js/angular-route.js"></script>
@@ -188,6 +195,7 @@
                        .when('/explain_soft', { templateUrl: 'page/explain_soft.html', controller: 'LoadedCtrl' })
                        .when('/explain_soft/:mes', { templateUrl: 'page/explain_soft.html', controller: 'VersionCtrl' })
                        .when('/explain_pixiv', { templateUrl: 'page/explain_pixiv.html', controller: 'LoadedCtrl' })
+                       .when('/explain_edit_default', { templateUrl: 'page/explain_edit_default.html', controller: 'LoadedCtrl' })
                        .when('/author', { templateUrl: 'page/author.html' })
                        //.when('/printers', { template: '這是打印機頁面' })//印出字串
                        .otherwise({ redirectTo: '/' });//其他
@@ -195,7 +203,7 @@
 
             //載入完成時
             app.controller('LoadedCtrl', function ($scope, $routeParams) {
-             
+
                 fun_圖片自動加超連結();
 
             });
