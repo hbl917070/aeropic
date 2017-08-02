@@ -8,7 +8,7 @@
 
     <link rel="Shortcut Icon" type="image/x-icon" href="imgs/logo.png" />
     <meta name="Description" content="AeroPic，可取代windows內建的圖片檢視器" />
-    <meta name="KeyWords" content="AeroPic,hbl917070,圖片檢視器,圖片檢視軟體,秀圖軟體" />
+    <meta name="KeyWords" content="AeroPic,aero,windows,玻璃,hbl917070,圖片檢視器,圖片檢視軟體,秀圖軟體" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
 
@@ -190,19 +190,30 @@
             var app = angular.module('routingDemoApp', ['ngRoute'])
                    .config(['$routeProvider', function ($routeProvider) {
                        $routeProvider
-                       .when('/', { templateUrl: 'page/p1.html', controller: 'LoadedCtrl' })//載入網址
-                       .when('/download', { templateUrl: 'page/download.html', controller: 'LoadedCtrl' })
-                       .when('/explain_soft', { templateUrl: 'page/explain_soft.html', controller: 'LoadedCtrl' })
-                       .when('/explain_soft/:mes', { templateUrl: 'page/explain_soft.html', controller: 'VersionCtrl' })
-                       .when('/explain_pixiv', { templateUrl: 'page/explain_pixiv.html', controller: 'LoadedCtrl' })
-                       .when('/explain_edit_default', { templateUrl: 'page/explain_edit_default.html', controller: 'LoadedCtrl' })
-                       .when('/author', { templateUrl: 'page/author.html' })
+                       .when('/', { templateUrl: 'page/p1.html', controller: 'LoadedCtrl', title: 'AeroPic 圖片檢視器 - 首頁' })//載入網址
+                       .when('/download', { templateUrl: 'page/download.html', controller: 'LoadedCtrl', title: 'AeroPic 下載' })
+                       .when('/explain_soft', { templateUrl: 'page/explain_soft.html', controller: 'LoadedCtrl', title: 'AeroPic 使用說明' })
+                       .when('/explain_soft/:mes', { templateUrl: 'page/explain_soft.html', controller: 'VersionCtrl', title: 'AeroPic 使用說明' })
+                       .when('/explain_pixiv', { templateUrl: 'page/explain_pixiv.html', controller: 'LoadedCtrl', title: 'AeroPic 下載Pixiv動圖教學' })
+                       .when('/explain_edit_default', { templateUrl: 'page/explain_edit_default.html', controller: 'LoadedCtrl', title: 'AeroPic 修改為預設開啟程式' })
+                       .when('/author', { templateUrl: 'page/author.html', title: 'AeroPic 作者資訊' })
                        //.when('/printers', { template: '這是打印機頁面' })//印出字串
                        .otherwise({ redirectTo: '/' });//其他
                    }]);
 
+
+            app.run(['$location', '$rootScope', function ($location, $rootScope) {
+                // 每當路由改變成功的時候，更新標題
+                $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+                    window.document.title = current.title;
+                    //$rootScope.title = current.$route.title;
+                });
+            }]);
+
             //載入完成時
             app.controller('LoadedCtrl', function ($scope, $routeParams) {
+
+
 
                 fun_圖片自動加超連結();
 
@@ -211,17 +222,33 @@
             //載入完成時
             app.controller('VersionCtrl', function ($scope, $routeParams) {
 
-                alert($routeParams.mes);//取得網址參數
+                $scope.s_version = $routeParams.mes;//取得網址參數
 
+                document.getElementById("div_version").style.display = "block";//顯示版本比較的視窗
+            
                 fun_圖片自動加超連結();
             });
 
 
+            ///
+            ///
+            ///
             function fun_圖片自動加超連結() {
+
+                //讓每一張圖片都加上超連結
                 var ar_img = document.getElementById("center").getElementsByTagName("img");
                 for (var i = 0; i < ar_img.length; i++) {
                     ar_img[i].outerHTML = "<a target='_blank' href='" + ar_img[i].src + "'>" + ar_img[i].outerHTML + "<a/>";
                 }
+
+                //讓每個超連結都另外開新分頁
+                var ar_a = document.getElementById("center").getElementsByTagName("a");
+                for (var i = 0; i < ar_a.length; i++) {                 
+                    if (ar_a[i].href.indexOf("#")==-1) {//如果是本站內的鏈接，就直接開啟
+                        ar_a[i].setAttribute("target", "_blank");
+                    }
+                }
+
             }
 
         </script>

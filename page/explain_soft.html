@@ -6,7 +6,7 @@
 
     #explain_menu_soft {
         /*background-color: rgb(161, 161, 161);*/
-        outline :rgb(0, 165, 39) solid 5px;
+        outline: rgb(0, 165, 39) solid 5px;
     }
 </style>
 
@@ -14,18 +14,37 @@
 
 <div ng-include="'page/explain.html'"></div>
 
-<div class="ddd">
 
 
 
+<div class="ddd" onload="alert()">
 
+
+    <div id="div_version" style="display:none">
+        <div class="tit">版本</div>
+        <div class="box" style="background-color:rgb(155, 255, 160);">
+
+            <table border="1">
+                <tr>
+                    <td>你目前的版本</td>
+                    <td>{{s_version}}</td>
+                </tr>
+                <tr>
+                    <td>最新版</td>
+                    <td>1.0.0</td>
+                </tr>
+
+            </table>
+
+        </div>
+    </div>
 
 
     <div class="tit">說明</div>
     <div class="box">
 
 
-        soft
+
 
     </div>
 
