@@ -1570,12 +1570,15 @@ var src = (urls[i].substring(0, 4).toUpperCase() == "HTTP") ? urls[i] : "file://
 var s_title = decodeURIComponent(urls[i]);//從網址編碼轉回原本的字串
 s_title = s_title.substring(s_title.lastIndexOf("/") + 1);
 
+//呼叫C#，使用windows內建的程式開啟圖片
+var s_open_file = "" + decodeURIComponent(urls[i]) + "";
 
 if (i < 40) {
 s_sum += (
 "<span class='sp'>" +
 "<div class='tit'>" +
 //"<a href='" + src + "' class='open_url' target='_blank'></a>" +
+"<a onclick=\"window.external.fun_open_file('" + s_open_file + "')\" class='open_url' ></a>" +
 "<div class='no'>" + (i + 1) + "</div>" +
 "<div class='le'>" + "<div style='height=1px'></div>" +
 "<div class='wh' id='" + i + "'>---</div>" +
@@ -1591,6 +1594,7 @@ s_sum += (
 "<span class='sp'>" +
 "<div class='tit'>" +
 //"<a href='" + src + "' class='open_url' target='_blank'></a>" +
+"<a onclick=\"window.external.fun_open_file('" + s_open_file + "')\" class='open_url' ></a>" +
 "<div class='no'>" + (i + 1) + "</div>" +
 "<div class='le'>" +
 "<div class='wh' id='" + i + "'>---</div>" +
