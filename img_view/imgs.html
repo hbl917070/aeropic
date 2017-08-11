@@ -99,117 +99,117 @@
 
     <!-- css 一般樣式-->
     <style type="text/css">
-                html, body {
-                    margin: 0px;
-                    max-width: 100%;
-                    /*捲軸顏色*/
-                    scrollbar-track-color: #1e1e1e;
-                    scrollbar-arrow-color: #fff;
-                    scrollbar-face-color: #777;
-                    scrollbar-shadow-color: #1e1e1e;
-                    /*禁止選取*/
-                    -webkit-touch-callout: none !important;
-                    -webkit-user-select: none !important;
-                    -moz-user-select: none !important;
-                    -ms-user-select: none !important;
-                    user-select: none !important;
-                }
+        html, body {
+            margin: 0px;
+            max-width: 100%;
+            /*捲軸顏色*/
+            scrollbar-track-color: #1e1e1e;
+            scrollbar-arrow-color: #fff;
+            scrollbar-face-color: #777;
+            scrollbar-shadow-color: #1e1e1e;
+            /*禁止選取*/
+            -webkit-touch-callout: none !important;
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+        }
 
-                .q {
-                    background-color: rgba(0,0,0,0.6);
-                    position: fixed;
-                    top: 0px;
-                    height: 100vh;
-                    width: 100vw;
-                    z-index: -555;
-                }
+        .q {
+            background-color: rgba(0,0,0,0.6);
+            position: fixed;
+            top: 0px;
+            height: 100vh;
+            width: 100vw;
+            z-index: -555;
+        }
 
 
-                html {
-                    font-family: "微軟正黑體";
-                    background-color: rgb(30, 30, 30);
-                    /*background-attachment: fixed !important;
+        html {
+            font-family: "微軟正黑體";
+            background-color: rgb(30, 30, 30);
+            /*background-attachment: fixed !important;
         background-position: center center !important;
         background-repeat: no-repeat !important;
         background-size: cover !important;
         background-image: url("Default.jpg" );*/
-                }
+        }
 
 
-                .col_table { /*選擇欄位數量的框*/
-                    color: #fff;
-                    background-color: rgba(94,94,94,0.50);
-                    -webkit-box-shadow: 0px 0px 16px 2px #000000;
-                    border-radius: 10px;
-                    padding: 5px;
-                    box-shadow: 0px 0px 16px 1px #000000;
-                }
+        .col_table { /*選擇欄位數量的框*/
+            color: #fff;
+            background-color: rgba(94,94,94,0.50);
+            -webkit-box-shadow: 0px 0px 16px 2px #000000;
+            border-radius: 10px;
+            padding: 5px;
+            box-shadow: 0px 0px 16px 1px #000000;
+        }
 
-                .col {
-                    width: 50px;
-                    font-size: 20px !important;
-                    text-align: center;
-                    padding-right: 15px;
-                    padding-left: 15px;
-                }
+        .col {
+            width: 50px;
+            font-size: 20px !important;
+            text-align: center;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
 
-                    .col:hover {
-                        background-color: rgba(255,255,255,0.2);
-                    }
+            .col:hover {
+                background-color: rgba(255,255,255,0.2);
+            }
 
-                .sel { /*選中的狀態*/
-                    border: 3px solid #4CB4FF;
-                }
+        .sel { /*選中的狀態*/
+            border: 3px solid #4CB4FF;
+        }
 
-                .sp:hover {
-                    /*border: 1px solid #4CB4FF;*/
-                }
+        .sp:hover {
+            /*border: 1px solid #4CB4FF;*/
+        }
 
-                .tab { /*上面選擇【欄】的標題與排版*/
-                    margin-left: 3vw;
-                    color: #FFFFFF;
-                    margin-top: 50px;
-                    margin-bottom: 20px;
-                }
+        .tab { /*上面選擇【欄】的標題與排版*/
+            margin-left: 3vw;
+            color: #FFFFFF;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
 
-                    .tab h2 {
-                        line-height: 0px;
-                    }
+            .tab h2 {
+                line-height: 0px;
+            }
 
-                /*右上角的超連結*/
-                .tit {
-                    position: relative;
-                }
+        /*右上角的超連結*/
+        .tit {
+            position: relative;
+        }
 
-                .open_url {
-                    display: block;
-                    width: 30px;
-                    height: 30px;
-                    float: right;
-                    background-image: url(img/open.png);
-                    background-size: contain;
-                    background-repeat: no-repeat !important; /*不重複*/
-                    position: absolute;
-                    top: 0px;
-                    right: 0px;
-                    opacity: 0;
-                }
+        .open_url {
+            display: block;
+            width: 30px;
+            height: 30px;
+            float: right;
+            background-image: url(img/open.svg);
+            background-size: contain;
+            background-repeat: no-repeat !important; /*不重複*/
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            opacity: 0;
+        }
 
-                    .open_url:hover {
-                        background-color: rgba(0, 107, 255, 0.40);
-                        opacity: 1;
-                    }
+            .open_url:hover {
+                background-color: rgba(0, 107, 255, 0.40);
+                opacity: 1;
+            }
 
-                #lock_width_div {
-                    transition: opacity 0.5s, transform 0.5s, margin-bottom 0.3s; /*動畫時間*/
-                }
+        #lock_width_div {
+            transition: opacity 0.5s, transform 0.5s, margin-bottom 0.3s; /*動畫時間*/
+        }
 
-                .none {
-                    opacity: 0;
-                    margin-bottom: -100px;
-                    transform: translateY(-100px);
-                    pointer-events: none;
-                }
+        .none {
+            opacity: 0;
+            margin-bottom: -100px;
+            transform: translateY(-100px);
+            pointer-events: none;
+        }
     </style>
 
 
@@ -593,156 +593,156 @@
     <!--========================================-->
     <!-- css 圖片檢視視窗-->
     <style type="text/css">
-                #img_box { /*主題視窗*/
-                    width: 94vw;
-                    height: 98vh;
-                    position: fixed;
-                    left: 3vw;
-                    right: 3vw;
-                    top: 1vh;
-                    bottom: 1vh;
-                    background-color: rgba(94,94,94,0.50);
-                    border-radius: 10px;
-                    box-shadow: 0px 0px 16px 1px;
-                    z-index: 100;
-                }
+        #img_box { /*主題視窗*/
+            width: 94vw;
+            height: 98vh;
+            position: fixed;
+            left: 3vw;
+            right: 3vw;
+            top: 1vh;
+            bottom: 1vh;
+            background-color: rgba(94,94,94,0.50);
+            border-radius: 10px;
+            box-shadow: 0px 0px 16px 1px;
+            z-index: 100;
+        }
 
 
 
-                #img_content {
-                    height: calc(100% - 60px);
-                    border: 1px solid #fff;
-                    overflow: hidden; /*scroll auto hidden*/
-                    margin: 10px;
-                }
+        #img_content {
+            height: calc(100% - 60px);
+            border: 1px solid #fff;
+            overflow: hidden; /*scroll auto hidden*/
+            margin: 10px;
+        }
 
-                #img_w { /*圖片外曾（拖曳用）*/
-                    min-width: 100%;
-                    min-height: 100%;
-                    position: relative;
-                }
+        #img_w { /*圖片外曾（拖曳用）*/
+            min-width: 100%;
+            min-height: 100%;
+            position: relative;
+        }
 
-                #img_img {
-                    position: absolute;
-                    /*top: 0px;
+        #img_img {
+            position: absolute;
+            /*top: 0px;
         right: 0px;
         bottom: 0px;
         left: 0px;
         margin: auto;*/
-                }
+        }
 
-                #img_d { /*底色*/
-                    height: 100vh;
-                    width: 100vw;
-                    background-color: rgba(0,0,0,0.8);
-                    position: fixed;
-                    top: 0px;
-                    z-index: 99;
-                }
+        #img_d { /*底色*/
+            height: 100vh;
+            width: 100vw;
+            background-color: rgba(0,0,0,0.8);
+            position: fixed;
+            top: 0px;
+            z-index: 99;
+        }
 
-                .img_tit {
-                    height: 40px;
-                    background-color: rgba(255,255,255,0.0);
-                }
+        .img_tit {
+            height: 40px;
+            background-color: rgba(255,255,255,0.0);
+        }
 
-                #img_t1, #img_t2 {
-                    font-size: 16px !important;
-                    display: block;
-                    background-color: rgba(0,0,0,0);
-                    color: #fff;
-                    margin-left: 10px;
-                    border: none;
-                    width: calc(100% - 460px);
-                    display: block;
-                    height: 20px;
-                    margin-top: 2px;
-                }
+        #img_t1, #img_t2 {
+            font-size: 16px !important;
+            display: block;
+            background-color: rgba(0,0,0,0);
+            color: #fff;
+            margin-left: 10px;
+            border: none;
+            width: calc(100% - 460px);
+            display: block;
+            height: 20px;
+            margin-top: 2px;
+        }
 
-                #text_scale {
-                    float: right;
-                    background-color: rgba(0, 0, 0, 0.30);
-                    border: 2px solid rgba(255, 255, 255, 0.70);
-                    width: 35px;
-                    height: 34px;
-                    margin-top: 5px;
-                    margin-right: 5px;
-                    display: block;
-                    font-size: 18px !important;
-                    font-family: "微軟正黑體";
-                    font-weight: 900;
-                    color: #fff;
-                    text-align: center;
-                }
+        #text_scale {
+            float: right;
+            background-color: rgba(0, 0, 0, 0.30);
+            border: 2px solid rgba(255, 255, 255, 0.70);
+            width: 35px;
+            height: 34px;
+            margin-top: 5px;
+            margin-right: 5px;
+            display: block;
+            font-size: 18px !important;
+            font-family: "微軟正黑體";
+            font-weight: 900;
+            color: #fff;
+            text-align: center;
+        }
 
-                .img_tit button {
-                    width: 50px;
-                    height: 50px;
-                    background-color: rgba(0,0,0,0);
-                    border: none;
-                    float: right;
-                    background-position: center center !important; /*對齊位置*/
-                    background-repeat: no-repeat !important; /*不重複*/
-                    background-size: 80% 80%;
-                }
+        .img_tit button {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0,0,0,0);
+            border: none;
+            float: right;
+            background-position: center center !important; /*對齊位置*/
+            background-repeat: no-repeat !important; /*不重複*/
+            background-size: 80% 80%;
+        }
 
-                /*縮放模式 - 選中的按鈕*/
-                .bu_sel {
-                    outline: solid 4px #4CB4FF !important;
-                    width: 42px !important;
-                    height: 42px !important;
-                    margin: 4px;
-                }
+        /*縮放模式 - 選中的按鈕*/
+        .bu_sel {
+            outline: solid 4px #4CB4FF !important;
+            width: 42px !important;
+            height: 42px !important;
+            margin: 4px;
+        }
 
-                .img_tit button:hover {
-                    background-color: rgba(0, 122, 255, 0.40);
-                }
+        .img_tit button:hover {
+            background-color: rgba(0, 122, 255, 0.40);
+        }
 
-                .img_tit button:focus {
-                    outline: 0;
-                }
+        .img_tit button:focus {
+            outline: 0;
+        }
 
-                .img_tit .break {
-                    margin: 10px 4px;
-                    border: none;
-                    float: right;
-                    width: 1px;
-                    height: 30px;
-                    background-color: #fff;
-                }
-                /*切換圖片上下張*/
-                #but_r, #but_l {
-                    position: fixed;
-                    bottom: 15px;
-                    right: 15px;
-                    width: calc( 50% - 15px);
-                    height: 80px;
-                    z-index: 200;
-                    /*background-color: rgba(94,94,94,0.50);*/
-                    background-color: rgba(75,200,255,0.5);
-                    /*border-radius: 10px;*/
-                    box-shadow: 0px 0px 16px 1px;
-                    background-position: center center !important; /*對齊位置*/
-                    background-repeat: no-repeat !important; /*不重複*/
-                    background-size: 50% 50%;
-                    background-image: url(img/r.svg);
-                    opacity: 0;
-                    outline: 0;
-                    border: none;
-                }
+        .img_tit .break {
+            margin: 10px 4px;
+            border: none;
+            float: right;
+            width: 1px;
+            height: 30px;
+            background-color: #fff;
+        }
+        /*切換圖片上下張*/
+        #but_r, #but_l {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            width: calc( 50% - 15px);
+            height: 80px;
+            z-index: 200;
+            /*background-color: rgba(94,94,94,0.50);*/
+            background-color: rgba(75,200,255,0.5);
+            /*border-radius: 10px;*/
+            box-shadow: 0px 0px 16px 1px;
+            background-position: center center !important; /*對齊位置*/
+            background-repeat: no-repeat !important; /*不重複*/
+            background-size: 50% 50%;
+            background-image: url(img/r.svg);
+            opacity: 0;
+            outline: 0;
+            border: none;
+        }
 
-                #but_l {
-                    transform: scaleX(-1);
-                    left: 15px;
-                }
+        #but_l {
+            transform: scaleX(-1);
+            left: 15px;
+        }
 
-                    #but_l:active { /*因為原本就已經有用變形，所以要另外覆寫一次*/
-                        transform: translateY(3px) scaleX(-1);
-                        background-color: rgba(66,166,112,1) !important;
-                    }
+            #but_l:active { /*因為原本就已經有用變形，所以要另外覆寫一次*/
+                transform: translateY(3px) scaleX(-1);
+                background-color: rgba(66,166,112,1) !important;
+            }
 
-                    #but_r:hover, #but_l:hover {
-                        opacity: 1;
-                    }
+            #but_r:hover, #but_l:hover {
+                opacity: 1;
+            }
     </style>
 
 
@@ -982,8 +982,8 @@
             }
 
             //計算游標目前在圖片的坐標
-            xxx = e.clientX - (document.getElementById("img_box")).offsetLeft - 0 - fun_nub(obj_img.style.left);
-            yyy = e.clientY - (document.getElementById("img_box")).offsetTop - 0 - fun_nub(obj_img.style.top);
+            xxx = e.clientX - (document.getElementById("img_box")).offsetLeft - 0 - fun_nub(obj_img.style.left) - obj_img_content.offsetLeft;
+            yyy = e.clientY - (document.getElementById("img_box")).offsetTop - 0 - fun_nub(obj_img.style.top) - obj_img_content.offsetTop;
 
             //計算圖片改變大小後的差距
             var xx2 = obj_img.offsetWidth - obj_img.offsetWidth * 0.9;
@@ -1022,8 +1022,9 @@
                 e.clientY = obj_img_content.offsetHeight / 2;
             }
 
-            xxx = e.clientX - (document.getElementById("img_box")).offsetLeft - 0 - fun_nub(obj_img.style.left);
-            yyy = e.clientY - (document.getElementById("img_box")).offsetTop - 0 - fun_nub(obj_img.style.top);
+            
+            xxx = e.clientX - (document.getElementById("img_box")).offsetLeft - 0 - fun_nub(obj_img.style.left) - obj_img_content.offsetLeft;
+            yyy = e.clientY - (document.getElementById("img_box")).offsetTop - 0 - fun_nub(obj_img.style.top) - obj_img_content.offsetTop;
 
             var xx2 = obj_img.offsetWidth - obj_img.offsetWidth / 1.1;
             var yy2 = obj_img.offsetHeight - obj_img.offsetHeight / 1.1;
@@ -1442,10 +1443,23 @@
 
                 <div class="break"></div>
 
-                <a target='_blank' id="img_open_url">
-                    <!--<button style="background-image:url(img/URL.png);background-size: 65% 65%;" onclick=""></button>-->
+
+                <a target='_blank' id="img_open_url">                
                 </a>
-                <!--<div class="break"></div>-->
+
+                <script>
+
+                    function fun_open_file() {
+                      
+                        var s_open_file = "" + decodeURIComponent(document.getElementById("img_t1").value) + "";
+                        window.external.fun_open_file(s_open_file);
+
+                    }
+                </script>
+
+                <button style="background-image:url(img/open.svg);background-size: 70% 70%;" onclick="fun_open_file()"></button>
+                <div class="break"></div>
+                
 
                 <button style="background-image:url(img/add.svg)" onclick="fun_imgSizeAdd()"></button>
                 <button style="background-image:url(img/subtrat.svg)" onclick="fun_imgSizeSubtrat()"></button>
@@ -1673,16 +1687,18 @@
         main();
 
     </script>
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-	  ga('create', 'UA-56186804-2', 'auto');
-	  ga('send', 'pageview');
+        ga('create', 'UA-56186804-2', 'auto');
+        ga('send', 'pageview');
 
-	</script>
+    </script>
 
 </body>
 </html>

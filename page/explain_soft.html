@@ -44,14 +44,33 @@
 
                 #tit_yes, #tit_no {
                     font-size: 30px;
-                    margin:10px 0px;
+                    margin: 10px 0px;
                 }
+
+                .a_download {
+                    /*padding: 5px 5px;*/
+                    /*border: rgb(0, 161, 23) 2px solid;*/
+                    color: rgb(0, 161, 23) !important;
+                    transition: all 0.3s;
+                    display: inline-block;
+                    text-decoration: none;
+                    font-size: 18px;
+                }
+
+                    .a_download:hover {
+                        background-color: rgb(203, 255, 201);
+                        transform: scale(1.05) !important;
+                    }
             </style>
 
 
             <div id="tit_yes" style="display:none; color:rgb(96, 255, 89)">您已經是最新版</div>
-            <div id="tit_no" style="display:none;color:rgb(255, 102, 102)">需要更新</div>
-           
+            <div id="tit_no" style="display:none;color:rgb(255, 102, 102)">
+                需要更新
+                <a href="index.html#/download" class="a_download">(下載 AeroPic {{new_version}})</a>
+               
+            </div>
+
 
             <table border="1" class="table">
                 <tr>
@@ -210,20 +229,20 @@
 
     <div class="tit">進階設定</div>
     <div class="box">
-   
+
         可以修改：預設瀏覽器、用其他程式開啟圖片的名單
         <br><br>
 
-        進階設定目前還沒有做圖形化界面，只能手動編輯設定檔，用記事本即可開機編輯。       
+        進階設定目前還沒有做圖形化界面，只能手動編輯設定檔，用記事本即可進行編輯。
         <br>
         路徑： {程式資料夾}/data/<b style="color:rgb(255, 0, 0)">confi.xml</b>
-        
+
         <br><br>
 
-        <img src="imgs\explain_soft/1.jpg"/>
-    
+        <img src="imgs\explain_soft/1.jpg" />
+
         <br><br>
-        
+
 
     </div>
 
