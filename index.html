@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-<html lang="zh-tw" >
+<html lang="zh-tw">
 <head>
 
     <meta charset="utf-8" />
@@ -31,8 +31,8 @@
         }
 
         .top {
-            box-shadow: 0px 0px 8px rgba(0,0,0,0.8);
-            background-color: rgba(0, 64, 26, 0.85);
+            /*box-shadow: 0px 0px 8px rgba(0,0,0,0.8);*/
+            background-color: rgba(17, 77, 0, 0.90);
             /*height: 50px;*/
             position: fixed;
             top: 0px;
@@ -47,7 +47,7 @@
                 font-size: 26px;
                 color: #FFF;
                 line-height: 50px;
-                margin-right: 30px;
+                margin-right: 20px;
                 height: 50px;
                 display: block;
                 float: left;
@@ -118,7 +118,7 @@
             word-break: break-all;
         }
 
-            .box a:link, .box a:visited {
+            .box a:link, .box a:visited ,#bottom a{
                 text-decoration: none;
                 color: rgb(47, 168, 229);
             }
@@ -161,7 +161,7 @@
                         }
 
                         .top table {
-                            width: 350px;
+                            width: 400px;
                         }
                     }
                 </style>
@@ -177,7 +177,7 @@
                         <td> <a id="top_1" href="#/">首頁</a></td>
                         <td> <a id="top_download" href="#/download">下載</a></td>
                         <td> <a id="top_explain" href="#/explain_soft">使用說明</a></td>
-                        <td> <a id="top_author" href="#/author">作者</a></td>
+                        <td> <a id="top_author" href="#/author">意見回饋</a></td>
                     </tr>
                 </table>
 
@@ -205,7 +205,7 @@
                        .when('/explain_soft/:mes', { templateUrl: 'page/explain_soft.html', controller: 'VersionCtrl', title: 'AeroPic 使用說明' })
                        .when('/explain_pixiv', { templateUrl: 'page/explain_pixiv.html', controller: 'LoadedCtrl', title: 'AeroPic 下載Pixiv動圖教學' })
                        .when('/explain_edit_default', { templateUrl: 'page/explain_edit_default.html', controller: 'LoadedCtrl', title: 'AeroPic 修改為預設開啟程式' })
-                       .when('/author', { templateUrl: 'page/author.html', title: 'AeroPic 作者資訊' })
+                       .when('/author', { templateUrl: 'page/author.html', controller: 'LoadedCtrl', title: 'AeroPic 意見回饋' })
                        //.when('/printers', { template: '這是打印機頁面' })//印出字串
                        .otherwise({ redirectTo: '/' });//其他
                    }]);
@@ -222,23 +222,36 @@
             //載入完成時
             app.controller('LoadedCtrl', function ($scope, $routeParams) {
 
-             
-      
-
                 fun_圖片自動加超連結();
+
+                //捲到最上面
+                window.document.body.scrollTop = 0;
+                window.scrollTo(0, 0);
             });
 
             //載入完成時
             app.controller('VersionCtrl', function ($scope, $routeParams) {
                 $scope.s_version = $routeParams.mes;//取得網址參數
                 document.getElementById("div_version").style.display = "block";//顯示版本比較的視窗
+
+                var int_最新版本 = parseFloat("0." + $scope.new_version.replace(/[.]/g, ""));
+                var int_使用者版本 = parseFloat("0." + $routeParams.mes.replace(/[.]/g, ""));
+
+                if (int_使用者版本 >= int_最新版本) {
+                    document.getElementById("tit_yes").style.display = "block";
+                } else {
+                    document.getElementById("tit_no").style.display = "block";
+                }
+
                 fun_圖片自動加超連結();
+
             });
 
 
             //統一設定目前版本
             app.controller('myCtrl', function ($scope) {
-                $scope.new_version = "1.1.2";            
+                $scope.new_version = "1.1.2";
+
             });
 
 
@@ -246,15 +259,18 @@
             ///
             ///
             function fun_圖片自動加超連結() {
-               
+
+
+
                 //讓每一張圖片都加上超連結
                 var ar_img = document.getElementById("center").getElementsByTagName("img");
                 for (var i = 0; i < ar_img.length; i++) {
                     //ar_img[i].outerHTML = "<a target='_blank' href='" + ar_img[i].src + "'>" + ar_img[i].outerHTML + "<a/>";
-                    ar_img[i].addEventListener("click", function () {         
+                    ar_img[i].addEventListener("click", function () {
                         window.open(this.src, '_blank')
                     });
                 }
+
 
                 //讓每個超連結都另外開新分頁
                 var ar_a = document.getElementById("center").getElementsByTagName("a");
@@ -267,8 +283,52 @@
             }
 
         </script>
-   
+
     </div>
+
+
+
+
+    <style type="text/css">
+        #bottom {
+            background-color: rgb(26, 26, 26);
+            color: #FFF;
+            padding: 10px 30px;
+            margin-top:50px;
+
+        }
+    </style>
+
+    <div id="bottom">
+
+        <style>
+            .div_aut {
+                /*border: 1px solid #FFF;*/
+                display: inline-block;
+                font-size: 14px;
+                line-height: 20px;
+                margin: 2px;
+                padding: 15px;
+                border-right: 1px #575757 solid;
+            }
+        </style>
+
+
+        <div class="div_aut">
+            作者：LAIO, WEN-HONG
+        </div>
+        <div class="div_aut">
+            巴哈姆特：<a href="https://home.gamer.com.tw/homeindex.php?owner=hbl917070" target="_blank">hbl917070（深海異音）</a>
+        </div>
+        <div class="div_aut">
+            信箱：<a href="mailto:hbl917070@gmail.com">hbl917070@gmail.com</a>
+        </div>
+
+
+
+
+    </div>
+
 
 
 

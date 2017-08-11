@@ -20,20 +20,39 @@
 <div class="ddd">
 
 
-    <div id="div_version" style="display:none">
-        <div class="tit">版本</div>
-        <div class="box" style="background-color:rgb(155, 255, 160);">
 
-            <style>
+
+    <div id="div_version" style="display:none">
+        <div class="tit">檢查版本</div>
+        <div class="box">
+
+            <style type="text/css">
+                #div_version .box {
+                    /*border: 5px rgb(0, 191, 51) solid;*/
+                    background-color: rgb(0, 0, 0);
+                    color: #FFF;
+                }
+
                 .table, .table td {
                     font-size: 24px;
-                    border: 1px solid rgb(0, 191, 51);
+                    border: 1px solid rgb(55, 55, 55);
                 }
 
                     .table td {
                         padding: 10px;
                     }
+
+                #tit_yes, #tit_no {
+                    font-size: 30px;
+                    margin:10px 0px;
+                }
             </style>
+
+
+            <div id="tit_yes" style="display:none; color:rgb(96, 255, 89)">您已經是最新版</div>
+            <div id="tit_no" style="display:none;color:rgb(255, 102, 102)">需要更新</div>
+           
+
             <table border="1" class="table">
                 <tr>
                     <td>你目前的版本</td>
@@ -45,6 +64,9 @@
                 </tr>
 
             </table>
+
+
+
 
         </div>
     </div>
@@ -80,7 +102,7 @@
             <li>
                 如果無法開啟PSD：右鍵→設定，把【PSD使用內建解碼器】打勾
             </li>
-        </ul> 
+        </ul>
 
     </div>
 
@@ -88,7 +110,7 @@
 
     <div class="tit">界面-一般圖片</div>
     <div class="box">
-     <img width="700" src="imgs/explain_soft/ui-1.svg" />
+        <img width="700" src="imgs/explain_soft/ui-1.svg" />
     </div>
 
     <div class="tit">界面-Pixiv動態圖</div>

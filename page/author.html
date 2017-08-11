@@ -9,41 +9,87 @@
 
 <div class="ddd">
 
-    <div class="tit">作者資訊</div>
+    <div class="tit">意見回饋</div>
     <div class="box">
 
 
         <style>
-            .table , .table td {
-                font-size: 24px;
-                border: 1px solid rgb(181, 181, 181);
+            .a_download {
+                padding: 10px 50px;
+                border: rgb(0, 161, 23) 2px solid;
+                color: rgb(0, 161, 23) !important;
+                transition: all 0.3s;
+                display: inline-block;
+                text-decoration: none;
             }
 
-                .table td {
-                    padding: 10px;
+                .a_download:hover {
+                    background-color: rgb(203, 255, 201);
+                    transform: scale(1.05) !important;
                 }
         </style>
 
-        <table border="1" class="table">
-
-            <tr>
-                <td>作者</td>
-                <td>LAIO, WEN-HONG</td>
-            </tr>
-            <tr>
-                <td> 巴哈姆特</td>
-                <td><a href="https://home.gamer.com.tw/homeindex.php?owner=hbl917070">hbl917070（深海異音）</a></td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td>hbl917070@gmail.com</td>
-            </tr>
-        </table>
 
 
+
+        因為我沒有多餘的錢可以架設伺服器，<br>
+        只能麻煩你們到巴哈姆特用回文的方式回覆意見，或直接mail到我的信箱<br>
+        <br>
+
+        <a class="a_download" target="_blank" href="https://forum.gamer.com.tw/C.php?bsn=60076&snA=4095280">回覆</a>
 
 
     </div>
 
 
-</div>
+
+
+
+
+    <div class="ddd">
+
+        <div class="tit">常見問題</div>
+        <div class="box">
+            <style>
+                .tit3 {
+                    margin-top: 20px;
+                    font-size: 26px;
+                    font-weight: 900;
+                    color: rgb(0, 111, 29);
+                    border-bottom: 2px solid rgb(0, 111, 29);
+                }
+
+                .aaa a {
+                    border: 1px rgb(160, 223, 255) solid;
+                    margin: 5px;
+                    display: inline-block;
+                    padding: 2px;
+                }
+            </style>
+
+            <div class="tit3">無法開啟PSD檔案</div>
+            如果無法開啟PSD：右鍵→設定，把【PSD使用內建解碼器】打勾<br>
+            依然無法打開的話，有可能是這個PSD檔案沒有在存檔的時候開啟【最大相容模式】，所以導致第三方軟體難以解析。
+
+            <div class="tit3">複製PNG圖片會沒有透明底</div>
+            <div class="aaa">
+                這是windows本身的限制。我有另外做一個【複製PNG】的按鈕，這雖然能複製透明底但並不是通用格式，在多數繪圖軟體都能直接貼上只有少部分軟體不支援。<br>
+                不支援：<a href="http://www.adobe.com/tw/products/photoshop.html">Photoshop CC 2015</a>、<a href="https://www.systemax.jp/en/sai/">SAI</a> <br>
+                支援：<a href="https://krita.org/jp/">Krita</a>、<a href="https://medibangpaint.com/zh_TW/pc/">MediBang Paint Pro</a>、<a href="https://www.getpaint.net/">paint.net</a>
+            </div>
+
+            <div class="tit3">開啟程式很慢</div>
+            這個要去問微軟，正常電腦開啟一般圖片不會超過1秒，不過如果win10在背後更新之類的東東，就可能導致 .net 運行變慢。
+
+
+            <div class="tit3">為什麼GIF背景不是透明</div>
+            因為是不一樣的圖片解析處理模式，如果用成透明，會需要2倍以上的讀取時間與運行資源。
+
+
+            <div class="tit3">大量閱讀模式無法顯示某些圖片</div>
+            看看那些圖片的附檔名是否跟實際檔案類型不一樣，例如：GIF圖片，附檔名卻打PNG 之類的
+
+
+
+        </div>
+    </div>
