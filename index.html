@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-<html lang="zh-tw">
+<html lang="zh-tw" >
 <head>
 
     <meta charset="utf-8" />
@@ -124,8 +124,7 @@
             }
 
             .box a:hover, .box a:active {
-             
-                text-decoration:underline;
+                text-decoration: underline;
             }
 
         .tit {
@@ -142,7 +141,7 @@
 
 
 
-    <div ng-app="routingDemoApp">
+    <div ng-app="routingDemoApp" ng-controller="myCtrl">
 
 
         <div class="top">
@@ -223,20 +222,23 @@
             //載入完成時
             app.controller('LoadedCtrl', function ($scope, $routeParams) {
 
-
+             
+      
 
                 fun_圖片自動加超連結();
-
             });
 
             //載入完成時
             app.controller('VersionCtrl', function ($scope, $routeParams) {
-
                 $scope.s_version = $routeParams.mes;//取得網址參數
-
                 document.getElementById("div_version").style.display = "block";//顯示版本比較的視窗
-
                 fun_圖片自動加超連結();
+            });
+
+
+            //統一設定目前版本
+            app.controller('myCtrl', function ($scope) {
+                $scope.new_version = "1.1.2";            
             });
 
 
@@ -244,11 +246,14 @@
             ///
             ///
             function fun_圖片自動加超連結() {
-
+               
                 //讓每一張圖片都加上超連結
                 var ar_img = document.getElementById("center").getElementsByTagName("img");
                 for (var i = 0; i < ar_img.length; i++) {
-                    ar_img[i].outerHTML = "<a target='_blank' href='" + ar_img[i].src + "'>" + ar_img[i].outerHTML + "<a/>";
+                    //ar_img[i].outerHTML = "<a target='_blank' href='" + ar_img[i].src + "'>" + ar_img[i].outerHTML + "<a/>";
+                    ar_img[i].addEventListener("click", function () {         
+                        window.open(this.src, '_blank')
+                    });
                 }
 
                 //讓每個超連結都另外開新分頁
@@ -262,7 +267,7 @@
             }
 
         </script>
-
+   
     </div>
 
 
