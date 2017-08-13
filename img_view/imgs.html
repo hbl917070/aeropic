@@ -952,7 +952,7 @@ fun_imgSizeSubtrat(e);
 } else {
 fun_imgSizeAdd(e);
 }
-fun_beyond();
+
 
 }//if
 
@@ -977,8 +977,8 @@ return;
 //如果不是透過滾輪來縮放，就從中央作為縮放起點
 if (e === undefined) {
 e = { clientX: 0, clientY: 0 };
-e.clientX = obj_img_content.offsetWidth / 2;
-e.clientY = obj_img_content.offsetHeight / 2;
+e.clientX = obj_img_content.offsetWidth / 2 + obj_img_content.offsetLeft;
+e.clientY = obj_img_content.offsetHeight / 2 +obj_img_content.offsetTop;
 }
 
 //計算游標目前在圖片的坐標
@@ -997,6 +997,8 @@ fun_imgSizeChange();//改變大小
 
 obj_img.style.top = top2 + ((yyy / obj_img.offsetHeight) * yy2) * 0.9 + "px";
 obj_img.style.left = left2 + ((xxx / obj_img.offsetWidth) * xx2) * 0.9 + "px";
+
+fun_beyond();//定位
 
 }
 
@@ -1018,11 +1020,11 @@ fun_imgSizeChange();
 //如果不是透過滾輪來縮放，就從中央作為縮放起點
 if (e == undefined) {
 e = { clientX: 0, clientY: 0 };
-e.clientX = obj_img_content.offsetWidth / 2;
-e.clientY = obj_img_content.offsetHeight / 2;
+e.clientX = obj_img_content.offsetWidth / 2 + obj_img_content.offsetLeft;
+e.clientY = obj_img_content.offsetHeight / 2 + obj_img_content.offsetTop;
 }
 
-            
+
 xxx = e.clientX - (document.getElementById("img_box")).offsetLeft - 0 - fun_nub(obj_img.style.left) - obj_img_content.offsetLeft;
 yyy = e.clientY - (document.getElementById("img_box")).offsetTop - 0 - fun_nub(obj_img.style.top) - obj_img_content.offsetTop;
 
@@ -1031,6 +1033,8 @@ var yy2 = obj_img.offsetHeight - obj_img.offsetHeight / 1.1;
 
 obj_img.style.top = "" + (fun_nub(obj_img.style.top) - ((yyy / obj_img.offsetHeight) * yy2) * 1.1) + "px";
 obj_img.style.left = "" + (fun_nub(obj_img.style.left) - ((xxx / obj_img.offsetWidth) * xx2) * 1.1) + "px";
+
+fun_beyond();//定位
 }
 
 
@@ -1297,6 +1301,12 @@ fun_imgSizeSubtrat();
 e.preventDefault();
 }
 
+else if (currKey == 37) {//切換上下張圖片
+fun_imgPrev();
+} else if (currKey == 39) {
+fun_imgNext();
+}
+
 } else {//沒有開啟檢視器，就直接控制body的捲軸
 
 if (currKey == 38) {
@@ -1333,13 +1343,9 @@ var keyName = String.fromCharCode(currKey);
 
 if (bool_視窗開啟) {
 
-if (currKey == 27) {//關閉視窗
+if (currKey == 27 || currKey == 8) {//關閉視窗
 fun_close_imgbox();
-} else if (currKey == 37) {//切換上下張圖片
-fun_imgPrev();
-} else if (currKey == 39) {
-fun_imgNext();
-}
+} 
 
 } else {
 
@@ -1444,13 +1450,13 @@ window.document.body.scrollTop = sch;
 <div class="break"></div>
 
 
-<a target='_blank' id="img_open_url">                
+<a target='_blank' id="img_open_url">
 </a>
 
 <script>
 
 function fun_open_file() {
-                      
+
 var s_open_file = "" + decodeURIComponent(document.getElementById("img_t1").value) + "";
 window.external.fun_open_file(s_open_file);
 
@@ -1459,7 +1465,7 @@ window.external.fun_open_file(s_open_file);
 
 <button style="background-image:url(img/open.svg);background-size: 70% 70%;" onclick="fun_open_file()"></button>
 <div class="break"></div>
-                
+
 
 <button style="background-image:url(img/add.svg)" onclick="fun_imgSizeAdd()"></button>
 <button style="background-image:url(img/subtrat.svg)" onclick="fun_imgSizeSubtrat()"></button>
