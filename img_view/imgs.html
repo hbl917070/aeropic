@@ -13,6 +13,7 @@
 
     <style type="text/css" id="css"></style>
     <style type="text/css" id="wid"></style>
+    <style type="text/css" id="css_noSpacing"></style>
 
 
 
@@ -208,7 +209,7 @@
 
         .none {
             opacity: 0;
-            margin-bottom: -100px;
+            margin-bottom: -200px;
             transform: translateY(-100px);
             pointer-events: none;
         }
@@ -298,6 +299,7 @@
     <script type="text/javascript">
 
         var int_width_css = "";//記錄【鎖定寬度】的全域變數
+        var s_noSpacing = "no";//記錄『無間距模式』的全域變數
 
         //4種顯示類型的CSS
         var s_css_01 = '.sp img { max-width: calc( 95vw - 20px ); margin-bottom: 10px !important; margin-top: 10px !important; /*margin-left:-500px !important; margin-right:-500px !important;*/}.sp { width: 95vw; margin-bottom: 30px; transition: none !important; /*動畫時間*/} .sp .tit { height: 40px; } .sp img, .sp .cont { position: static !important; }';
@@ -317,11 +319,17 @@
                 //document.getElementById("lock_width_div").style.display = "block";
                 document.getElementById("lock_width_div").className = "tab";
                 document.getElementById("wid").innerHTML = int_width_css;
+                fun_noSpacing(s_noSpacing);//啟用 『無間距模式』
             } else {
                 //document.getElementById("lock_width_div").style.display = "none";
                 document.getElementById("lock_width_div").className = "tab none";
                 document.getElementById("wid").innerHTML = "";
+                fun_noSpacing("none");//取消 『無間距模式』
             }
+
+
+       
+           
 
             //document.getElementById("css").href = ra + ".css";
             if (ra == 1) {
@@ -351,7 +359,7 @@
 
             if (ra == "0") {
                 document.getElementById("wid").innerHTML = "";
-            } else {
+            } else {            
                 int_width_css = "IMG{width:" + ra + "%;}"
                 document.getElementById("wid").innerHTML = int_width_css;
             }
@@ -364,8 +372,66 @@
             document.getElementById(o).className = "col sel";
 
             setCookie("wid", "fun_wid('" + ra + "','" + o + "')", 365);//儲存設定
-       
+
         }
+
+
+        ///
+        ///無間距模式
+        ///
+        function fun_noSpacing(ra) {//lock width
+
+
+            //如果是切換圖片欄位，就取消無間距模式，並且不記錄
+            if (ra == "none") {
+
+                document.getElementById("css_noSpacing").innerHTML = "";
+
+                return;
+
+            } else if (ra == "no") {
+
+                document.getElementById("css_noSpacing").innerHTML = "";
+
+            } else {
+
+                let style =
+                ".sp {" +
+                "    margin-bottom: " + ra + "px !important;" +
+                "    margin-left:auto !important;" +
+                "    margin-right:auto !important;" +
+                "    border: none !important;" +
+                "    display: block !important;" +
+                "}" +
+                "" +
+                ".sp img {" +
+                "    margin-top: 0px !important;" +
+                "    margin-bottom: 0px !important;" +
+                "    display: block !important;" +
+                "}" +
+                "" +
+                ".tit {" +
+                "    display: none !important;" +
+                "}";
+
+                document.getElementById("css_noSpacing").innerHTML = style;
+            }
+
+            //更改選中樣式
+            var ar = new Array("r3-no", "r3-0", "r3-20", "r3-40", "r3-60");
+            for (var i = 0 ; i < ar.length ; i++) {
+                document.getElementById(ar[i]).className = "col";
+            }
+            document.getElementById("r3-" + ra).className = "col sel";
+
+            s_noSpacing = ra;
+            setCookie("noSpacing", ra, 365);//儲存設定
+
+        }
+
+
+
+
 
 
         ///
@@ -1516,13 +1582,17 @@
             box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.5);
         }
 
-            .theme_b .col_table td {
-                color: rgba(0, 0, 0, 1) !important;
-            }
+        .theme_b .tab h2 {
+            color: rgba(0, 0, 0, 0.4) !important;
+        }
 
-                .theme_b .col_table td:hover {
-                    background-color: rgba(0, 111, 160, 0.28);
-                }
+        .theme_b .col_table td {
+            color: rgba(0, 0, 0, 1) !important;
+        }
+
+            .theme_b .col_table td:hover {
+                background-color: rgba(0, 111, 160, 0.28);
+            }
 
         .theme_b #title {
             background-color: rgba(255, 255, 255, 0.4) !important;
@@ -1620,7 +1690,7 @@
 
     <div class="tab none" id="lock_width_div">
         <h2 class="no_sel">Lock width（鎖定寬度）</h2>
-        <table border="0" class="col_table no_sel">
+        <table border="0" class="col_table">
             <tr>
                 <td class="col  sel" onclick="fun_wid('0','r2-0')" id="r2-0">no</td>
                 <td class="col" onclick="fun_wid('40','r2-40')" id="r2-40">40%</td>
@@ -1632,7 +1702,28 @@
                 <td class="col" onclick="fun_wid('100','r2-100')" id="r2-100">100%</td>
             </tr>
         </table>
+
+        <br>
+
+        <h2 class="no_sel">No spacing（無間距模式）</h2>
+        <table border="0" class="col_table">
+            <tr>
+                <td class="col  sel" onclick="fun_noSpacing('no')" id="r3-no">no</td>
+                <td class="col" onclick="fun_noSpacing('0')" id="r3-0">0</td>
+                <td class="col" onclick="fun_noSpacing('20')" id="r3-20">20</td>
+                <td class="col" onclick="fun_noSpacing('40')" id="r3-40">40</td>
+                <td class="col" onclick="fun_noSpacing('60')" id="r3-60">60</td>
+            </tr>
+        </table>
+
+        <br>
+
     </div>
+
+
+
+  
+
 
     <div id="title" onselectstart="return false">
         <button id="prev" onclick="fun_上一頁()"> << Prev </button>
@@ -1671,11 +1762,19 @@
         ///
         function fun_產生圖片() {
 
+            //根據上一次的設定回復『無間距模式』的選項
+            var cookie_noSpacing = getCookie("noSpacing");
+            if (cookie_noSpacing != "") {
+                s_noSpacing = cookie_noSpacing;
+                fun_noSpacing(s_noSpacing);
+            }
 
+            //回到以上一選擇的『鎖定寬度』
+            try {
+                eval(getCookie("wid") + ";");
+            } catch (e) { }
 
-
-            var s_sum = "";
-
+       
             //如果只有一張圖片，就顯示預設一欄
             if (urls.length == 1) {
                 fun_col("1", "r1");
@@ -1683,7 +1782,7 @@
                 fun_col("4", "r4");
             }
 
-
+            var s_sum = "";
             s_sum += ("<div class='div_page'>");
 
             for (var i = 0; i < urls.length; i++) {
@@ -1793,17 +1892,19 @@
     </div>
 
 
+
     <script type="text/javascript">
+
+
+
         fun_初始();
         main();
-     
-        //回到以上一選擇的『鎖定寬度』
-        try {
-            eval(getCookie("win"));
-        } catch (e) {}
-     
 
     </script>
+
+
+
+
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
