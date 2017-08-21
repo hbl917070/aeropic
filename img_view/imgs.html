@@ -10,11 +10,9 @@
 
 <!--<script src="urls.js" type="text/javascript"></script>-->
 
-
 <style type="text/css" id="css"></style>
 <style type="text/css" id="wid"></style>
 <style type="text/css" id="css_noSpacing"></style>
-
 
 
 <!--css 框 -->
@@ -479,12 +477,9 @@ var str_divPageClassName = "div_page";
 function fun_初始() {
 
 var imgs = document.getElementsByTagName(str_TagName);
-
 int_flag = 0;
-
 fun_隱藏不需要的按鈕();
 fun_刷新();
-
 }
 
 
@@ -565,9 +560,7 @@ imgs[j].getElementsByTagName("img")[0].src = "";
 
 }//for
 
-document.getElementById("select_page").value = int_flag;//設定目光前選擇的頁數
-window.document.documentElement.scrollTop = 0;//捲動至最上面
-window.document.body.scrollTop = 0;
+fun_捲動到最上面();
 
 // fun_刷新()
 }
@@ -612,9 +605,7 @@ imgs[j].getElementsByTagName("img")[0].src = "";
 
 }//for
 
-document.getElementById("select_page").value = int_flag;//設定目光前選擇的頁數
-window.document.documentElement.scrollTop = 0;//捲動至最上面
-window.document.body.scrollTop = 0;
+fun_捲動到最上面();
 //fun_刷新();
 }
 
@@ -680,8 +671,20 @@ imgs[j].getElementsByTagName("img")[0].src = "";
 
 }//for
 
-window.document.documentElement.scrollTop = 0;//捲動至最上面
-window.document.body.scrollTop = 0;
+
+fun_捲動到最上面();
+
+
+}
+
+
+///
+///捲動到最上面
+///
+function fun_捲動到最上面() {
+let sch = document.getElementById("div_imgs").offsetTop - 10;
+window.document.documentElement.scrollTop = sch;//捲動至最上面
+window.document.body.scrollTop = sch;
 }
 
 </script>
@@ -872,6 +875,10 @@ color: rgba(0, 0, 0, 1) !important;
 .theme_b .col_table td:hover {
 background-color: rgba(0, 111, 160, 0.28);
 }
+
+.theme_b .col_table td:active {
+background-color: rgba(0, 160, 33, 0.5) !important;
+}
 /*右上角換頁的選單*/
 .theme_b #title {
 background-color: rgba(255, 255, 255, 0.4) !important;
@@ -880,6 +887,11 @@ box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.5);
 /*hover*/
 .theme_b #title button:hover, .theme_b #title select:hover, .theme_b #prev2:hover, .theme_b #next2:hover {
 background-color: rgba(0, 111, 160, 0.68);
+}
+
+/*hover*/
+.theme_b #title button:active, .theme_b #title select:active, .theme_b #prev2:active, .theme_b #next2:active {
+background-color: rgba(0, 160, 33, 0.5) !important;
 }
 </style>
 
@@ -1409,37 +1421,32 @@ return;
 var currKey = 0, e = e || event;
 currKey = e.keyCode || e.which || e.charCode;
 
-
 if (bool_視窗開啟) {//開啟檢視器時
 
 if (currKey == 38 || currKey == 104) {//上 8
-//document.getElementById("img_content").scrollTop -= 50;
 
 obj_img.style.top = fun_nub(obj_img.style.top) + 50 + "px";
 fun_beyond();//避免超出位置
-
 e.preventDefault();
+
 } else if (currKey == 40 || currKey == 101) {//下 5
-//document.getElementById("img_content").scrollTop += 50;
 
 obj_img.style.top = fun_nub(obj_img.style.top) - 50 + "px";
 fun_beyond();//避免超出位置
-
 e.preventDefault();
+
 } else if (currKey == 100) {//左 4
-//document.getElementById("img_content").scrollLeft -= 50;
 
 obj_img.style.left = fun_nub(obj_img.style.left) + 50 + "px";
 fun_beyond();//避免超出位置
-
 e.preventDefault();
+
 } else if (currKey == 102) {//右 6
-//document.getElementById("img_content").scrollLeft += 50;
 
 obj_img.style.left = fun_nub(obj_img.style.left) - 50 + "px";
 fun_beyond();//避免超出位置
-
 e.preventDefault();
+
 } else if (currKey == 107 || currKey == 16) {// 放大 + shift
 fun_imgSizeAdd();
 e.preventDefault();
@@ -1450,12 +1457,15 @@ e.preventDefault();
 
 else if (currKey == 37) {//切換上下張圖片
 fun_imgPrev();
+e.preventDefault();
 } else if (currKey == 39) {
 fun_imgNext();
+e.preventDefault();
 }
 
-} else {//沒有開啟檢視器，就直接控制body的捲軸
+} else {//沒有開啟檢視器
 
+//控制body的捲軸
 if (currKey == 38) {
 window.document.body.scrollTop -= 50;
 window.document.documentElement.scrollTop -= 50;
@@ -1463,6 +1473,15 @@ e.preventDefault();
 } else if (currKey == 40) {
 window.document.body.scrollTop += 50;
 window.document.documentElement.scrollTop += 50;
+e.preventDefault();
+}
+
+//切換上下頁
+if (currKey == 37) {
+fun_上一頁();
+e.preventDefault();
+} else if (currKey == 39) {
+fun_下一頁();
 e.preventDefault();
 }
 
@@ -1485,26 +1504,14 @@ return;
 
 var currKey = 0, e = e || event;
 currKey = e.keyCode || e.which || e.charCode;
-var keyName = String.fromCharCode(currKey);
-
+//var keyName = String.fromCharCode(currKey);
+// alert("按鍵碼: " + currKey + " 字元: " + keyName);
 
 if (bool_視窗開啟) {
-
 if (currKey == 27 || currKey == 8) {//關閉視窗
 fun_close_imgbox();
 }
-
-} else {
-
-if (currKey == 37) {//切換上下頁
-fun_上一頁();
-} else if (currKey == 39) {
-fun_下一頁();
 }
-}
-
-
-// alert("按鍵碼: " + currKey + " 字元: " + keyName);
 
 }
 
@@ -1891,7 +1898,7 @@ button, .tab td {
 }
 
 button:active, .tab td:active {
-box-shadow: 0px 0px 10px rgba(0,0,0,0.85);
+/*box-shadow: 0px 0px 10px rgba(0,0,0,0.85);*/
 transform: translateY(3px);
 background-color: rgba(66,166,112,1) !important;
 }
