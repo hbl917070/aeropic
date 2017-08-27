@@ -1612,12 +1612,21 @@ document.body.setAttribute("class", "");
 }
 
 
+///
+///呼叫C#開啟『拖曳開啟圖片』的視窗
+///
+function dragHandler(e) {//覆寫HTML的拖曳事件
+if (window.external.fun_drag_window != undefined) {
+window.external.fun_drag_window();
+}
+//e.preventDefault(); //防止瀏覽器執行預設動作
+}
 
 </script>
 
 
 </head>
-<body>
+<body ondragover="javascript: dragHandler(event);">
 
 
 
