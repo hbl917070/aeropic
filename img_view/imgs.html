@@ -89,12 +89,10 @@ right: 0;
 bottom: 0;
 left: 0;
 margin: auto;
-/*禁止選取*/
--webkit-touch-callout: none;
--webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
+/*無法點擊*/
+pointer-events: none!important;
+               
+                 
 }
 </style>
 
@@ -161,7 +159,7 @@ padding-left: 15px;
 }
 
 .col:hover {
-background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.2);
 }
 
 .sel { /*選中的狀態*/
@@ -180,7 +178,7 @@ margin-bottom: 20px;
 }
 
 .tab h2 {
-line-height: 0px;
+    line-height: 0px;
 }
 
 /*右上角的超連結*/
@@ -203,8 +201,8 @@ opacity: 0;
 }
 
 .open_url:hover {
-background-color: rgba(0, 107, 255, 0.40);
-opacity: 1;
+    background-color: rgba(0, 107, 255, 0.40);
+    opacity: 1;
 }
 
 #lock_width_div {
@@ -552,15 +550,15 @@ if (i == int_flag) {
 divPage[i].style.display = "block";//顯示頁
 
 for (var j = 0 ; j < imgs.length ; j++) {//顯示圖片
-var x = imgs[j].getElementsByTagName("img")[0];
-x.src = x.alt;
+    var x = imgs[j].getElementsByTagName("img")[0];
+    x.src = x.alt;
 }
 
 } else {
 divPage[i].style.display = "none";
 
 for (var j = 0 ; j < imgs.length ; j++) {
-imgs[j].getElementsByTagName("img")[0].src = "";
+    imgs[j].getElementsByTagName("img")[0].src = "";
 }
 }
 
@@ -597,15 +595,15 @@ if (i == int_flag) {
 divPage[i].style.display = "block";//顯示頁
 
 for (var j = 0 ; j < imgs.length ; j++) {//顯示圖片
-var x = imgs[j].getElementsByTagName("img")[0];
-x.src = x.alt;
+    var x = imgs[j].getElementsByTagName("img")[0];
+    x.src = x.alt;
 }
 
 } else {
 divPage[i].style.display = "none";
 
 for (var j = 0 ; j < imgs.length ; j++) {
-imgs[j].getElementsByTagName("img")[0].src = "";
+    imgs[j].getElementsByTagName("img")[0].src = "";
 }
 }
 
@@ -633,7 +631,7 @@ var varItem = new Option(text, i);
 document.getElementById("select_page").options.add(varItem);
 
 if ((i + 1) * int_number >= imgs.length) {
-break;
+    break;
 }
 
 }
@@ -663,15 +661,15 @@ if (i == int_flag) {
 divPage[i].style.display = "block";//顯示頁
 
 for (var j = 0 ; j < imgs.length ; j++) {//顯示圖片
-var x = imgs[j].getElementsByTagName("img")[0];
-x.src = x.alt;
+    var x = imgs[j].getElementsByTagName("img")[0];
+    x.src = x.alt;
 }
 
 } else {
 divPage[i].style.display = "none";
 
 for (var j = 0 ; j < imgs.length ; j++) {
-imgs[j].getElementsByTagName("img")[0].src = "";
+    imgs[j].getElementsByTagName("img")[0].src = "";
 }
 }
 
@@ -843,12 +841,12 @@ left: 15px;
 }
 
 #but_l:active { /*因為原本就已經有用變形，所以要另外覆寫一次*/
-transform: translateY(3px) scaleX(-1);
-background-color: rgba(66,166,112,1) !important;
+    transform: translateY(3px) scaleX(-1);
+    background-color: rgba(66,166,112,1) !important;
 }
 
 #but_r:hover, #but_l:hover {
-opacity: 1;
+    opacity: 1;
 }
 </style>
 
@@ -1340,9 +1338,9 @@ if (st_zoomMode == "full") {//圖片滿版，需要判斷
 if (img_size[0] && img_size[1]) {
 
 if ((img_size[0] / obj_img_content.offsetWidth) > (img_size[1] / obj_img_content.offsetHeight)) {
-bool_width = true;
+    bool_width = true;
 } else {
-bool_width = false;
+    bool_width = false;
 }
 } else {
 bool_width = false;
@@ -1667,8 +1665,8 @@ window.external.fun_drag_window();
 ///
 function fun_open_file() {
 
-var s_open_file = "" + decodeURIComponent(document.getElementById("img_t1").value) + "";
-window.external.fun_open_file(s_open_file);
+    var s_open_file = "" + decodeURIComponent(document.getElementById("img_t1").value) + "";
+    window.external.fun_open_file(s_open_file);
 
 }
 </script>
@@ -1870,7 +1868,7 @@ if ((i + 1) % 40 == 0) {
 if (urls.length % 40 === 0 && i + 1 === urls.length) {
 
 } else {
-s_sum += ("</div><div class='div_page' style='display:none;'>");
+    s_sum += ("</div><div class='div_page' style='display:none;'>");
 }
 
 }
