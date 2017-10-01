@@ -1628,8 +1628,8 @@ return;
 } catch (e2) {
 return;
 }
-          
-if (window.external.fun_drag_window != undefined) {     
+
+if (window.external.fun_drag_window != undefined) {
 window.external.fun_drag_window();
 }
 //e.preventDefault(); //防止瀏覽器執行預設動作
@@ -1637,6 +1637,24 @@ window.external.fun_drag_window();
 
 </script>
 
+
+
+<script type="text/javascript">
+
+
+function fun_右鍵關閉(event) {
+
+var btnNum = event.button;
+
+if (btnNum == 2) {
+fun_close_imgbox();
+}
+
+
+}
+
+
+</script>
 
 </head>
 <body ondragover="javascript: dragHandler(event);">
@@ -1654,7 +1672,7 @@ window.external.fun_drag_window();
 <button id="but_l" style="display:none;" onclick="fun_imgPrev()"></button>
 
 <!--圖片視窗-->
-<div id="img_box" style="display:none;">
+<div id="img_box" style="display:none;" onmouseup="fun_右鍵關閉(event)">
 <div class="img_tit">
 
 <div style="float:right;margin-right:10px;">
@@ -1705,13 +1723,13 @@ document.getElementById("text_scale").value = "95";//設定初始值
 <input type="text" id="img_t2" readonly='readonly'>
 </div>
 </div>
-<div id="img_content">
 
+<div id="img_content" >
 <div id="img_w">
 <img id="img_img" />
 </div>
-
 </div>
+
 </div>
 
 
