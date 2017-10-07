@@ -13,4 +13,6 @@ AeroPic 圖片檢視器 採用100%的透明玻璃界面，可用來取代windows
 
 https://i.imgur.com/iEnKKfS.gif
 
+<img src="https://i.imgur.com/iEnKKfS.gif">
+
 //--------------------
