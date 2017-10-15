@@ -131,11 +131,6 @@ scrollbar-shadow-color: #1e1e1e;
 html {
 font-family: "微軟正黑體";
 background-color: #000000;
-/*background-attachment: fixed !important;
-background-position: center center !important;
-background-repeat: no-repeat !important;
-background-size: cover !important;
-background-image: url("Default.jpg" );*/
 }
 
 
@@ -189,7 +184,7 @@ display: block;
 width: 30px;
 height: 30px;
 float: right;
-background-image: url(img/open.svg);
+background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMC4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4yIiBiYXNlUHJvZmlsZT0idGlueSIgaWQ9IuWcluWxpF8xIg0KCSB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUwIDUwIg0KCSBvdmVyZmxvdz0ic2Nyb2xsIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik00Ny43LDI2LjNjLTAuNy0xLTItMS42LTMuNi0xLjZoLTMuM3YtNC41YzAtMi44LTIuMy01LjEtNS4xLTUuMWgtMS4ydjMuNWgxLjJjMC45LDAsMS42LDAuNywxLjYsMS42djQuNQ0KCQloLTIyYy0yLjUsMC01LDEuMy01LjgsMy4xTDUuNCwzN1YyMC4yYzAtMC45LDAuNy0xLjYsMS42LTEuNmgxOC4zdi0zLjVoLTYuNHYtMC42YzAtMi44LTIuMy01LjEtNS4xLTUuMUg3Yy0yLjgsMC01LjEsMi4zLTUuMSw1LjENCgkJdjUuMmMwLDAuMSwwLDAuMSwwLDAuMmMwLDAuMSwwLDAuMSwwLDAuMnYyMmMwLDIuOCwyLjMsNS4xLDUuMSw1LjFoMjguN2MxLjYsMCwzLTAuOCw0LTEuOWMwLjYtMC41LDEuMS0xLDEuNC0xLjZsNi44LTE0LjcNCgkJQzQ4LjMsMjguMiw0OC4yLDI3LjIsNDcuNywyNi4zeiBNMTIuNCwyOS4xYzAuMi0wLjUsMS42LTEuMywzLTEuM2gyMnYxNC40YzAsMC42LTAuNCwxLjItMC45LDEuNGMtMC40LDAuMS0wLjcsMC4yLTEuMSwwLjJINw0KCQljLTAuNSwwLTAuOS0wLjItMS4yLTAuNUwxMi40LDI5LjF6IE01LDE1LjVjMC4yLTAuMSwwLjMtMC4xLDAuNS0wLjJDNS40LDE1LjQsNS4yLDE1LjQsNSwxNS41eiBNNiwxNS4yYzAuMy0wLjEsMC43LTAuMSwxLTAuMQ0KCQlDNi42LDE1LjEsNi4zLDE1LjEsNiwxNS4yeiBNMy41LDE2LjRDMy41LDE2LjUsMy41LDE2LjUsMy41LDE2LjRDMy41LDE2LjUsMy41LDE2LjUsMy41LDE2LjR6IE00LjQsMTUuOGMtMC4xLDAtMC4yLDAuMS0wLjMsMC4xDQoJCUM0LjMsMTUuOSw0LjQsMTUuOCw0LjQsMTUuOHogTTQwLjgsMzd2LTkuMmgzLjNjMC41LDAsMC43LDAuMSwwLjksMC4yTDQwLjgsMzd6Ii8+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIzLjgsMTEuNGMwLjQsMCwwLjgtMC4xLDEuMS0wLjRsMy4zLTMuMnYxMy4xYzAsMC44LDAuNywxLjUsMS41LDEuNWMwLjgsMCwxLjUtMC43LDEuNS0xLjVWNy44bDMuMywzLjINCgkJYzAuMywwLjMsMC43LDAuNCwxLjEsMC40YzAuNCwwLDAuOC0wLjIsMS4xLTAuNWMwLjYtMC42LDAuNi0xLjYsMC0yLjJsLTUuOS01LjdjMCwwLDAsMCwwLDBjLTAuMS0wLjEtMC4zLTAuMi0wLjQtMC4zYzAsMCwwLDAsMCwwDQoJCWMwLDAsMCwwLDAsMGMwLDAsMCwwLDAsMGMtMC4xLTAuMS0wLjMtMC4xLTAuNS0wLjFjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjLTAuMiwwLTAuMywwLTAuNSwwLjENCgkJYzAsMCwwLDAtMC4xLDBjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjLTAuMiwwLjEtMC4zLDAuMi0wLjQsMC4zYzAsMCwwLDAsMCwwbC01LjksNS43Yy0wLjYsMC42LTAuNiwxLjYsMCwyLjINCgkJQzIzLDExLjMsMjMuNCwxMS40LDIzLjgsMTEuNHoiLz4NCjwvZz4NCjwvc3ZnPg0K);
 background-size: contain;
 background-repeat: no-repeat !important; /*不重複*/
 position: absolute;
@@ -212,6 +207,18 @@ opacity: 0;
 margin-bottom: -200px;
 transform: translateY(-100px);
 pointer-events: none;
+}
+
+#div_wheel { /*捲動度率的DIV*/
+position: fixed;
+background: rgba(10, 10, 10, 0.55);
+color: #fff;
+pointer-events: none;
+z-index: 999999;
+white-space: nowrap;
+font-size: 12px;
+padding: 5px;
+border-radius: 7px;
 }
 </style>
 
@@ -835,7 +842,7 @@ box-shadow: 0px 0px 16px 1px;
 background-position: center center !important; /*對齊位置*/
 background-repeat: no-repeat !important; /*不重複*/
 background-size: 50% 50%;
-background-image: url(img/r.svg);
+background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i5ZyW5bGkXzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTAgNTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUwIDUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojRkZGRkZGO30NCjwvc3R5bGU+DQo8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjI3LjcsMCAyLjQsMCAyMi4zLDI1IDIuNCw1MCAyNy43LDUwIDQ3LjYsMjUgIi8+DQo8L3N2Zz4NCg==);
 opacity: 0;
 outline: 0;
 border: none;
@@ -1240,23 +1247,14 @@ return Number(nn.replace("px", ""));
 <script type="text/javascript">
 
 
-
-
 ///
-///由C#呼叫，返回【f】表示目前不可以退出
 ///
-function fun_aeropic按下返回鍵() {
-
-if (text_目前焦點 != null) {//如果input text有焦點，就阻止C#的動作
-return "f";
+///
+function fun_右鍵關閉(event) {
+var btnNum = event.button;
+if (btnNum == 2) {
+fun_close_imgbox();
 }
-
-if (bool_視窗開啟) {//如果圖片檢視窗口開啟，就關閉，並且阻止C#的動作
-//fun_close_imgbox();
-return "f";
-}
-
-return "t";
 }
 
 
@@ -1271,7 +1269,6 @@ document.getElementById("img_d").style.display = "none";
 document.getElementById("but_r").style.display = "none";
 document.getElementById("but_l").style.display = "none";
 
-
 document.getElementsByTagName("body")[0].style.overflow = "auto";
 }
 
@@ -1281,8 +1278,6 @@ document.getElementsByTagName("body")[0].style.overflow = "auto";
 ///開啟視窗
 ///
 function fun_open_imgbox(x) {
-
-
 
 img_sel = x;
 bool_視窗開啟 = true;
@@ -1296,7 +1291,6 @@ document.getElementById("but_l").style.display = "block";
 document.getElementById("img_img").src = urls[x];
 document.getElementById("img_open_url").href = urls[img_sel];
 document.getElementsByTagName("body")[0].style.overflow = "hidden";
-
 
 fun_100scale();
 fun_imgTitle();
@@ -1314,7 +1308,6 @@ if (path.substr(0, 8) == "file:///")
 path = path.substr(8);
 
 document.getElementById("img_t1").value = path//從網址編碼轉回原本的字串
-
 }
 
 var bool_width;//判斷縮放方式
@@ -1422,9 +1415,7 @@ var text_目前焦點 = null;
 ///
 function fun_處理text焦點() {
 
-
 var ar_text = ["img_t1", "img_t2", "text_scale"];
-
 
 //點擊圖片時，讓所有文字框都失去焦點
 document.getElementById("img_content").onclick = function () {
@@ -1641,6 +1632,7 @@ window.document.body.scrollTop = sch;
 </script>
 
 
+<!--優化滑鼠中鍵的捲動-->
 <script>
 
 var bool_滾動頁面 = false;
@@ -1693,7 +1685,7 @@ function mousemove_滾動優化(e) {
 //微調速率
 var int_YY = -(int_滾動優化_Y - e.screenY) / 2.5;
 int_滾動優化_目前速度 = int_YY + Math.abs(int_YY) * (int_YY / 100);
-int_滾動優化_目前速度 = Math.round(int_滾動優化_目前速度);
+int_滾動優化_目前速度 = Math.round(int_滾動優化_目前速度 * 1.5);
 
 
 //顯示目前的速度
@@ -1714,21 +1706,18 @@ div_wheel.innerHTML = ss7 + " " + Math.abs(int_滾動優化_目前速度) + " " 
 function fun_優化滾動_time() {
 setTimeout(function () {
 if (bool_滾動頁面) {
-//$("html").stop(true, true);
+$("html").stop(true, true);
 $('html').animate({
 scrollTop: window.document.documentElement.scrollTop + int_滾動優化_目前速度
-}, 100, "linear", function () { }
+}, 150, "linear", function () { }
 );
 }
 fun_優化滾動_time();
-}, 100);
+}, 151);
 }
 
 
-
 fun_優化滾動_time();
-
-
 
 }
 </script>
@@ -1738,6 +1727,26 @@ fun_優化滾動_time();
 
 
 <script>
+
+
+
+///
+///由C#呼叫，返回【f】表示目前不可以退出
+///
+function fun_aeropic按下返回鍵() {
+
+if (text_目前焦點 != null) {//如果input text有焦點，就阻止C#的動作
+return "f";
+}
+
+if (bool_視窗開啟) {//如果圖片檢視窗口開啟，就關閉，並且阻止C#的動作
+//fun_close_imgbox();
+return "f";
+}
+
+return "t";
+}
+
 
 ///
 ///由C#呼叫，設定網頁背景顏色
@@ -1789,48 +1798,28 @@ window.external.fun_drag_window();
 //e.preventDefault(); //防止瀏覽器執行預設動作
 }
 
-</script>
 
-
-
-<script type="text/javascript">
-
-
-function fun_右鍵關閉(event) {
-
-var btnNum = event.button;
-
-if (btnNum == 2) {
-fun_close_imgbox();
+///
+///呼叫C#開啟圖片
+///
+function fun_open_file() {
+var s_open_file = "" + decodeURIComponent(document.getElementById("img_t1").value) + "";
+window.external.fun_open_file(s_open_file);
 }
 
 
-}
 
 
 </script>
 
 
 </head>
+
+
 <body ondragover="javascript: dragHandler(event);">
 
-<style>
-#div_wheel {
-position: fixed;
-background: rgba(10, 10, 10, 0.55);
-color: #fff;
-pointer-events: none;
-z-index: 999999;
-white-space: nowrap;
-font-size:12px;
-padding:5px;
-border-radius:7px;
-            
-}
-</style>
-
+<!--顯示捲動速率-->
 <div id="div_wheel"></div>
-
 
 <!--背景顏色(由C#控制)-->
 <div id="q"></div>
@@ -1847,46 +1836,22 @@ border-radius:7px;
 <div class="img_tit">
 
 <div style="float:right;margin-right:10px;">
-
-<button style="background-image:url(img/close.svg)" onclick="fun_close_imgbox()"></button>
-
+<button onclick="fun_close_imgbox()" title="close" style="background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUwIDUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MCA1MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCgkuc3Qze2ZpbGw6I0ZGRkZGRjt9DQo8L3N0eWxlPg0KPGcgaWQ9IuWcluWxpF80Ij4NCgk8cG9seWdvbiBjbGFzcz0ic3QzIiBwb2ludHM9IjQwLjIsMTMuNiAzNi40LDkuOCAyNSwyMS4yIDEzLjYsOS44IDkuOCwxMy42IDIxLjIsMjUgOS44LDM2LjQgMTMuNiw0MC4yIDI1LDI4LjggMzYuNCw0MC4yIA0KCQk0MC4yLDM2LjQgMjguOCwyNSAJIi8+DQo8L2c+DQo8L3N2Zz4NCg==)" ></button>
 <div class="break"></div>
-
-
-<a target='_blank' id="img_open_url">
-</a>
-
-<script type="text/javascript">
-
-///
-///呼叫C#開啟圖片
-///
-function fun_open_file() {
-
-var s_open_file = "" + decodeURIComponent(document.getElementById("img_t1").value) + "";
-window.external.fun_open_file(s_open_file);
-
-}
-</script>
-
-<button style="background-image:url(img/open.svg);background-size: 70% 70%;" onclick="fun_open_file()"></button>
+<a target='_blank' id="img_open_url"></a>
+<button onclick="fun_open_file()" title="open image" style="background-size:70% 70%;background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMC4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4yIiBiYXNlUHJvZmlsZT0idGlueSIgaWQ9IuWcluWxpF8xIg0KCSB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUwIDUwIg0KCSBvdmVyZmxvdz0ic2Nyb2xsIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik00Ny43LDI2LjNjLTAuNy0xLTItMS42LTMuNi0xLjZoLTMuM3YtNC41YzAtMi44LTIuMy01LjEtNS4xLTUuMWgtMS4ydjMuNWgxLjJjMC45LDAsMS42LDAuNywxLjYsMS42djQuNQ0KCQloLTIyYy0yLjUsMC01LDEuMy01LjgsMy4xTDUuNCwzN1YyMC4yYzAtMC45LDAuNy0xLjYsMS42LTEuNmgxOC4zdi0zLjVoLTYuNHYtMC42YzAtMi44LTIuMy01LjEtNS4xLTUuMUg3Yy0yLjgsMC01LjEsMi4zLTUuMSw1LjENCgkJdjUuMmMwLDAuMSwwLDAuMSwwLDAuMmMwLDAuMSwwLDAuMSwwLDAuMnYyMmMwLDIuOCwyLjMsNS4xLDUuMSw1LjFoMjguN2MxLjYsMCwzLTAuOCw0LTEuOWMwLjYtMC41LDEuMS0xLDEuNC0xLjZsNi44LTE0LjcNCgkJQzQ4LjMsMjguMiw0OC4yLDI3LjIsNDcuNywyNi4zeiBNMTIuNCwyOS4xYzAuMi0wLjUsMS42LTEuMywzLTEuM2gyMnYxNC40YzAsMC42LTAuNCwxLjItMC45LDEuNGMtMC40LDAuMS0wLjcsMC4yLTEuMSwwLjJINw0KCQljLTAuNSwwLTAuOS0wLjItMS4yLTAuNUwxMi40LDI5LjF6IE01LDE1LjVjMC4yLTAuMSwwLjMtMC4xLDAuNS0wLjJDNS40LDE1LjQsNS4yLDE1LjQsNSwxNS41eiBNNiwxNS4yYzAuMy0wLjEsMC43LTAuMSwxLTAuMQ0KCQlDNi42LDE1LjEsNi4zLDE1LjEsNiwxNS4yeiBNMy41LDE2LjRDMy41LDE2LjUsMy41LDE2LjUsMy41LDE2LjRDMy41LDE2LjUsMy41LDE2LjUsMy41LDE2LjR6IE00LjQsMTUuOGMtMC4xLDAtMC4yLDAuMS0wLjMsMC4xDQoJCUM0LjMsMTUuOSw0LjQsMTUuOCw0LjQsMTUuOHogTTQwLjgsMzd2LTkuMmgzLjNjMC41LDAsMC43LDAuMSwwLjksMC4yTDQwLjgsMzd6Ii8+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIzLjgsMTEuNGMwLjQsMCwwLjgtMC4xLDEuMS0wLjRsMy4zLTMuMnYxMy4xYzAsMC44LDAuNywxLjUsMS41LDEuNWMwLjgsMCwxLjUtMC43LDEuNS0xLjVWNy44bDMuMywzLjINCgkJYzAuMywwLjMsMC43LDAuNCwxLjEsMC40YzAuNCwwLDAuOC0wLjIsMS4xLTAuNWMwLjYtMC42LDAuNi0xLjYsMC0yLjJsLTUuOS01LjdjMCwwLDAsMCwwLDBjLTAuMS0wLjEtMC4zLTAuMi0wLjQtMC4zYzAsMCwwLDAsMCwwDQoJCWMwLDAsMCwwLDAsMGMwLDAsMCwwLDAsMGMtMC4xLTAuMS0wLjMtMC4xLTAuNS0wLjFjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjLTAuMiwwLTAuMywwLTAuNSwwLjENCgkJYzAsMCwwLDAtMC4xLDBjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjLTAuMiwwLjEtMC4zLDAuMi0wLjQsMC4zYzAsMCwwLDAsMCwwbC01LjksNS43Yy0wLjYsMC42LTAuNiwxLjYsMCwyLjINCgkJQzIzLDExLjMsMjMuNCwxMS40LDIzLjgsMTEuNHoiLz4NCjwvZz4NCjwvc3ZnPg0K);" ></button>
 <div class="break"></div>
-
-
-<button style="background-image:url(img/add.svg)" onclick="fun_imgSizeAdd()"></button>
-<button style="background-image:url(img/subtrat.svg)" onclick="fun_imgSizeSubtrat()"></button>
-
+<button onclick="fun_imgSizeAdd()" title="Zoom in image" style="background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUwIDUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MCA1MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCgkuc3Qwe2Rpc3BsYXk6bm9uZTt9DQoJLnN0MXtkaXNwbGF5OmlubGluZTt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnIGlkPSLlnJblsaRfMSIgY2xhc3M9InN0MCI+DQoJPHJlY3QgY2xhc3M9InN0MSIgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIi8+DQo8L2c+DQo8ZyBpZD0i5ZyW5bGkXzIiPg0KCTxyZWN0IHg9IjIyLjMiIHk9IjYuMSIgY2xhc3M9InN0MiIgd2lkdGg9IjUuNCIgaGVpZ2h0PSIzNy44Ii8+DQoJPHJlY3QgeD0iNi4xIiB5PSIyMi4zIiBjbGFzcz0ic3QyIiB3aWR0aD0iMzcuOCIgaGVpZ2h0PSI1LjQiLz4NCjwvZz4NCjwvc3ZnPg0K)" ></button>
+<button onclick="fun_imgSizeSubtrat()" title="Narrow pictures" style="background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUwIDUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MCA1MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCgkuc3Qwe2Rpc3BsYXk6bm9uZTt9DQoJLnN0MXtkaXNwbGF5OmlubGluZTt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnIGlkPSLlnJblsaRfMSIgY2xhc3M9InN0MCI+DQoJPHJlY3QgY2xhc3M9InN0MSIgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIi8+DQo8L2c+DQo8ZyBpZD0i5ZyW5bGkXzIiPg0KCTxyZWN0IHg9IjYuMSIgeT0iMjIuMyIgY2xhc3M9InN0MiIgd2lkdGg9IjM3LjgiIGhlaWdodD0iNS40Ii8+DQo8L2c+DQo8L3N2Zz4NCg==)" ></button>
 <div class="break"></div>
-<button id="bu_full" title="auto full" class="bu_sel" style="background-image:url(img/full.svg)" onclick="fun_zoomMode('full')"></button>
-<button id="bu_full_h" title="horizontal full" style="background-image:url(img/full-horizontal.svg)" onclick="fun_zoomMode('h')"></button>
-<button id="bu_full_v" title="vertical full" style="background-image:url(img/full-vertical.svg)" onclick="fun_zoomMode('v')"></button>
-
+<button id="bu_full"  onclick="fun_zoomMode('full')" title="auto full" class="bu_sel" style="background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IuWcluWxpF8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjUwcHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDUwIDUwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MCA1MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cG9seWdvbiBmaWxsPSIjRkZGRkZGIiBwb2ludHM9IjcuOCw2LjggMTUuMSw2LjggMTUuMSwzLjMgNC4zLDMuMyA0LjMsMTQuMSA3LjgsMTQuMSAiLz4NCjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iMzYuOSwzLjMgMzYuOSw2LjggNDQuMiw2LjggNDQuMiwxNC4xIDQ3LjcsMTQuMSA0Ny43LDMuMyAiLz4NCjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iNDQuMiw0My4yIDM2LjksNDMuMiAzNi45LDQ2LjcgNDcuNyw0Ni43IDQ3LjcsMzUuOSA0NC4yLDM1LjkgIi8+DQo8cG9seWdvbiBmaWxsPSIjRkZGRkZGIiBwb2ludHM9IjcuOCwzNS45IDQuMywzNS45IDQuMyw0Ni43IDE1LjEsNDYuNyAxNS4xLDQzLjIgNy44LDQzLjIgIi8+DQo8cG9seWdvbiBmaWxsPSIjRkZGRkZGIiBwb2ludHM9IjI4LjIyNywyNy4yMjYgMzcuMDQsMjcuMjI2IDM3LjA0LDMzLjk2MyA0MS4zNTIsMjkuNDggNDUuNjY3LDI0Ljk5OSA0MS4zNTIsMjAuNTE5IDM3LjA0LDE2LjAzNyANCgkzNy4wNCwyMi43NzMgMjguMjI4LDIyLjc3MyAyOC4yMjgsMTMuOTYxIDM0Ljk2MywxMy45NjEgMzAuNDgxLDkuNjQ4IDI2LDUuMzMzIDIxLjUyLDkuNjQ4IDE3LjAzNywxMy45NjEgMjMuNzc0LDEzLjk2MSANCgkyMy43NzQsMjIuNzczIDE0Ljk2MSwyMi43NzMgMTQuOTYxLDE2LjAzNyAxMC42NDgsMjAuNTE5IDYuMzMzLDI1IDEwLjY0OCwyOS40OCAxNC45NjEsMzMuOTYzIDE0Ljk2MSwyNy4yMjYgMjMuNzc0LDI3LjIyNiANCgkyMy43NzQsMzYuMDQgMTcuMDM3LDM2LjA0IDIxLjUyLDQwLjM1MiAyNi4wMDEsNDQuNjY3IDMwLjQ4MSw0MC4zNTIgMzQuOTYzLDM2LjA0IDI4LjIyNywzNi4wNCAiLz4NCjwvc3ZnPg0K)"></button>
+<button id="bu_full_h" onclick="fun_zoomMode('h')" title="horizontal full" style="background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IuWcluWxpF8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjUwcHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDUwIDUwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MCA1MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cG9seWdvbiBmaWxsPSIjRkZGRkZGIiBwb2ludHM9IjMuMywxNC4xIDYuOCwxNC4xIDYuOCw2LjggMTQuMSw2LjggMTQuMSwzLjMgMy4zLDMuMyAiLz4NCjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iMzUuOSwzLjMgMzUuOSw2LjggNDMuMiw2LjggNDMuMiwxNC4xIDQ2LjcsMTQuMSA0Ni43LDMuMyAiLz4NCjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iNDMuMiw0My4yIDM1LjksNDMuMiAzNS45LDQ2LjcgNDYuNyw0Ni43IDQ2LjcsMzUuOSA0My4yLDM1LjkgIi8+DQo8cG9seWdvbiBmaWxsPSIjRkZGRkZGIiBwb2ludHM9IjYuOCwzNS45IDMuMywzNS45IDMuMyw0Ni43IDE0LjEsNDYuNyAxNC4xLDQzLjIgNi44LDQzLjIgIi8+DQo8cG9seWdvbiBmaWxsPSIjRkZGRkZGIiBwb2ludHM9IjM2LjAzOSwzMy45NjMgNDAuMzUyLDI5LjQ4MSA0NC42NjcsMjUgNDAuMzUyLDIwLjUyIDM2LjAzOSwxNi4wMzcgMzYuMDM5LDIyLjc3NCAxMy45NiwyMi43NzQgDQoJMTMuOTYsMTYuMDM3IDkuNjQ4LDIwLjUyIDUuMzMzLDI1LjAwMSA5LjY0OCwyOS40ODEgMTMuOTYsMzMuOTYzIDEzLjk2LDI3LjIyNyAzNi4wMzksMjcuMjI4ICIvPg0KPC9zdmc+DQo=)" ></button>
+<button id="bu_full_v" onclick="fun_zoomMode('v')" title="vertical full" style="background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IuWcluWxpF8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjUwcHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDUwIDUwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MCA1MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cG9seWdvbiBmaWxsPSIjRkZGRkZGIiBwb2ludHM9IjMuMywxNC4xIDYuOCwxNC4xIDYuOCw2LjggMTQuMSw2LjggMTQuMSwzLjMgMy4zLDMuMyAiLz4NCjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iMzUuOSwzLjMgMzUuOSw2LjggNDMuMiw2LjggNDMuMiwxNC4xIDQ2LjcsMTQuMSA0Ni43LDMuMyAiLz4NCjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iNDMuMiw0My4yIDM1LjksNDMuMiAzNS45LDQ2LjcgNDYuNyw0Ni43IDQ2LjcsMzUuOSA0My4yLDM1LjkgIi8+DQo8cG9seWdvbiBmaWxsPSIjRkZGRkZGIiBwb2ludHM9IjYuOCwzNS45IDMuMywzNS45IDMuMyw0Ni43IDE0LjEsNDYuNyAxNC4xLDQzLjIgNi44LDQzLjIgIi8+DQo8cG9seWdvbiBmaWxsPSIjRkZGRkZGIiBwb2ludHM9IjMzLjk2MywxMy45NjEgMjkuNDgxLDkuNjQ4IDI1LDUuMzMzIDIwLjUyLDkuNjQ4IDE2LjAzNywxMy45NjEgMjIuNzc0LDEzLjk2MSAyMi43NzQsMzYuMDQgDQoJMTYuMDM3LDM2LjA0IDIwLjUyLDQwLjM1MiAyNS4wMDEsNDQuNjY3IDI5LjQ4MSw0MC4zNTIgMzMuOTYzLDM2LjA0IDI3LjIyNywzNi4wNCAyNy4yMjgsMTMuOTYxICIvPg0KPC9zdmc+DQo=)" ></button>
 
 <input type="text" id="text_scale" title="預設的縮放比例" />
 <script type="text/javascript">
 document.getElementById("text_scale").value = "95";//設定初始值
 </script>
-
 </div>
 
 <div class="img_text">
@@ -1915,7 +1880,6 @@ document.getElementById("text_scale").value = "95";//設定初始值
 </tr>
 </table>
 </div>
-
 
 <div class="tab none" id="lock_width_div">
 <h2 class="no_sel">Lock width（鎖定寬度）</h2>
@@ -1950,10 +1914,6 @@ document.getElementById("text_scale").value = "95";//設定初始值
 </div>
 
 
-
-
-
-
 <div id="title" onselectstart="return false">
 <button id="prev" onclick="fun_上一頁()"> << Prev </button>
 <select id="select_page" onchange="fun_選頁(this.value)"></select>
@@ -1983,9 +1943,15 @@ var s_get_array = window.external.fun_getImgs();//取得javascript字串【var u
 eval(s_get_array);
 
 
-
+if (urls.length > 0) {
 fun_產生圖片();
-
+} else {
+document.getElementById("div_imgs").innerHTML =
+"<div style='color:#FFF;background:rgba(0,0,0,0.5);padding:20px;margin:20px'>" +
+"<h1>未檢測到圖片</h1>" +
+"<h2>大量瀏覽模式可以解析的格式包含：jpg、png、gif、bmp、tif、svg</h2>" +
+"</div>";
+}
 
 
 
@@ -2134,7 +2100,6 @@ main();
 
 
 
-
 <script>
 (function (i, s, o, g, r, a, m) {
 i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
@@ -2145,8 +2110,8 @@ m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBef
 
 ga('create', 'UA-56186804-2', 'auto');
 ga('send', 'pageview');
-
 </script>
+
 
 </body>
 </html>
