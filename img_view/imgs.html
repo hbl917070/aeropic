@@ -993,17 +993,29 @@ fun_beyond(e);//避免超出範圍
 ///
 ///放開時，取消事件
 ///
-document.onmouseup = function () {
+document.onmouseup = function (e) {
+
+
+
+if (bool_滾動頁面) {      //優化滑鼠滾動
+
+
+
+if (ar_滾動優化_點擊時坐標[0] == e.clientX && ar_滾動優化_點擊時坐標[1] == e.clientY) {
+return;
+}
 
 document.onmousemove = null;//刪除『滑鼠移動事件』
-
-if (bool_滾動頁面) {
-//優化滑鼠滾動
 document.getElementById("div_wheel").style.display = "none";
 bool_滾動頁面 = false;
 document.body.style.pointerEvents = "";
 int_滾動優化_目前速度 = 0;
 $("html").stop(false, false);
+
+} else {
+
+document.onmousemove = null;//刪除『滑鼠移動事件』
+
 }
 
 }
@@ -1270,7 +1282,7 @@ document.getElementsByTagName("body")[0].style.overflow = "auto";
 ///
 function fun_open_imgbox(x) {
 
-           
+
 
 img_sel = x;
 bool_視窗開啟 = true;
@@ -1633,7 +1645,7 @@ window.document.body.scrollTop = sch;
 
 var bool_滾動頁面 = false;
 var int_滾動優化_目前速度 = 0;
-
+var ar_滾動優化_點擊時坐標 = {};
 
 ///
 ///
@@ -1644,13 +1656,20 @@ var int_滾動優化_Y = 0;
 var div_wheel = document.getElementById("div_wheel");
 
 
-document.body.addEventListener("mousedown", function (e) {//按下時，註冊事件
+document.addEventListener("mousedown", function (e) {//按下時，註冊事件
 if (e.button == 1) {//滑鼠滾輪按下去
+
+if (bool_滾動頁面) {
+e.preventDefault();//取消點擊事件
+return;
+}
 
 //顯示捲動速率的div
 div_wheel.style.top = e.clientY - 20 + "px";
-div_wheel.style.left = e.clientX + "px";
+div_wheel.style.left = e.clientX - 25 + "px";
 div_wheel.style.display = "block";
+
+ar_滾動優化_點擊時坐標 = new Array(e.clientX, e.clientY);
 
 int_滾動優化_Y = e.screenY;
 document.onmousemove = mousemove_滾動優化;//註冊滑鼠移動事件
@@ -1658,7 +1677,7 @@ document.onmousemove = mousemove_滾動優化;//註冊滑鼠移動事件
 e.preventDefault();//取消點擊事件
 
 int_滾動優化_目前速度 = 0;
-div_wheel.innerHTML = 0;
+div_wheel.innerHTML = "－ 0 －";
 bool_滾動頁面 = true;
 
 document.body.style.pointerEvents = "none";//避免放開滑鼠時誤觸其他按鈕
@@ -1671,7 +1690,11 @@ document.body.style.pointerEvents = "none";//避免放開滑鼠時誤觸其他�
 ///
 function mousemove_滾動優化(e) {
 
-int_滾動優化_目前速度 = Math.round(-(int_滾動優化_Y - e.screenY) / 2.5);//微調速率
+//微調速率
+var int_YY = -(int_滾動優化_Y - e.screenY) / 2.5;
+int_滾動優化_目前速度 = int_YY + Math.abs(int_YY) * (int_YY / 100);
+int_滾動優化_目前速度 = Math.round(int_滾動優化_目前速度);
+
 
 //顯示目前的速度
 var ss7 = "－";
@@ -1684,7 +1707,7 @@ div_wheel.innerHTML = ss7 + " " + Math.abs(int_滾動優化_目前速度) + " " 
 }
 
 
-            
+
 ///
 ///每100毫秒判斷一次捲動頁面
 ///
@@ -1794,11 +1817,15 @@ fun_close_imgbox();
 <style>
 #div_wheel {
 position: fixed;
-background: rgba(255,255,255,0.3);
-color: #000;
+background: rgba(10, 10, 10, 0.55);
+color: #fff;
 pointer-events: none;
 z-index: 999999;
 white-space: nowrap;
+font-size:12px;
+padding:5px;
+border-radius:7px;
+            
 }
 </style>
 
