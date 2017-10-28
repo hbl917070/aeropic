@@ -1802,20 +1802,19 @@ window.external.fun_drag_window();
 ///呼叫C#開啟圖片
 ///
 function fun_open_file(s_img_url) {
-
-if (window.external.fun_open_file != undefined) {
-window.external.fun_open_file(s_img_url);
-} else {
-
-var img_48763 = document.createElement("img");
-img_48763.src = s_img_url + "/open_img";
-img_48763.style.height = "0px";
-document.body.appendChild(img_48763);
-setTimeout(function () {
-iframe_48763.parentNode.removeChild(img_48763);
-}, 100);
-
-}
+    
+    try {
+        window.external.fun_open_file(s_img_url);
+    } catch (e) {
+        var img_48763 = document.createElement("img");
+        img_48763.src = s_img_url + "/open_img";
+        img_48763.style.height = "0px";
+        document.body.appendChild(img_48763);
+        setTimeout(function () {
+            iframe_48763.parentNode.removeChild(img_48763);
+        }, 100);
+    }
+ 
 
 
 
