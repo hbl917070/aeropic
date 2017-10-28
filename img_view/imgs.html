@@ -483,7 +483,7 @@ var str_divPageClassName = "div_page";
 ///
 ///
 ///
-function fun_初始() {
+function fun_初始_換頁事件() {
 
 var imgs = document.getElementsByTagName(str_TagName);
 int_flag = 0;
@@ -1798,25 +1798,32 @@ window.external.fun_drag_window();
 }
 
 
+var int_66664 = 0;
+
 ///
 ///呼叫C#開啟圖片
 ///
 function fun_open_file(s_img_url) {
-    
-    try {
-        window.external.fun_open_file(s_img_url);
-    } catch (e) {
-        var img_48763 = document.createElement("img");
-        img_48763.src = s_img_url + "/open_img";
-        img_48763.style.height = "0px";
-        document.body.appendChild(img_48763);
-        setTimeout(function () {
-            iframe_48763.parentNode.removeChild(img_48763);
-        }, 100);
-    }
- 
 
+try {
 
+//如果是webbrowser就直接調用次函數開啟圖片
+window.external.fun_open_file(s_img_url);
+
+} catch (e) {
+
+//外部瀏覽器，使用localhost伺服器處理
+
+int_66664 += 1;//避免每次網址都一樣而無法開啟
+var img_48763 = document.createElement("img");
+img_48763.src = s_img_url + "/open_img/" + int_66664;//訪問此網址就會開啟圖片
+img_48763.style.height = "0px";
+document.body.appendChild(img_48763);
+setTimeout(function () {
+iframe_48763.parentNode.removeChild(img_48763);
+}, 100);
+
+}
 
 }
 
@@ -1953,7 +1960,6 @@ height: 80px;
 margin: 15px;
 }
 
-
 #next2 {
 float: right;
 }
@@ -1991,22 +1997,15 @@ background-color: rgba(66,166,112,1) !important;
 
 
 <!--<script src="urls.js" type="text/javascript"></script>-->
-
 <script src="jquery-3.2.1.min.js"></script>
+
 
 
 <!--初始化-->
 <script type="text/javascript">
 
-
-
-
-
-
-
 var urls = undefined;
 var fun = undefined;
-
 
 //取得網址列的參數
 var url_input = location.search.replace(/\?/g, '');
@@ -2037,10 +2036,6 @@ eval(s_get_array);
 }
 
 
-
-
-
-
 if (urls.length > 0) {
 fun_產生圖片();
 } else {
@@ -2051,13 +2046,8 @@ document.getElementById("div_imgs").innerHTML =
 "</div>";
 }
 
-
-fun_初始();
+       
 main();
-
-
-
-
 
 
 
@@ -2066,11 +2056,7 @@ main();
 ///
 ///
 function fun_產生圖片() {
-
-
-
-
-
+        
 //根據上一次的設定回復『無間距模式』的選項
 var cookie_noSpacing = getCookie("noSpacing");
 if (cookie_noSpacing != "") {
@@ -2144,20 +2130,18 @@ urls[i] = src;
 
 if ((i + 1) % 40 == 0) {
 if (urls.length % 40 === 0 && i + 1 === urls.length) {
-
 } else {
 s_sum += ("</div><div class='div_page' style='display:none;'>");
 }
-
 }
 
 }//for
 
 s_sum += ("</div>");
 
-
 document.getElementById("div_imgs").innerHTML = s_sum;
 
+fun_初始_換頁事件();
 }
 
 
