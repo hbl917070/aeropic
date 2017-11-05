@@ -1,6 +1,7 @@
 ﻿<!doctype html>
-
+<!-- saved from url=(0014)about:internet -->
 <html>
+
 <head>
 <meta charset="utf-8">
 
@@ -27,19 +28,23 @@ user-select: none !important;
 }
 
 .sp {
-border: solid 1px rgba(255,255,255,0.3);
+border: solid 1px rgba(255, 255, 255, 0.3);
 display: inline-table;
 text-align: center;
 font-size: 15px !important;
-transition: width 0.8s; /*動畫時間*/
+transition: width 0.8s;
+/*動畫時間*/
 }
 
 /*圖片的上方列*/
+
 .sp .tit {
 height: 40px;
 color: #fff;
 }
+
 /*圖片編號*/
+
 .sp .tit .no {
 height: 40px;
 /*width: 40px;*/
@@ -56,10 +61,12 @@ display: block;
 height: 20px;
 text-align: left;
 }
+
 /*編號右邊的區塊*/
+
 .sp .tit .le {
 /*margin-left: 40px;*/
-background-color: rgba(0,0,0,0);
+background-color: rgba(0, 0, 0, 0);
 display: block;
 overflow: hidden;
 }
@@ -68,7 +75,7 @@ overflow: hidden;
 height: 20px;
 width: 100%;
 border: none;
-background-color: rgba(250,250,250,0.0);
+background-color: rgba(250, 250, 250, 0.0);
 padding: 0px 3px 0px 3px;
 color: #fff;
 display: inline-block;
@@ -98,7 +105,8 @@ pointer-events: none !important;
 
 <!-- css 一般樣式-->
 <style type="text/css">
-html, body {
+html,
+body {
 margin: 0px;
 max-width: 100%;
 /*禁止選取*/
@@ -134,9 +142,10 @@ background-color: #000000;
 }
 
 
-.col_table { /*選擇欄位數量的框*/
+.col_table {
+/*選擇欄位數量的框*/
 color: #fff;
-background-color: rgba(94,94,94,0.50);
+background-color: rgba(94, 94, 94, 0.50);
 -webkit-box-shadow: 0px 0px 16px 2px #000000;
 border-radius: 10px;
 padding: 5px;
@@ -152,10 +161,11 @@ padding-left: 15px;
 }
 
 .col:hover {
-background-color: rgba(255,255,255,0.2);
+background-color: rgba(255, 255, 255, 0.2);
 }
 
-.sel { /*選中的狀態*/
+.sel {
+/*選中的狀態*/
 border: 3px solid #4CB4FF;
 }
 
@@ -163,7 +173,8 @@ border: 3px solid #4CB4FF;
 /*border: 1px solid #4CB4FF;*/
 }
 
-.tab { /*上面選擇【欄】的標題與排版*/
+.tab {
+/*上面選擇【欄】的標題與排版*/
 margin-left: 3vw;
 color: #FFFFFF;
 margin-top: 50px;
@@ -175,6 +186,7 @@ line-height: 0px;
 }
 
 /*右上角的超連結*/
+
 .tit {
 position: relative;
 }
@@ -186,7 +198,8 @@ height: 30px;
 float: right;
 background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMC4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4yIiBiYXNlUHJvZmlsZT0idGlueSIgaWQ9IuWcluWxpF8xIg0KCSB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUwIDUwIg0KCSBvdmVyZmxvdz0ic2Nyb2xsIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik00Ny43LDI2LjNjLTAuNy0xLTItMS42LTMuNi0xLjZoLTMuM3YtNC41YzAtMi44LTIuMy01LjEtNS4xLTUuMWgtMS4ydjMuNWgxLjJjMC45LDAsMS42LDAuNywxLjYsMS42djQuNQ0KCQloLTIyYy0yLjUsMC01LDEuMy01LjgsMy4xTDUuNCwzN1YyMC4yYzAtMC45LDAuNy0xLjYsMS42LTEuNmgxOC4zdi0zLjVoLTYuNHYtMC42YzAtMi44LTIuMy01LjEtNS4xLTUuMUg3Yy0yLjgsMC01LjEsMi4zLTUuMSw1LjENCgkJdjUuMmMwLDAuMSwwLDAuMSwwLDAuMmMwLDAuMSwwLDAuMSwwLDAuMnYyMmMwLDIuOCwyLjMsNS4xLDUuMSw1LjFoMjguN2MxLjYsMCwzLTAuOCw0LTEuOWMwLjYtMC41LDEuMS0xLDEuNC0xLjZsNi44LTE0LjcNCgkJQzQ4LjMsMjguMiw0OC4yLDI3LjIsNDcuNywyNi4zeiBNMTIuNCwyOS4xYzAuMi0wLjUsMS42LTEuMywzLTEuM2gyMnYxNC40YzAsMC42LTAuNCwxLjItMC45LDEuNGMtMC40LDAuMS0wLjcsMC4yLTEuMSwwLjJINw0KCQljLTAuNSwwLTAuOS0wLjItMS4yLTAuNUwxMi40LDI5LjF6IE01LDE1LjVjMC4yLTAuMSwwLjMtMC4xLDAuNS0wLjJDNS40LDE1LjQsNS4yLDE1LjQsNSwxNS41eiBNNiwxNS4yYzAuMy0wLjEsMC43LTAuMSwxLTAuMQ0KCQlDNi42LDE1LjEsNi4zLDE1LjEsNiwxNS4yeiBNMy41LDE2LjRDMy41LDE2LjUsMy41LDE2LjUsMy41LDE2LjRDMy41LDE2LjUsMy41LDE2LjUsMy41LDE2LjR6IE00LjQsMTUuOGMtMC4xLDAtMC4yLDAuMS0wLjMsMC4xDQoJCUM0LjMsMTUuOSw0LjQsMTUuOCw0LjQsMTUuOHogTTQwLjgsMzd2LTkuMmgzLjNjMC41LDAsMC43LDAuMSwwLjksMC4yTDQwLjgsMzd6Ii8+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIzLjgsMTEuNGMwLjQsMCwwLjgtMC4xLDEuMS0wLjRsMy4zLTMuMnYxMy4xYzAsMC44LDAuNywxLjUsMS41LDEuNWMwLjgsMCwxLjUtMC43LDEuNS0xLjVWNy44bDMuMywzLjINCgkJYzAuMywwLjMsMC43LDAuNCwxLjEsMC40YzAuNCwwLDAuOC0wLjIsMS4xLTAuNWMwLjYtMC42LDAuNi0xLjYsMC0yLjJsLTUuOS01LjdjMCwwLDAsMCwwLDBjLTAuMS0wLjEtMC4zLTAuMi0wLjQtMC4zYzAsMCwwLDAsMCwwDQoJCWMwLDAsMCwwLDAsMGMwLDAsMCwwLDAsMGMtMC4xLTAuMS0wLjMtMC4xLTAuNS0wLjFjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjLTAuMiwwLTAuMywwLTAuNSwwLjENCgkJYzAsMCwwLDAtMC4xLDBjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjLTAuMiwwLjEtMC4zLDAuMi0wLjQsMC4zYzAsMCwwLDAsMCwwbC01LjksNS43Yy0wLjYsMC42LTAuNiwxLjYsMCwyLjINCgkJQzIzLDExLjMsMjMuNCwxMS40LDIzLjgsMTEuNHoiLz4NCjwvZz4NCjwvc3ZnPg0K);
 background-size: contain;
-background-repeat: no-repeat !important; /*不重複*/
+background-repeat: no-repeat !important;
+/*不重複*/
 position: absolute;
 top: 0px;
 right: 0px;
@@ -199,7 +212,8 @@ opacity: 1;
 }
 
 #lock_width_div {
-transition: opacity 0.5s, transform 0.5s, margin-bottom 0.3s; /*動畫時間*/
+transition: opacity 0.5s, transform 0.5s, margin-bottom 0.3s;
+/*動畫時間*/
 }
 
 .none {
@@ -209,7 +223,8 @@ transform: translateY(-100px);
 pointer-events: none;
 }
 
-#div_wheel { /*捲動度率的DIV*/
+#div_wheel {
+/*捲動度率的DIV*/
 position: fixed;
 background: rgba(10, 10, 10, 0.55);
 color: #fff;
@@ -232,26 +247,38 @@ right: 5px;
 top: 5px;
 z-index: 30;
 padding: 3px;
-background-color: rgba(94,94,94,0.80);
+background-color: rgba(94, 94, 94, 0.50);
 -webkit-box-shadow: 0px 0px 16px 2px #000000;
 border-radius: 10px;
 box-shadow: 0px 0px 16px 1px #000000;
+
+overflow: auto;
 }
 
-#title button, #title select {
-height: 100%;
-background-color: rgba(0,0,0,0.30);
+#title button,
+#title select {
+height: 35px;
+background-color: rgba(0, 0, 0, 0.30);
 color: #FFF;
-border: solid 1px #FFF;
+border: solid 1px rgba(255, 255, 255, 0.4);
 margin: 5px;
 padding: 3px;
 font-size: 16px !important;
 font-weight: 900;
 font-family: "微軟正黑體";
+float: left;
 }
 
-#title button:hover, #title select:hover, #prev2:hover, #next2:hover {
-background-color: rgba(75,200,255,0.40);
+#title button {
+width: 80px;
+
+}
+
+#title button:hover,
+#title select:hover,
+#prev2:hover,
+#next2:hover {
+background-color: rgba(75, 200, 255, 0.40);
 }
 
 option {
@@ -351,7 +378,7 @@ document.getElementById("css").innerHTML = s_css_04;
 
 //更改選中的樣式
 var ar = new Array("r1", "r2", "r3", "r4");
-for (var i = 0 ; i < ar.length ; i++) {
+for (var i = 0; i < ar.length; i++) {
 document.getElementById(ar[i]).className = "col";
 }
 document.getElementById(o).className = "col sel";
@@ -373,7 +400,7 @@ document.getElementById("wid").innerHTML = int_width_css;
 
 //更改選中樣式
 var ar = new Array("r2-0", "r2-40", "r2-50", "r2-60", "r2-70", "r2-80", "r2-90", "r2-100");
-for (var i = 0 ; i < ar.length ; i++) {
+for (var i = 0; i < ar.length; i++) {
 document.getElementById(ar[i]).className = "col";
 }
 document.getElementById(o).className = "col sel";
@@ -426,7 +453,7 @@ document.getElementById("css_noSpacing").innerHTML = style;
 
 //更改選中樣式
 var ar = new Array("r3-no", "r3-0", "r3-20", "r3-40", "r3-60");
-for (var i = 0 ; i < ar.length ; i++) {
+for (var i = 0; i < ar.length; i++) {
 document.getElementById(ar[i]).className = "col";
 }
 document.getElementById("r3-" + ra).className = "col sel";
@@ -550,14 +577,14 @@ return;
 document.getElementById("select_page").selectedIndex = document.getElementById("select_page").selectedIndex + 1;
 
 //換頁
-for (var i = 0 ; i < divPage.length ; i++) {
+for (var i = 0; i < divPage.length; i++) {
 
 var imgs = divPage[i].getElementsByTagName(str_TagName);
 
 if (i == int_flag) {
 divPage[i].style.display = "block";//顯示頁
 
-for (var j = 0 ; j < imgs.length ; j++) {//顯示圖片
+for (var j = 0; j < imgs.length; j++) {//顯示圖片
 var x = imgs[j].getElementsByTagName("img")[0];
 x.src = x.alt;
 }
@@ -565,7 +592,7 @@ x.src = x.alt;
 } else {
 divPage[i].style.display = "none";
 
-for (var j = 0 ; j < imgs.length ; j++) {
+for (var j = 0; j < imgs.length; j++) {
 imgs[j].getElementsByTagName("img")[0].src = "";
 }
 }
@@ -600,14 +627,14 @@ var divPage = document.getElementsByClassName(str_divPageClassName);
 document.getElementById("select_page").selectedIndex = document.getElementById("select_page").selectedIndex - 1;
 
 
-for (var i = 0 ; i < divPage.length ; i++) {
+for (var i = 0; i < divPage.length; i++) {
 
 var imgs = divPage[i].getElementsByTagName(str_TagName);
 
 if (i == int_flag) {
 divPage[i].style.display = "block";//顯示頁
 
-for (var j = 0 ; j < imgs.length ; j++) {//顯示圖片
+for (var j = 0; j < imgs.length; j++) {//顯示圖片
 var x = imgs[j].getElementsByTagName("img")[0];
 x.src = x.alt;
 }
@@ -615,7 +642,7 @@ x.src = x.alt;
 } else {
 divPage[i].style.display = "none";
 
-for (var j = 0 ; j < imgs.length ; j++) {
+for (var j = 0; j < imgs.length; j++) {
 imgs[j].getElementsByTagName("img")[0].src = "";
 }
 }
@@ -637,7 +664,7 @@ var imgs = document.getElementsByTagName(str_TagName);
 if (document.getElementById('select_page').options.length * int_number != imgs.length) {
 
 document.getElementById('select_page').options.length = 0;//清除
-for (var i = 0 ; true ; i++) {
+for (var i = 0; true; i++) {
 
 var text = (i * int_number + 1) + " ~ " + ((i + 1) * int_number);
 var varItem = new Option(text, i);
@@ -666,14 +693,14 @@ var divPage = document.getElementsByClassName(str_divPageClassName);
 fun_隱藏不需要的按鈕();
 
 //換頁
-for (var i = 0 ; i < divPage.length ; i++) {
+for (var i = 0; i < divPage.length; i++) {
 
 var imgs = divPage[i].getElementsByTagName(str_TagName);
 
 if (i == int_flag) {
 divPage[i].style.display = "block";//顯示頁
 
-for (var j = 0 ; j < imgs.length ; j++) {//顯示圖片
+for (var j = 0; j < imgs.length; j++) {//顯示圖片
 var x = imgs[j].getElementsByTagName("img")[0];
 x.src = x.alt;
 }
@@ -681,7 +708,7 @@ x.src = x.alt;
 } else {
 divPage[i].style.display = "none";
 
-for (var j = 0 ; j < imgs.length ; j++) {
+for (var j = 0; j < imgs.length; j++) {
 imgs[j].getElementsByTagName("img")[0].src = "";
 }
 }
@@ -711,7 +738,8 @@ window.document.body.scrollTop = sch;
 <!--========================================-->
 <!-- css 圖片檢視視窗-->
 <style type="text/css">
-#img_box { /*主題視窗*/
+#img_box {
+/*主題視窗*/
 width: 94vw;
 height: 98vh;
 position: fixed;
@@ -719,7 +747,7 @@ left: 3vw;
 right: 3vw;
 top: 1vh;
 bottom: 1vh;
-background-color: rgba(94,94,94,0.50);
+background-color: rgba(94, 94, 94, 0.50);
 border-radius: 10px;
 box-shadow: 0px 0px 16px 1px;
 z-index: 100;
@@ -729,12 +757,14 @@ z-index: 100;
 
 #img_content {
 height: calc(100% - 60px);
-border: 1px solid #fff;
-overflow: hidden; /*scroll auto hidden*/
+border: 1px solid rgba(255, 255, 255, 0.4);
+overflow: hidden;
+/*scroll auto hidden*/
 margin: 10px;
 }
 
-#img_w { /*圖片外曾（拖曳用）*/
+#img_w {
+/*圖片外曾（拖曳用）*/
 min-width: 100%;
 min-height: 100%;
 position: relative;
@@ -749,10 +779,11 @@ left: 0px;
 margin: auto;*/
 }
 
-#img_d { /*底色*/
+#img_d {
+/*底色*/
 height: 100vh;
 width: 100vw;
-background-color: rgba(0,0,0,0.8);
+background-color: rgba(0, 0, 0, 0.8);
 position: fixed;
 top: 0px;
 z-index: 99;
@@ -760,13 +791,14 @@ z-index: 99;
 
 .img_tit {
 height: 40px;
-background-color: rgba(255,255,255,0.0);
+background-color: rgba(255, 255, 255, 0.0);
 }
 
-#img_t1, #img_t2 {
+#img_t1,
+#img_t2 {
 font-size: 16px !important;
 display: block;
-background-color: rgba(0,0,0,0);
+background-color: rgba(0, 0, 0, 0);
 color: #fff;
 margin-left: 10px;
 border: none;
@@ -795,15 +827,18 @@ text-align: center;
 .img_tit button {
 width: 50px;
 height: 50px;
-background-color: rgba(0,0,0,0);
+background-color: rgba(0, 0, 0, 0);
 border: none;
 float: right;
-background-position: center center !important; /*對齊位置*/
-background-repeat: no-repeat !important; /*不重複*/
+background-position: center center !important;
+/*對齊位置*/
+background-repeat: no-repeat !important;
+/*不重複*/
 background-size: 80% 80%;
 }
 
 /*縮放模式 - 選中的按鈕*/
+
 .bu_sel {
 outline: solid 4px #4CB4FF !important;
 width: 42px !important;
@@ -827,8 +862,11 @@ width: 1px;
 height: 30px;
 background-color: #fff;
 }
+
 /*切換圖片上下張*/
-#but_r, #but_l {
+
+#but_r,
+#but_l {
 position: fixed;
 bottom: 15px;
 right: 15px;
@@ -836,29 +874,28 @@ width: calc( 50% - 15px);
 height: 80px;
 z-index: 200;
 /*background-color: rgba(94,94,94,0.50);*/
-background-color: rgba(75,200,255,0.5);
+background-color: rgba(75, 200, 255, 0.5);
 /*border-radius: 10px;*/
 box-shadow: 0px 0px 16px 1px;
-background-position: center center !important; /*對齊位置*/
-background-repeat: no-repeat !important; /*不重複*/
-background-size: 50% 50%;
-background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i5ZyW5bGkXzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTAgNTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUwIDUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojRkZGRkZGO30NCjwvc3R5bGU+DQo8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjI3LjcsMCAyLjQsMCAyMi4zLDI1IDIuNCw1MCAyNy43LDUwIDQ3LjYsMjUgIi8+DQo8L3N2Zz4NCg==);
+
 opacity: 0;
 outline: 0;
 border: none;
 }
 
 #but_l {
-transform: scaleX(-1);
+
 left: 15px;
 }
 
-#but_l:active { /*因為原本就已經有用變形，所以要另外覆寫一次*/
-transform: translateY(3px) scaleX(-1);
-background-color: rgba(66,166,112,1) !important;
+#but_l:active {
+/*因為原本就已經有用變形，所以要另外覆寫一次*/
+transform: translateY(3px) ;
+background-color: rgba(66, 166, 112, 1) !important;
 }
 
-#but_r:hover, #but_l:hover {
+#but_r:hover,
+#but_l:hover {
 opacity: 1;
 }
 </style>
@@ -868,14 +905,18 @@ opacity: 1;
 <!-- css 白底主題-->
 <style>
 /*圖片框*/
+
 .theme_b .sp {
 border: solid 1px rgba(0, 0, 0, 0.3);
 }
 
-.theme_b .sp input, .theme_b .sp div {
+.theme_b .sp input,
+.theme_b .sp div {
 color: rgba(0, 0, 0, 0.4) !important;
 }
+
 /*功能選單*/
+
 .theme_b .col_table {
 background-color: rgba(255, 255, 255, 0.4) !important;
 box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.5);
@@ -896,18 +937,29 @@ background-color: rgba(0, 111, 160, 0.28);
 .theme_b .col_table td:active {
 background-color: rgba(0, 160, 33, 0.5) !important;
 }
+
 /*右上角換頁的選單*/
+
 .theme_b #title {
 background-color: rgba(255, 255, 255, 0.4) !important;
 box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.5);
 }
+
 /*hover*/
-.theme_b #title button:hover, .theme_b #title select:hover, .theme_b #prev2:hover, .theme_b #next2:hover {
+
+.theme_b #title button:hover,
+.theme_b #title select:hover,
+.theme_b #prev2:hover,
+.theme_b #next2:hover {
 background-color: rgba(0, 111, 160, 0.68);
 }
 
 /*hover*/
-.theme_b #title button:active, .theme_b #title select:active, .theme_b #prev2:active, .theme_b #next2:active {
+
+.theme_b #title button:active,
+.theme_b #title select:active,
+.theme_b #prev2:active,
+.theme_b #next2:active {
 background-color: rgba(0, 160, 33, 0.5) !important;
 }
 </style>
@@ -943,6 +995,12 @@ var m_left;
 ///
 ///
 function main() {
+
+
+try {
+//禁止右鍵選單
+document.oncontextmenu = new Function("return false");
+} catch (e) { }
 
 
 fun_處理text焦點();
@@ -1303,11 +1361,20 @@ fun_imgTitle();
 function fun_imgTitle() {
 document.getElementById("img_t2").value = "[ " + (Number(img_sel) + 1) + " / " + urls.length + " ]　　W:" + img_size[0] + "　　H:" + img_size[1];
 
-var path = decodeURIComponent(urls[img_sel]);//不要顯示出『file:///』
+/*var path = decodeURIComponent(urls[img_sel]);//不要顯示出『file:///』
 if (path.substr(0, 8) == "file:///")
-path = path.substr(8);
+path = path.substr(8);*/
 
-document.getElementById("img_t1").value = path//從網址編碼轉回原本的字串
+var s_title = decodeURIComponent(urls[img_sel]);//從網址編碼轉回原本的字串
+s_title = s_title.substring(s_title.lastIndexOf("/") + 1);
+try {
+s_title = decodeURIComponent(s_title);
+} catch (eee) { }
+
+
+
+
+document.getElementById("img_t1").value = s_title//從網址編碼轉回原本的字串
 }
 
 var bool_width;//判斷縮放方式
@@ -1806,6 +1873,10 @@ var int_66664 = 0;
 function fun_open_file(s_img_url) {
 
 try {
+//避免舊的aeropic無法使用
+if (s_img_url.indexOf("localhost") > -1 == false) {
+s_img_url = decodeURIComponent(s_img_url);
+}
 
 //如果是webbrowser就直接調用次函數開啟圖片
 window.external.fun_open_file(s_img_url);
@@ -1852,8 +1923,8 @@ iframe_48763.parentNode.removeChild(img_48763);
 <div id="img_d" style="display:none;" onclick="fun_close_imgbox()"></div>
 
 <!--切換圖片上下張的按鈕-->
-<button id="but_r" style="display:none;" onclick="fun_imgNext()"></button>
-<button id="but_l" style="display:none;" onclick="fun_imgPrev()"></button>
+<button id="but_r" class="icon_right_80" style="display:none;" onclick="fun_imgNext()"></button>
+<button id="but_l" class="icon_left_80" style="display:none;" onclick="fun_imgPrev()"></button>
 
 <!--圖片視窗-->
 <div id="img_box" style="display:none;" onmouseup="fun_右鍵關閉(event)">
@@ -1863,7 +1934,7 @@ iframe_48763.parentNode.removeChild(img_48763);
 <button onclick="fun_close_imgbox()" title="close" style="background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUwIDUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MCA1MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCgkuc3Qze2ZpbGw6I0ZGRkZGRjt9DQo8L3N0eWxlPg0KPGcgaWQ9IuWcluWxpF80Ij4NCgk8cG9seWdvbiBjbGFzcz0ic3QzIiBwb2ludHM9IjQwLjIsMTMuNiAzNi40LDkuOCAyNSwyMS4yIDEzLjYsOS44IDkuOCwxMy42IDIxLjIsMjUgOS44LDM2LjQgMTMuNiw0MC4yIDI1LDI4LjggMzYuNCw0MC4yIA0KCQk0MC4yLDM2LjQgMjguOCwyNSAJIi8+DQo8L2c+DQo8L3N2Zz4NCg==)"></button>
 <div class="break"></div>
 <a target='_blank' id="img_open_url"></a>
-<button onclick="fun_open_file(decodeURIComponent(document.getElementById('img_t1').value) )" title="open image" style="background-size:70% 70%;background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMC4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4yIiBiYXNlUHJvZmlsZT0idGlueSIgaWQ9IuWcluWxpF8xIg0KCSB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUwIDUwIg0KCSBvdmVyZmxvdz0ic2Nyb2xsIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik00Ny43LDI2LjNjLTAuNy0xLTItMS42LTMuNi0xLjZoLTMuM3YtNC41YzAtMi44LTIuMy01LjEtNS4xLTUuMWgtMS4ydjMuNWgxLjJjMC45LDAsMS42LDAuNywxLjYsMS42djQuNQ0KCQloLTIyYy0yLjUsMC01LDEuMy01LjgsMy4xTDUuNCwzN1YyMC4yYzAtMC45LDAuNy0xLjYsMS42LTEuNmgxOC4zdi0zLjVoLTYuNHYtMC42YzAtMi44LTIuMy01LjEtNS4xLTUuMUg3Yy0yLjgsMC01LjEsMi4zLTUuMSw1LjENCgkJdjUuMmMwLDAuMSwwLDAuMSwwLDAuMmMwLDAuMSwwLDAuMSwwLDAuMnYyMmMwLDIuOCwyLjMsNS4xLDUuMSw1LjFoMjguN2MxLjYsMCwzLTAuOCw0LTEuOWMwLjYtMC41LDEuMS0xLDEuNC0xLjZsNi44LTE0LjcNCgkJQzQ4LjMsMjguMiw0OC4yLDI3LjIsNDcuNywyNi4zeiBNMTIuNCwyOS4xYzAuMi0wLjUsMS42LTEuMywzLTEuM2gyMnYxNC40YzAsMC42LTAuNCwxLjItMC45LDEuNGMtMC40LDAuMS0wLjcsMC4yLTEuMSwwLjJINw0KCQljLTAuNSwwLTAuOS0wLjItMS4yLTAuNUwxMi40LDI5LjF6IE01LDE1LjVjMC4yLTAuMSwwLjMtMC4xLDAuNS0wLjJDNS40LDE1LjQsNS4yLDE1LjQsNSwxNS41eiBNNiwxNS4yYzAuMy0wLjEsMC43LTAuMSwxLTAuMQ0KCQlDNi42LDE1LjEsNi4zLDE1LjEsNiwxNS4yeiBNMy41LDE2LjRDMy41LDE2LjUsMy41LDE2LjUsMy41LDE2LjRDMy41LDE2LjUsMy41LDE2LjUsMy41LDE2LjR6IE00LjQsMTUuOGMtMC4xLDAtMC4yLDAuMS0wLjMsMC4xDQoJCUM0LjMsMTUuOSw0LjQsMTUuOCw0LjQsMTUuOHogTTQwLjgsMzd2LTkuMmgzLjNjMC41LDAsMC43LDAuMSwwLjksMC4yTDQwLjgsMzd6Ii8+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIzLjgsMTEuNGMwLjQsMCwwLjgtMC4xLDEuMS0wLjRsMy4zLTMuMnYxMy4xYzAsMC44LDAuNywxLjUsMS41LDEuNWMwLjgsMCwxLjUtMC43LDEuNS0xLjVWNy44bDMuMywzLjINCgkJYzAuMywwLjMsMC43LDAuNCwxLjEsMC40YzAuNCwwLDAuOC0wLjIsMS4xLTAuNWMwLjYtMC42LDAuNi0xLjYsMC0yLjJsLTUuOS01LjdjMCwwLDAsMCwwLDBjLTAuMS0wLjEtMC4zLTAuMi0wLjQtMC4zYzAsMCwwLDAsMCwwDQoJCWMwLDAsMCwwLDAsMGMwLDAsMCwwLDAsMGMtMC4xLTAuMS0wLjMtMC4xLTAuNS0wLjFjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjLTAuMiwwLTAuMywwLTAuNSwwLjENCgkJYzAsMCwwLDAtMC4xLDBjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjLTAuMiwwLjEtMC4zLDAuMi0wLjQsMC4zYzAsMCwwLDAsMCwwbC01LjksNS43Yy0wLjYsMC42LTAuNiwxLjYsMCwyLjINCgkJQzIzLDExLjMsMjMuNCwxMS40LDIzLjgsMTEuNHoiLz4NCjwvZz4NCjwvc3ZnPg0K);"></button>
+<button onclick="fun_open_file(document.getElementById('img_img').src)" title="open image" style="background-size:70% 70%;background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMC4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4yIiBiYXNlUHJvZmlsZT0idGlueSIgaWQ9IuWcluWxpF8xIg0KCSB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUwIDUwIg0KCSBvdmVyZmxvdz0ic2Nyb2xsIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik00Ny43LDI2LjNjLTAuNy0xLTItMS42LTMuNi0xLjZoLTMuM3YtNC41YzAtMi44LTIuMy01LjEtNS4xLTUuMWgtMS4ydjMuNWgxLjJjMC45LDAsMS42LDAuNywxLjYsMS42djQuNQ0KCQloLTIyYy0yLjUsMC01LDEuMy01LjgsMy4xTDUuNCwzN1YyMC4yYzAtMC45LDAuNy0xLjYsMS42LTEuNmgxOC4zdi0zLjVoLTYuNHYtMC42YzAtMi44LTIuMy01LjEtNS4xLTUuMUg3Yy0yLjgsMC01LjEsMi4zLTUuMSw1LjENCgkJdjUuMmMwLDAuMSwwLDAuMSwwLDAuMmMwLDAuMSwwLDAuMSwwLDAuMnYyMmMwLDIuOCwyLjMsNS4xLDUuMSw1LjFoMjguN2MxLjYsMCwzLTAuOCw0LTEuOWMwLjYtMC41LDEuMS0xLDEuNC0xLjZsNi44LTE0LjcNCgkJQzQ4LjMsMjguMiw0OC4yLDI3LjIsNDcuNywyNi4zeiBNMTIuNCwyOS4xYzAuMi0wLjUsMS42LTEuMywzLTEuM2gyMnYxNC40YzAsMC42LTAuNCwxLjItMC45LDEuNGMtMC40LDAuMS0wLjcsMC4yLTEuMSwwLjJINw0KCQljLTAuNSwwLTAuOS0wLjItMS4yLTAuNUwxMi40LDI5LjF6IE01LDE1LjVjMC4yLTAuMSwwLjMtMC4xLDAuNS0wLjJDNS40LDE1LjQsNS4yLDE1LjQsNSwxNS41eiBNNiwxNS4yYzAuMy0wLjEsMC43LTAuMSwxLTAuMQ0KCQlDNi42LDE1LjEsNi4zLDE1LjEsNiwxNS4yeiBNMy41LDE2LjRDMy41LDE2LjUsMy41LDE2LjUsMy41LDE2LjRDMy41LDE2LjUsMy41LDE2LjUsMy41LDE2LjR6IE00LjQsMTUuOGMtMC4xLDAtMC4yLDAuMS0wLjMsMC4xDQoJCUM0LjMsMTUuOSw0LjQsMTUuOCw0LjQsMTUuOHogTTQwLjgsMzd2LTkuMmgzLjNjMC41LDAsMC43LDAuMSwwLjksMC4yTDQwLjgsMzd6Ii8+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIzLjgsMTEuNGMwLjQsMCwwLjgtMC4xLDEuMS0wLjRsMy4zLTMuMnYxMy4xYzAsMC44LDAuNywxLjUsMS41LDEuNWMwLjgsMCwxLjUtMC43LDEuNS0xLjVWNy44bDMuMywzLjINCgkJYzAuMywwLjMsMC43LDAuNCwxLjEsMC40YzAuNCwwLDAuOC0wLjIsMS4xLTAuNWMwLjYtMC42LDAuNi0xLjYsMC0yLjJsLTUuOS01LjdjMCwwLDAsMCwwLDBjLTAuMS0wLjEtMC4zLTAuMi0wLjQtMC4zYzAsMCwwLDAsMCwwDQoJCWMwLDAsMCwwLDAsMGMwLDAsMCwwLDAsMGMtMC4xLTAuMS0wLjMtMC4xLTAuNS0wLjFjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjLTAuMiwwLTAuMywwLTAuNSwwLjENCgkJYzAsMCwwLDAtMC4xLDBjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjLTAuMiwwLjEtMC4zLDAuMi0wLjQsMC4zYzAsMCwwLDAsMCwwbC01LjksNS43Yy0wLjYsMC42LTAuNiwxLjYsMCwyLjINCgkJQzIzLDExLjMsMjMuNCwxMS40LDIzLjgsMTEuNHoiLz4NCjwvZz4NCjwvc3ZnPg0K);"></button>
 <div class="break"></div>
 <button onclick="fun_imgSizeAdd()" title="Zoom in image" style="background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUwIDUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MCA1MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCgkuc3Qwe2Rpc3BsYXk6bm9uZTt9DQoJLnN0MXtkaXNwbGF5OmlubGluZTt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnIGlkPSLlnJblsaRfMSIgY2xhc3M9InN0MCI+DQoJPHJlY3QgY2xhc3M9InN0MSIgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIi8+DQo8L2c+DQo8ZyBpZD0i5ZyW5bGkXzIiPg0KCTxyZWN0IHg9IjIyLjMiIHk9IjYuMSIgY2xhc3M9InN0MiIgd2lkdGg9IjUuNCIgaGVpZ2h0PSIzNy44Ii8+DQoJPHJlY3QgeD0iNi4xIiB5PSIyMi4zIiBjbGFzcz0ic3QyIiB3aWR0aD0iMzcuOCIgaGVpZ2h0PSI1LjQiLz4NCjwvZz4NCjwvc3ZnPg0K)"></button>
 <button onclick="fun_imgSizeSubtrat()" title="Narrow pictures" style="background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUwIDUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MCA1MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCgkuc3Qwe2Rpc3BsYXk6bm9uZTt9DQoJLnN0MXtkaXNwbGF5OmlubGluZTt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnIGlkPSLlnJblsaRfMSIgY2xhc3M9InN0MCI+DQoJPHJlY3QgY2xhc3M9InN0MSIgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIi8+DQo8L2c+DQo8ZyBpZD0i5ZyW5bGkXzIiPg0KCTxyZWN0IHg9IjYuMSIgeT0iMjIuMyIgY2xhc3M9InN0MiIgd2lkdGg9IjM3LjgiIGhlaWdodD0iNS40Ii8+DQo8L2c+DQo8L3N2Zz4NCg==)"></button>
@@ -1939,9 +2010,9 @@ document.getElementById("text_scale").value = "95";//設定初始值
 
 
 <div id="title" onselectstart="return false">
-<button id="prev" onclick="fun_上一頁()"> << Prev </button>
+<button id="prev" class="icon_left_80" onclick="fun_上一頁()"></button>
 <select id="select_page" onchange="fun_選頁(this.value)"></select>
-<button id="next" onclick="fun_下一頁()"> Next >> </button>
+<button id="next" class="icon_right_80" onclick="fun_下一頁()"></button>
 </div>
 
 
@@ -1964,7 +2035,8 @@ margin: 15px;
 float: right;
 }
 
-#prev2, #next2 {
+#bottom #prev2,
+#bottom #next2 {
 height: 100%;
 width: 50%;
 background-color: rgba(0, 0, 0, 0.4);
@@ -1973,26 +2045,42 @@ font-size: 50px !important;
 border: 1px solid rgba(255, 255, 255, 0.400);
 }
 
-button, .tab td {
+button,
+.tab td {
 /*transition: box-shadow 0.3s,transform 0.3s;*/
 }
 
-button:active, .tab td:active {
+button:active,
+.tab td:active {
 /*box-shadow: 0px 0px 10px rgba(0,0,0,0.85);*/
 transform: translateY(3px);
-background-color: rgba(66,166,112,1) !important;
+background-color: rgba(66, 166, 112, 1) !important;
 }
 </style>
 
 
 <div id="bottom">
-<button id="prev2" onclick="fun_上一頁()"> << Prev </button>
-<button id="next2" onclick="fun_下一頁()"> Next >> </button>
+<button id="prev2" class="icon_left_80" onclick="fun_上一頁()"></button>
+<button id="next2" class="icon_right_80" onclick="fun_下一頁()"></button>
 </div>
 
 
 
+<style>
+.icon_left_80 {
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAAH5FsI7AAAACXBIWXMAABYlAAAWJQFJUiTwAAACA0lEQVR42u2b23GDMBBFdz0pgBLsDijF7iAtpAN3QglyJ5Rgd0AJmx8yoyHgCCPB4pzz6dHIq8vVg2UlsgpmZssbmVn9rJGm9KSqOj+28o03wMzqpEGYWVg0Uk1qFD+Z/m/r1IEE72J7e/Jtr7Atntg91fbRRB1WWTucGHKbu+NyUcObz2czsya3waulHdXZDJ11kYiGGPzoNejsFa7rLVk/m27W5arYGhhJUJfotMnZaZPFSgDgec++DpdvT4eJmM6lWmZ2Ri2vaqmzlMhJVR/xD4eJhpcNgnsMg0t9zJ3LJWQk0HPyadVBsKhaXFUOAAAAADA8LLQlDgofud74Sg38sDCwse/jN7fpDhcv8EO/ZU3nv22GIfbbgIDf8Nu7+01HgjuKyH2TYIY1TRM7yaenPX4qP9iJyNoT4aKqtzk+DCM+rD2pu4/kUPy5t1hdTaZA/ecE8SW+3IsvPQZ53kPGv8pecAIAAAAAAAB7on81bOI7CVwjSH/x76au1KDQtNtCwpUkEhVz3Oa+jtO521p3CW/chttwG27DbbgNtzlD57hNRBpZvzhlbR4i8pVaEHNIFO8qIuEfiCcichSRkLrsaKKAR9mouGxDTi/divxDyHqi+PJXWSHZk4RpnSBk56bs1rGQuBJX4kpciStxJa7ElbjyOai0zJV8lQMAAAAAN3wDH+BnfrMWaOQAAAAASUVORK5CYII=);
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
+}
 
+.icon_right_80 {
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAAH5FsI7AAAACXBIWXMAABYlAAAWJQFJUiTwAAAB+ElEQVR42u2b23GDMBBFdz0pgBLsDigFd5B0QgcpgRJwJ5TgdGB3sPkwzBBHCfIgrMWc861ZVlcXPRYh8hTMzJZvrDERVFXnPz5do7VgN7rYxsWvkZmS49+RMbNuUs8+x0LgoUE1MytTB26HyL6zNrMylOnbjDnuNDnJxHQPe8ISk3O293dYFZKbe5FpbBT0ibraPOqU3W5TBivmBiqTWWfYS6QKlk6vPmDDJgbALZoy2P0sNGvv2LNL2ttbQsfAjFe7HB4zu9wvjF4TrRZZxD2oqs5KIgdV/Yp5SY4ZkrveJ5djeOuAFytPNYqBi4ekUGtucpUAAAAAjDYKzWLfphbaZtXeEiwCSXYelfR/WB+X7d36chXVBHyJL1/BlxoIsBeRc47kQyXjUHXrfQ0L/9meT+Wl810gucJLcj4LS+NPw8k/xiZIrsZv+A2//T7Vmbvrmm4L54FdSkOVAAAAAAAAYJP0R8PxAZvfCGYc/n8UArisFidgE1Frb3HltJB1hJC4MkLI8o8iN67ElbgSVwKuxJWbdaU+kEglIp8isn9xza8i8qGqp5jGu9jXQUTaDYgnIlKISBt7w00jBdxLpstlGTlk/yvSWXWnjZgHO5cX5jMKV4Wu8q7mt2vchttwG27DbbgNt+G27QmI22YK2OA2AAAAAPDMNyhV1lftp4i6AAAAAElFTkSuQmCC);
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
+}
+</style>
 
 
 
@@ -2046,7 +2134,7 @@ document.getElementById("div_imgs").innerHTML =
 "</div>";
 }
 
-       
+
 main();
 
 
@@ -2056,7 +2144,7 @@ main();
 ///
 ///
 function fun_產生圖片() {
-        
+
 //根據上一次的設定回復『無間距模式』的選項
 var cookie_noSpacing = getCookie("noSpacing");
 if (cookie_noSpacing != "") {
@@ -2082,22 +2170,38 @@ s_sum += ("<div class='div_page'>");
 
 for (var i = 0; i < urls.length; i++) {
 
+
+
 //網址（如果是本地圖片就在前面加上【file:///】
 var src = (urls[i].substring(0, 4).toUpperCase() == "HTTP") ? urls[i] : "file:///" + urls[i];
 
 //檔名
-var s_title = decodeURIComponent(urls[i]);//從網址編碼轉回原本的字串
+//var s_title = decodeURIComponent(urls[i]);//從網址編碼轉回原本的字串
+//s_title = s_title.substring(s_title.lastIndexOf("/") + 1);
+
+//檔名
+var s_title = urls[i];
+try {
+s_title = decodeURIComponent(urls[i]);//從網址編碼轉回原本的字串
+} catch (eee) { }
 s_title = s_title.substring(s_title.lastIndexOf("/") + 1);
+try {
+s_title = decodeURIComponent(s_title);
+} catch (eee) { }
+s_title = s_title.substring(s_title.lastIndexOf("\\") + 1);
+
+
+
 
 //呼叫C#，使用windows內建的程式開啟圖片
-var s_open_file = "" + decodeURIComponent(urls[i]) + "";
+var s_open_file = decodeURIComponent(urls[i]);
 
 if (i < 40) {
 s_sum += (
 "<span class='sp'>" +
 "<div class='tit'>" +
 //"<a href='" + src + "' class='open_url' target='_blank'></a>" +
-"<a onclick=\"fun_open_file('" + s_open_file + "')\" class='open_url' ></a>" +
+"<a onclick=\"fun_open_file('" + src + "')\" class='open_url' ></a>" +
 "<div class='no'>" + (i + 1) + "</div>" +
 "<div class='le'>" + "<div style='height=1px'></div>" +
 "<div class='wh' id='" + i + "'>---</div>" +
@@ -2113,7 +2217,7 @@ s_sum += (
 "<span class='sp'>" +
 "<div class='tit'>" +
 //"<a href='" + src + "' class='open_url' target='_blank'></a>" +
-"<a onclick=\"fun_open_file('" + s_open_file + "')\" class='open_url' ></a>" +
+"<a onclick=\"fun_open_file('" + src + "')\" class='open_url' ></a>" +
 "<div class='no'>" + (i + 1) + "</div>" +
 "<div class='le'>" +
 "<div class='wh' id='" + i + "'>---</div>" +
@@ -2169,4 +2273,5 @@ ga('send', 'pageview');
 
 
 </body>
+
 </html>
