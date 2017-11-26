@@ -2371,11 +2371,11 @@ try {
 eval(getCookie("wid") + ";");
 } catch (e) { }
 
-
+/*
 //如果只有一張圖片，就顯示預設一欄
 if (urls.length == 1) {
 fun_col("1", "r1");
-} else {
+} else {*/
 
 //根據上一次的設定回復圖片的『欄』
 var cookie_col = getCookie("col") + "";
@@ -2385,7 +2385,7 @@ fun_col(cookie_col, "r" + cookie_col);
 } else {
 fun_col("4", "r4");
 }
-}
+//}
 
 var s_sum = "";
 s_sum += ("<div class='div_page'>");
