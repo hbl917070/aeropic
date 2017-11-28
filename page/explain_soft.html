@@ -1,13 +1,14 @@
 ﻿<!--讓目前選擇的項目改變顏色-->
 <style>
     #top_explain {
-        color: rgb(0, 255, 144);
+        color: rgb(0, 179, 24);
+        border-bottom: 5px solid rgb(0, 179, 24);
     }
 
     #explain_menu_soft {
         /* background-color: rgb(161, 161, 161); */
         /* outline: rgb(0, 165, 39) solid 5px; */
-        border-bottom: 10px solid rgb(0, 179, 24);
+        border-bottom: 5px solid rgb(0, 179, 24);
         color: rgb(0, 179, 24) !important;
 
     }
@@ -52,14 +53,14 @@
                     margin: 10px 0px;
                 }
 
-                .a_download{
+                .a_download {
                     padding: 10px 50px;
                     border: rgb(50, 170, 230) 2px solid;
                     color: rgb(50, 170, 230) !important;
                     transition: all 0.3s;
                     display: inline-block;
                     text-decoration: none;
-            font-size: 18px;
+                    font-size: 18px;
                 }
 
                 .a_download:hover {
@@ -73,7 +74,7 @@
             <div id="tit_yes" style="display:none; color:rgb(96, 255, 89)">您已經是最新版</div>
             <div id="tit_no" style="display:none;color:rgb(255, 102, 102)">
                 需要更新
-             
+
                 <br>
                 <a href="index.html#/download" class="a_download">(下載 AeroPic {{new_version}})</a>
 
@@ -163,10 +164,12 @@
                 text-align: center;
                 padding: 5px 15px;
             }
-.tab_keyboard{
-   
-margin: auto;
-}
+
+            .tab_keyboard {
+
+                margin: auto;
+            }
+
             .tab_keyboard,
             .tab_keyboard td {
                 border: #00b1092a 1px solid;
