@@ -13,18 +13,20 @@
 
         作業系統：windows7、windows8、windows10
 
-        <br><br><br>
-
-        備註：
+        <br>
+        <br>
+        <br> 備註：
         <ul>
             <li>
                 只有win7或win10可以使用透明玻璃特效
             </li>
             <li>
-                如果無法執行：請安裝 <a href="https://www.microsoft.com/zh-tw/download/details.aspx?id=30653"> Microsoft .NET Framework 4.5 </a> ，或更高版本
+                如果無法執行：請安裝
+                <a href="https://www.microsoft.com/zh-tw/download/details.aspx?id=30653"> Microsoft .NET Framework 4.5 </a> ，或更高版本
             </li>
             <li>
-                如果如法順利瀏覽GIF 或 無法開啟大量瀏覽模式：請把IE更新到版本 <a href="https://support.microsoft.com/zh-tw/help/18520/download-internet-explorer-11-offline-installer">IE11</a>
+                如果如法順利瀏覽GIF 或 無法開啟大量瀏覽模式：請把IE更新到版本
+                <a href="https://support.microsoft.com/zh-tw/help/18520/download-internet-explorer-11-offline-installer">IE11</a>
             </li>
 
         </ul>
@@ -48,33 +50,48 @@
         <style>
             .table_download td {
                 padding: 5px;
-                border: rgb(35, 90, 57) solid 1px;
+                border: rgb(35, 90, 57) solid 0px;
             }
 
             .table_download {
-                border: rgb(35, 90, 57) solid 1px;
+                border: rgb(35, 90, 57) solid 0px;
+            }
+
+            .table_download a {
+                padding: 10px 50px;
+                border: rgb(50, 170, 230) 2px solid;
+                color: rgb(50, 170, 230) !important;
+                transition: all 0.3s;
+                display: inline-block;
+                text-decoration: none;
+            }
+
+            .table_download a:hover {
+                border: rgb(80, 249, 255) 2px solid;
+                color: rgb(80, 249, 255) !important;
+                transform: scale(1.03) !important;
             }
         </style>
 
 
-        最新版：{{new_version}}<br>
+        最新版：{{new_version}}
+        <br>
         <table class="table_download" border="1">
             <tr>
                 <td>載點</td>
                 <td>
-                    <a href="download/AeroPic 2_3_1.zip">直接下載</a>
+                    <a href="download/AeroPic 2_4_0.zip">直接下載</a>
                 </td>
             </tr>
             <tr>
                 <td> 備用載點</td>
                 <td>
-                    <a href="https://www.dropbox.com/s/ch3fc7fwvn1bfzy/AeroPic%202_3_1.zip?dl=0">Dropbox</a>
+                    <a href="https://www.dropbox.com/s/pp7lxslphxv9twk/AeroPic%202_4_0.zip?dl=0">Dropbox</a>
                 </td>
             </tr>
         </table>
 
-        <br>
-        免安裝，下載後解壓縮就能直接用
+        <br> 免安裝，下載後解壓縮就能直接用
 
 
 
@@ -87,19 +104,32 @@
             .v_title {
                 font-size: 24px;
                 font-weight: 900;
-                color: rgb(0, 165, 39);
+                color: rgb(0, 179, 24);
                 margin-top: 30px;
             }
 
             .v_title_sub {
                 font-size: 14px;
-                color: #006314;
+                color: rgb(0, 179, 24);
             }
 
             ul {
                 margin: 0px;
             }
         </style>
+
+        <div class="v_title">
+            2.4.0
+            <a class="v_title_sub">(2017/11/28)</a>
+        </div>
+        <ul>
+            <li>新增：大量瀏覽模式支援：PSD、EXE、ICO、WEBP、RAW 等..特殊格式的圖片</li>
+            <li>新增：可使用瀏覽器開啟大量瀏覽模式</li>
+            <li>新增：一鍵關閉所有個視窗</li>
+            <li>新增：可隱藏工具列</li>
+            <li>修正：可離線使用大量瀏覽模式</li>
+        </ul>
+
 
         <div class="v_title">
             2.3.1
@@ -152,7 +182,7 @@
             <li>新增：EXE執行檔的圖示解析</li>
         </ul>
 
-    
+
         <div class="v_title">
             1.3.1
             <a class="v_title_sub">(2017/08/22)</a>
@@ -170,7 +200,8 @@
         <ul>
             <li>新增：自定義視窗顏色</li>
             <li>新增：關聯圖片附檔名</li>
-            <li>新增：搜圖類型『<a href="http://iqdb.org/">Multi-service image search</a>』</li>
+            <li>新增：搜圖類型『
+                <a href="http://iqdb.org/">Multi-service image search</a>』</li>
             <li>修正：PSD是否需要解碼器改為自動判斷</li>
             <li>修正：若干BUG</li>
         </ul>

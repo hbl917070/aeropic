@@ -1,38 +1,45 @@
-﻿
-
-<style type="text/css">
+﻿<style type="text/css">
     .explain_menu {
-        overflow-x: auto;
+      
     }
 
 
 
-        .explain_menu a {
-            /*margin: 10px;*/
-            vertical-align: middle;
-            width: 200px;
-            display: table-cell;
-            /*line-height: 50px;*/
-            /*background-color: rgb(35, 90, 57);*/
-            /*box-shadow: 0px 0px 5px rgba(0,0,0,0.85);*/
-            color: #000 !important;
-            font-size: 26px;
-            text-decoration: none;
-            text-align: center !important;
-        }
+    .explain_menu a {
+        /*margin: 10px;*/
+        vertical-align: middle;
+        width: 200px;
+        /*line-height: 50px;*/
+        /*background-color: rgb(35, 90, 57);*/
+        /*box-shadow: 0px 0px 5px rgba(0,0,0,0.85);*/
+        color: #FFF !important;
+        font-size: 26px;
+        text-decoration: none;
+        text-align: center !important;
+    }
 
-            .explain_menu a:hover {
-                color: rgb(0, 165, 39) !important;
-            }
+    .explain_menu a:hover {
+        color: rgb(0, 165, 39) !important;
+    }
 
-    .div_table {
-        height: 70px;
-        display: table;
+    .div_td {
+     display: table-cell;
+     border-bottom: 10px solid rgba(0, 179, 24,0);
     }
 
     .explain_bottom {
         height: 5px;
         background-color: rgb(0, 165, 39);
+    }
+
+    #tab02 {
+        width: 100%;
+         
+        text-align: center;
+        display: table;
+        box-sizing: content-box;
+        height:80px;
+        margin-bottom: -10px;
     }
 </style>
 
@@ -47,20 +54,16 @@
 
         <div class="explain_menu">
 
-            <table align="center" height="80" width="700">
-                <tr>
-                    <td>
-                        <div id="explain_menu_soft" class="div_table"><a href="#/explain_soft">軟體說明</a></div>
-                    </td>
-                    <td>
-                        <div id="explain_menu_pixiv" class="div_table"><a href="#/explain_pixiv">下載Pixiv動圖</a></div>
-                    </td>
-                    <td>
-                        <div id="explain_edit_default" class="div_table"><a href="#/explain_edit_default">修改為<br>預設開啟程式</a></div>
-                    </td>
-                </tr>
-
-            </table>
+            <div id="tab02">
+            
+                    <a href="#/explain_soft"  id="explain_menu_soft" class="div_td">軟體說明</a>
+                
+                    <a href="#/explain_pixiv"  id="explain_menu_pixiv" class="div_td">下載Pixiv動圖</a>
+             
+                    <a href="#/explain_edit_default" id="explain_edit_default" class="div_td">修改為
+                        <br>預設開啟程式</a>
+                
+            </div>
 
 
 

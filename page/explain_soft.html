@@ -5,8 +5,11 @@
     }
 
     #explain_menu_soft {
-        /*background-color: rgb(161, 161, 161);*/
-        outline: rgb(0, 165, 39) solid 5px;
+        /* background-color: rgb(161, 161, 161); */
+        /* outline: rgb(0, 165, 39) solid 5px; */
+        border-bottom: 10px solid rgb(0, 179, 24);
+        color: rgb(0, 179, 24) !important;
+
     }
 </style>
 
@@ -33,42 +36,47 @@
                     color: #FFF;
                 }
 
-                .table, .table td {
+                .table,
+                .table td {
                     font-size: 24px;
                     border: 1px solid rgb(55, 55, 55);
                 }
 
-                    .table td {
-                        padding: 10px;
-                    }
+                .table td {
+                    padding: 10px;
+                }
 
-                #tit_yes, #tit_no {
-                    font-size: 30px;
+                #tit_yes,
+                #tit_no {
+                    font-size: 50px;
                     margin: 10px 0px;
                 }
 
-                .a_download {
-                    /*padding: 5px 5px;*/
-                    /*border: rgb(0, 161, 23) 2px solid;*/
-                    color: rgb(0, 161, 23) !important;
+                .a_download{
+                    padding: 10px 50px;
+                    border: rgb(50, 170, 230) 2px solid;
+                    color: rgb(50, 170, 230) !important;
                     transition: all 0.3s;
                     display: inline-block;
                     text-decoration: none;
-                    font-size: 18px;
+            font-size: 18px;
                 }
 
-                    .a_download:hover {
-                        background-color: rgb(203, 255, 201);
-                        transform: scale(1.05) !important;
-                    }
+                .a_download:hover {
+                    border: rgb(80, 249, 255) 2px solid;
+                    color: rgb(80, 249, 255) !important;
+                    transform: scale(1.03) !important;
+                }
             </style>
 
 
             <div id="tit_yes" style="display:none; color:rgb(96, 255, 89)">您已經是最新版</div>
             <div id="tit_no" style="display:none;color:rgb(255, 102, 102)">
                 需要更新
+             
+                <br>
                 <a href="index.html#/download" class="a_download">(下載 AeroPic {{new_version}})</a>
-               
+
             </div>
 
 
@@ -95,28 +103,34 @@
     <div class="box">
 
 
-        AeroPic 是一款圖片檢視軟體，可以將圖片或資料夾拖曳至程式中開啟，或設定成系統預設開啟圖片的程式（<a href="#/explain_edit_default">設定教學</a>）。
+        AeroPic 是一款圖片檢視軟體，可以將圖片或資料夾拖曳至程式中開啟，或設定成系統預設開啟圖片的程式（
+        <a href="#/explain_edit_default">設定教學</a>）。
 
-        <br><br>
+        <br>
+        <br> 程式開啟圖片後，會自動讀取該資料夾底下所有的圖片，供快速切換瀏覽。支援格式：
 
-        程式開啟圖片後，會自動讀取該資料夾底下所有的圖片，供快速切換瀏覽。支援格式：<br>JPG、PNG、GIF、BMP、TIF、APNG、SVG、PSD、webP、RAW、Pixiv動圖（<a href="#/explain_pixiv">下載教學</a>）
+        <br>JPG、PNG、GIF、BMP、TIF、APNG、SVG、PSD、webP、RAW、Pixiv動圖（
+        <a href="#/explain_pixiv">下載教學</a>）
 
-        <br><br>
+        <br>
+        <br> 滑鼠滾輪捲動可控制圖片縮放
 
-        滑鼠滾輪捲動可控制圖片縮放<br>圖片小於視窗時，拖曳=拖曳視窗<br>圖片大於視窗時，拖曳=移動圖片位置
+        <br>圖片小於視窗時，拖曳=拖曳視窗
+        <br>圖片大於視窗時，拖曳=移動圖片位置
 
-        <br><br>
-
-        備註：
+        <br>
+        <br> 備註：
         <ul>
             <li>
                 只有win7或win10可以使用透明玻璃特效
             </li>
             <li>
-                如果無法執行：請安裝 <a href="https://www.microsoft.com/zh-tw/download/details.aspx?id=30653"> Microsoft .NET Framework 4.5 </a> ，或更高版本
+                如果無法執行：請安裝
+                <a href="https://www.microsoft.com/zh-tw/download/details.aspx?id=30653"> Microsoft .NET Framework 4.5 </a> ，或更高版本
             </li>
             <li>
-                如果如法順利瀏覽GIF 或 無法開啟大量瀏覽模式：請把IE更新到版本 <a href="https://support.microsoft.com/zh-tw/help/18520/download-internet-explorer-11-offline-installer">IE11</a>
+                如果如法順利瀏覽GIF 或 無法開啟大量瀏覽模式：請把IE更新到版本
+                <a href="https://support.microsoft.com/zh-tw/help/18520/download-internet-explorer-11-offline-installer">IE11</a>
             </li>
         </ul>
 
@@ -150,13 +164,14 @@
                 padding: 5px 15px;
             }
 
-            .tab_keyboard, .tab_keyboard td {
+            .tab_keyboard,
+            .tab_keyboard td {
                 border: #00b109 1px solid;
             }
 
-                .tab_keyboard tr:hover {
-                    background-color: #c2c2c2;
-                }
+            .tab_keyboard tr:hover {
+                background-color: #c2c2c2;
+            }
         </style>
 
         <table border='1' class='tab_keyboard'>
@@ -192,7 +207,7 @@
             <tr>
                 <td>圖片全滿</td>
                 <td>F</td>
-            </tr>      
+            </tr>
             <tr>
                 <td>開啟圖片位置</td>
                 <td>O</td>
@@ -201,7 +216,7 @@
                 <td>開啟圖片原生右鍵選單</td>
                 <td>M</td>
             </tr>
-            <tr>         
+            <tr>
                 <td>複製圖片</td>
                 <td>Ctrl + C</td>
             </tr>
@@ -213,7 +228,7 @@
                 <td>重新載入圖片</td>
                 <td>F5</td>
             </tr>
-          
+
 
             <tr>
                 <td>進入 大量瀏覽模式</td>
@@ -223,7 +238,7 @@
                 <td>退出 大量瀏覽模式</td>
                 <td>Back Space 或 Esc</td>
             </tr>
-     
+
             <tr>
                 <td>關閉程式</td>
                 <td>Esc</td>
@@ -240,17 +255,18 @@
     <div class="box">
 
         可以修改：預設瀏覽器、用其他程式開啟圖片的名單
-        <br><br>
-
-        進階設定目前還沒有做圖形化界面，只能手動編輯設定檔，用記事本即可進行編輯。
         <br>
-        路徑： {程式資料夾}/data/<b style="color:rgb(255, 0, 0)">confi.xml</b>
+        <br> 進階設定目前還沒有做圖形化界面，只能手動編輯設定檔，用記事本即可進行編輯。
+        <br> 路徑： {程式資料夾}/data/
+        <b style="color:rgb(255, 0, 0)">config.xml</b>
 
-        <br><br>
+        <br>
+        <br>
 
         <img src="imgs\explain_soft/1.jpg" />
 
-        <br><br>
+        <br>
+        <br>
 
 
     </div>
