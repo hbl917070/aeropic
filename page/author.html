@@ -1,8 +1,10 @@
 ﻿<!--讓目前選擇的項目改變顏色-->
 <style>
     #top_author {
-        color: rgb(0, 179, 24);
-        border-bottom: 5px solid rgb(0, 179, 24);
+        color: rgb(77, 243, 255);
+        border-bottom: 5px solid rgb(77, 243, 255);
+        animation: first_top_but 10s;
+        animation-iteration-count: infinite;
     }
 </style>
 
@@ -10,32 +12,13 @@
 
 <div class="ddd">
 
-    <div class="tit">意見回饋</div>
+
     <div class="box">
+        <div class="tit">意見回饋</div>
 
-
-        <style>
-         .a_download {
-            padding: 10px 50px;
-            border: rgb(50, 170, 230) 2px solid;
-            color: rgb(50, 170, 230) !important;
-            transition: all 0.3s;
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .a_download:hover {
-            border: rgb(80, 249, 255) 2px solid;
-            color: rgb(80, 249, 255) !important;
-            transform: scale(1.03) !important;
-        }
-        </style>
-
-
-
-
-        因為我沒有多餘的錢可以架設伺服器，<br>
-        只能麻煩你們到巴哈姆特用回文的方式回覆意見，或直接mail到我的信箱<br>
+        <br> 作者只是個的碩士生，沒有辦法生出資金架設伺服器，
+        <br> 只能麻煩你們到巴哈姆特用回文的方式回覆意見，或直接mail到我的信箱
+        <br>
         <br>
 
         <a class="a_download" target="_blank" href="https://forum.gamer.com.tw/C.php?bsn=60076&snA=4095280">回覆</a>
@@ -50,21 +33,23 @@
 
     <div class="ddd">
 
-        <div class="tit">常見問題</div>
+
         <div class="box">
+
+            <div class="tit">常見問題</div>
+            <br>
             <style>
                 .tit3 {
                     margin-top: 50px;
                     font-size: 26px;
                     font-weight: 900;
-                    color: rgb(0, 179, 24) ;
+                    color: rgb(130, 0, 180);
                     /* border-bottom: 2px solid rgb(70, 255, 100) ; */
-                    line-height:30px;
+                    line-height: 30px;
                 }
 
                 .aaa a {
-                    border-bottom: 1px rgb(160, 223, 255) solid;
-                    margin: 5px;
+                    margin: 0px 10px;
                     display: inline-block;
                     padding: 2px;
                 }
@@ -75,9 +60,30 @@
 
             <div class="tit3">複製PNG圖片會沒有透明底</div>
             <div class="aaa">
-                這是windows本身的限制。我有另外做一個【複製PNG】的按鈕，這雖然能複製透明底但並不是通用格式，在多數繪圖軟體都能直接貼上只有少部分軟體不支援。<br>
-                不支援：<a href="http://www.adobe.com/tw/products/photoshop.html">Photoshop CC 2015</a>、<a href="https://www.systemax.jp/en/sai/">SAI</a> <br>
-                支援：<a href="https://krita.org/jp/">Krita</a>、<a href="https://medibangpaint.com/zh_TW/pc/">MediBang Paint Pro</a>、<a href="https://www.getpaint.net/">paint.net</a>
+                這是windows本身的限制。我有另外做一個【複製PNG】的按鈕，這雖然能複製透明底但並不是通用格式，在多數繪圖軟體都能直接貼上只有少部分軟體不支援。
+                <br>
+
+                <table border="1">
+                    <tr>
+                        <td>不支援</td>
+                        <td>
+                            <a href="http://www.adobe.com/tw/products/photoshop.html">Photoshop CC 2015</a>、
+                            <a href="https://www.systemax.jp/en/sai/">SAI</a>
+                            <br>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>支援</td>
+                        <td>
+                            <a href="https://krita.org/jp/">Krita</a>、
+                            <a href="https://medibangpaint.com/zh_TW/pc/">MediBang Paint Pro</a>、
+                            <a href="https://www.getpaint.net/">paint.net</a>、
+                            <a href="https://products.office.com/">Microsoft Word</a>
+
+                        </td>
+                    </tr>
+                </table>
             </div>
 
             <div class="tit3">開啟程式很慢</div>
@@ -94,11 +100,12 @@
 
 
             <div class="tit3">某些 RAW 不支援？</div>
-            的確有這個問題，程式使用的是 『<a href="https://magick.codeplex.com/">Magick.NET</a>解析引擎』，<br>
-            可解析：DNG、CR2、CRW、NEF、ARW、RAW、PPM<br>
-            開啟很慢：RAF、PEF、ORF、RW2<br>
-            無法解析：X3F
-       
+            的確有這個問題，程式使用的是 『
+            <a href="https://magick.codeplex.com/">Magick.NET</a>解析引擎』，
+            <br> 可解析：DNG、CR2、CRW、NEF、ARW、RAW、PPM
+            <br> 開啟很慢：RAF、PEF、ORF、RW2
+            <br> 無法解析：X3F
+
 
 
         </div>

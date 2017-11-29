@@ -1,15 +1,17 @@
 ﻿<!--讓目前選擇的項目改變顏色-->
 <style>
     #top_explain {
-        color: rgb(0, 179, 24);
-        border-bottom: 5px solid rgb(0, 179, 24);
+        color: rgb(77, 243, 255);
+        border-bottom: 5px solid rgb(77, 243, 255);
+        animation: first_top_but 10s;
+        animation-iteration-count: infinite;
     }
 
     #explain_menu_pixiv {
         /* background-color: rgb(161, 161, 161); */
         /* outline: rgb(0, 165, 39) solid 5px; */
-        border-bottom: 5px solid rgb(0, 179, 24);
-        color: rgb(0, 179, 24) !important;
+        border-bottom: 5px solid  rgb(130, 0, 180);
+        color: rgb(130, 0, 180) !important;
     }
 </style>
 
@@ -27,7 +29,9 @@
 
     <style>
         .box img {
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.50);
+
+            margin: auto;
+            display: block;
             margin-top: 10px;
             max-width: 100%;
         }
@@ -36,9 +40,24 @@
 
 
 
-    <div class="tit">方法1：使用瀏覽器插件</div>
-    <div class="box">
 
+    <div class="box">
+        <div class="tit">方法1：使用瀏覽器插件</div>
+        <br>
+        
+        
+<style>
+.tab01{
+    margin: 20px 0px;
+}
+.tab01 td{
+padding: 3px 10px;
+text-align: center;
+}
+
+</style>
+
+        
         要下載
         <b>
             <a href="https://www.pixiv.net/search.php?word=%E3%81%91%E3%82%82%E3%81%AE%E3%83%95%E3%83%AC%E3%83%B3%E3%82%BA&order=date_d&type=ugoira">Pixiv</a>動圖</b> 可以使用【
@@ -46,22 +65,33 @@
         】這個瀏覽器附加原件
         <br>
         <br> 裡面是日文，懶得點進去看的話就直接下載：
-        <br>
-        <a href="https://chrome.google.com/webstore/detail/px-downloader/bcbibglkpaimhgmoomembjhclhipoack">Px Downloader(google chrome)</a>
-        <br>
-        <a href="https://addons.mozilla.org/ja/firefox/addon/px-downloader/">Px Downloader(firefox 火狐)</a>
 
-        <br>
-        <br>
-        <br> 安裝完後是中文的，保存動圖預設是儲存成GIF，如果要用【AeroPic】來瀏覽的話，可以改成【None(Zip)】。
+        <table class="tab01">
+            <tr>
+                <td>火狐</td>
+                <td>Google chrome</td>
+            </tr>
+            <tr>
+                <td>
+                    <a class="a_download" href="https://addons.mozilla.org/ja/firefox/addon/px-downloader/">Px Downloader(firefox 火狐)</a>
+
+                </td>
+                <td>
+                    <a class="a_download" href="https://chrome.google.com/webstore/detail/px-downloader/bcbibglkpaimhgmoomembjhclhipoack">Px Downloader(google chrome)</a>
+
+                </td>
+            </tr>
+        </table>
+
+
+        <br> 安裝完後是中文的，保存動圖預設是儲存成GIF，如果要用【AeroPic】來瀏覽的話，請選擇【None(Zip)】。
 
         <br>
         <br>
         <br> 對照表：
-
         <br>
         <div style="overflow-x:auto;padding:10px;">
-            <table border="1" style="width:700px;">
+            <table border="1" style="width:700px;width:100%">
                 <tr>
                     <td width="60"></td>
                     <td width="50">畫質</td>
@@ -118,11 +148,10 @@
 
 
 
-    <div class="tit">方法2：使用js腳本</div>
+
     <div class="box">
-
-
-        如果是Microsoft Edge或其他瀏覽器，可以使用這個javascript腳本來下載zip。
+        <div class="tit">方法2：使用js腳本</div>
+        <br> 如果是Microsoft Edge或其他瀏覽器，可以使用這個javascript腳本來下載zip。
         <br> 這個js腳本跟上面的【Px Downloader】同樣都是
         <a href="https://twitter.com/rndomhack">rndomhack（らんだむ）</a>開發的。
         <br>
@@ -156,8 +185,9 @@
 
 
 
-    <div class="tit">將Pixiv動圖轉成GIF</div>
+
     <div class="box">
+        <div class="tit">將Pixiv動圖轉成GIF</div>
 
         <br> 程式內建有將Pixiv動圖轉換成GIF的功能，用AeroPic開啟從Pixiv下載的zip，或已經被解壓縮的zip，程式的右鍵選單就會多出一個【輸出成GIF】的選項。
         <br>

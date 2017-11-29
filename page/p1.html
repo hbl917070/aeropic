@@ -1,9 +1,12 @@
 ﻿<!--讓目前選擇的項目改變顏色-->
 <style type="text/css">
     #top_1 {
-        color: rgb(0, 179, 24);
-        border-bottom: 5px solid rgb(0, 179, 24);
+        color: rgb(77, 243, 255);
+        border-bottom: 5px solid rgb(77, 243, 255);
+        animation: first_top_but 10s;
+        animation-iteration-count: infinite;
     }
+
 </style>
 
 
@@ -11,8 +14,8 @@
 <div class='ddd'>
 
 
-    <div class="tit">簡介</div>
     <div class="box">
+        <div class="tit">簡介</div>
 
         <div style="overflow:auto;">
 
@@ -50,22 +53,6 @@
                         text-align: center;
                     }
                 }
-
-
-                .a_download {
-                    padding: 10px 50px;
-                    border: rgb(50, 170, 230) 2px solid;
-                    color: rgb(50, 170, 230) !important;
-                    transition: all 0.3s;
-                    display: inline-block;
-                    text-decoration: none;
-                }
-
-                .a_download:hover {
-                    border: rgb(80, 249, 255) 2px solid;
-                    color: rgb(80, 249, 255) !important;
-                    transform: scale(1.03) !important;
-                }
             </style>
         </div>
 
@@ -73,8 +60,9 @@
 
     </div>
 
-    <div class="tit">功能演示</div>
+
     <div class="box">
+        <div class="tit">功能演示</div>
 
         <div style="text-align:center;overflow:auto;">
 
@@ -87,6 +75,7 @@
                     .div_demo img {
                         width: 100% !important;
                         float: inherit !important;
+                        margin-top: 10px !important;
                     }
 
                     .div_demo .div_demo_t {
@@ -111,17 +100,19 @@
                     margin: 10px;
                     padding: 5px;
                     overflow: auto;
-                    margin-bottom: 150px;
+                    margin-bottom: 100px;
                 }
 
                 .div_demo img {
                     width: 450px;
                     float: left;
+                    margin-top: 65px;
                 }
 
                 .div_demo .div_demo_t {
                     float: right;
                     width: 400px;
+                    line-height: 24px;
                     /*background:rgb(255, 216, 0);*/
                 }
 
@@ -141,11 +132,11 @@
                 }
 
                 .div_demo h2 {
-                    color: rgb(0, 179, 24) ;
-                    /* border-bottom: 0px rgb(0, 179, 24) solid; */
+                    color: rgb(0, 0, 0);
+                    border-bottom: 1px rgb(0, 0, 0) solid;
                     font-weight: 900;
                     line-height: 40px;
-                    font-size: 40px !important;
+                    font-size: 30px !important;
                     /*background-color:rgba(0, 213, 50, 0.25);*/
                 }
             </style>
@@ -161,19 +152,19 @@
 
             <div class="div_demo div_demo_left">
                 <div class="div_demo_t">
-                    <h2>檢視『EXIF 資訊』</h2>
-                    檢視圖片EXIF資訊，如果圖片有儲存地理位置，可透過 Google Map 開啟。
-                </div>
-                <img src="imgs/home_demo/10.jpg" />
-            </div>
-
-            <div class="div_demo">
-                <div class="div_demo_t">
                     <h2>自定義視窗顏色</h2>
                     可獨立設定視窗顏色與標題列顏色
                 </div>
                 <img src="imgs/home_demo/9.jpg" />
             </div>
+
+            <div class="div_demo ">
+                    <div class="div_demo_t">
+                        <h2>檢視『EXIF 資訊』</h2>
+                        檢視圖片EXIF資訊，有儲存地理位置的圖片，可直接用 Google Map 開啟。
+                    </div>
+                    <img src="imgs/home_demo/10.jpg" />
+                </div>
 
 
             <div class="div_demo div_demo_left">
@@ -189,11 +180,10 @@
 
             <div class="div_demo">
                 <div class="div_demo_t">
-                    <h2>支援多樣格式</h2>
-                    支援格式：
-                    <br>JPG、PNG、GIF、BMP、TIF、ICO、PSD、SVG、APNG、WebP、RAW
-                    <br>使用
-                    <a href="https://magick.codeplex.com/">Magick.NET</a> 解析引擎，據說支援格式多達100種)
+                    <h2>支援多種格式</h2>           
+                    使用
+                    <a href="https://magick.codeplex.com/">Magick.NET</a> 解析引擎，支援格式：
+                    <br>JPG、PNG、GIF、BMP、TIF、ICO、PSD、AI、SVG、APNG、WebP、RAW、PDF、EXE 等...
                 </div>
                 <img src="imgs/home_demo/3.gif" />
             </div>

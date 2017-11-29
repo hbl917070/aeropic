@@ -1,37 +1,43 @@
 ﻿<!--讓目前選擇的項目改變顏色-->
 <style>
     #top_download {
-        color: rgb(0, 179, 24);
-        border-bottom: 5px solid rgb(0, 179, 24);
+        color: rgb(77, 243, 255);
+        border-bottom: 5px solid rgb(77, 243, 255);
+        animation: first_top_but 10s;
+        animation-iteration-count: infinite;
     }
 </style>
 
 
 <div class="ddd">
 
-    <div class="tit">軟體需求</div>
-    <div class="box">
 
-        作業系統：windows7、windows8、windows10
+    <div class="box">
+        <div class="tit">軟體需求</div>
+        作業系統：
+        <br>windows7、windows8、windows10
 
         <br>
         <br>
         <br> 備註：
         <ul>
             <li>
-                只有win7或win10可以使用透明玻璃特效
+                只有 win7 或 win10 可以使用透明玻璃特效
             </li>
             <li>
                 如果無法執行：請安裝
                 <a href="https://www.microsoft.com/zh-tw/download/details.aspx?id=30653"> Microsoft .NET Framework 4.5 </a> ，或更高版本
             </li>
             <li>
-                如果如法順利瀏覽GIF 或 無法開啟大量瀏覽模式：請把IE更新到版本
+                無法 瀏覽GIF 或 無法開啟大量瀏覽模式，請把IE更新到
                 <a href="https://support.microsoft.com/zh-tw/help/18520/download-internet-explorer-11-offline-installer">IE11</a>
             </li>
-
+            <li>
+                要開啟 AI 或 PDF 檔，需要另外安裝
+                <a href="https://www.ghostscript.com/download/gsdnld.html">Ghostscript</a>
+            </li>
         </ul>
-
+        <br>
 
 
     </div>
@@ -42,76 +48,63 @@
 
 
 
-    <div class="tit">載點</div>
+
     <div class="box">
-
-
+        <div class="tit">載點</div>
 
 
         <style>
             .table_download td {
-                padding: 5px;
-                border: rgb(35, 90, 57) solid 0px;
-            }
-
-            .table_download {
-                border: rgb(35, 90, 57) solid 0px;
-            }
-
-            .table_download a {
-                padding: 10px 50px;
-                border: rgb(50, 170, 230) 2px solid;
-                color: rgb(50, 170, 230) !important;
-                transition: all 0.3s;
-                display: inline-block;
-                text-decoration: none;
-            }
-
-            .table_download a:hover {
-                border: rgb(80, 249, 255) 2px solid;
-                color: rgb(80, 249, 255) !important;
-                transform: scale(1.03) !important;
+                text-align: center;
+                padding: 3px 10px;
             }
         </style>
 
 
-        最新版：{{new_version}}
+        目前最新版本：<span style="font-size:30px;">{{new_version}}</span>
         <br>
-        <table class="table_download" border="1">
+        僅提供免安裝，下載後解壓縮即可直接使用
+        <br>
+        <br>
+        <table class="table_download" border="0">
             <tr>
                 <td>載點</td>
                 <td>
-                    <a href="download/AeroPic 2_4_0.zip">直接下載</a>
-                </td>
+                    備用載點
+                      </td>
             </tr>
             <tr>
-                <td> 備用載點</td>
                 <td>
-                    <a href="https://www.dropbox.com/s/pp7lxslphxv9twk/AeroPic%202_4_0.zip?dl=0">Dropbox</a>
+                    <a class="a_download" href="download/AeroPic 2_4_0.zip">直接下載</a>
+                </td>
+                <td>
+                    <a class="a_download" href="https://www.dropbox.com/s/pp7lxslphxv9twk/AeroPic%202_4_0.zip?dl=0">
+                        Dropbox
+                    </a>
                 </td>
             </tr>
         </table>
 
-        <br> 免安裝，下載後解壓縮就能直接用
+        <br> 
 
-
+  
 
     </div>
 
-    <div class="tit">更新曆史</div>
-    <div class="box">
 
+    <div class="box">
+        <div class="tit">更新曆史</div>
         <style>
             .v_title {
                 font-size: 24px;
                 font-weight: 900;
-                color: rgb(0, 179, 24);
+                color: rgb(130, 0, 180);
                 margin-top: 30px;
             }
 
             .v_title_sub {
                 font-size: 14px;
-                color: rgb(0, 179, 24);
+                color: rgb(130, 0, 180);
             }
 
             ul {
