@@ -10,7 +10,7 @@
     #explain_menu_soft {
         /* background-color: rgb(161, 161, 161); */
         /* outline: rgb(0, 165, 39) solid 5px; */
-        border-bottom: 5px solid  rgb(130, 0, 180);
+        border-bottom: 5px solid rgb(130, 0, 180);
         color: rgb(130, 0, 180) !important;
 
     }
@@ -26,13 +26,14 @@
 <div class="ddd">
 
     <style>
-       .box img {
+        .box img {
             margin: auto !important;
             display: block;
         }
+
         ul {
-                margin: 0px;
-            }
+            margin: 0px;
+        }
     </style>
 
 
@@ -46,7 +47,7 @@
                 #div_version .box {
                     /*border: 5px rgb(0, 191, 51) solid;*/
                     background-color: rgb(0, 0, 0);
-                    color: #FFF;
+                    color: #000000;
                 }
 
                 .table,
@@ -66,10 +67,10 @@
                     line-height: 70px;
                 }
 
-               .a_download{
-                   font-size:18px;
-                   margin-bottom: 20px;
-               }
+                .a_download {
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                }
             </style>
 
 
@@ -78,7 +79,7 @@
                 需要更新
 
                 <br>
-                <a href="index.html#/download"  class="a_download">(下載 AeroPic {{new_version}})</a>
+                <a href="index.html#/download" class="a_download">(下載 AeroPic {{new_version}})</a>
 
             </div>
 
@@ -106,14 +107,48 @@
     <div class="box">
         <div class="tit">說明</div>
 
+        <style>
+            .table_123,
+            .table_123 td {
+                border-color: rgba(160, 110, 145, 0.8);
+            }
+
+            .table_123 td {
+                padding: 5px;
+            }
+        </style>
+
+
         AeroPic 是一款圖片檢視軟體，可以將圖片或資料夾拖曳至程式中開啟，或設定成系統預設開啟圖片的程式（
         <a href="#/explain_edit_default">設定教學</a>）。
 
         <br>
-        <br> 程式開啟圖片後，會自動讀取該資料夾底下所有的圖片，供快速切換瀏覽。支援格式：
+        <br> 程式開啟圖片後，會自動讀取該資料夾底下所有的圖片，供快速切換瀏覽。支援格式包含：
+        <table border="1" class="table_123">
+            <tr>
+                <td>常見格式</td>
+                <td>
+                    JPG、PNG、APNG、GIF、BMP、TIF、ICO、WebP、PSD、PSB、PPM、TGA、PCX、PGM、PBM
+                </td>
+            </tr>
+            <tr>
+                <td>相機 RAW</td>
+                <td>RAF、CRW、CR2、MRW、NEF、X3F、PEF、DNG、ORF、RW2、ARW、ERF、SR2、SRW</td>
+            </tr>
+            <tr>
+                <td>向量</td>
+                <td>PDF、SVG、AI、WMF、EMF</td>
+            </tr>
+            <tr>
+                <td>特殊</td>
+                <td>EXE、LNK、Pixiv動圖
+                    <a href="#/explain_pixiv">(下載教學)</a>
+                </td>
+            </tr>
+        </table>
 
-        <br>JPG、PNG、GIF、BMP、TIF、APNG、SVG、PSD、webP、RAW、Pixiv動圖（
-        <a href="#/explain_pixiv">下載教學</a>）
+
+      
 
         <br>
         <br> 滑鼠滾輪捲動可控制圖片縮放
@@ -122,7 +157,7 @@
         <br>圖片大於視窗時，拖曳=移動圖片位置
 
         <br>
-        <br> 
+        <br>
         <br> 備註：
         <ul>
             <li>
@@ -218,6 +253,18 @@
             <tr>
                 <td>縮小圖片</td>
                 <td> 右Ctrl 或 -</td>
+            </tr>
+            <tr>
+                <td>旋轉</td>
+                <td> R </td>
+            </tr>
+            <tr>
+                <td>垂直鏡像</td>
+                <td> V </td>
+            </tr>
+            <tr>
+                <td>水平鏡像</td>
+                <td> H </td>
             </tr>
             <tr>
                 <td>P網動圖-下一幀</td>
