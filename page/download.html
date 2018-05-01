@@ -25,11 +25,11 @@
                 只有 win7 或 win10 可以使用透明玻璃特效
             </li>
             <li>
-                如果無法執行：請安裝
+                如果「無法執行」請安裝
                 <a href="https://www.microsoft.com/zh-tw/download/details.aspx?id=30653"> Microsoft .NET Framework 4.5 </a> ，或更高版本
             </li>
             <li>
-                無法 瀏覽GIF 或 無法開啟大量瀏覽模式，請把IE更新到
+                「無法瀏覽GIF」或「無法開啟大量瀏覽模式」，請把IE更新到
                 <a href="https://support.microsoft.com/zh-tw/help/18520/download-internet-explorer-11-offline-installer">IE11</a>
             </li>
             <li>
@@ -63,10 +63,20 @@
 
         目前最新版本：
         <span style="font-size:30px;">{{new_version}}</span>
-        <br> 僅提供免安裝，下載後解壓縮即可直接使用
+        <br> 程式為免安裝軟體，下載後解壓縮即可直接使用
         <br>
         <br>
-        <table class="table_download" border="0">
+
+        <a class="a_download" href="download/AeroPic 2_5_0.zip">下載</a>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="https://github.com/hbl917070/aeropic/tree/master/download" target="_block"> 下載舊版</a>
+        <br>
+
+        <!-- <table class="table_download" border="0">
             <tr>
                 <td>載點</td>
                 <td>
@@ -75,15 +85,15 @@
             </tr>
             <tr>
                 <td>
-                    <a class="a_download" href="download/AeroPic 2_4_1.zip">直接下載</a>
+                   
                 </td>
                 <td>
-                    <a class="a_download" href="https://www.dropbox.com/s/q3t6l78tk794wtu/AeroPic%202_4_1.zip?dl=0">
+                    <a class="a_download" href="https://www.dropbox.com/s/q3t6l78tk794wtu/AeroPic%202_5_0.zip?dl=0">
                         Dropbox
                     </a>
                 </td>
             </tr>
-        </table>
+        </table> -->
 
         <br>
 
@@ -113,6 +123,35 @@
             }
         </style>
 
+        <div class="v_title">
+            2.5.0
+            <a class="v_title_sub">(2018/04/24)</a>
+        </div>
+        <ul>
+
+
+            <li>優化：重新繪製界面圖示</li>
+            <li>新增：『功能選單』可在隱藏工具列或隱藏某些按鈕的情況下操作</li>
+            <li>新增：『解析動圖』解析GIF每一幀</li>
+            <li>新增：快速切換上下一個資料夾，用於看漫畫快速切換不同集數</li>
+            <li>新增：『快速拖曳』可拖曳至其他程式開啟，或拖曳至瀏覽器上傳圖片</li>
+            <li>新增：對HEIF、DDS圖片的支援</li>
+            <li>新增：自定圖片排序方式，與資料夾排序方式</li>
+            <li>新增：把圖片複製成base64格式</li>
+            <li>新增：「大量瀏覽模式」會自動判斷沒有副檔名的檔案是否為圖片</li>
+            <li style="margin-bottom: 10px">新增：可解析任何非圖片的檔案，在檔案總管顯示的圖示</li>
+
+            <li>修正：某些電腦程式視窗會錯位</li>
+            <li>修正：把檔案拖進視窗時，視窗跑至最上層的問題</li>
+            <li>修正：搜圖 sauceNAO 無法使用的BUG</li>
+            <li>修正：在沒有正確附檔名情況下，webP格式誤判成AVI格式</li>
+            <li style="margin-bottom: 10px">修正：開啟圖片後刪除整個資料夾導致程式閃退</li>
+
+            <li>修改：自動記錄『顯示或隱藏工具列』與『顯示或隱藏EXIF資訊』的操作</li>
+            <li>修改：在『大量瀏覽模式』下允許隱藏工具列</li>
+        </ul>
+
+
 
         <div class="v_title">
             2.4.1
@@ -120,7 +159,8 @@
         </div>
         <ul>
             <li>新增：多種RAW格式的支援性：RAF、CRW、CR2、MRW、NEF、X3F、PEF、DNG、ORF、RW2、ARW、ERF、SR2、SRW</li>
-            <li>優化：RAW的開啟速度(改用<a href="https://www.cybercom.net/~dcoffin/dcraw/">DCRAW</a>解析引擎)</li>
+            <li>優化：加快RAW圖片的開啟速度(改用
+                <a href="https://www.cybercom.net/~dcoffin/dcraw/">DCRAW</a>解析引擎)</li>
             <li>修正：用大量瀏覽模式開啟 exe 或 lnk 會無法顯示的問題</li>
             <li>修正：網路路徑無法使用大量瀏覽模式的問題</li>
             <li>修正：隱藏工具列後視窗背景顏色異常的問題</li>

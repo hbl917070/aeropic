@@ -6,7 +6,6 @@
         animation: first_top_but 10s;
         animation-iteration-count: infinite;
     }
-
 </style>
 
 
@@ -23,12 +22,13 @@
 
             <div class="div_t02" style="font-size:24px;width :450px;margin-left:300px;margin-top:10px;">
 
-                Aero 是 Windows 7 作業系統採用的一種透明玻璃界面。
+                AERO Glass 是一種用於程式視窗界面的透明毛玻璃特效，最早出現於Vista系統，在win7系統大受歡迎。
+
                 <br>
                 <br>
 
 
-                <b>AeroPic 圖片檢視器 </b>採用100%的透明玻璃界面，可用來取代windows內建的圖片檢視器
+                <b>AeroPic 圖片檢視器 </b>採用100%覆蓋率的透明毛玻璃界面，輕巧免安裝，可用來取代windows內建的圖片檢視器。
 
                 <br>
                 <br>
@@ -139,6 +139,11 @@
                     font-size: 30px !important;
                     /*background-color:rgba(0, 213, 50, 0.25);*/
                 }
+
+                .div_demo_t ul li {
+                    margin-bottom: 15px;
+
+                }
             </style>
 
             <div class="div_demo">
@@ -159,20 +164,39 @@
             </div>
 
             <div class="div_demo ">
-                    <div class="div_demo_t">
-                        <h2>檢視『EXIF 資訊』</h2>
-                        檢視圖片EXIF資訊，有儲存地理位置的圖片，可直接用 Google Map 開啟。
-                    </div>
-                    <img src="imgs/home_demo/10.jpg" />
+                <div class="div_demo_t">
+                    <h2>檢視『EXIF 資訊』</h2>
+                    檢視圖片EXIF資訊，有儲存地理位置的圖片，可直接用 Google Map 開啟。
                 </div>
+                <img src="imgs/home_demo/10.jpg" />
+            </div>
 
 
             <div class="div_demo div_demo_left">
                 <div class="div_demo_t">
                     <h2>大量瀏覽模式</h2>
-                    一次瀏覽大量圖片
-                    <br> 專門為
-                    <b>瀏覽漫畫</b>設計的垂直捲動模式
+                    <div style="text-align:left;">
+
+
+                        <ul>
+                            <li>
+                                專門用來看
+                                <b>漫畫</b>的瀏覽模式，
+                                <br> 一次載入資料夾內所有圖片，
+                                <br> 可像瀏覽器一樣垂直捲動
+
+                            </li>
+                            <li>
+                                快速切換上下一個資料夾(上下一集)
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+
+
+
                 </div>
                 <img src="imgs/home_demo/2.gif" />
             </div>
@@ -180,12 +204,15 @@
 
             <div class="div_demo">
                 <div class="div_demo_t">
-                    <h2>支援多種格式</h2>           
-                    使用
-                    <a href="https://magick.codeplex.com/">Magick.NET</a> 解析引擎，支援格式：
-                    <br>JPG、PNG、GIF、BMP、TIF、ICO、PSD、AI、SVG、APNG、WebP、RAW、PDF、EXE 等...
+                    <h2>支援多種格式</h2>
+                    <div style="text-align: left;">
+
+                       除了支援常見的 JPG、PNG、GIF、BMP格式外， 使用
+                        <a href="https://www.imagemagick.org/script/index.php">Magick</a> 解析引擎，亦支援多種特殊格式：
+                        <br>TIF、ICO、PSD、AI、SVG、APNG、WebP、RAW、PDF、EXE、HEIC 等...
+                    </div>
                 </div>
-                <img src="imgs/home_demo/3.gif" />
+                <img src="imgs/home_demo/3.jpg" />
             </div>
 
 
@@ -193,14 +220,14 @@
                 <div class="div_demo_t">
                     <h2>直接播放Pixiv動態圖</h2>
                     <div style="text-align:left;">
-                        <ol>
+                        <ul>
                             <li>
                                 直接播放Pixiv動圖的zip壓縮檔 or 已解壓縮的Pixiv動圖資料夾
                             </li>
                             <li>
                                 將Pixiv動圖輸出成GIF格式
                             </li>
-                        </ol>
+                        </ul>
 
 
                     </div>
@@ -215,14 +242,18 @@
 
                     <div style="text-align:left;">
 
-                        直接對本機端的圖片進行線上搜圖，支援：
-
+                        不用將圖片拖到瀏覽器上面就可直接進行線上搜圖，支援：
 
                         <ul>
-                            <li>Google搜圖</li>
-                            <li>SauceNAO搜圖</li>
+
                             <li>
-                                <a href="http://iqdb.org/">Multi-service image search</a>
+                                <a href="https://www.google.com.tw/imghp">Google搜圖</a>
+                            </li>
+                            <li>
+                                <a href="https://saucenao.com/">SauceNAO搜圖</a>
+                            </li>
+                            <li>
+                                <a href="http://iqdb.org/">IQDB</a>
                             </li>
                         </ul>
                     </div>
@@ -235,7 +266,7 @@
 
             <div class="div_demo div_demo_left">
                 <div class="div_demo_t">
-                    <h2>快速複製</h2>
+                    <h2>多種複製方式</h2>
                     <div style="text-align:left;">
                         <ul>
                             <li>
@@ -253,21 +284,24 @@
                             <li>
                                 複製PNG（可保留透明底）
                             </li>
+                            <li>
+                                複製base64（用於網頁設計）
+                            </li>
                         </ul>
                     </div>
 
                 </div>
-                <img src="imgs/home_demo/6.gif" />
+                <img src="imgs/home_demo/6.jpg" />
             </div>
 
 
             <div class="div_demo">
                 <div class="div_demo_t">
-                    <h2>用外部程式開啟</h2>
+                    <h2>用其他程式開啟</h2>
                     <div style="text-align:left;">
                         <ul>
                             <li>
-                                開啟圖片原生右鍵選單
+                                開啟 Windows系統 原生右鍵選單
                             </li>
 
                             <li>
@@ -279,8 +313,12 @@
                             <li>
                                 設定成桌布
                             </li>
-
-                            <li> 使用其他第三方軟體開啟圖片（名單可自定）</li>
+                            <li>
+                                使用 Windows系統 原生的APP選擇器開啟
+                            </li>
+                            <li>
+                                使用其他第三方軟體開啟圖片（名單可自定）
+                            </li>
                         </ul>
 
                     </div>
@@ -295,6 +333,28 @@
                     將視窗鎖定在最上層後，AeroPic就不會被其他視窗蓋過去
                 </div>
                 <img src="imgs/home_demo/8.gif" />
+            </div>
+
+
+            <div class="div_demo">
+                <div class="div_demo_t">
+                    <h2>快速拖曳</h2>
+                    <div style="text-align:left;">
+
+
+                        <ul>
+                            <li>
+                                將圖片拖曳到其他程式開啟
+                            </li>
+
+                            <li>
+                                將圖片拖曳到瀏覽器上傳
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <img src="imgs/home_demo/11.gif" />
             </div>
 
 
