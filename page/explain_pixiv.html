@@ -10,7 +10,7 @@
     #explain_menu_pixiv {
         /* background-color: rgb(161, 161, 161); */
         /* outline: rgb(0, 165, 39) solid 5px; */
-        border-bottom: 5px solid  rgb(130, 0, 180);
+        border-bottom: 5px solid rgb(130, 0, 180);
         color: rgb(130, 0, 180) !important;
     }
 </style>
@@ -42,51 +42,75 @@
 
 
     <div class="box">
-        <div class="tit">方法1：使用瀏覽器插件</div>
+        <div class="tit">下載 pixiv動圖</div>
         <br>
-        
-        
-<style>
-.tab01{
-    margin: 20px 0px;
-}
-.tab01 td{
-padding: 3px 10px;
-text-align: center;
-}
 
-</style>
 
-        
-        要下載
-        <b>
-            <a href="https://www.pixiv.net/search.php?word=%E3%81%91%E3%82%82%E3%81%AE%E3%83%95%E3%83%AC%E3%83%B3%E3%82%BA&order=date_d&type=ugoira">Pixiv</a>動圖</b> 可以使用【
+        <style>
+            .tab01 {
+                margin: 20px 0px;
+            }
+
+            .tab01 td {
+                padding: 3px 10px;
+                text-align: center;
+            }
+
+            .tab01 .a_download {
+                height: 65px;
+                line-height: 30px;
+            }
+        </style>
+
+
+
+        <b>「
+            <a href="https://www.pixiv.net/search.php?word=%E3%81%91%E3%82%82%E3%81%AE%E3%83%95%E3%83%AC%E3%83%B3%E3%82%BA&order=date_d&type=ugoira">
+                Pixiv
+            </a>動圖」
+        </b>
+        並不是一般的GIF圖片所以無法直接下載，必須使用 「
         <a target="_blank" href="https://rndomhack.com/2016/01/15/px-downloader/">Px Downloader</a>
-        】這個瀏覽器附加原件
+        」這個瀏覽器附加原件，才能把pixiv動圖下載到電腦
         <br>
-        <br> 裡面是日文，懶得點進去看的話就直接下載：
+        <br>
+        <br> Px Downloader安裝：
 
         <table class="tab01">
-            <tr>
-                <td>火狐</td>
-                <td>Google chrome</td>
-            </tr>
+
             <tr>
                 <td>
-                    <a class="a_download" href="https://addons.mozilla.org/ja/firefox/addon/px-downloader/">Px Downloader(firefox 火狐)</a>
+                    <a class="a_download" href="https://addons.mozilla.org/ja/firefox/addon/px-downloader/">
+                        Px Downloader
+                        <br>(Firefox 火狐)
+                    </a>
 
                 </td>
                 <td>
-                    <a class="a_download" href="https://chrome.google.com/webstore/detail/px-downloader/bcbibglkpaimhgmoomembjhclhipoack">Px Downloader(google chrome)</a>
+                    <a class="a_download" href="https://chrome.google.com/webstore/detail/px-downloader/bcbibglkpaimhgmoomembjhclhipoack">
+                        Px Downloader
+                        <br>(Google Chrome)
+                    </a>
 
                 </td>
             </tr>
         </table>
 
 
-        <br> 安裝完後是中文的，保存動圖預設是儲存成GIF，如果要用【AeroPic】來瀏覽的話，請選擇【None(Zip)】。
+        <br> 安裝完後，標題的右下方會多出一個按鈕，點了就會下載
+        <br>
+        <img src="imgs/download_pixiv/1-2.jpg" />
 
         <br>
+        <br> Px Downloader 預設是把下載的動圖儲存成GIF格式，GIF除了畫質很差外，下載速度也很慢， 建議把「動圖轉換模式」改成「None(Zip)」，AeroPic可以直接播放從pixiv下載下來的zip壓縮檔，或是把壓縮檔解開成資料夾亦可播放。
+
+
+        <br>
+        <img src="imgs/download_pixiv/1-1.jpg" />
+
+        <br>
+
+
         <br>
         <br> 對照表：
         <br>
@@ -103,45 +127,36 @@ text-align: center;
                     <td>Zip</td>
                     <td>高</td>
                     <td>小</td>
-                    <td>0延遲</td>
-                    <td>用AeroPic可以直接播放，並且可用AeroPic內建的功能直接輸出成GIF圖片</td>
+                    <td>零延遲</td>
+                    <td>AeroPic可直接瀏覽，
+                        <br>且AeroPic內建有把pixiv動圖轉換成GIF的功能 </td>
                 </tr>
                 <tr>
                     <td>GIF</td>
                     <td>低</td>
                     <td>大</td>
                     <td>很慢</td>
-                    <td>普及性高，可張貼於各個論壇</td>
+                    <td>普及性高，常見的社群網站與通訊軟體皆支援</td>
                 </tr>
                 <tr>
                     <td>APNG</td>
                     <td>高</td>
                     <td>大到嚇死人</td>
                     <td>普通</td>
-                    <td>普及性低，某些舊版瀏覽器無法播放，且多數論壇都不支援</td>
+                    <td>普及性低，常見社群網站與通訊軟體皆無法使用</td>
                 </tr>
                 <tr>
                     <td>WebP</td>
                     <td>高</td>
                     <td>非常大</td>
                     <td>快</td>
-                    <td>普及性低，只有chrome跟火狐可以播放，且多數論壇都不支援</td>
+                    <td>普及性低，常見社群網站與通訊軟體皆無法使用</td>
                 </tr>
             </table>
         </div>
 
         <br>
         <br>
-        <br> 截圖：
-        <br>
-        <img src="imgs/download_pixiv/1-1.jpg" />
-
-        <br>
-        <br>
-        <br> 安裝完後，標題的右下方會多出一個按鈕，點了就會下載
-        <br>
-        <img src="imgs/download_pixiv/1-2.jpg" />
-
 
     </div>
 
@@ -149,7 +164,7 @@ text-align: center;
 
 
 
-    <div class="box">
+    <!-- <div class="box">
         <div class="tit">方法2：使用js腳本</div>
         <br> 如果是Microsoft Edge或其他瀏覽器，可以使用這個javascript腳本來下載zip。
         <br> 這個js腳本跟上面的【Px Downloader】同樣都是
@@ -181,7 +196,7 @@ text-align: center;
         <img src="imgs/download_pixiv/2-1.jpg" />
 
 
-    </div>
+    </div> -->
 
 
 

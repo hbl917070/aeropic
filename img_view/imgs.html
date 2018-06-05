@@ -1,6 +1,7 @@
 ﻿<!doctype html>
 <!-- saved from url=(0014)about:internet -->
 <html>
+
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -25,6 +26,7 @@ user-select: none !important;
 
 
 /*背景顏色*/
+
 #q {
 background-color: rgb(30, 30, 30);
 position: fixed;
@@ -50,6 +52,7 @@ background-color: #000000;
 }
 
 /*選擇欄位數量的框*/
+
 .col_table {
 color: #fff;
 background-color: rgba(94, 94, 94, 0.50);
@@ -96,6 +99,7 @@ white-space: nowrap;
 }
 
 /*右上角的超連結*/
+
 .tit {
 position: relative;
 }
@@ -145,6 +149,7 @@ pointer-events: none;
 }
 
 /*捲動度率的DIV*/
+
 #div_wheel {
 position: fixed;
 background: rgba(10, 10, 10, 0.55);
@@ -180,7 +185,7 @@ height: 35px;
 background-color: rgba(0, 0, 0, 0.30);
 color: #FFF;
 outline: solid 1px rgba(255, 255, 255, 0.4);
-border:none;
+border: none;
 margin: 5px;
 padding: 3px;
 font-size: 16px !important;
@@ -200,13 +205,13 @@ width: 80px;
 #prev2:hover,
 #next2:hover {
 /*background-color: rgba(75, 200, 255, 0.40);*/
-background-color: rgba(75,200,255,0.1) ;
-outline: solid 1px rgba(75,200,255,0.4) ;
+background-color: rgba(75, 200, 255, 0.1);
+outline: solid 1px rgba(75, 200, 255, 0.4);
 }
 
 #title button:active {
-             
-outline: solid 1px rgba(0,177,255,1) !important;
+
+outline: solid 1px rgba(0, 177, 255, 1) !important;
 /*transform: translateY(2px);
 background-color: rgba(66, 166, 112, 1) !important;
 outline: none;*/
@@ -283,6 +288,7 @@ user-select: none !important;
 }
 
 /*放所有圖片的list*/
+
 #div_imgs {
 margin-top: 0px;
 padding-left: 15px;
@@ -292,6 +298,7 @@ overflow: auto;
 }
 
 /*圖片容器的外層*/
+
 .sp_box {
 display: block;
 text-align: center;
@@ -301,6 +308,7 @@ transition: width 0.4s !important;
 }
 
 /*圖片容器*/
+
 .sp {
 outline: solid 1px rgba(255, 255, 255, 0.3);
 font-size: 15px !important;
@@ -312,12 +320,14 @@ margin-right: 15px;
 }
 
 /*圖片的上方列*/
+
 .sp .tit {
 height: 40px;
 color: #fff;
 }
 
 /*圖片編號*/
+
 .sp .tit .no {
 height: 40px;
 margin: 0px 10px;
@@ -332,10 +342,11 @@ display: block;
 .sp .tit .wh {
 height: 20px;
 text-align: left;
-overflow:hidden;
+overflow: hidden;
 }
 
 /*編號右邊的區塊*/
+
 .sp .tit .le {
 background-color: rgba(0, 0, 0, 0);
 display: block;
@@ -366,7 +377,8 @@ left: 0px;
 margin: auto;
 max-width: 100%;
 max-height: 100%;
-pointer-events: none !important; /*無法點擊*/
+pointer-events: none !important;
+/*無法點擊*/
 }
 </style>
 
@@ -384,7 +396,9 @@ max-width: 100%;
 .w1 .sp img {
 position: static !important;
 }
+
 /*--------------*/
+
 .w2 .sp_box {
 width: 50%;
 }
@@ -392,7 +406,9 @@ width: 50%;
 .w2 .sp .cont {
 height: 50vw;
 }
+
 /*--------------*/
+
 .w3 .sp_box {
 width: 33.33%;
 }
@@ -400,7 +416,9 @@ width: 33.33%;
 .w3 .sp .cont {
 height: 33vw;
 }
+
 /*--------------*/
+
 .w4 .sp_box {
 width: 25%;
 }
@@ -408,7 +426,9 @@ width: 25%;
 .w4 .sp .cont {
 height: 25vw;
 }
+
 /*--------------*/
+
 .w5 .sp_box {
 width: 20%;
 }
@@ -741,7 +761,7 @@ if (get_E_Id('select_page').options.length * int_number != imgs.length) {
 get_E_Id('select_page').options.length = 0;//清除
 for (var i = 0; true; i++) {
 
-var text = (i + 1) + ": " +  (i * int_number + 1) + "~" + ((i + 1) * int_number);
+var text = (i + 1) + ": " + (i * int_number + 1) + "~" + ((i + 1) * int_number);
 var varItem = new Option(text, i);
 varItem.height = "40px";
 get_E_Id("select_page").options.add(varItem);
@@ -970,7 +990,7 @@ right: 15px;
 width: calc( 50% - 15px);
 height: 80px;
 z-index: 200;
-background-color: rgba(0,0,0,0.4);
+background-color: rgba(0, 0, 0, 0.4);
 /*box-shadow: 0px 0px 16px 1px;*/
 opacity: 0;
 outline: 0;
@@ -985,7 +1005,7 @@ left: 15px;
 /*因為原本就已經有用變形，所以要另外覆寫一次*/
 /*transform: translateY(3px);
 background-color: rgba(66, 166, 112, 1) !important;*/
-outline: solid 1px rgba(0,177,255,0.4) !important;
+outline: solid 1px rgba(0, 177, 255, 0.4) !important;
 }
 
 #but_r:hover,
@@ -1001,7 +1021,9 @@ opacity: 1;
 body.theme_b {
 scrollbar-arrow-color: rgb(119, 119, 119) !important;
 }
+
 /*圖片框*/
+
 .theme_b .sp {
 outline: solid 1px rgba(0, 0, 0, 0.3);
 }
@@ -1012,6 +1034,7 @@ color: rgba(0, 0, 0, 0.4) !important;
 }
 
 /*功能選單*/
+
 .theme_b .col_table {
 background-color: rgba(255, 255, 255, 0.4) !important;
 box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.5);
@@ -1034,12 +1057,14 @@ background-color: rgba(0, 160, 33, 0.5) !important;
 }
 
 /*右上角換頁的選單*/
+
 .theme_b #title {
 background-color: rgba(255, 255, 255, 0.4) !important;
 box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.5);
 }
 
 /*hover*/
+
 .theme_b #title button:hover,
 .theme_b #title select:hover,
 .theme_b #prev2:hover,
@@ -1048,6 +1073,7 @@ background-color: rgba(0, 111, 160, 0.68);
 }
 
 /*hover*/
+
 .theme_b #title button:active,
 .theme_b #title select:active,
 .theme_b #prev2:active,
@@ -1586,6 +1612,8 @@ bool_width = true;
 
 fun_imgSizeChange();
 
+
+
 setTimeout(function () {
 obj_img.style.left = (obj_img_content.offsetWidth - obj_img.offsetWidth) / 2 + "px";
 obj_img.style.top = (obj_img_content.offsetHeight - obj_img.offsetHeight) / 2 + "px";
@@ -1670,24 +1698,24 @@ window.document.documentElement.scrollTop -= 50;*/
 
 $("html").stop(true, true);
 $('html').animate({
-scrollTop: window.document.documentElement.scrollTop - 200
-}, 100, "linear", function () { });
+scrollTop: window.document.documentElement.scrollTop - 250
+}, 150, "linear", function () { });
 
 setTimeout(function () {
 fun_控制捲動();
-}, 101);
+}, 151);
 return;
 
 } else if (key_654 === "down") {
 
 $("html").stop(true, true);
 $('html').animate({
-scrollTop: window.document.documentElement.scrollTop + 200
-}, 100, "linear", function () { });
+scrollTop: window.document.documentElement.scrollTop + 250
+}, 150, "linear", function () { });
 
 setTimeout(function () {
 fun_控制捲動();
-}, 101);
+}, 151);
 return;
 }
 
@@ -1851,10 +1879,13 @@ fun_判斷是否需要換頁();
 
 img_size = fun_getImgSize(get_E_Id("img_" + img_sel));
 get_E_Id("img_open_url").href = urls[img_sel];
-get_E_Id("img_img").src = urls[img_sel];
-fun_100scale();
-fun_imgTitle();
 
+
+fun_imgTitle();
+setTimeout(function () {
+fun_100scale();
+get_E_Id("img_img").src = urls[img_sel];
+}, 30);
 fun_捲動到目前圖片的位置();
 }
 
@@ -1871,10 +1902,14 @@ fun_判斷是否需要換頁();
 
 img_size = fun_getImgSize(get_E_Id("img_" + img_sel));
 get_E_Id("img_open_url").href = urls[img_sel];
-get_E_Id("img_img").src = urls[img_sel];
-fun_100scale();
+
+
 fun_imgTitle();
 
+setTimeout(function () {
+fun_100scale();
+get_E_Id("img_img").src = urls[img_sel];
+}, 30);
 fun_捲動到目前圖片的位置();
 }
 
@@ -2217,28 +2252,28 @@ float: right;
 #bottom #next2 {
 height: 100%;
 width: 50%;
-background-color: rgba(0, 0, 0, 0.4);
+
 color: #FFF;
 font-size: 50px !important;
 border: none;
-outline: 1px solid rgba(255, 255, 255, 0.4);
-opacity:0.2;
+
+background-color: rgba(0, 0, 0, 0);
 }
 
 #bottom #prev2:hover,
 #bottom #next2:hover {
 /*background-color: rgba(75, 200, 255, 0.40);*/
-opacity: 1;
+background-color: rgba(0, 0, 0, 0.4);
+outline: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 button,
-.tab td {
-}
+.tab td {}
 
 button:active,
 .tab td:active {
 opacity: 1;
-outline: solid 1px rgba(0,177,255,0.4) !important;
+outline: solid 1px rgba(0, 177, 255, 0.4) !important;
 /*transform: translateY(2px);
 background-color: rgba(66, 166, 112, 1) !important;
 outline: none;*/
