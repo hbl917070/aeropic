@@ -1901,6 +1901,16 @@ fun_imgNext();
 e.preventDefault();
 }
 
+} else {//沒有開啟檢視器
+//切換上下頁
+if (currKey == 37) {
+fun_上一頁();
+e.preventDefault();               
+}
+if (currKey == 39) {
+fun_下一頁();
+e.preventDefault();
+}
 }
 
 }
@@ -1940,14 +1950,7 @@ if (currKey >= 49 && currKey <= 53) {//上面的鍵盤，49 = 1
 fun_col(currKey - 48, 'r' + (currKey - 48));
 }
 
-//切換上下頁
-if (currKey === 37) {
-fun_上一頁();
-e.preventDefault();
-} else if (currKey === 39) {
-fun_下一頁();
-e.preventDefault();
-}
+
 }
 
 }
