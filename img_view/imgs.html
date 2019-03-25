@@ -7,10 +7,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <title>大量瀏覽模式</title>
 
-
-
-
-
 <script>
 
 ///
@@ -1153,7 +1149,7 @@ background-color: rgba(255, 255, 255, 0.4);
 position: fixed;
 bottom: 15px;
 right: 15px;
-width: calc( 50% - 15px);
+width: calc(50% - 15px);
 height: 80px;
 z-index: 200;
 background-color: rgba(0, 0, 0, 0.4);
@@ -2501,7 +2497,10 @@ if (urls.length > 0) {
 
 //var time = new Date();
 
+setTimeout(function() {
 fun_產生圖片();
+}, 100);
+
 
 /*var int_毫秒 = (new Date()).getTime() - time.getTime();
 var s_輸出時間差 = (int_毫秒 / 1000) + "秒";
