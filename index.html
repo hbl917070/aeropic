@@ -5,7 +5,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>AeroPic</title>
+    <title>TiefSee</title>
 
     <link rel="Shortcut Icon" type="image/x-icon" href="imgs/logo.png" />
     <meta name="Description" content="TiefSee(舊名 AeroPic)，輕巧免安裝的看圖軟體，可取代windows內建的圖片檢視器" />
@@ -301,13 +301,13 @@
             var app = angular.module('routingDemoApp', ['ngRoute'])
                 .config(['$routeProvider', function ($routeProvider) {
                     $routeProvider
-                        .when('/', { templateUrl: 'page/p1.html', controller: 'LoadedCtrl', title: 'AeroPic 圖片檢視器 - 首頁' })//載入網址
-                        .when('/download', { templateUrl: 'page/download.html', controller: 'LoadedCtrl', title: 'AeroPic 下載' })
-                        .when('/explain_soft', { templateUrl: 'page/explain_soft.html', controller: 'LoadedCtrl', title: 'AeroPic 使用說明' })
-                        .when('/explain_soft/:mes', { templateUrl: 'page/explain_soft.html', controller: 'VersionCtrl', title: 'AeroPic 使用說明' })
-                        .when('/explain_pixiv', { templateUrl: 'page/explain_pixiv.html', controller: 'LoadedCtrl', title: 'AeroPic 下載Pixiv動圖教學' })
-                        .when('/explain_edit_default', { templateUrl: 'page/explain_edit_default.html', controller: 'LoadedCtrl', title: 'AeroPic 修改為預設開啟程式' })
-                        .when('/author', { templateUrl: 'page/author.html', controller: 'LoadedCtrl', title: 'AeroPic 意見回饋' })
+                        .when('/', { templateUrl: 'page/p1.html', controller: 'LoadedCtrl', title: 'TiefSee 圖片檢視器 - 首頁' })//載入網址
+                        .when('/download', { templateUrl: 'page/download.html', controller: 'LoadedCtrl', title: 'TiefSee 下載' })
+                        .when('/explain_soft', { templateUrl: 'page/explain_soft.html', controller: 'LoadedCtrl', title: 'TiefSee 使用說明' })
+                        .when('/explain_soft/:mes', { templateUrl: 'page/explain_soft.html', controller: 'VersionCtrl', title: 'TiefSee 使用說明' })
+                        .when('/explain_pixiv', { templateUrl: 'page/explain_pixiv.html', controller: 'LoadedCtrl', title: 'TiefSee 下載Pixiv動圖教學' })
+                        .when('/explain_edit_default', { templateUrl: 'page/explain_edit_default.html', controller: 'LoadedCtrl', title: 'TiefSee 修改為預設開啟程式' })
+                        .when('/author', { templateUrl: 'page/author.html', controller: 'LoadedCtrl', title: 'TiefSee 意見回饋' })
                         //.when('/printers', { template: '這是打印機頁面' })//印出字串
                         .otherwise({ redirectTo: '/' });//其他
                 }]);
