@@ -1,0 +1,507 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-tw">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>TiefSee</title>
+
+    <link rel="Shortcut Icon" type="image/x-icon" href="imgs/logo.png" />
+    <meta name="Description" content="TiefSee(舊名 AeroPic)，輕巧免安裝的看圖軟體，可取代windows內建的圖片檢視器" />
+    <meta name="KeyWords" content="TiefSee,AeroPic,aero,windows,hbl917070,深海異音,圖片檢視,看圖軟體,秀圖軟體,相片檢視" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+
+
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+
+
+    <style>
+        html,
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-family: "微軟正黑體";
+            font-size: 18px;
+
+        }
+
+        html {
+            background-color: rgb(206, 206, 206);
+            background-image: url(imgs/bac.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .top {
+            /*box-shadow: 0px 0px 8px rgba(0,0,0,0.8);*/
+            background-color: rgba(0, 0, 0, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            /*height: 50px;*/
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            /*min-width: 800px;*/
+            overflow-y: auto;
+            overflow-y: hidden;
+        }
+
+        .top a {
+            font-size: 26px;
+            color: #FFF;
+            line-height: 50px;
+            margin-right: 20px;
+            height: 50px;
+            display: block;
+            float: left;
+            padding: 0px 20px;
+            text-decoration: none;
+        }
+
+        .top table,
+        .top tr,
+        .top td {
+            border: none;
+            margin: 0px;
+            padding: 0px;
+            border-collapse: collapse;
+        }
+
+        .top table {
+            width: 800px;
+        }
+
+        .top a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            /* transform: scale(1.1); */
+        }
+
+        .top a:active {
+             transform: scale(1.02) translateY(3px); 
+        }
+
+        .top .logo {}
+
+        .top .logo img {
+            width: 44px;
+            height: 44px;
+            margin: 3px;
+            float: left;
+        }
+
+        .top .logo t {
+            font-size: 30px;
+            color: #FFF;
+            line-height: 50px;
+        }
+
+
+        @keyframes first_top_but {
+            0% {
+                color: rgb(77, 243, 255);
+                border-bottom: 5px solid rgb(77, 243, 255);
+            }
+
+            50% {
+                color: rgb(77, 255, 92);
+                border-bottom: 5px solid rgb(77, 255, 92);
+            }
+
+            100% {
+                color: rgb(77, 243, 255);
+                border-bottom: 5px solid rgb(77, 243, 255);
+            }
+        }
+
+        #center {}
+
+        #center img {
+            max-width: 100%;
+        }
+
+        #center table {
+            border-collapse: collapse;
+        }
+
+        .ddd {
+            max-width: 960px;
+            margin: auto;
+        }
+    </style>
+
+
+    <style>
+        .box {
+            background-color: rgba(0, 0, 0, 0);
+            color: #000;
+            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin: 10px;
+            margin-top: 60px;
+            padding: 10px;
+            border-radius: 15px;
+            word-break: break-all;
+            line-height: 24px;
+            /**/
+            background-image: url(imgs/bac_aero.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+        }
+
+        .box a:link,
+        .box a:visited,
+        #bottom a {
+            text-decoration: none;
+            color: rgb(0, 73, 209);
+
+        }
+
+        .box a:hover,
+        .box a:active {
+            text-decoration: underline;
+        }
+
+        .tit {
+            font-size: 28px;
+            line-height: 30px;
+            text-align: center;
+            font-weight: 900;
+            margin-top: 0px;
+            margin-left: 0px;
+            margin-bottom: 10px;
+            color: #FFF;
+            text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.8);
+        }
+    </style>
+
+
+
+
+
+
+
+    <!-- 下載按鈕 -->
+    <style>
+        .a_download {
+            padding: 0px 40px;
+            border: none;
+            color: rgb(255, 255, 255) !important;
+            background-color: rgb(0, 174, 255);
+            border-radius: 15px;
+            height: 50px;
+            line-height: 50px;
+            /* transition: all 0.3s; */
+            display: inline-block;
+            text-decoration: none !important;
+            overflow: hidden;
+        }
+
+        .a_download:hover {
+            background-color: rgb(64, 188, 241);
+            /* transform: scale(1.02) !important; */
+        }
+
+        .a_download:active {
+            background-color: rgb(0, 146, 214);
+            transform: translateY(3px) !important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <div ng-app="routingDemoApp" ng-controller="myCtrl">
+
+
+        <div class="top">
+            <div class="ddd">
+
+
+
+                <style>
+                    @media screen and (max-width: 800px) {
+                        #td_logo {
+                            display: none;
+                        }
+
+                        .top a {
+                            margin-right: 10px !important;
+                            padding: 0px 5px;
+                        }
+
+                        .top table {
+                            width: 400px;
+                        }
+
+                        body {
+
+                            background-image: none !important;
+                            background-color: rgb(206, 206, 206) !important;
+                            background-size: initial !important;
+                            background-repeat: initial !important;
+                            background-attachment: initial !important;
+                        }
+
+                        .box {
+                            background: rgba(255, 255, 255, 0.7) !important;
+                        }
+
+                        #bottom {
+                            background: rgb(26, 26, 26) !important;
+                        }
+                    }
+                </style>
+
+                <table>
+                    <tr>
+                        <td id="td_logo">
+                            <a href="#/" class="logo">
+                                <img src="imgs/logo.png" /> TiefSee
+                            </a>
+                        </td>
+                        <td>
+                            <a id="top_1" href="#/">首頁</a>
+                        </td>
+                        <td>
+                            <a id="top_download" href="#/download">下載</a>
+                        </td>
+                        <td>
+                            <a id="top_explain" href="#/explain_soft">使用說明</a>
+                        </td>
+                        <td>
+                            <a id="top_author" href="#/author">意見回饋</a>
+                        </td>
+                    </tr>
+                </table>
+
+
+
+
+            </div>
+
+        </div>
+
+        <div style="height:50px;"></div>
+
+
+        <!--顯示用的區域-->
+        <div id="center" ng-view></div>
+
+
+        <div style="display: none">
+            <div id="tmp_p1">
+                <!--js> print(load("page/p1.html")) <js-->
+            </div>
+            <div id="tmp_download">
+                <!--js> print(load("page/download.html")) <js-->
+            </div>
+            <div id="tmp_explain_soft">
+                <!--js> print(load("page/explain_soft.html")) <js-->
+            </div>
+            <div id="tmp_explain_soft">
+                <!--js> print(load("page/explain_soft.html")) <js-->
+            </div>
+            <div id="tmp_explain_pixiv">
+                <!--js> print(load("page/explain_pixiv.html")) <js-->
+            </div>
+            <div id="tmp_explain_edit_default">
+                <!--js> print(load("page/explain_edit_default.html")) <js-->
+            </div>
+            <div id="tmp_author">
+                <!--js> print(load("page/author.html")) <js-->
+            </div>
+        </div>
+
+
+        <script>
+
+            function getHtml(id) {
+                var html = document.getElementById(id);
+                var s = html.innerHTML;
+                html.parentNode.removeChild(html);
+                
+                return s;
+            }
+
+            var app = angular.module('routingDemoApp', ['ngRoute']);
+            /*app.config(['$routeProvider', function ($routeProvider) {
+                $routeProvider
+                    .when('/', { templateUrl: 'page/p1.html', controller: 'LoadedCtrl', title: 'TiefSee 圖片檢視器 - 首頁' })//載入網址
+                    .when('/download', { templateUrl: 'page/download.html', controller: 'LoadedCtrl', title: 'TiefSee 下載' })
+                    .when('/explain_soft', { templateUrl: 'page/explain_soft.html', controller: 'LoadedCtrl', title: 'TiefSee 使用說明' })
+                    .when('/explain_soft/:mes', { templateUrl: 'page/explain_soft.html', controller: 'VersionCtrl', title: 'TiefSee 使用說明' })
+                    .when('/explain_pixiv', { templateUrl: 'page/explain_pixiv.html', controller: 'LoadedCtrl', title: 'TiefSee 下載Pixiv動圖教學' })
+                    .when('/explain_edit_default', { templateUrl: 'page/explain_edit_default.html', controller: 'LoadedCtrl', title: 'TiefSee 修改為預設開啟程式' })
+                    .when('/author', { templateUrl: 'page/author.html', controller: 'LoadedCtrl', title: 'TiefSee 意見回饋' })
+                    //.when('/printers', { template: '這是打印機頁面' })//印出字串
+                    .otherwise({ redirectTo: '/' });//其他
+            }]);*/
+
+            app.config(['$routeProvider', function ($routeProvider) {
+                $routeProvider
+                    .when('/', { template: getHtml('tmp_p1'), controller: 'LoadedCtrl', title: 'TiefSee 圖片檢視器 - 首頁' })//載入網址
+                    .when('/download', { template: getHtml('tmp_download'), controller: 'LoadedCtrl', title: 'TiefSee 下載' })
+                    .when('/explain_soft', { template: getHtml('tmp_explain_soft'), controller: 'LoadedCtrl', title: 'TiefSee 使用說明' })
+                    .when('/explain_soft/:mes', { template: getHtml('tmp_explain_soft'), controller: 'VersionCtrl', title: 'TiefSee 使用說明' })
+                    .when('/explain_pixiv', { template: getHtml('tmp_explain_pixiv'), controller: 'LoadedCtrl', title: 'TiefSee 下載Pixiv動圖教學' })
+                    .when('/explain_edit_default', { template: getHtml('tmp_explain_edit_default'), controller: 'LoadedCtrl', title: 'TiefSee 修改為預設開啟程式' })
+                    .when('/author', { template: getHtml('tmp_author'), controller: 'LoadedCtrl', title: 'TiefSee 意見回饋' })
+                    //.when('/printers', { template: '這是打印機頁面' })//印出字串
+                    .otherwise({ redirectTo: '/' });//其他
+            }]);
+
+            app.run(['$location', '$rootScope', function ($location, $rootScope) {
+                // 每當路由改變成功的時候，更新標題
+                $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+                    window.document.title = current.title;
+                    //$rootScope.title = current.$route.title;
+                });
+            }]);
+
+            //載入完成時
+            app.controller('LoadedCtrl', function ($scope, $routeParams) {
+
+                fun_圖片自動加超連結();
+
+                //捲到最上面
+                window.document.body.scrollTop = 0;
+                window.scrollTo(0, 0);
+            });
+
+            //載入完成時
+            app.controller('VersionCtrl', function ($scope, $routeParams) {
+                $scope.s_version = $routeParams.mes;//取得網址參數
+                document.getElementById("div_version").style.display = "block";//顯示版本比較的視窗
+
+                var int_最新版本 = parseFloat("0." + $scope.new_version.replace(/[.]/g, ""));
+                var int_使用者版本 = parseFloat("0." + $routeParams.mes.replace(/[.]/g, ""));
+
+                if (int_使用者版本 >= int_最新版本) {
+                    document.getElementById("tit_yes").style.display = "block";
+                } else {
+                    document.getElementById("tit_no").style.display = "block";
+                }
+
+                fun_圖片自動加超連結();
+
+            });
+
+
+            //統一設定目前版本
+            app.controller('myCtrl', function ($scope) {
+                $scope.new_version = "3.0.1";
+
+            });
+
+
+            ///
+            ///
+            ///
+            function fun_圖片自動加超連結() {
+
+
+
+                //讓每一張圖片都加上超連結
+                var ar_img = document.getElementById("center").getElementsByTagName("img");
+                for (var i = 0; i < ar_img.length; i++) {
+                    //ar_img[i].outerHTML = "<a target='_blank' href='" + ar_img[i].src + "'>" + ar_img[i].outerHTML + "<a/>";
+                    ar_img[i].addEventListener("click", function () {
+                        window.open(this.src, '_blank')
+                    });
+                }
+
+
+                //讓每個超連結都另外開新分頁
+                var ar_a = document.getElementById("center").getElementsByTagName("a");
+                for (var i = 0; i < ar_a.length; i++) {
+                    if (ar_a[i].href.indexOf("#") == -1) {//如果是本站內的鏈接，就直接開啟
+                        ar_a[i].setAttribute("target", "_blank");
+                    }
+                }
+
+            }
+
+        </script>
+
+    </div>
+
+
+
+
+    <style type="text/css">
+        #bottom {
+            background-color: rgb(26, 26, 26);
+            color: #FFF;
+            padding: 10px 30px;
+            margin-top: 50px;
+            background-image: url(imgs/bac_aero.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+
+    <div id="bottom">
+
+        <style>
+            .div_aut {
+                /*border: 1px solid #FFF;*/
+                display: inline-block;
+                font-size: 16px;
+                line-height: 20px;
+                margin: 2px;
+                padding: 15px;
+                border-right: 1px #575757 solid;
+            }
+        </style>
+
+
+        <div class="div_aut">
+            作者：LAIO, WEN-HONG
+        </div>
+        <div class="div_aut">
+            巴哈姆特：
+            <a href="https://home.gamer.com.tw/homeindex.php?owner=hbl917070" target="_blank">hbl917070（深海異音）</a>
+        </div>
+        <div class="div_aut">
+            信箱：
+            <a href="mailto:hbl917070@gmail.com">hbl917070@gmail.com</a>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-56186804-2', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+
+</body>
+
+</html>
