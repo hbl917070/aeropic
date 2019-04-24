@@ -1,29 +1,14 @@
-# aeropic
 
-官方網站<br>
-https://hbl917070.github.io/aeropic/index.html#/
-<br><br>
-討論區<br>
-https://forum.gamer.com.tw/C.php?bsn=60076&snA=4095280&locked=F
-<br><br>
-//--------------------
-<br><br>
-Aero 是 Windows 7 作業系統採用的一種透明玻璃界面
-AeroPic 圖片檢視器 採用100%的透明玻璃界面，可用來取代windows內建的圖片檢視器，支持多種圖片格式（JPG、PNG、GIF、BMP、TIF、ICO、PSD、SVG、APNG、webP、RAW 等...）
-<br>
+### 此為 TiefSee(舊名 AeroPic) 的官方網站
 
 
-<img style="max-width:500px;" src="https://hbl917070.github.io/aeropic/imgs/home_demo/1.gif">
-<br><br>
-<img style="max-width:500px;"  src="https://hbl917070.github.io/aeropic/imgs/home_demo/10.jpg">
-<br><br>
-<img style="max-width:500px;"  src="https://hbl917070.github.io/aeropic/imgs/home_demo/9.jpg">
+###### 專案類型：採用 angularJS 撰寫
 
-<br><br>
+- 官方網站：https://hbl917070.github.io/aeropic/index.html
+- 討論區：https://forum.gamer.com.tw/C.php?bsn=60076&snA=4095280
+- TiefSee原始碼：https://github.com/hbl917070/TiefSee
+- 下載歷史版本：https://github.com/hbl917070/aeropic/tree/master/download
 
-//--------------------
-<br><br>
-專案說明：<br>
-這個專案其實就是AeroPic的官方網站，採用 angularJS 撰寫<br>
-download 資料夾：程式歷史版本<br>
+
+![](https://truth.bahamut.com.tw/s01/201904/858dfb3dd7b620ce649eb63dd2a51bae.JPG)
 
