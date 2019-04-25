@@ -10,5 +10,5 @@
 - 下載歷史版本：https://github.com/hbl917070/aeropic/tree/master/download
 
 
-![](https://truth.bahamut.com.tw/s01/201904/858dfb3dd7b620ce649eb63dd2a51bae.JPG)
+![TiefSee官方網站](https://hbl917070.github.io/aeropic/imgs/other/md_1.jpg)
 
