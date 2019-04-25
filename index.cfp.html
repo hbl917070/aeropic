@@ -5,11 +5,11 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>TiefSee</title>
+    <title>TiefSee 圖片檢視器 (舊名 AeroPic)</title>
 
     <link rel="Shortcut Icon" type="image/x-icon" href="imgs/logo.png" />
-    <meta name="Description" content="TiefSee(舊名 AeroPic)，輕巧免安裝的看圖軟體，可取代windows內建的圖片檢視器" />
-    <meta name="KeyWords" content="TiefSee,AeroPic,aero,windows,hbl917070,深海異音,圖片檢視,看圖軟體,秀圖軟體,相片檢視" />
+    <meta name="Description" content="TiefSee 圖片檢視器 (舊名 AeroPic)，開源免安裝的看圖軟體，簡約高雅的界面，全視窗的AERO毛玻璃，方便看漫畫的大量瀏覽模式，可取代windows內建的圖片檢視器" />
+    <meta name="KeyWords" content="TiefSee,AeroPic,aero,windows,hbl917070,深海異音,圖片檢視,看圖軟體,漫畫軟體,相片檢視" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
 
@@ -82,7 +82,7 @@
         }
 
         .top a:active {
-             transform: scale(1.02) translateY(3px); 
+            transform: scale(1.02) translateY(3px);
         }
 
         .top .logo {}
@@ -266,7 +266,7 @@
                     <tr>
                         <td id="td_logo">
                             <a href="#/" class="logo">
-                                <img src="imgs/logo.png" /> TiefSee
+                                <img src="imgs/logo.png" alt="TiefSee LOGO"/> TiefSee
                             </a>
                         </td>
                         <td>
@@ -298,7 +298,8 @@
         <div id="center" ng-view></div>
 
 
-        <div style="display: none">
+        <!-- 從外部檔案合併進來的模板 -->
+        <div>
             <div id="tmp_p1">
                 <!--js> print(load("page/p1.html")) <js-->
             </div>
@@ -329,7 +330,7 @@
                 var html = document.getElementById(id);
                 var s = html.innerHTML;
                 html.parentNode.removeChild(html);
-                
+
                 return s;
             }
 
