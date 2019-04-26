@@ -79,78 +79,114 @@
 
 
             <div class="tit3" style="margin-top: 0px;">舊版可以運行，但新版一開就閃退</div>
-            舊的 AeroPic 2.5.0 以前的版本，運行需求是 .NET 4.5<br>
-            TiefSee 3.0.0 以後，則必須使用 .NET 4.6.2 以上(含)才能運行<br>
-            安裝完這個就行了：<a href="https://dotnet.microsoft.com/download/dotnet-framework/net472"> Microsoft .NET Framework 4.7.2 </a>
-
+            <p>
+                舊的 AeroPic 2.5.0 以前的版本，運行需求是 .NET 4.5<br>
+                TiefSee 3.0.0 以後，則必須使用 .NET 4.6.2 以上(含)才能運行<br>
+                安裝完這個就行了：<a href="https://dotnet.microsoft.com/download/dotnet-framework/net472"> Microsoft .NET Framework 4.7.2 </a>
+            </p>
 
             <div class="tit3">可以開啟TiefSee，但是開啟圖片就會閃退</div>
-            可能是電腦不支援硬體加速引起的<br>
-            開啟TiefSee的 設定->其他->高品質成像-硬體加速<br>
-            嘗試把他改成「模式2」，看看能不能解決閃退問題<br>
-            如果一樣閃退就改成「模式3」，再不行就改成「模式4」<br>
-            <img src="imgs/other/1.jpg" alt="關閉硬體加速">
-
+            <p>
+                可能是電腦不支援硬體加速引起的<br>
+                開啟TiefSee的 設定->其他->高品質成像-硬體加速<br>
+                嘗試把他改成「模式2」，看看能不能解決閃退問題<br>
+                如果一樣閃退就改成「模式3」，再不行就改成「模式4」<br>
+                <img src="imgs/other/1.jpg" alt="關閉硬體加速">
+            </p>
 
             <div class="tit3">從pixiv下載的動圖zip不能播放</div>
-            必須使用「<a href="#/explain_pixiv">Px Downloader</a>」才能下載完整的動圖<br>
-            很多腳本或瀏覽器附加原件，下載下來的pixiv動圖，只是一般的zip壓縮檔，裡面不包含幀數資訊，所以TiefSee無法播放
-
+            <p>
+                必須使用「<a href="#/explain_pixiv">Px Downloader</a>」才能下載完整的動圖<br>
+                很多腳本或瀏覽器附加原件，下載下來的pixiv動圖，只是一般的zip壓縮檔<br>
+                因為裡面不包含幀數資訊，所以TiefSee無法播放
+            </p>
 
             <div class="tit3">「無法瀏覽GIF」或「無法開啟大量瀏覽模式」</div>
-            把電腦的 IE 更新到 IE 11 即可解決問題<br>
-            安裝完這個就行了：<a href="https://support.microsoft.com/zh-tw/help/18520/download-internet-explorer-11-offline-installer"> Internet Explorer 11 </a>
+            <p>
+                把電腦的 IE 更新到 IE 11 即可解決問題<br>
+                安裝完這個就行了：<a href="https://support.microsoft.com/zh-tw/help/18520/download-internet-explorer-11-offline-installer"> Internet Explorer 11 </a>
+            </p>
+
+            <div class="tit3">Adobe Reader DC 的圖示錯誤 </div>
+            <p>
+                這個是 Reader DC 本身的 BUG，某個特定的情況下就會導致 Reader DC 的圖示變成圖片軟體的圖示<br>
+                解決方式就是手動重新建立這個捷徑，步驟如下：<br>
+                <ol>
+                    <li>
+                        進到「C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat」<br>
+                        如果上面的路徑不存在，那麼改成進入這個路徑「C:\Program Files\Adobe\Acrobat DC\Acrobat」<br>
+                    </li>
+                    <li>
+                        在裡面找到「Acrobat.exe」對他右鍵選擇「傳送到→桌面(建立捷徑)」<br>
+
+                    </li>
+                    <li>
+                        進到這個「C:\ProgramData\Microsoft\Windows\Start Menu\Programs」資料夾，把「Adobe Acrobat DC」這個捷徑刪除<br>
+
+                    </li>
+                    <li>
+                        最後把剛剛產生到桌面的「Acrobat.exe - 捷徑」丟回「C:\ProgramData\Microsoft\Windows\Start Menu\Programs」即可<br>
+                    </li>
+                </ol>
+                <img src="imgs/other/4.jpg" alt="Adobe Reader DC 的圖示錯誤的修復方法">
+            </p>
 
 
 
             <div class="tit3">無法開啟PSD檔案</div>
-            有可能是這個PSD檔案沒有在存檔的時候開啟「最大相容模式」，導致第三方軟體難以解析
+            <p>
+                有可能是這個PSD檔案沒有在存檔的時候開啟「最大相容模式」，導致第三方軟體難以解析
+            </p>
 
             <div class="tit3">複製PNG圖片會沒有透明底</div>
-            <div class="aaa">
-                這是windows本身的限制。我有另外做一個「複製PNG」的按鈕，這雖然能複製透明底但並不是通用格式，在多數繪圖軟體都能直接貼上只有少部分軟體不支援。
-                <br>
+            <p>
+                <div class="aaa">
+                    這是windows本身的限制。我有另外做一個「複製PNG」的按鈕，這雖然能複製透明底但並不是通用格式，在多數繪圖軟體都能直接貼上只有少部分軟體不支援。
+                    <br>
 
-                <table border="1">
-                    <tr>
-                        <td>不支援</td>
-                        <td>
-                            <a href="http://www.adobe.com/tw/products/photoshop.html">Photoshop CC 2015</a>、
-                            <a href="https://www.systemax.jp/en/sai/">SAI</a>
-                            <br>
+                    <table border="1">
+                        <tr>
+                            <td>不支援</td>
+                            <td>
+                                <a href="http://www.adobe.com/tw/products/photoshop.html">Photoshop CC 2015</a>、
+                                <a href="https://www.systemax.jp/en/sai/">SAI</a>
+                                <br>
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>支援</td>
-                        <td>
-                            <a href="https://krita.org/jp/">Krita</a>、
-                            <a href="https://medibangpaint.com/zh_TW/pc/">MediBang Paint Pro</a>、
-                            <a href="https://www.getpaint.net/">paint.net</a>、
-                            <a href="https://products.office.com/">Microsoft Word</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>支援</td>
+                            <td>
+                                <a href="https://krita.org/jp/">Krita</a>、
+                                <a href="https://medibangpaint.com/zh_TW/pc/">MediBang Paint Pro</a>、
+                                <a href="https://www.getpaint.net/">paint.net</a>、
+                                <a href="https://products.office.com/">Microsoft Word</a>
 
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </p>
 
 
             <div class="tit3">為什麼GIF背景不是透明</div>
-            可以到設定裡面把「GIF渲染模式」改成「DirectX」，就能夠以透明底來開啟GIF
-
+            <p>
+                可以到設定裡面把「GIF渲染模式」改成「DirectX」，就能夠以透明底來開啟GIF
+            </p>
 
             <div class="tit3">如何刪除程式？</div>
-            程式為免安裝，直接把 「TiefSee」(舊名 AeroPic)的資料夾 刪除即可，如果有使用過自動關聯副檔名的話，記得先進到設定裡面「解除關聯」
-            <br>
-            <img src="imgs/other/2.jpg" alt="解除安裝TiefSee">
+            <p>
+                程式為免安裝，直接把 「TiefSee」(舊名 AeroPic)的資料夾 刪除即可，如果有使用過自動關聯副檔名的話，記得先進到設定裡面「解除關聯」
+                <br>
+                <img src="imgs/other/2.jpg" alt="解除安裝TiefSee">
+            </p>
 
 
 
-
-            <br>
-            <br>
+            <br><br>
 
 
         </div>
     </div>
+
+</div>
