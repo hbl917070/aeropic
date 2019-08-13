@@ -15,20 +15,20 @@
 
     <div class="box">
         <div class="tit">關於</div>
-		
-		<p>
-			TiefSee 是 深海異音 開發的相片檢視軟體，屬於免費軟體，也不包含任何廣告
-		</p>
-		<p>	
-			如果程式有BUG，或是想提供意見
-			<br>可以到 巴哈姆特的討論區 回覆
-			<br>要用 巴哈姆特 或 Email 寄信給我也行
-		</p>
-		
-     
-        <br> TiefSee 討論區：
-        <a class="" target="_blank" href="https://forum.gamer.com.tw/C.php?bsn=60076&snA=4095280">討論區</a>
-		<br>
+
+        <p>
+            TiefSee 是 深海異音 開發的相片檢視軟體，屬於免費軟體，也不包含任何廣告
+        </p>
+        <p>
+            如果程式有BUG，或是想提供意見
+            <br>可以到 巴哈姆特的討論區 回覆
+            <br>要用 巴哈姆特 或 Email 寄信給我也行
+        </p>
+
+
+        <br> 討論區：
+        <a class="" target="_blank" href="https://forum.gamer.com.tw/C.php?bsn=60076&snA=4095280">https://forum.gamer.com.tw/C.php?bsn=60076&snA=4095280</a>
+        <br>
         <br> TiefSee 原始碼：
         <a href="https://github.com/hbl917070/TiefSee">https://github.com/hbl917070/TiefSee</a>
 
@@ -43,16 +43,62 @@
         <a href="mailto:hbl917070@gmail.com">hbl917070@gmail.com</a>
 
 
-    
-		<br>
+        <style>
+            .but03 {
+                border: 1px solid rgb(3, 0, 158) !important;
+                color: rgb(3, 0, 158) !important;
+                background-color: rgba(0, 0, 0, 0) !important;
+                font-family: "微軟正黑體";
+                font-size: 18px;
+                margin-bottom: 10px;
+                display: inline-block;
+                padding: 10px;
+            }
+
+            .but03:hover {
+                border: 1px solid rgb(0, 100, 8) !important;
+                color: rgb(0, 100, 8) !important;
+                text-decoration: none !important;
+            }
+
+            #qrcode {
+                overflow: hidden;
+                transition: height 0.3s;
+
+            }
+        </style>
+
+        <script>
+
+            function func_showqrcord() {
+                var qrcode = document.getElementById('qrcode');
+
+                if (qrcode.style.height == '0px') {
+                    qrcode.style.height = '135px';
+                } else {
+                    qrcode.style.height = '0px';
+                }
+            }
+        </script>
+
+        <br>
         <br> 贊助作者：
-        <a href="https://payment.opay.tw/Broadcaster/Donate/D048058B80DCCE45258DD08E0E021913">歐付寶</a>		
-		<br>
-		<span>　　　　　</span>
-		<a href="https://qr.opay.tw/CLf9Q">
-			<img style="margin-top:5px" src="imgs/other/qrcode.png" />
-		</a>
-		
+        <a class="but03" href="https://payment.opay.tw/Broadcaster/Donate/D048058B80DCCE45258DD08E0E021913">歐付寶</a>
+        <br>
+
+        <span>　　　　　</span>
+        <button class="but03" onclick="func_showqrcord()">
+            顯示二維條碼
+        </button>
+
+        <div id="qrcode" style="height:0px">
+
+            <a href="https://qr.opay.tw/CLf9Q">
+                <img style="margin-top:5px" src="imgs/other/qrcode.png" />
+            </a>
+
+        </div>
+
         <br> <br>
 
 
@@ -88,10 +134,16 @@
             </style>
 
 
+            <div class="tit3" style="margin-top: 0px;">程式完全打不開</div>
+            <p>
+                解壓縮後的 TiefSee 資料夾，不可以放在「沒有存取權限」的資料夾，例如「C:\」或「C:\Program Files」都是不行的。<br>
+                可以放在桌面、D槽、我的文件 之類的地方。<br>
+                不過如果很堅持要放在沒有存取權限的地方，也是可以，手動賦予資料夾權限即可。<br>
+                資料夾右鍵 → 內容 → 安全性 → 編輯 → 選擇目前的使用者 → 把「完全控制」與「修改」打勾 → 確定
+            </p>
 
 
-
-            <div class="tit3" style="margin-top: 0px;">舊版可以運行，但新版一開就閃退</div>
+            <div class="tit3" >舊版可以運行，但新版一開就閃退</div>
             <p>
                 舊的 AeroPic 2.5.0 以前的版本，運行需求是 .NET 4.5<br>
                 TiefSee 3.0.0 以後，則必須使用 .NET 4.6.2 以上(含)才能運行<br>
