@@ -61,6 +61,14 @@ return "t";
 
 
 ///
+/// 由C#呼叫，設定背景圖片
+///
+function set_bac_img(img_base64) {
+document.getElementsByTagName("html")[0].style.backgroundImage = img_base64;
+}
+
+
+///
 ///由C#呼叫，設定網頁背景顏色
 ///
 function set_bac_color(col) {
@@ -174,6 +182,7 @@ user-select: none !important;
 }
 
 
+
 /*背景顏色*/
 
 #q {
@@ -198,6 +207,10 @@ scrollbar-shadow-color: #1e1e1e;
 html {
 font-family: "微軟正黑體";
 background-color: #000000;
+background-size: 100vw 100vh;
+background-position: 0 0;
+background-repeat: no-repeat;
+background-attachment: fixed;
 }
 
 /*選擇欄位數量的框*/
@@ -326,11 +339,9 @@ padding: 3px;
 background-color: rgba(94, 94, 94, 0.50);
 border-radius: 5px;
 box-shadow: 0px 0px 16px 1px #000000;
-
 transition: all 0.5s;
 overflow: hidden;
 height: 45px;
-
 }
 
 
@@ -2368,11 +2379,9 @@ float: right;
 #bottom #next2 {
 height: 100%;
 width: 50%;
-
 color: #FFF;
 font-size: 50px !important;
 border: none;
-
 background-color: rgba(0, 0, 0, 0);
 }
 
@@ -2384,13 +2393,13 @@ outline: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 button,
-.tab td {}
+.tab td {
+}
 
 button:active,
 .tab td:active {
 opacity: 1;
 outline: solid 1px rgba(0, 177, 255, 0.4) !important;
-
 }
 </style>
 
@@ -2497,7 +2506,7 @@ if (urls.length > 0) {
 
 //var time = new Date();
 fun_產生圖片();
-setTimeout(function() {
+setTimeout(function () {
 
 }, 30);
 
