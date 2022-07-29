@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiefsee Plugin</title>
+    <link rel="Shortcut Icon" type="image/x-icon" href="imgs/logo.png">
+
+    <!--google字體-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+            /* background-color: rgb(250, 250, 250); */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body,
+        input,
+        button,
+        textarea {
+            font-family: "Noto Sans TC", "Microsoft JhengHei", "黑體-繁", "蘋果儷中黑", "sans-serif";
+        }
+
+        .bg {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: linear-gradient(#e1e8ec, #fff);
+            z-index: -1;
+        }
+
+        .header {
+            background-color: rgb(44, 44, 50);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-item {
+            height: 45px;
+            padding: 0 5px;
+            text-decoration: none;
+            color: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .header .logo {
+            width: 30px;
+            margin-right: 5px;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+        }
+
+
+        .boxBg {
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+            margin: 20px;
+            margin-top: 5px;
+            padding: 10px;
+        }
+
+        .boxBg img {
+            max-width: 100%;
+        }
+
+        .boxBg-header {
+            font-size: 24px;
+            margin: 20px;
+            margin-bottom: 10px;
+        }
+
+        .code {
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 5px;
+            display: inline-block;
+            border-radius: 5px;
+            word-break: break-all;
+        }
+    </style>
+    <style>
+        .plugin {
+            margin: auto;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .plugin-item {
+            overflow: hidden;
+        }
+
+        .plugin-T {
+            display: flex;
+        }
+
+        .plugin-L {
+            /* width: 100px; */
+        }
+
+        .plugin-R {
+            flex: 1;
+            margin-left: 10px;
+        }
+
+        .plugin-icon {
+            width: 80px;
+            margin: 5px;
+        }
+
+        .plugin-title {
+            font-size: 20px;
+            margin-top: 3px;
+        }
+
+        .plugin-content {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .plugin-download {
+            margin-top: 10px;
+            padding: 5px 30px;
+            /* background: linear-gradient(-80deg, #0fdb97, #00eeff); */
+            background-color: rgb(0, 166, 255);
+            display: inline-block;
+            color: #FFF;
+            font-size: 14px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .plugin-download:hover {
+            cursor: pointer;
+            background: rgb(0, 146, 225);
+        }
+
+        .plugin-moreContent {
+            transition: all 0.3s;
+            overflow: hidden;
+            max-height: 0px;
+            margin-top: 0px;
+        }
+
+        .plugin-moreBtn {
+            height: 30px;
+            margin: -10px;
+            margin-top: 10px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .plugin-moreBtn:hover {
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .plugin-moreBtn::after {
+            content: "";
+            border-right: 3px solid rgba(0, 0, 0, 0.5);
+            border-bottom: 3px solid rgba(0, 0, 0, 0.5);
+
+            width: 10px;
+            height: 10px;
+            position: absolute;
+
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            transition: transform 0.1s;
+            transform: rotate(45deg);
+            top: -6px;
+        }
+
+        .plugin-item[open="true"] .plugin-moreContent {
+            max-height: none;
+            margin-top: 10px;
+        }
+
+        .plugin-item[open="true"] .plugin-moreBtn::after {
+            transform: rotate(225deg);
+            top: 6px;
+        }
+    </style>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            initAccordion();//初始化手風琴功能
+        });
+
+        /**
+         * 初始化手風琴功能
+         */
+        function initAccordion() {
+
+            let ar = document.querySelectorAll(".plugin-item .plugin-moreBtn");
+            for (let i = 0; i < ar.length; i++) {
+                addEvent(ar[i]);
+            }
+
+            function addEvent(btn) {
+                let dom = btn;
+
+                while (true) {//取得要設定open="true"的父親物件
+                    dom = dom.parentNode;
+                    if (dom === null || dom === document.body) { return; }
+                    if (dom.className.indexOf("plugin-item") != -1) {
+                        break;
+                    }
+                }
+
+                btn.addEventListener("click", () => {
+                    if (dom.getAttribute("open") == "true") {
+                        dom.setAttribute("open", "")
+                    } else {
+                        dom.setAttribute("open", "true")
+                    }
+                })
+            }
+        }
+    </script>
+
+    <div class="bg"></div>
+
+    <div class="header">
+        <div class="header-content">
+            <a href="./index.html" class="header-item">
+                <img class="logo" src="./imgs/logo.png" alt="Tiefsee LOGO"> TiefSee
+            </a>
+        </div>
+    </div>
+
+    <div class="content">
+
+
+        <div class="plugin">
+
+            <div class="boxBg-header">
+                Tiefsee 擴充套件列表
+            </div>
+            <div class="plugin-item boxBg" open="">
+                <div class="plugin-T">
+                    <div class="plugin-L">
+                        <img class="plugin-icon" src="./imgs/plugin/icon-QuickLook.png">
+                    </div>
+                    <div class="plugin-R">
+                        <div class="plugin-title">QuickLook </div>
+                        <div class="plugin-content">長按空白鍵時，快速預覽桌面或資料夾的檔案</div>
+                        <a class="plugin-download" target="_blank" href="./download/plugin/QuickLook.zip">下載</a>
+                    </div>
+                </div>
+                <div class="plugin-B">
+                    <div class="plugin-moreContent">
+                        以 GPL-3.0 開源的專案。
+                        <br>
+                        原始專案：
+                        <a href="https://github.com/hbl917070/Tiefsee.QuickLook"
+                            target="_blank">https://github.com/hbl917070/Tiefsee.QuickLook</a>
+                    </div>
+
+                    <div class="plugin-moreBtn"></div>
+                </div>
+            </div>
+            <div class="plugin-item boxBg" open="">
+                <div class="plugin-T">
+                    <div class="plugin-L">
+                        <img class="plugin-icon" src="./imgs/plugin/icon-NConvert.png">
+                    </div>
+                    <div class="plugin-R">
+                        <div class="plugin-title">NConvert</div>
+                        <div class="plugin-content">讓Tiefsee支援「Clip Studio Paint」產生的clip檔案</div>
+                        <a class="plugin-download" target="_blank" href="./download/plugin/NConvert.zip">下載</a>
+                    </div>
+                </div>
+                <div class="plugin-B">
+                    <div class="plugin-moreContent">
+                        NConvert只免費提供給私人用途(非商業)或教育用途，<br>
+                        如果需要NConvert的授權，請至
+                        <br>
+                        <a href="https://www.xnview.com/" target="_blank">https://www.xnview.com/</a>
+                    </div>
+                    <div class="plugin-moreBtn"></div>
+                </div>
+            </div>
+
+
+            <div class="boxBg-header">
+                擴充套件安裝方法
+            </div>
+            <div class="boxBg">
+                在這裡下載的擴充套件是ZIP檔， <br>
+                解壓縮後放到
+                <span class="code"> %userprofile%\AppData\Local\Tiefsee\Plugin </span>
+                <br>
+                然後重新開啟Tiefsee。
+
+                <br> <br>
+                <div> 或者從這裡也可以開啟「Plugin」資料夾 </div>
+                <img src="./imgs/plugin/plugin-2.png" alt="How to open 「Plugin」 directory">
+
+                <br> <br>
+                <div>安裝完成後的示意圖</div>
+                <img src="./imgs/plugin/plugin-1.jpg" alt="Schematic">
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
