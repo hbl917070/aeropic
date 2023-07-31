@@ -1,0 +1,51 @@
+// 常見問題
+.page-support {
+  .infoBox {
+    //min-height: 600px;
+    //border-radius: 10px;
+    margin: 0 20px;
+    .infoBox-content {
+      max-width: 800px;
+      margin: auto;
+      margin-bottom: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: saturate(180%) blur(20px);
+      //box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+
+      padding: 30px 30px;
+      //display: flex;
+      //flex-direction: row;
+    }
+
+    .item {
+      margin-bottom: 30px;
+      //padding-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+
+      .title {
+        font-size: 20px;
+        margin: 0;
+        margin-bottom: 5px;
+
+        //border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+        padding: 5px 5px;
+      }
+      .content {
+        padding: 10px;
+        border-radius: 5px;
+        min-height: 100px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+
+        ul {
+          margin: 3px 0;
+        }
+      }
+    }
+  }
+}

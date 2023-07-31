@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="<%- lang %>">
+
+<head>
+    <%- await include("./_head.ejs"); %>
+</head>
+
+<body>
+
+    <%- await include("./_header.ejs"); %>
+
+    <div class="page page-index">
+
+        <div class="infoBox">
+            <div class="infoBox-content">
+
+                <div class="infoBox-title">
+                    <h1> Tiefsee </h1>
+                </div>
+
+                <div class="infoBox-text">
+                    <!-- 強大而易用的圖片檢視程式 -->
+                    <%- t("index.subTitle") %>
+                </div>
+
+                <!-- 已推出 {v} 版 -->
+                <div class="infoBox-ver"> <%- t("index.version", {v:"4.1.2"}) %> </div>
+
+                <div class="infoBox-links">
+                    <!-- 從商店獲取 Tiefsee -->
+                    <div class="infoBox-links-btns">
+                        <a class="infoBox-link-btn" href="https://apps.microsoft.com/store/detail/9N04QDXBNMCQ?launch=true&amp;mode=full" target="_blank">
+                            <img src="/img/svg/microsoftStore.svg">
+                            <span> <%- t("index.getTiefsee") %> </span>
+                        </a>
+                    </div>
+                    <!-- 下載免安裝版 -->
+                    <a class="infoBox-link-link link" target="_blank" href="https://github.com/hbl917070/Tiefsee4/releases/download/4.1.2/Tiefsee.zip"> <%- t("index.downloadZip") %> </a>
+                    <!-- 更新說明 -->
+                    <a class="infoBox-link-link link" target="_blank" href="https://github.com/hbl917070/Tiefsee4/releases"> <%- t("index.updateNotes") %> </a>
+                    <!-- 查看舊版 3.0.2 -->
+                    <a class="infoBox-link-link link" target="_blank" href="/v3/index.html"> <%- t("index.viewOldVersion") %> </a>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="contentBox2">
+
+            <!-- 視窗主題 -->
+            <div class="item">
+                <div class="item-1">
+                    <div class="item-1-content">
+                        <div class="item-title"> <%- t("index.item.windowTheme.title") %> </div>
+                        <div class="item-text"> <%- t("index.item.windowTheme.text") %> </div>
+                    </div>
+                </div>
+                <div class="item-2">
+                    <a class="item-imgbox" data-pswp-width="1147" data-pswp-height="883" href="/img/index/windowTheme.jpg">
+                        <img class="item-img" src="/img/index/windowTheme.jpg" alt="Window Theme">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 檔案預覽面板 -->
+            <div class="item">
+                <div class="item-1">
+                    <div class="item-1-content">
+                        <div class="item-1-content">
+                            <div class="item-title"> <%- t("index.item.filePanel.title") %> </div>
+                            <div class="item-text"> <%- t("index.item.filePanel.text") %> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-2">
+                    <a class="item-imgbox" data-pswp-width="814" data-pswp-height="613" href="/img/index/filePanel.jpg">
+                        <img class="item-img" src="/img/index/filePanel.jpg" alt="File Panel">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 資料夾預覽面板 -->
+            <div class="item">
+                <div class="item-1">
+                    <div class="item-1-content">
+                        <div class="item-title"> <%- t("index.item.folderPanel.title") %> </div>
+                        <div class="item-text"> <%- t("index.item.folderPanel.text") %> </div>
+                    </div>
+                </div>
+                <div class="item-2">
+                    <a class="item-imgbox" data-pswp-width="811" data-pswp-height="612" href="/img/index/folderPanel.jpg">
+                        <img class="item-img" src="/img/index/folderPanel.jpg" alt="Folder Panel">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 詳細資料面板 -->
+            <div class="item">
+                <div class="item-1">
+                    <div class="item-1-content">
+                        <div class="item-title"> <%- t("index.item.informationPanel.title") %> </div>
+                        <div class="item-text"> <%- t("index.item.informationPanel.text") %> </div>
+                    </div>
+                </div>
+                <div class="item-2">
+                    <a class="item-imgbox" data-pswp-width="1194" data-pswp-height="896" href="/img/index/informationPanel.jpg">
+                        <img class="item-img" src="/img/index/informationPanel.jpg" alt="Information Panel">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 大量瀏覽模式 -->
+            <div class="item">
+                <div class="item-1">
+                    <div class="item-1-content">
+                        <div class="item-title"> <%- t("index.item.bulkView.title") %> </div>
+                        <div class="item-text"> <%- t("index.item.bulkView.text") %> </div>
+                    </div>
+                </div>
+                <div class="item-2">
+                    <a class="item-imgbox" data-pswp-width="800" data-pswp-height="600" href="/img/index/bulkView.webp">
+                        <img class="item-img" src="/img/index/bulkView.webp" alt="Bulk View">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 快速拖曳 -->
+            <div class="item">
+                <div class="item-1">
+                    <div class="item-1-content">
+                        <div class="item-title"> <%- t("index.item.quickDragFile.title") %> </div>
+                        <div class="item-text"> <%- t("index.item.quickDragFile.text") %> </div>
+                    </div>
+                </div>
+                <div class="item-2">
+                    <a class="item-imgbox" data-pswp-width="800" data-pswp-height="600" href="/img/index/quickDragFile.webp">
+                        <img class="item-img" src="/img/index/quickDragFile.webp" alt="Quick Drag File">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 開啟網頁圖片 -->
+            <div class="item">
+                <div class="item-1">
+                    <div class="item-1-content">
+                        <div class="item-title"> <%- t("index.item.openWebImage.title") %> </div>
+                        <div class="item-text"> <%- t("index.item.openWebImage.text") %> </div>
+                    </div>
+                </div>
+                <div class="item-2">
+                    <a class="item-imgbox" data-pswp-width="800" data-pswp-height="600" href="/img/index/openWebImage.webp">
+                        <img class="item-img" src="/img/index/openWebImage.webp" alt="Open Web Image">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="height:50px;"></div>
+
+        <div class="contentBox3">
+
+            <!-- 支援多種格式 -->
+            <div class="item">
+                <div class="item-top">
+                    <img class="item-icon" src="/img/svg/productVariant.svg">
+                    <div class="item-title"> <%- t("index.item.supportFormats.title") %> </div>
+                </div>
+                <div class="item-text"> <%- t("index.item.supportFormats.text") %> </div>
+            </div>
+            <!-- 快速啟動 -->
+            <div class="item">
+                <div class="item-top">
+                    <img class="item-icon" src="/img/svg/lightningBolt.svg">
+                    <div class="item-title"> <%- t("index.item.fastStartup.title") %> </div>
+                </div>
+                <div class="item-text"> <%- t("index.item.fastStartup.text") %> </div>
+            </div>
+            <!-- 線上搜圖 -->
+            <div class="item">
+                <div class="item-top">
+                    <img class="item-icon" src="/img/svg/webEnvironment.svg">
+                    <div class="item-title"> <%- t("index.item.onlineImageSearch.title") %> </div>
+                </div>
+                <div class="item-text"> <%- t("index.item.onlineImageSearch.text") %> </div>
+            </div>
+        </div>
+        <div class="contentBox3">
+            <!-- QuickLook -->
+            <div class="item">
+                <div class="item-top">
+                    <img class="item-icon" src="/img/svg/searchAndApps.svg">
+                    <div class="item-title"> <%- t("index.item.quickLook.title") %> </div>
+                </div>
+                <div class="item-text"> <%- t("index.item.quickLook.text") %> </div>
+            </div>
+            <!-- 其他功能 -->
+            <div class="item">
+                <div class="item-top">
+                    <img class="item-icon" src="/img/svg/puzzle.svg">
+                    <div class="item-title"> <%- t("index.item.otherFeatures.title") %> </div>
+                </div>
+                <div class="item-text"> <%- t("index.item.otherFeatures.text") %> </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <%- await include("./_bottom.ejs"); %>
+
+    <%- await include("./_script.ejs"); %>
+
+</body>
+
+</html>

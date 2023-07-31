@@ -1,0 +1,227 @@
+// 首頁
+.page-index {
+  // 上面的資訊區塊
+  .infoBox {
+    margin: 0 20px;
+
+    .infoBox-content {
+      max-width: 800px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: saturate(180%) blur(20px);
+      //box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      padding: 30px 30px;
+    }
+
+    .infoBox-title {
+      display: flex;
+      align-items: center;
+      h1 {
+        font-size: 50px;
+        margin: 0;
+        font-weight: 500;
+      }
+    }
+    .infoBox-text {
+      font-size: 26px;
+      margin-top: 20px;
+      margin-bottom: 80px;
+      // color: rgb(189, 189, 189);
+    }
+
+    .infoBox-ver {
+      margin-bottom: 10px;
+    }
+
+    .infoBox-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-shadow: 0 0 2px #000;
+
+      .infoBox-links-btns {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .infoBox-link-btn {
+        text-decoration: none;
+        padding: 0px 20px;
+        margin-right: 20px;
+        border: none;
+        color: rgb(255, 255, 255);
+        background-color: rgb(0, 0, 0);
+        border-radius: 5px;
+        height: 50px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 30px;
+          margin-right: 10px;
+        }
+      }
+      .infoBox-link-btn:hover {
+        background-color: rgb(22, 22, 22);
+      }
+      .infoBox-link-link {
+        margin-top: 20px;
+        //margin-bottom: 20px;
+      }
+    }
+
+    .infoBox-img {
+      max-width: 80%;
+      margin-left: auto;
+    }
+  }
+
+  .contentBox2 {
+    margin-top: 100px;
+    //background-color: rgba(15, 15, 15, 0.5);
+    //backdrop-filter: saturate(180%) blur(20px);
+
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .item {
+      display: flex;
+      flex-direction: row;
+      width: 90%;
+      margin-bottom: 100px;
+
+      .item-1 {
+        width: 40%;
+        display: flex;
+      }
+
+      .item-2 {
+        width: 60%;
+        display: flex;
+      }
+      .item-1 {
+        margin-right: 10px;
+      }
+      .item-2 {
+        margin-left: 10px;
+      }
+      .item-1-content {
+        //width: 80%;
+        //flex: 1;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .item-title {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+      .item-text {
+        color: rgb(189, 189, 189);
+      }
+      .item-imgbox {
+      }
+      .item-img {
+        max-width: 100%;
+        display: block;
+      }
+    }
+
+    .item:nth-child(even) {
+      .item-1 {
+        order: 2;
+      }
+      .item-1 {
+        margin-right: 0px;
+        margin-left: 10px;
+      }
+      .item-2 {
+        margin-left: 0px;
+        margin-right: 10px;
+      }
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .contentBox2 {
+      .item {
+        flex-wrap: wrap;
+      }
+      .item-1 {
+        width: 100% !important;
+        order: 1 !important;
+        margin-bottom: 10px;
+      }
+
+      .item-2 {
+        width: 100% !important;
+        order: 2 !important;
+      }
+    }
+  }
+
+  .contentBox3 {
+    //margin-top: 50px;
+    margin-bottom: 10px;
+    //background-color: rgba(15, 15, 15, 0.5);
+    //backdrop-filter: saturate(180%) blur(20px);
+
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .item {
+      width: 33.3%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      margin: 10px;
+      margin-bottom: 0px;
+
+      min-height: 230px;
+      border-radius: 10px;
+      //display: flex;
+      //justify-content: center;
+      //flex-direction: column;
+
+      .item-top {
+        //display: flex;
+        //flex-direction: row;
+        //align-items: center;
+        margin-bottom: 32px;
+      }
+
+      .item-icon {
+        height: 30px;
+        margin-top: 5px;
+      }
+      .item-title {
+        font-size: 24px;
+      }
+      .item-text {
+        color: rgb(189, 189, 189);
+      }
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    .contentBox3 {
+      flex-wrap: wrap;
+      .item {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,2731 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-tw">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>TiefSee 圖片檢視器 (舊名 AeroPic)</title>
+
+    <link rel="Shortcut Icon" type="image/x-icon" href="imgs/logo.png" />
+    <meta name="Description" content="TiefSee 圖片檢視器 (舊名 AeroPic)，開源免安裝的看圖軟體，簡約高雅的界面，全視窗的AERO毛玻璃，方便看漫畫的大量瀏覽模式，可取代windows內建的圖片檢視器" />
+    <meta name="KeyWords" content="TiefSee,AeroPic,aero,windows,hbl917070,深海異音,圖片檢視,看圖軟體,漫畫軟體,相片檢視" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+
+    <meta name="msvalidate.01" content="8E2F4436D1A39A1D7CCFB36D47910783" />
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+
+
+    <style>
+        html,
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-family: "微軟正黑體";
+            font-size: 18px;
+
+        }
+
+        html {
+            background-color: rgb(206, 206, 206);
+            background-image: url(imgs/bac.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .top {
+            /*box-shadow: 0px 0px 8px rgba(0,0,0,0.8);*/
+            background-color: rgba(0, 0, 0, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            /*height: 50px;*/
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            /*min-width: 800px;*/
+            overflow-y: auto;
+            overflow-y: hidden;
+        }
+
+        .top a {
+            font-size: 26px;
+            color: #FFF;
+            line-height: 50px;
+            margin-right: 20px;
+            height: 50px;
+            display: block;
+            float: left;
+            padding: 0px 20px;
+            text-decoration: none;
+        }
+
+        .top table,
+        .top tr,
+        .top td {
+            border: none;
+            margin: 0px;
+            padding: 0px;
+            border-collapse: collapse;
+        }
+
+        .top table {
+            width: 800px;
+        }
+
+        .top a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            /* transform: scale(1.1); */
+        }
+
+        .top a:active {
+            transform: scale(1.02) translateY(3px);
+        }
+
+        .top .logo {}
+
+        .top .logo img {
+            width: 44px;
+            height: 44px;
+            margin: 3px;
+            float: left;
+        }
+
+        .top .logo t {
+            font-size: 30px;
+            color: #FFF;
+            line-height: 50px;
+        }
+
+
+        @keyframes first_top_but {
+            0% {
+                color: rgb(77, 243, 255);
+                border-bottom: 5px solid rgb(77, 243, 255);
+            }
+
+            50% {
+                color: rgb(116, 255, 209);
+                border-bottom: 5px solid rgb(116, 255, 209);
+            }
+
+            100% {
+                color: rgb(77, 243, 255);
+                border-bottom: 5px solid rgb(77, 243, 255);
+            }
+        }
+
+        #center {}
+
+        #center img {
+            max-width: 100%;
+        }
+
+        #center table {
+            border-collapse: collapse;
+        }
+
+        .ddd {
+            max-width: 960px;
+            margin: auto;
+        }
+    </style>
+
+
+    <style>
+        .box {
+            background-color: rgba(0, 0, 0, 0);
+            color: #000;
+            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin: 10px;
+            margin-top: 60px;
+            padding: 10px;
+            border-radius: 15px;
+            word-break: break-all;
+            line-height: 24px;
+            /**/
+            background-image: url(imgs/bac_aero.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+        }
+
+        .box a:link,
+        .box a:visited,
+        #bottom a {
+            text-decoration: none;
+            color: rgb(3, 0, 158);
+
+        }
+
+        .box a:hover,
+        .box a:active {
+            text-decoration: underline;
+        }
+
+        .tit {
+            font-size: 28px;
+            line-height: 30px;
+            text-align: center;
+            font-weight: 900;
+            margin-top: 0px;
+            margin-left: 0px;
+            margin-bottom: 10px;
+            color: #FFF;
+            text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.8);
+        }
+    </style>
+
+
+
+
+
+
+
+    <!-- 下載按鈕 -->
+    <style>
+        .a_download {
+            padding: 0px 40px;
+            border: none;
+            color: rgb(255, 255, 255) !important;
+            background-color: rgb(0, 174, 255);
+            border-radius: 15px;
+            height: 50px;
+            line-height: 50px;
+            /* transition: all 0.3s; */
+            display: inline-block;
+            text-decoration: none !important;
+            overflow: hidden;
+        }
+
+        .a_download:hover {
+            background-color: rgb(64, 188, 241);
+            /* transform: scale(1.02) !important; */
+        }
+
+        .a_download:active {
+            background-color: rgb(0, 146, 214);
+            transform: translateY(3px) !important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <div ng-app="routingDemoApp" ng-controller="myCtrl">
+
+
+        <div class="top">
+            <div class="ddd">
+
+
+
+                <style>
+                    @media screen and (max-width: 800px) {
+                        #td_logo {
+                            display: none;
+                        }
+
+                        .top a {
+                            margin-right: 10px !important;
+                            padding: 0px 5px;
+                        }
+
+                        .top table {
+                            width: 400px;
+                        }
+
+                        body {
+
+                            background-image: none !important;
+                            background-color: rgb(206, 206, 206) !important;
+                            background-size: initial !important;
+                            background-repeat: initial !important;
+                            background-attachment: initial !important;
+                        }
+
+                        .box {
+                            background: rgba(255, 255, 255, 0.7) !important;
+                        }
+
+                        #bottom {
+                            background: rgb(26, 26, 26) !important;
+                        }
+                    }
+                </style>
+
+                <table>
+                    <tr>
+                        <td id="td_logo">
+                            <a href="#/" class="logo">
+                                <img src="imgs/logo.png" alt="TiefSee LOGO"/> TiefSee
+                            </a>
+                        </td>
+                        <td>
+                            <a id="top_1" href="#/">首頁</a>
+                        </td>
+                        <td>
+                            <a id="top_download" href="#/download">下載</a>
+                        </td>
+                        <td>
+                            <a id="top_explain" href="#/explain_soft">使用說明</a>
+                        </td>
+                        <td>
+                            <a id="top_author" href="#/author">意見回饋</a>
+                        </td>
+                    </tr>
+                </table>
+
+
+
+
+            </div>
+
+        </div>
+
+        <div style="height:50px;"></div>
+
+
+        <!--顯示用的區域-->
+        <div id="center" ng-view></div>
+
+
+        <!-- 從外部檔案合併進來的模板 -->
+        <div>
+            <div id="tmp_p1">
+                <!--讓目前選擇的項目改變顏色-->
+<style type="text/css">
+    #top_1 {
+        color: rgb(77, 243, 255);
+        border-bottom: 5px solid rgb(77, 243, 255);
+        animation: first_top_but 10s;
+        animation-iteration-count: infinite;
+    }
+
+    @media screen and (max-width: 800px) {
+        .img_t01 {
+            float: initial !important;
+            margin: 10px auto !important;
+            display: block;
+        }
+
+        .div_t02 {
+            margin: auto !important;
+            float: initial !important;
+            width: 100% !important;
+            text-align: center;
+        }
+    }
+
+    .div_t02 h1 {
+        font-size: 22px;
+        margin: 10px 0px;
+    }
+
+    .div_t02 h2 {
+        font-size: 20px;
+        line-height: 22px;
+        padding: 0px;
+        margin: 0px;
+        font-weight: normal;
+    }
+</style>
+
+
+
+<div class='ddd'>
+
+
+    <div class="box">
+        <div class="tit">簡介</div>
+
+        <div style="overflow:hidden;">
+
+            <img class="img_t01" style="float:left; width:150px; margin:80px 0px 0 80px;" src="imgs/logo.png">
+
+            <div class="div_t02" style="font-size:24px; max-width:600px; margin-left:300px; margin-top:10px;">
+
+                <br>
+
+                <h1>TiefSee 圖片檢視器 (舊名 AeroPic)</h1>
+                <h2>開源綠色免安裝，專注於看圖的軟體</h2>
+                <h2>簡約高雅的界面，全界面的透明毛玻璃</h2>
+                <h2>不在界面上擺一堆使用者看不懂的按鈕</h2>
+                <h2>使用大量瀏覽模式，看漫畫簡單方便</h2>
+                <h2>將視窗固定在最上層，協助完成複雜工作</h2>
+                <h2>在資料夾或桌面長按空白鍵，快速預覽圖片</h2>
+                <h2>支援多種特殊格式：pixiv動圖、apng、svg、psd、raw、webp、exe 等...</h2>
+
+
+                <br>
+                <br>
+                <a href="index.html#/download" class="a_download"> 下載 TiefSee {{new_version}}</a>
+                <br> <br>
+                <a href="https://github.com/hbl917070/Tiefsee4" target="_blank" class="a_download"> 下載 TiefSee 4</a>
+                <br>
+                <br>
+                原始碼：<a href="https://github.com/hbl917070/TiefSee" target="_block">GitHub</a>
+                <br>
+                <br>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+    <div class="box">
+        <div class="tit">功能演示</div>
+
+        <div style="text-align:center;overflow:auto;">
+
+            <style type="text/css">
+                @media screen and (max-width: 920px) {
+                    .div_demo {
+                        margin-bottom: 100px !important;
+                    }
+
+                    .div_demo img {
+                        width: 100% !important;
+                        float: inherit !important;
+                        margin-top: 10px !important;
+                    }
+
+                    .div_demo .div_demo_t {
+                        width: 100% !important;
+                        float: inherit !important;
+                    }
+
+                    .div_demo_left .div_demo_t {
+                        width: 100% !important;
+                        float: inherit !important;
+                    }
+
+                    .div_demo_left img {
+                        width: 100% !important;
+                        float: inherit !important;
+                    }
+                }
+
+
+
+                .div_demo {
+                    margin: 10px;
+                    padding: 5px;
+                    overflow: auto;
+                    margin-bottom: 100px;
+                }
+
+                .div_demo img {
+                    width: 450px;
+                    float: left;
+                    margin-top: 65px;
+                }
+
+                .div_demo .div_demo_t {
+                    float: right;
+                    width: 400px;
+                    line-height: 24px;
+                    /*background:rgb(255, 216, 0);*/
+                }
+
+                .div_demo_left .div_demo_t {
+                    float: left;
+                    line-height: 24px;
+                }
+
+                .div_demo_left img {
+                    float: right;
+                }
+
+                .div_demo .div_demo_t h2 {
+                    font-size: 26px;
+                    margin-top: 0px;
+                    margin-bottom: 20px;
+                }
+
+                .div_demo h2 {
+                    color: rgb(0, 0, 0);
+                    border-bottom: 1px rgb(0, 0, 0) solid;
+                    font-weight: 900;
+                    line-height: 40px;
+                    font-size: 30px !important;
+                    /*background-color:rgba(0, 213, 50, 0.25);*/
+                }
+
+                .div_demo_t ul li {
+                    margin-bottom: 15px;
+
+                }
+            </style>
+
+            <div class="div_demo">
+                <div class="div_demo_t">
+                    <h2>透明毛玻璃UI</h2>
+                    全視窗使用AERO(毛玻璃特效)
+                    <br> win7、win10 適用
+                </div>
+                <img src="imgs/home_demo/1.gif" alt="全視窗使用AERO(毛玻璃特效)" />
+            </div>
+
+
+            <div class="div_demo div_demo_left">
+                <div class="div_demo_t">
+                    <h2>簡約風格界面</h2>
+                    <div style="text-align: left ;">
+                        <ul>
+                            <li> 圖示皆採用極細線條風格繪製 </li>
+                            <li> 隱藏工具列後，依然可以透過右上角的「功能選單」來進行操作 </li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="imgs/home_demo/12.jpg" alt="功能選單。極細線條風格的圖示" />
+            </div>
+
+
+            <div class="div_demo">
+                <div class="div_demo_t">
+                    <h2>自定程式主題</h2>
+                    <div style="text-align: left ;">
+                        <ul>
+                            <li> 自定視窗背景顏色 </li>
+                            <li> 自定標題列顏色 </li>
+                            <li> 自定工具列的按鈕 </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <img src="imgs/home_demo/9.jpg" alt="自定程式主題。可自定視窗的背景顏色，與標題列的顏色" />
+            </div>
+
+
+            <div class="div_demo div_demo_left">
+                <div class="div_demo_t">
+                    <h2>大量瀏覽模式</h2>
+                    <div style="text-align:left;">
+                        <ul>
+                            <li>
+                                專門用來看
+                                <b>漫畫</b>的瀏覽模式，
+                                <br> 一次載入資料夾內所有圖片，
+                                <br> 可像瀏覽器一樣垂直捲動
+                            </li>
+                            <li>
+                                快速切換上下一個資料夾(上下一集)
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+                <img src="imgs/home_demo/2.gif" alt="大量瀏覽模式。像網頁一樣垂直捲動來顯示大量圖片，適合用於看漫畫" />
+            </div>
+
+
+
+            <div class="div_demo ">
+                <div class="div_demo_t">
+                    <h2>EXIF 資訊</h2>
+                    <div style="text-align: left ;">
+                        檢視圖片EXIF資訊，有儲存地理位置的圖片，可直接用 Google Map 開啟。
+                    </div>
+                </div>
+                <img src="imgs/home_demo/10.jpg" alt="檢視圖片EXIF資訊" />
+            </div>
+
+
+
+
+
+            <div class="div_demo div_demo_left">
+                <div class="div_demo_t">
+                    <h2>支援多種格式</h2>
+                    <div style="text-align: left;">
+
+                        除了支援常見的 JPG、PNG、GIF、BMP格式外， 使用
+                        <a href="https://www.imagemagick.org/script/index.php">Magick</a> 解析引擎，亦支援多種特殊格式：
+                        <br>TIF、ICO、PSD、AI、SVG、APNG、WebP、RAW、PDF、EXE、HEIC 等...
+                    </div>
+                </div>
+                <img src="imgs/home_demo/3.jpg" alt="支援多種特殊格式的圖片" />
+            </div>
+
+
+            <div class="div_demo">
+                <div class="div_demo_t">
+                    <h2>直接播放Pixiv動態圖</h2>
+                    <div style="text-align:left;">
+                        <ul>
+                            <li>
+                                直接播放Pixiv動圖的zip壓縮檔 or 已解壓縮的Pixiv動圖資料夾
+                            </li>
+                            <li>
+                                將Pixiv動圖輸出成GIF格式
+                            </li>
+                            <li>
+                                載入Pixiv動圖後，不會影響切換上下一張圖片的功能， 會自動與同個資料夾內的其他pixiv動圖進行聯結
+                            </li>
+                        </ul>
+
+
+                    </div>
+                </div>
+                <img src="imgs/home_demo/4.gif" alt="可直接開啟pixiv動圖" />
+            </div>
+
+
+            <div class="div_demo div_demo_left">
+                <div class="div_demo_t">
+                    <h2>直接線上搜圖</h2>
+
+                    <div style="text-align:left;">
+
+                        不用將圖片拖到瀏覽器上面就可直接進行線上搜圖，支援：
+
+                        <ul>
+                            <li> <a href="https://www.google.com.tw/imghp">Google 搜圖</a>：<br>搜尋相關網站，或出現類似圖片的網站 </li>
+                            <li> <a href="https://saucenao.com/">SauceNAO 搜圖</a> ：<br>搜尋 pixiv 之類的圖片網站、動畫截圖對應的集數 </li>
+                            <li> <a href="http://iqdb.org/">IQDB 搜圖</a> ：<br>搜尋 Danbooru、e-shuushuu、Sankaku 之類的圖片網站</li>
+                            <li> <a href="https://ascii2d.net/" target="_block">Ascii2d 搜圖</a> ：<br>搜尋 pixiv、Twitter 之類的圖片網站</li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <img src="imgs/home_demo/5.gif" alt="直接線上搜圖" />
+            </div>
+
+
+            <div class="div_demo">
+                <div class="div_demo_t">
+                    <h2>多種複製方式</h2>
+                    <div style="text-align:left;">
+                        <ul>
+                            <li> 複製檔案 </li>
+                            <li> 複製檔名 </li>
+                            <li> 複製完整路徑 </li>
+                            <li> 複製影像（可直接貼到其他程式） </li>
+                            <li> 複製PNG（可保留透明底） </li>
+                            <li> 複製base64（用於網頁設計） </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <img src="imgs/home_demo/6.jpg" alt="多種複製方式" />
+            </div>
+
+
+            <div class="div_demo div_demo_left">
+                <div class="div_demo_t">
+                    <h2>用其他程式開啟</h2>
+                    <div style="text-align:left;">
+                        <ul>
+                            <li> 開啟 Windows系統 原生右鍵選單 </li>
+                            <li> 開啟檔案總管，並把焦點放在目前的圖片上面 </li>
+                            <li> 列印圖片 </li>
+                            <li> 設定成桌布 </li>
+                            <li> 使用 Windows系統 原生的APP選擇器開啟 </li>
+                            <li> 使用其他第三方軟體開啟圖片（名單可自定） </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <img src="imgs/home_demo/7.jpg" alt="快速使用第三方軟體開啟" />
+            </div>
+
+
+            <div class="div_demo">
+                <div class="div_demo_t">
+                    <h2>鎖定視窗在最上層</h2>
+                    將視窗鎖定在最上層後<br>
+                    TiefSee 就不會被其他視窗蓋過去<br>
+                    增進作業效率
+                </div>
+                <img src="imgs/home_demo/8.gif" alt="鎖定視窗在最上層" />
+            </div>
+
+
+            <div class="div_demo div_demo_left">
+                <div class="div_demo_t">
+                    <h2>快速拖曳</h2>
+                    <div style="text-align:left;">
+
+
+                        <ul>
+                            <li> 將圖片拖曳到其他程式開啟 </li>
+                            <li> 將圖片拖曳到瀏覽器上傳 </li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="imgs/home_demo/11.gif" alt="快速拖曳。將圖片拖曳到其他程式開啟" />
+            </div>
+
+
+            <script>
+                /*var ar_div_demo = document.getElementsByClassName("div_demo");
+                for (var i = 0; i < ar_div_demo.length; i++) {
+                    if(i%2==0)
+                    ar_div_demo[i].setAttribute("class", "div_demo div_demo_left");
+                }   */
+            </script>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+</div>
+            </div>
+            <div id="tmp_download">
+                <!--讓目前選擇的項目改變顏色-->
+<style>
+    #top_download {
+        color: rgb(77, 243, 255);
+        border-bottom: 5px solid rgb(77, 243, 255);
+        animation: first_top_but 10s;
+        animation-iteration-count: infinite;
+    }
+</style>
+
+
+<div class="ddd">
+
+
+    <div class="box">
+        <div class="tit">軟體需求</div>
+        作業系統：
+        <br> Windows 7、Windows 8、Windows 10
+
+        <br>
+        <br>
+        <br> 備註：
+        <ul>
+            <li>
+                只有 win7 或 win10 可以使用透明玻璃特效
+            </li>
+            <li>
+                如果「無法執行」請安裝
+                <a href="https://dotnet.microsoft.com/download/dotnet-framework/net472"> Microsoft .NET Framework 4.6.2 </a> ，或更高版本
+            </li>
+            <li>
+                「無法瀏覽GIF」或「無法開啟大量瀏覽模式」，請把IE更新到
+                <a href="https://support.microsoft.com/zh-tw/help/18520/download-internet-explorer-11-offline-installer">IE11</a>
+            </li>
+            <li>
+                要開啟 AI 或 PDF 檔，需要另外安裝
+                <a href="https://www.ghostscript.com/download/gsdnld.html">Ghostscript</a>
+            </li>
+        </ul>
+        <br>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="box">
+        <div class="tit">載點</div>
+
+
+        <style>
+            .table_download td {
+                text-align: center;
+                padding: 3px 10px;
+            }
+        </style>
+
+
+        目前最新版本：
+        <span style="font-size:30px;">{{new_version}}</span>
+        <br>
+        <br> 程式為免安裝軟體，使用「
+        <a href="https://www.developershome.com/7-zip/" target="_blank">7zip</a>  
+        」或「
+        <a href="https://tw.bandisoft.com/bandizip/" target="_blank">Bandizip</a>     
+        」之類的軟體解壓縮後，即可直接使用
+        <br>
+
+        <div style="height:5px"></div>
+        <a class="a_download" href="download/TiefSee_3_0_2.zip" style="width:80px; text-align:center"> 下載 </a>
+        <br>
+        <br>
+
+        <br> 備用下載點：
+        <span style="font-size:30px;"></span>
+        <br>
+
+        <div style="height:5px"></div>
+        <a class="a_download" href="https://www.dropbox.com/s/5vciob6iio9p729/TiefSee_3_0_2.zip" style="width:80px; text-align:center">Dropbox</a>
+
+
+        <br>
+        <br>
+        <br> 相關說明：
+
+        <ul>
+            <li>
+                <a href="https://github.com/hbl917070/aeropic/tree/master/download" target="_block">下載舊版</a>
+            </li>
+            <li>
+                <a href="#/explain_edit_default"> 如何把 TiefSee 設為預設開啟圖片的程式？</a>
+            </li>
+            <li>
+                <a href="#/author"> TiefSee 無法運行，或其他疑難雜症</a>
+            </li>
+        </ul>
+
+
+        <!-- <table class="table_download" border="0">
+            <tr>
+                <td>載點</td>
+                <td>
+                    備用載點
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   
+                </td>
+                <td>
+                    <a class="a_download" href="https://www.dropbox.com/s/q3t6l78tk794wtu/AeroPic%202_5_0.zip?dl=0">
+                        Dropbox
+                    </a>
+                </td>
+            </tr>
+        </table> -->
+
+        <br>
+
+
+
+    </div>
+
+
+    <div class="box">
+        <div class="tit">更新歷史</div>
+        <style>
+            .v_title {
+                font-size: 24px;
+                font-weight: 900;
+                color: rgb(130, 0, 180);
+                margin-top: 30px;
+            }
+
+            .v_title_sub {
+                font-size: 14px;
+                color: rgb(130, 0, 180);
+                text-decoration: none !important;
+            }
+
+            ul {
+                margin: 0px;
+            }
+        </style>
+
+
+
+
+
+        <div class="v_title">
+            3.0.2
+            <a class="v_title_sub">(2019/08/14)</a>
+        </div>
+        <ul>
+            <li>新增：快速鍵 tab=顯示或隱藏exif視窗、home=移動到資料夾第一張圖片、end=移動到資料夾最後一張圖片、數字鍵0=圖片縮放至100%</li>
+            <li>修復：某些SVG無法縮放的BUG</li>
+            <li>修復：某些JPG或BMP無法開啟的BUG</li>
+            <li>修復：圖片顏色偏移的問題</li>
+            <li>修復：以長按滑鼠滾輪啟動快速瀏覽，會誤觸拖曳開啟圖片的視窗</li>
+            <li>更新：google搜圖、SauceNAO 搜圖</li>
+        </ul>
+
+
+
+
+
+        <div class="v_title">
+            3.0.1
+            <a class="v_title_sub">(2019/04/24)</a>
+        </div>
+        <ul>
+            <li>修復：電腦開機後，沒有啟動過 TiefSee，就無法使用 快速預覽 的BUG</li>
+        </ul>
+
+
+        <div class="v_title">
+            3.0.0
+            <a class="v_title_sub">(2019/04/22)</a>
+        </div>
+        <ul>
+            <li>修復：圖片排序失效的BUG</li>
+            <li>修復：無法開啟根目錄底下圖片的BUG</li>
+            <li>修復：在大量瀏覽模式下，使用「開啟資料夾」會失敗的BUG</li>
+            <li>新增：可選擇滑鼠滾輪的作用為切換上下一張圖片，或縮放圖片</li>
+            <li>新增：可自定 是否「開機後自動讓 TiefSee常駐於背景」</li>
+            <li>新增：可自定 是否啟用「快速啟用」</li>
+            <li>新增：可自定 是否啟用「快速預覽」</li>
+            <li>新增：搜圖模式「<a href="https://ascii2d.net/" target="_block">Ascii2d</a> 搜圖」(可搜尋 pixiv 或 Twitter)</li>
+            <li>新增：「快速預覽」可透過「長按滑鼠滾輪」來啟用</li>
+        </ul>
+
+
+        <div class="v_title">
+            2.7.4
+            <a class="v_title_sub">(2019/01/02)</a>
+        </div>
+        <ul>
+            <li>新增：界面按鈕的特效</li>
+            <li>新增：自動記錄排序模式</li>
+            <li>新增：GIF可選擇使用 GDI 或 DirectX 來進行繪製</li>
+            <li>修正：沒有退出程式就無法刪除圖片或資料夾的BUG</li>
+            <li>修正：某些路徑有亂碼的圖片，無法開啟的BUG</li>
+            <li>修正：某些情況下完全無法啟動程式的BUG</li>
+        </ul>
+
+
+        <div class="v_title">
+            2.7.3
+            <a class="v_title_sub"></a>
+        </div>
+        <ul>
+            <li>修正：圖片無法顯示或是程式閃退的問題，進入「設定→其他→高品質成像-硬體加速」即可進行調整</li>
+        </ul>
+
+
+        <div class="v_title">
+            2.7.2
+            <a class="v_title_sub"></a>
+        </div>
+        <ul>
+            <li>新增：自動銳化圖片，增加圖片裡文字的辨識度</li>
+            <li>修正：某些情況下切換圖片後，依然顯示上一張圖片的BUG</li>
+            <li>修正：結束全螢幕模式後，工具列會自動顯示出來的BUG</li>
+            <li>修正：同資料夾裡面有容量很大的zip時，圖片就會開很慢的BUG</li>
+        </ul>
+
+
+        <div class="v_title">
+            2.7.1
+            <a class="v_title_sub"></a>
+        </div>
+        <ul>
+            <li>新增：全螢幕模式(F11)</li>
+            <li>修正：開啟路徑含有「%」符號的圖片會閃退的BUG</li>
+            <li>修正：程式無法完全退出的BUG</li>
+        </ul>
+
+
+        <div class="v_title">
+            2.7.0
+            <a class="v_title_sub">(2018/08/02)</a>
+            <a href="https://forum.gamer.com.tw/C.php?bsn=60076&snA=4661648">(詳細說明)</a>
+        </div>
+        <ul>
+            <li>新增：快速啟動，啟動速度比舊版的快一倍</li>
+            <li>新增：高品質成像，圖片不會因為過度的縮放導致畫質降低</li>
+            <li>新增：空白鍵預覽，在桌面or資料夾or回收桶，選擇圖片後長按空白鍵即可快速預覽圖片</li>
+            <li>優化：在大量瀏覽模式切換上下資料夾的速度加快</li>
+            <li>修正：RAW圖片不能複製的問題</li>
+            <li>修正：某些RAW圖片無法顯示的問題</li>
+            <li>修改：右鍵選單的界面</li>
+            <li>修改：開啟小於視窗大小的圖片時，以原圖大小來顯示</li>
+        </ul>
+
+
+
+        <div class="v_title">
+            2.5.0
+            <a class="v_title_sub">(2018/04/24)</a>
+            <a href="https://forum.gamer.com.tw/C.php?bsn=60076&snA=4510233&tnum=72">(詳細說明)</a>
+        </div>
+        <ul>
+            <li style="margin-bottom: 10px">優化：重新繪製界面圖示，改為極細風格圖示</li>
+            <li>新增：『功能選單』可在隱藏工具列或隱藏某些按鈕的情況下操作</li>
+            <li>新增：『解析動圖』解析GIF每一幀</li>
+            <li>新增：快速切換上下一個資料夾，用於看漫畫快速切換不同集數</li>
+            <li>新增：『快速拖曳』可拖曳至其他程式開啟，或拖曳至瀏覽器上傳圖片</li>
+            <li>新增：對HEIC、DDS圖片的支援</li>
+            <li>新增：自定圖片排序方式，與資料夾排序方式</li>
+            <li>新增：把圖片複製成base64格式</li>
+            <li>新增：「大量瀏覽模式」會自動判斷沒有副檔名的檔案是否為圖片</li>
+            <li style="margin-bottom: 10px">新增：可解析任何非圖片的檔案，在檔案總管顯示的圖示</li>
+
+            <li>修正：某些電腦程式視窗會錯位</li>
+            <li>修正：把檔案拖進視窗時，視窗跑至最上層的問題</li>
+            <li>修正：在沒有正確附檔名情況下，webP格式誤判成AVI格式</li>
+            <li style="margin-bottom: 10px">修正：開啟圖片後刪除整個資料夾導致程式閃退</li>
+
+            <li>修改：自動記錄『顯示或隱藏工具列』與『顯示或隱藏EXIF資訊』的操作</li>
+            <li>修改：在『大量瀏覽模式』下允許隱藏工具列</li>
+        </ul>
+
+
+
+        <div class="v_title">
+            2.4.1
+            <a class="v_title_sub">(2017/12/05)</a>
+        </div>
+        <ul>
+            <li>新增：多種RAW格式的支援性：RAF、CRW、CR2、MRW、NEF、X3F、PEF、DNG、ORF、RW2、ARW、ERF、SR2、SRW</li>
+            <li>優化：加快RAW圖片的開啟速度(改用
+                <a href="https://www.cybercom.net/~dcoffin/dcraw/">DCRAW</a>解析引擎)</li>
+            <li>修正：用大量瀏覽模式開啟 exe 或 lnk 會無法顯示的問題</li>
+            <li>修正：網路路徑無法使用大量瀏覽模式的問題</li>
+            <li>修正：隱藏工具列後視窗背景顏色異常的問題</li>
+        </ul>
+
+
+        <div class="v_title">
+            2.4.0
+            <a class="v_title_sub">(2017/11/28)</a>
+            <a href="https://forum.gamer.com.tw/Co.php?bsn=60076&sn=47628210&subbsn=0&bPage=0">(詳細說明)</a>
+        </div>
+        <ul>
+            <li>新增：大量瀏覽模式支援：PSD、EXE、ICO、WEBP、RAW 等..特殊格式的圖片</li>
+            <li>新增：可使用瀏覽器開啟大量瀏覽模式</li>
+            <li>新增：一鍵關閉所有個視窗</li>
+            <li>新增：可隱藏工具列</li>
+            <li>修正：可離線使用大量瀏覽模式</li>
+        </ul>
+
+
+        <div class="v_title">
+            2.3.1
+            <a class="v_title_sub">(2017/09/20)</a>
+        </div>
+        <ul>
+            <li>優化：啟動速度</li>
+            <li>新增：自定義工具列顯示的按鈕</li>
+            <li>新增：自定視窗外框顏色</li>
+            <li>修正：某些電腦會閃退的BUG</li>
+        </ul>
+
+        <div class="v_title">
+            2.2.0
+            <a class="v_title_sub">(2017/09/16)</a>
+        </div>
+        <ul>
+            <li>新增：『旋轉圖片』與『鏡像反轉』的功能</li>
+            <li>新增：根據exif資訊，自動修正jpg圖片的方向</li>
+            <li>修正：作業系統非安裝在C槽引起閃退的問題</li>
+        </ul>
+
+
+        <div class="v_title">
+            2.1.0
+            <a class="v_title_sub">(2017/09/12)</a>
+        </div>
+        <ul>
+            <li>新增：讀取jpg與tif圖片的『exif資訊』</li>
+            <li>新增：使用『google map』開啟拍攝圖片的位置</li>
+            <li>新增：開啟檔案原生右鍵選單</li>
+            <li>修正：讀取exe圖示的某些BUG</li>
+            <li>修正：類型為GIF時，切換圖片會誤觸全螢幕</li>
+            <li>修正：多幀數圖片顯示不正確的size</li>
+            <li>修正：非檔案類型依然會誤觸『拖曳開啟』的問題</li>
+            <li>修正：中文輸入法導致快速鍵無法觸發的問題</li>
+        </ul>
+
+
+
+        <div class="v_title">
+            2.0.1
+            <a class="v_title_sub">(2017/08/30)</a>
+        </div>
+        <ul>
+            <li>修正：2.0.0無法開啟資料夾的BUG</li>
+            <li>新增：多種圖片格式WebP、Raw ...等(使用Magick.NET 解析引擎</li>
+            <li>新增：允許選取多個檔案拖進程式裡面單獨檢視</li>
+            <li>新增：允許選取多的資料夾拖進程式裡面單獨檢視</li>
+            <li>新增：EXE執行檔的圖示解析</li>
+        </ul>
+
+
+        <div class="v_title">
+            1.3.1
+            <a class="v_title_sub">(2017/08/22)</a>
+        </div>
+        <ul>
+            <li>新增：『用外部程式開啟圖片』選單的圖示</li>
+            <li>修正：從右下角拖曳視窗有時候會錯誤的BUG</li>
+            <li>修正：GIF無法雙擊視窗全螢幕的BUG</li>
+        </ul>
+
+        <div class="v_title">
+            1.3.0
+            <a class="v_title_sub">(2017/08/20)</a>
+        </div>
+        <ul>
+            <li>新增：自定義視窗顏色</li>
+            <li>新增：關聯圖片附檔名</li>
+            <li>新增：搜圖類型『
+                <a href="http://iqdb.org/">IQDB</a>』</li>
+            <li>修正：PSD是否需要解碼器改為自動判斷</li>
+
+        </ul>
+
+
+        <div class="v_title">
+            1.2.0
+            <a class="v_title_sub">(2017/08/13)</a>
+        </div>
+        <ul>
+            <li>優化：啟動速度</li>
+            <li>新增：win7半透明毛玻璃特效</li>
+            <li>修正：win7無法縮放GIF的BUG</li>
+        </ul>
+
+        <div class="v_title">
+            1.1.2
+            <a class="v_title_sub">(2017/08/11)</a>
+        </div>
+        <ul>
+            <li>新增：列印圖片</li>
+            <li>新增：設定圖片為桌布</li>
+            <li>新增：用其他程式開啟圖片</li>
+            <li>新增：顯示目前圖片比例</li>
+            <li>新增：顯示原始圖片大小</li>
+
+            <li>修正：重新繪製icon</li>
+            <li>修正：SVG顯示的size不正確</li>
+            <li>修正：切換GIF會閃爍的現象</li>
+            <li>修正：某些電腦開啟程式3秒後自動閃退</li>
+            <li>修正：某些情況無法複製檔名與路徑</li>
+            <li>修正：無法讀取根目錄圖片</li>
+            <li>修正：手機用USB傳輸線連接電腦，無法瀏覽手機內的圖片</li>
+        </ul>
+
+        <div class="v_title">
+            1.0.1
+            <a class="v_title_sub">(2017/08/06)</a>
+        </div>
+        <ul>
+            <li>修正BUG</li>
+            <li>內建PSD解碼器，讓沒有安裝 Photoshop 的電腦也能開啟PSD圖片</li>
+        </ul>
+
+
+        <div class="v_title">
+            1.0.0
+            <a class="v_title_sub">(2017/08/01)</a>
+        </div>
+        <ul>
+            <li>初版</li>
+        </ul>
+
+
+
+    </div>
+
+
+</div>
+            </div>
+            <div id="tmp_explain_soft">
+                <!--讓目前選擇的項目改變顏色-->
+<style>
+    #top_explain {
+        color: rgb(77, 243, 255);
+        border-bottom: 5px solid rgb(77, 243, 255);
+        animation: first_top_but 10s;
+        animation-iteration-count: infinite;
+    }
+
+    #explain_menu_soft {
+        /* background-color: rgb(161, 161, 161); */
+        /* outline: rgb(0, 165, 39) solid 5px; */
+        border-bottom: 10px solid rgb(130, 0, 180);
+        color: rgb(130, 0, 180) !important;
+
+    }
+</style>
+
+
+
+<div ng-include="'page/explain.html'"></div>
+
+
+
+
+<div class="ddd">
+
+    <style>
+        .box img {
+            margin: auto !important;
+            display: block;
+        }
+
+        ul {
+            margin: 0px;
+        }
+    </style>
+
+
+    <div id="div_version" style="display:none">
+
+
+        <div class="box">
+            <div class="tit">檢查版本</div>
+
+            <style type="text/css">
+                #div_version .box {
+                    /*border: 5px rgb(0, 191, 51) solid;*/
+                    background-color: rgb(0, 0, 0);
+                    color: #000000;
+                }
+
+                .table,
+                .table td {
+                    font-size: 24px;
+                    border: 1px solid rgb(55, 55, 55);
+                }
+
+                .table td {
+                    padding: 10px;
+                }
+
+                #tit_yes,
+                #tit_no {
+                    font-size: 50px;
+                    margin: 10px 0px;
+                    line-height: 70px;
+                }
+
+                .a_download {
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                }
+            </style>
+
+
+            <div id="tit_yes" style="display:none; color:rgb(7, 146, 0)">您已經是最新版</div>
+            <div id="tit_no" style="display:none;color:rgb(255, 0, 0)">
+                需要更新
+
+                <br>
+                <a href="index.html#/download" class="a_download">下載 TiefSee(舊名 AeroPic) {{new_version}}</a>
+
+            </div>
+
+
+            <table border="1" class="table">
+                <tr>
+                    <td>你目前的版本</td>
+                    <td>{{s_version}}</td>
+                </tr>
+                <tr>
+                    <td>最新版</td>
+                    <td>{{new_version}}</td>
+                </tr>
+
+            </table>
+
+
+
+
+        </div>
+    </div>
+
+
+
+    <div class="box">
+        <div class="tit">說明</div>
+
+        <style>
+            .table_123,
+            .table_123 td {
+                border-color: rgba(160, 110, 145, 0.8);
+            }
+
+            .table_123 td {
+                padding: 5px;
+            }
+        </style>
+
+
+        TiefSee 是一款圖片顯示器，將圖片或資料夾拖曳至程式中即可開啟，亦可設定成系統預設開啟圖片的程式(
+        <a href="#/explain_edit_default">設定教學</a>)。
+
+
+        <br>
+        <br> 開啟圖片後，會自動關聯該資料夾底下所有的圖片，供快速切換瀏覽。
+        <br>
+        <br> 支援格式包含：
+        <table border="1" class="table_123">
+            <tr>
+                <td>常見格式</td>
+                <td>
+                    JPG、PNG、APNG、GIF、BMP、TIF、ICO、WebP、PSD、PSB、PPM、TGA、PCX、PGM、PBM
+                </td>
+            </tr>
+            <tr>
+                <td>相機 RAW</td>
+                <td>RAF、CRW、CR2、MRW、NEF、X3F、PEF、DNG、ORF、RW2、ARW、ERF、SR2、SRW</td>
+            </tr>
+            <tr>
+                <td>向量</td>
+                <td>PDF、SVG、AI、WMF、EMF</td>
+            </tr>
+            <tr>
+                <td>特殊</td>
+                <td>EXE、LNK、Pixiv動圖
+                    <a href="#/explain_pixiv">(下載教學)</a>、HEIC (iOS相機格式)
+
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <br>
+        <br> 滑鼠滾輪捲動可控制圖片縮放
+
+        <br>圖片小於視窗時，拖曳=拖曳視窗
+        <br>圖片大於視窗時，拖曳=移動圖片位置
+
+        <br>
+        <br>
+        <br> 備註：
+        <ul>
+            <li>
+                只有 win7 或 win10 可以使用透明玻璃特效
+            </li>
+            <li>
+                如果無法執行：請安裝
+                <a href="https://dotnet.microsoft.com/download/dotnet-framework/net472"> Microsoft .NET Framework 4.6.2 </a> ，或更高版本
+            </li>
+            <li>
+                無法 瀏覽GIF 或 無法開啟大量瀏覽模式，請把IE更新到
+                <a href="https://support.microsoft.com/zh-tw/help/18520/download-internet-explorer-11-offline-installer">IE11</a>
+            </li>
+            <li>
+                要開啟 AI 或 PDF 檔，需要另外安裝
+                <a href="https://www.ghostscript.com/download/gsdnld.html">Ghostscript</a>
+            </li>
+        </ul>
+
+    </div>
+
+
+
+
+    <div class="box">
+        <div class="tit">工具列</div>
+        <br><br>
+        工具列按鈕的顯示與隱藏可到 「設定 → 界面配置」裡面進行修改
+        <br><br>
+        <img src="imgs/explain_soft/ui-1.svg" alt="TiefSee 工具列介紹" />
+
+
+
+        <br>
+    </div>
+
+
+    <div class="box">
+        <div class="tit">Pixiv動態圖</div>
+        <br> 開啟pixiv動圖後，工具列會多出控制選項
+        <br>
+        <img width="851" src="imgs/explain_soft/ui-2.svg" alt="TiefSee 動圖工具列" />
+        <br>
+        <br> 並且可以使用功能選單裡面的「轉存GIF」功能，將pixiv動圖轉存成GIF格式。
+        <br>
+        <br>
+        <img src="imgs/explain_soft/ui-3.jpg" alt="TiefSee 功能選單->轉存GIF" />
+        <br>
+        <br>
+        <img width="486" src="imgs/explain_soft/ui-4.svg" alt="將pixiv動圖轉成GIF圖片" />
+    </div>
+
+
+    <div class="box">
+        <div class="tit">解析GIF</div>
+        <br> 開啟GIF後，可以使用功能選單裡面的「解析GIF」功能，可以分解出GIF裡面的每一幀畫面。
+        <br>
+        <br>
+        <video style="max-width:600px" loop="loop" controls>
+            <source src="imgs/explain_soft/movie01.webm" type="video/webm" />
+            <source src="imgs/explain_soft/movie01.mp4" type="video/mp4" />
+        </video>
+        <br> <br>
+    </div>
+
+
+
+    <div class="box">
+        <div class="tit">快速鍵說明</div>
+
+        <br>
+
+        <style>
+            .tab_keyboard td {
+                text-align: center;
+                padding: 5px 15px;
+            }
+
+            .tab_keyboard {
+                margin: auto;
+                width: 80%;
+            }
+
+            .tab_keyboard,
+            .tab_keyboard td {
+                border: rgba(255, 255, 255, 0.5) 1px solid;
+            }
+
+            .tab_keyboard tr:hover {
+                background-color: rgba(0, 132, 255, 0.1);
+            }
+        </style>
+
+        <table border='1' class='tab_keyboard'>
+            <tr style='background:rgba(255,255,255,0.5);color:rgb(0, 0, 0);font-size:24px;'>
+                <td>操作</td>
+                <td>按鍵</td>
+            </tr>
+            <tr>
+                <td>下一張</td>
+                <td>方向鍵 →</td>
+            </tr>
+            <tr>
+                <td>上一張</td>
+                <td>方向鍵 ←</td>
+            </tr>
+            <tr>
+                <td>上一個資料夾</td>
+                <td>&lt;</td>
+            </tr>
+            <tr>
+                <td>上一個資料夾</td>
+                <td>&gt;</td>
+            </tr>
+            <tr>
+                <td>放大圖片</td>
+                <td>右Shift 或 + </td>
+            </tr>
+            <tr>
+                <td>縮小圖片</td>
+                <td> 右Ctrl 或 -</td>
+            </tr>
+            <tr>
+                <td>旋轉</td>
+                <td> R </td>
+            </tr>
+            <tr>
+                <td>垂直鏡像</td>
+                <td> V </td>
+            </tr>
+            <tr>
+                <td>水平鏡像</td>
+                <td> H </td>
+            </tr>
+            <tr>
+                <td>P網動圖-下一幀</td>
+                <td> ] </td>
+            </tr>
+            <tr>
+                <td>P網動圖-上一幀</td>
+                <td> [ </td>
+            </tr>
+
+            <tr>
+                <td>圖片全滿</td>
+                <td>F</td>
+            </tr>
+            <tr>
+                <td>開啟圖片位置</td>
+                <td>O</td>
+            </tr>
+            <tr>
+                <td>開啟圖片原生右鍵選單</td>
+                <td>M</td>
+            </tr>
+            <tr>
+                <td>複製圖片</td>
+                <td>Ctrl + C</td>
+            </tr>
+            <tr>
+                <td>刪除圖片</td>
+                <td>Delete</td>
+            </tr>
+            <tr>
+                <td>重新載入圖片</td>
+                <td>F5</td>
+            </tr>
+            <tr>
+                <td>全螢幕</td>
+                <td>F11</td>
+            </tr>
+
+            <tr>
+                <td>進入 大量瀏覽模式</td>
+                <td>B</td>
+            </tr>
+            <tr>
+                <td>退出 大量瀏覽模式</td>
+                <td>Back Space 或 Esc</td>
+            </tr>
+
+            <tr>
+                <td>關閉程式</td>
+                <td>Esc</td>
+            </tr>
+
+        </table>
+        <br>
+        <br>
+    </div>
+
+
+
+
+    <div class="box">
+
+        <div class="tit">進階設定</div>
+
+        <br> 在進階設定裡面可以修改「預設瀏覽器」、「用其他程式開啟圖片的名單」
+        <br>
+        <br> 目前還尚未做圖形化界面，只能手動編輯設定檔，用記事本即可進行編輯。
+        <br> 路徑： {程式資料夾}/data/
+        <b style="color:rgb(255, 0, 0)">config.xml</b>
+
+        <br>
+        <br>
+
+        <img src="imgs\explain_soft/1.jpg" alt="TiefSee 的 config.xml" />
+
+        <br>
+        <br>
+
+
+    </div>
+
+
+</div>
+            </div>
+            <div id="tmp_explain_soft">
+                <!--讓目前選擇的項目改變顏色-->
+<style>
+    #top_explain {
+        color: rgb(77, 243, 255);
+        border-bottom: 5px solid rgb(77, 243, 255);
+        animation: first_top_but 10s;
+        animation-iteration-count: infinite;
+    }
+
+    #explain_menu_soft {
+        /* background-color: rgb(161, 161, 161); */
+        /* outline: rgb(0, 165, 39) solid 5px; */
+        border-bottom: 10px solid rgb(130, 0, 180);
+        color: rgb(130, 0, 180) !important;
+
+    }
+</style>
+
+
+
+<div ng-include="'page/explain.html'"></div>
+
+
+
+
+<div class="ddd">
+
+    <style>
+        .box img {
+            margin: auto !important;
+            display: block;
+        }
+
+        ul {
+            margin: 0px;
+        }
+    </style>
+
+
+    <div id="div_version" style="display:none">
+
+
+        <div class="box">
+            <div class="tit">檢查版本</div>
+
+            <style type="text/css">
+                #div_version .box {
+                    /*border: 5px rgb(0, 191, 51) solid;*/
+                    background-color: rgb(0, 0, 0);
+                    color: #000000;
+                }
+
+                .table,
+                .table td {
+                    font-size: 24px;
+                    border: 1px solid rgb(55, 55, 55);
+                }
+
+                .table td {
+                    padding: 10px;
+                }
+
+                #tit_yes,
+                #tit_no {
+                    font-size: 50px;
+                    margin: 10px 0px;
+                    line-height: 70px;
+                }
+
+                .a_download {
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                }
+            </style>
+
+
+            <div id="tit_yes" style="display:none; color:rgb(7, 146, 0)">您已經是最新版</div>
+            <div id="tit_no" style="display:none;color:rgb(255, 0, 0)">
+                需要更新
+
+                <br>
+                <a href="index.html#/download" class="a_download">下載 TiefSee(舊名 AeroPic) {{new_version}}</a>
+
+            </div>
+
+
+            <table border="1" class="table">
+                <tr>
+                    <td>你目前的版本</td>
+                    <td>{{s_version}}</td>
+                </tr>
+                <tr>
+                    <td>最新版</td>
+                    <td>{{new_version}}</td>
+                </tr>
+
+            </table>
+
+
+
+
+        </div>
+    </div>
+
+
+
+    <div class="box">
+        <div class="tit">說明</div>
+
+        <style>
+            .table_123,
+            .table_123 td {
+                border-color: rgba(160, 110, 145, 0.8);
+            }
+
+            .table_123 td {
+                padding: 5px;
+            }
+        </style>
+
+
+        TiefSee 是一款圖片顯示器，將圖片或資料夾拖曳至程式中即可開啟，亦可設定成系統預設開啟圖片的程式(
+        <a href="#/explain_edit_default">設定教學</a>)。
+
+
+        <br>
+        <br> 開啟圖片後，會自動關聯該資料夾底下所有的圖片，供快速切換瀏覽。
+        <br>
+        <br> 支援格式包含：
+        <table border="1" class="table_123">
+            <tr>
+                <td>常見格式</td>
+                <td>
+                    JPG、PNG、APNG、GIF、BMP、TIF、ICO、WebP、PSD、PSB、PPM、TGA、PCX、PGM、PBM
+                </td>
+            </tr>
+            <tr>
+                <td>相機 RAW</td>
+                <td>RAF、CRW、CR2、MRW、NEF、X3F、PEF、DNG、ORF、RW2、ARW、ERF、SR2、SRW</td>
+            </tr>
+            <tr>
+                <td>向量</td>
+                <td>PDF、SVG、AI、WMF、EMF</td>
+            </tr>
+            <tr>
+                <td>特殊</td>
+                <td>EXE、LNK、Pixiv動圖
+                    <a href="#/explain_pixiv">(下載教學)</a>、HEIC (iOS相機格式)
+
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <br>
+        <br> 滑鼠滾輪捲動可控制圖片縮放
+
+        <br>圖片小於視窗時，拖曳=拖曳視窗
+        <br>圖片大於視窗時，拖曳=移動圖片位置
+
+        <br>
+        <br>
+        <br> 備註：
+        <ul>
+            <li>
+                只有 win7 或 win10 可以使用透明玻璃特效
+            </li>
+            <li>
+                如果無法執行：請安裝
+                <a href="https://dotnet.microsoft.com/download/dotnet-framework/net472"> Microsoft .NET Framework 4.6.2 </a> ，或更高版本
+            </li>
+            <li>
+                無法 瀏覽GIF 或 無法開啟大量瀏覽模式，請把IE更新到
+                <a href="https://support.microsoft.com/zh-tw/help/18520/download-internet-explorer-11-offline-installer">IE11</a>
+            </li>
+            <li>
+                要開啟 AI 或 PDF 檔，需要另外安裝
+                <a href="https://www.ghostscript.com/download/gsdnld.html">Ghostscript</a>
+            </li>
+        </ul>
+
+    </div>
+
+
+
+
+    <div class="box">
+        <div class="tit">工具列</div>
+        <br><br>
+        工具列按鈕的顯示與隱藏可到 「設定 → 界面配置」裡面進行修改
+        <br><br>
+        <img src="imgs/explain_soft/ui-1.svg" alt="TiefSee 工具列介紹" />
+
+
+
+        <br>
+    </div>
+
+
+    <div class="box">
+        <div class="tit">Pixiv動態圖</div>
+        <br> 開啟pixiv動圖後，工具列會多出控制選項
+        <br>
+        <img width="851" src="imgs/explain_soft/ui-2.svg" alt="TiefSee 動圖工具列" />
+        <br>
+        <br> 並且可以使用功能選單裡面的「轉存GIF」功能，將pixiv動圖轉存成GIF格式。
+        <br>
+        <br>
+        <img src="imgs/explain_soft/ui-3.jpg" alt="TiefSee 功能選單->轉存GIF" />
+        <br>
+        <br>
+        <img width="486" src="imgs/explain_soft/ui-4.svg" alt="將pixiv動圖轉成GIF圖片" />
+    </div>
+
+
+    <div class="box">
+        <div class="tit">解析GIF</div>
+        <br> 開啟GIF後，可以使用功能選單裡面的「解析GIF」功能，可以分解出GIF裡面的每一幀畫面。
+        <br>
+        <br>
+        <video style="max-width:600px" loop="loop" controls>
+            <source src="imgs/explain_soft/movie01.webm" type="video/webm" />
+            <source src="imgs/explain_soft/movie01.mp4" type="video/mp4" />
+        </video>
+        <br> <br>
+    </div>
+
+
+
+    <div class="box">
+        <div class="tit">快速鍵說明</div>
+
+        <br>
+
+        <style>
+            .tab_keyboard td {
+                text-align: center;
+                padding: 5px 15px;
+            }
+
+            .tab_keyboard {
+                margin: auto;
+                width: 80%;
+            }
+
+            .tab_keyboard,
+            .tab_keyboard td {
+                border: rgba(255, 255, 255, 0.5) 1px solid;
+            }
+
+            .tab_keyboard tr:hover {
+                background-color: rgba(0, 132, 255, 0.1);
+            }
+        </style>
+
+        <table border='1' class='tab_keyboard'>
+            <tr style='background:rgba(255,255,255,0.5);color:rgb(0, 0, 0);font-size:24px;'>
+                <td>操作</td>
+                <td>按鍵</td>
+            </tr>
+            <tr>
+                <td>下一張</td>
+                <td>方向鍵 →</td>
+            </tr>
+            <tr>
+                <td>上一張</td>
+                <td>方向鍵 ←</td>
+            </tr>
+            <tr>
+                <td>上一個資料夾</td>
+                <td>&lt;</td>
+            </tr>
+            <tr>
+                <td>上一個資料夾</td>
+                <td>&gt;</td>
+            </tr>
+            <tr>
+                <td>放大圖片</td>
+                <td>右Shift 或 + </td>
+            </tr>
+            <tr>
+                <td>縮小圖片</td>
+                <td> 右Ctrl 或 -</td>
+            </tr>
+            <tr>
+                <td>旋轉</td>
+                <td> R </td>
+            </tr>
+            <tr>
+                <td>垂直鏡像</td>
+                <td> V </td>
+            </tr>
+            <tr>
+                <td>水平鏡像</td>
+                <td> H </td>
+            </tr>
+            <tr>
+                <td>P網動圖-下一幀</td>
+                <td> ] </td>
+            </tr>
+            <tr>
+                <td>P網動圖-上一幀</td>
+                <td> [ </td>
+            </tr>
+
+            <tr>
+                <td>圖片全滿</td>
+                <td>F</td>
+            </tr>
+            <tr>
+                <td>開啟圖片位置</td>
+                <td>O</td>
+            </tr>
+            <tr>
+                <td>開啟圖片原生右鍵選單</td>
+                <td>M</td>
+            </tr>
+            <tr>
+                <td>複製圖片</td>
+                <td>Ctrl + C</td>
+            </tr>
+            <tr>
+                <td>刪除圖片</td>
+                <td>Delete</td>
+            </tr>
+            <tr>
+                <td>重新載入圖片</td>
+                <td>F5</td>
+            </tr>
+            <tr>
+                <td>全螢幕</td>
+                <td>F11</td>
+            </tr>
+
+            <tr>
+                <td>進入 大量瀏覽模式</td>
+                <td>B</td>
+            </tr>
+            <tr>
+                <td>退出 大量瀏覽模式</td>
+                <td>Back Space 或 Esc</td>
+            </tr>
+
+            <tr>
+                <td>關閉程式</td>
+                <td>Esc</td>
+            </tr>
+
+        </table>
+        <br>
+        <br>
+    </div>
+
+
+
+
+    <div class="box">
+
+        <div class="tit">進階設定</div>
+
+        <br> 在進階設定裡面可以修改「預設瀏覽器」、「用其他程式開啟圖片的名單」
+        <br>
+        <br> 目前還尚未做圖形化界面，只能手動編輯設定檔，用記事本即可進行編輯。
+        <br> 路徑： {程式資料夾}/data/
+        <b style="color:rgb(255, 0, 0)">config.xml</b>
+
+        <br>
+        <br>
+
+        <img src="imgs\explain_soft/1.jpg" alt="TiefSee 的 config.xml" />
+
+        <br>
+        <br>
+
+
+    </div>
+
+
+</div>
+            </div>
+            <div id="tmp_explain_pixiv">
+                <!--讓目前選擇的項目改變顏色-->
+<style>
+    #top_explain {
+        color: rgb(77, 243, 255);
+        border-bottom: 5px solid rgb(77, 243, 255);
+        animation: first_top_but 10s;
+        animation-iteration-count: infinite;
+    }
+
+    #explain_menu_pixiv {
+        /* background-color: rgb(161, 161, 161); */
+        /* outline: rgb(0, 165, 39) solid 5px; */
+        border-bottom: 10px solid rgb(130, 0, 180);
+        color: rgb(130, 0, 180) !important;
+    }
+</style>
+
+
+
+
+<div ng-include="'page/explain.html'"></div>
+
+
+
+
+<div class="ddd">
+
+
+
+    <style>
+        .box img {
+
+            margin: auto;
+            display: block;
+            margin-top: 10px;
+            max-width: 100%;
+        }
+    </style>
+
+
+
+
+
+    <div class="box">
+        <div class="tit">下載 pixiv動圖</div>
+        <br>
+
+
+        <style>
+            .tab01 {
+                margin: 20px 0px;
+            }
+
+            .tab01 td {
+                padding: 3px 10px;
+                text-align: center;
+            }
+
+            .tab01 .a_download {
+                height: 65px;
+                line-height: 30px;
+            }
+        </style>
+
+
+
+        <b>「
+            <a href="https://www.pixiv.net/search.php?word=%E3%81%91%E3%82%82%E3%81%AE%E3%83%95%E3%83%AC%E3%83%B3%E3%82%BA&order=date_d&type=ugoira">
+                Pixiv
+            </a>動圖」
+        </b>
+        並不是一般的GIF圖片所以無法直接下載，必須使用 「
+        <a target="_blank" href="https://rndomhack.com/2016/01/15/px-downloader/">Px Downloader</a>
+        」這個瀏覽器附加原件，才能把pixiv動圖下載到電腦
+        <br>
+        <br>
+        <br> Px Downloader安裝：
+
+        <table class="tab01">
+
+            <tr>
+                <td>
+                    <a class="a_download" href="https://addons.mozilla.org/ja/firefox/addon/px-downloader/">
+                        Px Downloader
+                        <br>(Firefox 火狐)
+                    </a>
+
+                </td>
+                <td>
+                    <a class="a_download" href="https://chrome.google.com/webstore/detail/px-downloader/bcbibglkpaimhgmoomembjhclhipoack">
+                        Px Downloader
+                        <br>(Google Chrome)
+                    </a>
+
+                </td>
+            </tr>
+        </table>
+
+
+        <br> 安裝完後，在圖片的下方會多出一個「Px Downloader」的按鈕，點了就會下載
+        <br>
+        <img src="imgs/download_pixiv/1-2.jpg" alt="在圖片的下方會多出一個「Px Downloader」的按鈕" />
+
+        <br>
+        <br> 
+        Px Downloader 預設是把下載的動圖儲存成GIF格式，GIF除了畫質很差外，下載速度也很慢， 
+        建議把「動圖轉換模式」改成「None(Zip)」，TiefSee 可以直接播放從pixiv下載下來的zip壓縮檔，
+        或是把壓縮檔解開成資料夾亦可播放。
+
+
+        <br>
+        <img src="imgs/download_pixiv/1-1.jpg" alt="把Px Downloader的「動圖轉換模式」改成「None(Zip)」" />
+
+        <br>
+
+
+        <br>
+        <br> 對照表：
+        <br>
+        <div style="overflow-x:auto;padding:10px;">
+            <table border="1" style="width:700px;width:100%">
+                <tr>
+                    <td width="60"></td>
+                    <td width="50">畫質</td>
+                    <td width="80">檔案大小</td>
+                    <td width="80">下載時間</td>
+                    <td>普及性</td>
+                </tr>
+                <tr>
+                    <td>Zip</td>
+                    <td>高</td>
+                    <td>小</td>
+                    <td>零延遲</td>
+                    <td>TiefSee可直接瀏覽，
+                        <br>且TiefSee內建有把pixiv動圖轉換成GIF的功能 </td>
+                </tr>
+                <tr>
+                    <td>GIF</td>
+                    <td>低</td>
+                    <td>大</td>
+                    <td>很慢</td>
+                    <td>普及性高，常見的社群網站與通訊軟體皆支援</td>
+                </tr>
+                <tr>
+                    <td>APNG</td>
+                    <td>高</td>
+                    <td>大到嚇死人</td>
+                    <td>普通</td>
+                    <td>普及性低，常見社群網站與通訊軟體皆無法使用</td>
+                </tr>
+                <tr>
+                    <td>WebP</td>
+                    <td>高</td>
+                    <td>非常大</td>
+                    <td>快</td>
+                    <td>普及性低，常見社群網站與通訊軟體皆無法使用</td>
+                </tr>
+            </table>
+        </div>
+
+        <br>
+        <br>
+
+    </div>
+
+
+
+
+
+    <!-- <div class="box">
+        <div class="tit">方法2：使用js腳本</div>
+        <br> 如果是Microsoft Edge或其他瀏覽器，可以使用這個javascript腳本來下載zip。
+        <br> 這個js腳本跟上面的【Px Downloader】同樣都是
+        <a href="https://twitter.com/rndomhack">rndomhack（らんだむ）</a>開發的。
+        <br>
+        <br> 安裝前請先確定有執行js的瀏覽器套件：
+
+
+        <br> 【火狐】使用者：必須先安裝【
+        <a href="https://addons.mozilla.org/zh-TW/firefox/addon/greasemonkey/">Greasemonkey</a>】或【
+        <a href="https://addons.mozilla.org/zh-TW/firefox/addon/tampermonkey/">Tampermonkey</a>】
+        <br> 【google chrome】使用者：必須先安裝【
+        <a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=zh-TW">Tampermonkey</a>】
+
+        <br>
+        <br>
+        <br> 腳本：
+
+        <br>
+        <a href="https://hbl917070.github.io/aeropic/download/pixiv_download_zip.user.js">https://hbl917070.github.io/aeropic/download/pixiv_download_zip.user.js</a>
+
+
+        <br>
+        <br>
+        <br> 截圖：
+
+        <br> 安裝完後，標題的下方會多出2個按鈕，點了就會下載
+        <br>
+        <img src="imgs/download_pixiv/2-1.jpg" />
+
+
+    </div> -->
+
+
+
+
+    <div class="box">
+        <div class="tit">將Pixiv動圖轉成GIF</div>
+
+        <br> 程式內建有將Pixiv動圖轉換成GIF的功能，用TiefSee開啟「從Pixiv下載的動圖zip」，
+        或「動圖zip解開後的資料夾」，程式右上角的功能選單就會多出一個「轉存GIF」的選項可以使用。
+      
+       
+        <br>
+        <br>
+        <img src="imgs/explain_soft/ui-3.jpg" alt="功能選單->「轉存GIF」" />
+
+        <br>
+        <br>
+        <br>
+        <img src="imgs/explain_soft/ui-4.svg" width="486" alt="將Pixiv動圖轉換成GIF" />
+
+    </div>
+
+
+
+</div>
+            </div>
+            <div id="tmp_explain_edit_default">
+                <!--讓目前選擇的項目改變顏色-->
+<style>
+    #top_explain {
+        color: rgb(77, 243, 255);
+        border-bottom: 5px solid rgb(77, 243, 255);
+        animation: first_top_but 10s;
+        animation-iteration-count: infinite;
+    }
+
+    #explain_edit_default {
+        /* background-color: rgb(161, 161, 161); */
+        /* outline: rgb(0, 165, 39) solid 5px; */
+        border-bottom: 10px solid rgb(130, 0, 180);
+        
+        color: rgb(130, 0, 180) !important;
+    }
+</style>
+
+
+
+<div ng-include="'page/explain.html'"></div>
+
+<div class="ddd">
+
+    <style>
+        .run {
+            border-radius: 50px;
+            background-color: rgb(130, 0, 180);
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            color: #FFF;
+            font-weight: 900;
+            text-align: center;
+            line-height: 40px;
+            font-size: 30px;
+            margin-right: 5px;
+        }
+    </style>
+
+
+
+
+    <div class="box">
+        <div class="tit">如何設為預設開啟圖片的程式？</div>
+
+
+
+        <br>windows 是根據檔案附檔名來決定要用什麼程式開啟檔案，
+        <br>所以對常見的圖片格式（jpg、gif、png）進行設定即可。
+        <br>
+        <br>TiefSee 解壓縮完成後放到一個固定的位子，例如「D:\TiefSee」，
+        <br>之後可以使用「自動關聯副檔名」，或「手動關聯副檔名」。
+
+
+    </div>
+
+
+    <div class="box">
+        <div class="tit">自動關聯副檔名</div>
+
+
+
+
+        <a class="run">1</a>右上角功能選單 → 設定 → 關聯副檔名 → 設定圖片關聯 → 啟用關聯
+        <br>
+        <br>
+        <video style="width:100%;" controls="controls">
+            <source src="imgs/explain_edit_default/movie01.webm" type="video/webm" />
+            <source src="imgs/explain_edit_default/movie01.mp4" type="video/mp4" />
+        </video>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <a class="run">2</a>win10才需要做第②步驟：系統設定 → App → 預設應用程式 → 相片檢視器，選擇 TiefSee
+
+        <br>
+        <br>
+        <img src="imgs/explain_edit_default/7.jpg" />
+        <br>
+    </div>
+
+
+
+
+    <div class="box">
+        <div class="tit">手動關聯副檔名</div>
+
+
+
+        <br> 如果上述的「自動關聯副檔名」沒有效果，或是一些較為特殊的副檔名要設定關聯，可以用下面的步驟。假設我要設定 jpg圖片：
+
+        <br>
+        <br>
+        <br>
+
+        <a class="run">1</a>對隨便一張jpg圖片按「右鍵」，選擇「內容」
+        <br>
+        <img src="imgs/explain_edit_default/1.jpg" alt="對隨便一張jpg圖片按「右鍵」，選擇「內容」" />
+        <br>
+        <br>
+
+        <a class="run">2</a>要修改開啟檔案的程式，所以點擊「變更」
+        <br>
+        <img src="imgs/explain_edit_default/2.jpg" alt="要修改開啟檔案的程式，所以點擊「變更」" />
+        <br>
+        <br>
+
+        <a class="run">3</a>往下捲動，找到「更多應用程式」
+        <br>
+        <img src="imgs/explain_edit_default/3.jpg" alt="往下捲動，找到「更多應用程式」" />
+        <br>
+        <br>
+
+        <a class="run">4</a>再往下捲動，找到「尋找此電腦上的其他應用程式」
+        <br>
+        <img src="imgs/explain_edit_default/4.jpg" alt="再往下捲動，找到「尋找此電腦上的其他應用程式」" />
+        <br>
+        <br>
+
+        <a class="run">5</a>選擇 TiefSee.exe （我是直接解壓縮放在D槽）
+        <br>
+        <img src="imgs/explain_edit_default/5.jpg" alt="選擇 TiefSee.exe （我是直接解壓縮放在D槽）" />
+        <br>
+        <br>
+
+        <a class="run">6</a>開啟檔案已經變成 TiefSee 就是成功了，點擊「確定」即可完成設定
+        <br>
+        <img src="imgs/explain_edit_default/6.jpg" alt="開啟檔案已經變成 TiefSee 就是成功了，點擊「確定」即可完成設定"/>
+        <br>
+        <br>
+
+    </div>
+
+
+
+
+
+
+    <!-- <div class="tit"></div>
+    <div class="box">
+    </div> -->
+
+
+</div>
+            </div>
+            <div id="tmp_author">
+                <!--讓目前選擇的項目改變顏色-->
+<style>
+    #top_author {
+        color: rgb(77, 243, 255);
+        border-bottom: 5px solid rgb(77, 243, 255);
+        animation: first_top_but 10s;
+        animation-iteration-count: infinite;
+    }
+</style>
+
+
+
+<div class="ddd">
+
+
+    <div class="box">
+        <div class="tit">關於</div>
+
+        <p>
+            TiefSee 是 深海異音 開發的相片檢視軟體，屬於免費軟體，也不包含任何廣告
+        </p>
+        <p>
+            如果程式有BUG，或是想提供意見
+            <br>可以到 巴哈姆特的討論區 回覆
+            <br>要用 巴哈姆特 或 Email 寄信給我也行
+        </p>
+
+
+        <br> 討論區：
+        <a class="" target="_blank" href="https://forum.gamer.com.tw/C.php?bsn=60076&snA=4095280">https://forum.gamer.com.tw/C.php?bsn=60076&snA=4095280</a>
+        <br>
+        <br> TiefSee 原始碼：
+        <a href="https://github.com/hbl917070/TiefSee">https://github.com/hbl917070/TiefSee</a>
+
+
+        <br>
+        <br> 作者 巴哈姆特：
+        <a class="" target="_blank" href="https://home.gamer.com.tw/homeindex.php?owner=hbl917070">hbl917070(深海異音)</a>
+
+
+        <br>
+        <br> 作者 Email：
+        <a href="mailto:hbl917070@gmail.com">hbl917070@gmail.com</a>
+
+
+        <style>
+            .but03 {
+                border: 1px solid rgb(3, 0, 158) !important;
+                color: rgb(3, 0, 158) !important;
+                background-color: rgba(0, 0, 0, 0) !important;
+                font-family: "微軟正黑體";
+                font-size: 18px;
+                margin-bottom: 10px;
+                display: inline-block;
+                padding: 10px;
+            }
+
+            .but03:hover {
+                border: 1px solid rgb(0, 100, 8) !important;
+                color: rgb(0, 100, 8) !important;
+                text-decoration: none !important;
+            }
+
+            #qrcode {
+                overflow: hidden;
+                transition: height 0.3s;
+
+            }
+        </style>
+
+        <script>
+
+            function func_showqrcord() {
+                var qrcode = document.getElementById('qrcode');
+
+                if (qrcode.style.height == '0px') {
+                    qrcode.style.height = '135px';
+                } else {
+                    qrcode.style.height = '0px';
+                }
+            }
+        </script>
+
+        <br>
+        <br> 贊助作者：
+        <a class="but03" href="https://payment.opay.tw/Broadcaster/Donate/D048058B80DCCE45258DD08E0E021913">歐付寶</a>
+        <br>
+
+        <span>　　　　　</span>
+        <button class="but03" onclick="func_showqrcord()">
+            顯示二維條碼
+        </button>
+
+        <div id="qrcode" style="height:0px">
+
+            <a href="https://qr.opay.tw/CLf9Q">
+                <img style="margin-top:5px" src="imgs/other/qrcode.png" />
+            </a>
+
+        </div>
+
+        <br> <br>
+
+
+    </div>
+
+
+
+
+
+
+    <div class="ddd">
+
+
+        <div class="box">
+
+            <div class="tit">常見問題</div>
+            <br>
+            <style>
+                .tit3 {
+                    margin-top: 50px;
+                    font-size: 26px;
+                    font-weight: 900;
+                    color: rgb(130, 0, 180);
+                    /* border-bottom: 2px solid rgb(70, 255, 100) ; */
+                    line-height: 30px;
+                }
+
+                .aaa a {
+                    margin: 0px 10px;
+                    display: inline-block;
+                    padding: 2px;
+                }
+            </style>
+
+
+            <div class="tit3" style="margin-top: 0px;">程式完全打不開</div>
+            <p>
+                解壓縮後的 TiefSee 資料夾，不可以放在「沒有存取權限」的資料夾，例如「C:\」或「C:\Program Files」都是不行的。<br>
+                可以放在桌面、D槽、我的文件 之類的地方。<br>
+                不過如果很堅持要放在沒有存取權限的地方，也是可以，手動賦予資料夾權限即可。<br>
+                資料夾右鍵 → 內容 → 安全性 → 編輯 → 選擇目前的使用者 → 把「完全控制」與「修改」打勾 → 確定
+            </p>
+
+
+            <div class="tit3" >舊版可以運行，但新版一開就閃退</div>
+            <p>
+                舊的 AeroPic 2.5.0 以前的版本，運行需求是 .NET 4.5<br>
+                TiefSee 3.0.0 以後，則必須使用 .NET 4.6.2 以上(含)才能運行<br>
+                安裝完這個就行了：<a href="https://dotnet.microsoft.com/download/dotnet-framework/net472"> Microsoft .NET Framework 4.7.2 </a>
+            </p>
+
+            <div class="tit3">可以開啟TiefSee，但開啟圖片後就會閃退</div>
+            <p>
+                可能是電腦不支援硬體加速引起的<br>
+                開啟TiefSee的 設定->其他->高品質成像-硬體加速<br>
+                嘗試把他改成「模式2」，看看能不能解決閃退問題<br>
+                如果一樣閃退就改成「模式3」，再不行就改成「模式4」<br>
+                <img src="imgs/other/1.jpg" alt="關閉硬體加速">
+            </p>
+
+            <div class="tit3">從pixiv下載的動圖zip不能播放</div>
+            <p>
+                必須使用「<a href="#/explain_pixiv">Px Downloader</a>」才能下載完整的動圖<br>
+                很多腳本或瀏覽器附加原件，下載下來的pixiv動圖，只是一般的zip壓縮檔<br>
+                因為裡面不包含幀數資訊，所以TiefSee無法播放
+            </p>
+
+            <div class="tit3">「無法瀏覽GIF」或「無法開啟大量瀏覽模式」</div>
+            <p>
+                把電腦的 IE 更新到 IE 11 即可解決問題<br>
+                安裝完這個就行了：<a href="https://support.microsoft.com/zh-tw/help/18520/download-internet-explorer-11-offline-installer"> Internet Explorer 11 </a>
+            </p>
+
+            <div class="tit3">Adobe Reader DC 的圖示錯誤 </div>
+            <p>
+                這個是 Reader DC 本身的 BUG，某個特定的情況下就會導致 Reader DC 的圖示變成圖片軟體的圖示<br>
+                解決方式就是手動重新建立這個捷徑，步驟如下：<br>
+                <ol>
+                    <li>
+                        進到「C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat」<br>
+                        如果上面的路徑不存在，那麼改成進入這個路徑「C:\Program Files\Adobe\Acrobat DC\Acrobat」<br>
+                    </li>
+                    <li>
+                        在裡面找到「Acrobat.exe」對他右鍵選擇「傳送到→桌面(建立捷徑)」<br>
+
+                    </li>
+                    <li>
+                        進到這個「C:\ProgramData\Microsoft\Windows\Start Menu\Programs」資料夾，把「Adobe Acrobat DC」這個捷徑刪除<br>
+
+                    </li>
+                    <li>
+                        最後把剛剛產生到桌面的「Acrobat.exe - 捷徑」丟回「C:\ProgramData\Microsoft\Windows\Start Menu\Programs」即可<br>
+                    </li>
+                </ol>
+                <img src="imgs/other/4.jpg" alt="Adobe Reader DC 的圖示錯誤的修復方法">
+            </p>
+
+
+
+            <div class="tit3">無法開啟PSD檔案</div>
+            <p>
+                有可能是這個PSD檔案沒有在存檔的時候開啟「最大相容模式」，導致第三方軟體難以解析
+            </p>
+
+            <div class="tit3">複製PNG圖片會沒有透明底</div>
+            <p>
+                <div class="aaa">
+                    這是windows本身的限制。我有另外做一個「複製PNG」的按鈕，這雖然能複製透明底但並不是通用格式，在多數繪圖軟體都能直接貼上只有少部分軟體不支援。
+                    <br>
+
+                    <table border="1">
+                        <tr>
+                            <td>不支援</td>
+                            <td>
+                                <a href="http://www.adobe.com/tw/products/photoshop.html">Photoshop CC 2015</a>、
+                                <a href="https://www.systemax.jp/en/sai/">SAI</a>
+                                <br>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>支援</td>
+                            <td>
+                                <a href="https://krita.org/jp/">Krita</a>、
+                                <a href="https://medibangpaint.com/zh_TW/pc/">MediBang Paint Pro</a>、
+                                <a href="https://www.getpaint.net/">paint.net</a>、
+                                <a href="https://products.office.com/">Microsoft Word</a>
+
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </p>
+
+
+            <div class="tit3">為什麼GIF背景不是透明</div>
+            <p>
+                可以到設定裡面把「GIF渲染模式」改成「DirectX」，就能夠以透明底來開啟GIF
+            </p>
+
+            <div class="tit3">如何刪除程式？</div>
+            <p>
+                程式為免安裝，直接把 「TiefSee」(舊名 AeroPic)的資料夾 刪除即可，如果有使用過自動關聯副檔名的話，記得先進到設定裡面「解除關聯」
+                <br>
+                <img src="imgs/other/2.jpg" alt="解除安裝TiefSee">
+            </p>
+
+
+
+            <br><br>
+
+
+        </div>
+    </div>
+
+</div>
+            </div>
+        </div>
+
+
+        <script>
+
+            function getHtml(id) {
+                var html = document.getElementById(id);
+                var s = html.innerHTML;
+                html.parentNode.removeChild(html);
+
+                return s;
+            }
+
+            var app = angular.module('routingDemoApp', ['ngRoute']);
+            /*app.config(['$routeProvider', function ($routeProvider) {
+                $routeProvider
+                    .when('/', { templateUrl: 'page/p1.html', controller: 'LoadedCtrl', title: 'TiefSee 圖片檢視器 - 首頁' })//載入網址
+                    .when('/download', { templateUrl: 'page/download.html', controller: 'LoadedCtrl', title: 'TiefSee 下載' })
+                    .when('/explain_soft', { templateUrl: 'page/explain_soft.html', controller: 'LoadedCtrl', title: 'TiefSee 使用說明' })
+                    .when('/explain_soft/:mes', { templateUrl: 'page/explain_soft.html', controller: 'VersionCtrl', title: 'TiefSee 使用說明' })
+                    .when('/explain_pixiv', { templateUrl: 'page/explain_pixiv.html', controller: 'LoadedCtrl', title: 'TiefSee 下載Pixiv動圖教學' })
+                    .when('/explain_edit_default', { templateUrl: 'page/explain_edit_default.html', controller: 'LoadedCtrl', title: 'TiefSee 修改為預設開啟程式' })
+                    .when('/author', { templateUrl: 'page/author.html', controller: 'LoadedCtrl', title: 'TiefSee 意見回饋' })
+                    //.when('/printers', { template: '這是打印機頁面' })//印出字串
+                    .otherwise({ redirectTo: '/' });//其他
+            }]);*/
+
+            app.config(['$routeProvider', function ($routeProvider) {
+                $routeProvider
+                    .when('/', { template: getHtml('tmp_p1'), controller: 'LoadedCtrl', title: 'TiefSee 圖片檢視器 - 首頁' })//載入網址
+                    .when('/download', { template: getHtml('tmp_download'), controller: 'LoadedCtrl', title: 'TiefSee 下載' })
+                    .when('/explain_soft', { template: getHtml('tmp_explain_soft'), controller: 'LoadedCtrl', title: 'TiefSee 使用說明' })
+                    .when('/explain_soft/:mes', { template: getHtml('tmp_explain_soft'), controller: 'VersionCtrl', title: 'TiefSee 使用說明' })
+                    .when('/explain_pixiv', { template: getHtml('tmp_explain_pixiv'), controller: 'LoadedCtrl', title: 'TiefSee 下載Pixiv動圖教學' })
+                    .when('/explain_edit_default', { template: getHtml('tmp_explain_edit_default'), controller: 'LoadedCtrl', title: 'TiefSee 修改為預設開啟程式' })
+                    .when('/author', { template: getHtml('tmp_author'), controller: 'LoadedCtrl', title: 'TiefSee 意見回饋' })
+                    //.when('/printers', { template: '這是打印機頁面' })//印出字串
+                    .otherwise({ redirectTo: '/' });//其他
+            }]);
+
+            app.run(['$location', '$rootScope', function ($location, $rootScope) {
+                // 每當路由改變成功的時候，更新標題
+                $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+                    window.document.title = current.title;
+                    //$rootScope.title = current.$route.title;
+                });
+            }]);
+
+            //載入完成時
+            app.controller('LoadedCtrl', function ($scope, $routeParams) {
+
+                fun_圖片自動加超連結();
+
+                //捲到最上面
+                window.document.body.scrollTop = 0;
+                window.scrollTo(0, 0);
+            });
+
+            //載入完成時
+            app.controller('VersionCtrl', function ($scope, $routeParams) {
+                $scope.s_version = $routeParams.mes;//取得網址參數
+                document.getElementById("div_version").style.display = "block";//顯示版本比較的視窗
+
+                var int_最新版本 = parseFloat("0." + $scope.new_version.replace(/[.]/g, ""));
+                var int_使用者版本 = parseFloat("0." + $routeParams.mes.replace(/[.]/g, ""));
+
+                if (int_使用者版本 >= int_最新版本) {
+                    document.getElementById("tit_yes").style.display = "block";
+                } else {
+                    document.getElementById("tit_no").style.display = "block";
+                }
+
+                fun_圖片自動加超連結();
+
+            });
+
+
+            //統一設定目前版本
+            app.controller('myCtrl', function ($scope) {
+                $scope.new_version = "3.0.2";
+
+            });
+
+
+            ///
+            ///
+            ///
+            function fun_圖片自動加超連結() {
+
+
+
+                //讓每一張圖片都加上超連結
+                var ar_img = document.getElementById("center").getElementsByTagName("img");
+                for (var i = 0; i < ar_img.length; i++) {
+                    //ar_img[i].outerHTML = "<a target='_blank' href='" + ar_img[i].src + "'>" + ar_img[i].outerHTML + "<a/>";
+                    ar_img[i].addEventListener("click", function () {
+                        window.open(this.src, '_blank')
+                    });
+                }
+
+
+                //讓每個超連結都另外開新分頁
+                var ar_a = document.getElementById("center").getElementsByTagName("a");
+                for (var i = 0; i < ar_a.length; i++) {
+                    if (ar_a[i].href.indexOf("#") == -1) {//如果是本站內的鏈接，就直接開啟
+                        ar_a[i].setAttribute("target", "_blank");
+                    }
+                }
+
+            }
+
+        </script>
+
+    </div>
+
+
+
+
+    <style type="text/css">
+        #bottom {
+            background-color: rgb(26, 26, 26);
+            color: #FFF;
+            padding: 10px 30px;
+            margin-top: 50px;
+            background-image: url(imgs/bac_aero.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+
+    <div id="bottom">
+
+        <style>
+            .div_aut {
+                /*border: 1px solid #FFF;*/
+                display: inline-block;
+                font-size: 16px;
+                line-height: 20px;
+                margin: 2px;
+                padding: 15px;
+                border-right: 1px #575757 solid;
+            }
+        </style>
+
+
+        <div class="div_aut">
+            作者：LIAO, WEN-HONG
+        </div>
+        <div class="div_aut">
+            巴哈姆特：
+            <a href="https://home.gamer.com.tw/homeindex.php?owner=hbl917070" target="_blank">hbl917070（深海異音）</a>
+        </div>
+        <div class="div_aut">
+            信箱：
+            <a href="mailto:hbl917070@gmail.com">hbl917070@gmail.com</a>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-56186804-2', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+
+</body>
+
+</html>

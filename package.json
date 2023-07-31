@@ -1,0 +1,30 @@
+{
+  "name": "aeropic",
+  "version": "1.0.0",
+  "description": "- 官方網站：https://hbl917070.github.io/aeropic/index.html\r - 討論區：https://forum.gamer.com.tw/C.php?bsn=60076&snA=4095280\r - TiefSee原始碼：https://github.com/hbl917070/TiefSee\r - 下載歷史版本：https://github.com/hbl917070/aeropic/tree/master/download",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hbl917070/aeropic.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hbl917070/aeropic/issues"
+  },
+  "homepage": "https://github.com/hbl917070/aeropic#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "gulp": "^4.0.2",
+    "gulp-ejs": "^5.1.0",
+    "gulp-esbuild": "^0.11.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "path": "^0.12.7",
+    "sass": "^1.63.6"
+  }
+}

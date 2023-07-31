@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="<%- lang %>">
+
+<head>
+    <%- await include("./_head.ejs"); %>
+</head>
+
+<body>
+
+    <%- await include("./_header.ejs"); %>
+
+    <div class="page page-support">
+
+        <!-- 簡介 -->
+        <!-- <div class="page-title"> <%- t("support.introduction") %> </div> -->
+
+        <div class="infoBox">
+            <div class="infoBox-content">
+                <%- t("support.description") %>
+            </div>
+        </div>
+
+        <!-- 常見問題 -->
+        <!-- <div class="page-title"> <%- t("support.faq") %> </div> -->
+
+        <div class="infoBox">
+            <div class="infoBox-content">
+
+                <!-- 商店版 與 免安裝版 有什麼差異？ -->
+                <div class="item">
+                    <h1 class="title"> <%- t("support.faqItem.differenceBetweenStoreAndPortable.title") %> </h1>
+                    <div class="content"> <%- t("support.faqItem.differenceBetweenStoreAndPortable.text") %> </div>
+                </div>
+
+                <!-- 為什麼 商店版 比 免安裝版 還要大？ -->
+                <div class="item">
+                    <h1 class="title"> <%- t("support.faqItem.storeVersionLarger.title") %> </h1>
+                    <div class="content"> <%- t("support.faqItem.storeVersionLarger.text") %> </div>
+                </div>
+
+                <!-- Tiefsee 是否會收集使用者資料？ -->
+                <div class="item">
+                    <h1 class="title"> <%- t("support.faqItem.dataCollection.title") %> </h1>
+                    <div class="content"> <%- t("support.faqItem.dataCollection.text") %> </div>
+                </div>
+
+                <!-- 啟動程式時顯示「WebView2 must be installed to run this application」 -->
+                <div class="item">
+                    <h1 class="title"> <%- t("support.faqItem.webView2Error.title") %> </h1>
+                    <div class="content"> <%- t("support.faqItem.webView2Error.text") %> </div>
+                </div>
+
+                <!-- 使用毛玻璃(AERO、Acrylic)視窗效果後產生異常 -->
+                <div class="item">
+                    <h1 class="title"> <%- t("support.faqItem.aeroAcrylicError.title") %> </h1>
+                    <div class="content"> <%- t("support.faqItem.aeroAcrylicError.text") %> </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <%- await include("./_bottom.ejs"); %>
+
+    <%- await include("./_script.ejs"); %>
+
+</body>
+
+</html>

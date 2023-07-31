@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="<%- lang %>">
+
+<head>
+    <%- await include("./_head.ejs"); %>
+</head>
+
+<body>
+
+    <%- await include("./_header.ejs"); %>
+
+    <div class="page page-plugin">
+
+
+        <div class="plugin">
+
+            <!-- Tiefsee 擴充套件列表 -->
+            <div class="boxBg-header">
+                <%- t("plugin.pluginList") %>
+            </div>
+
+            <div class="plugin-item boxBg" open="">
+                <div class="plugin-T">
+                    <div class="plugin-L">
+                        <img class="plugin-icon" src="/img/plugin/icon-QuickLook.png">
+                    </div>
+                    <div class="plugin-R">
+                        <div class="plugin-title"> QuickLook </div>
+                        <div class="plugin-content"> <%- t("plugin.item.quickLook.subTitle") %> </div>
+                        <a class="plugin-download" target="_blank" href="/download/plugin/QuickLook.zip"> <%- t("plugin.download") %> </a>
+                    </div>
+                </div>
+                <div class="plugin-B">
+                    <div class="plugin-moreContent">
+                        <%- t("plugin.item.quickLook.text") %>
+                    </div>
+
+                    <div class="plugin-moreBtn"></div>
+                </div>
+            </div>
+
+            <div class="plugin-item boxBg" open="">
+                <div class="plugin-T">
+                    <div class="plugin-L">
+                        <img class="plugin-icon" src="/img/plugin/icon-monaco-editor.png">
+                    </div>
+                    <div class="plugin-R">
+                        <div class="plugin-title"> monaco-editor </div>
+                        <div class="plugin-content"> <%- t("plugin.item.monacoEditor.subTitle") %> </div>
+                        <a class="plugin-download" target="_blank" href="/download/plugin/monaco-editor.zip"> <%- t("plugin.download") %> </a>
+                    </div>
+                </div>
+                <div class="plugin-B">
+                    <div class="plugin-moreContent">
+                        <%- t("plugin.item.monacoEditor.text") %>
+                    </div>
+                    <div class="plugin-moreBtn"></div>
+                </div>
+            </div>
+
+            <div class="plugin-item boxBg" open="">
+                <div class="plugin-T">
+                    <div class="plugin-L">
+                        <img class="plugin-icon" src="/img/plugin/icon-WebViewer.png">
+                    </div>
+                    <div class="plugin-R">
+                        <div class="plugin-title"> WebViewer </div>
+                        <div class="plugin-content"> <%- t("plugin.item.webViewer.subTitle") %> </div>
+                        <a class="plugin-download" target="_blank" href="https://dev.pdftron.com/?platform=web&product=webviewer"> <%- t("plugin.download") %> </a>
+                    </div>
+                </div>
+                <div class="plugin-B">
+                    <div class="plugin-moreContent">
+                        <%- t("plugin.item.webViewer.text") %>
+                    </div>
+                    <div class="plugin-moreBtn"></div>
+                </div>
+            </div>
+
+            <!-- 擴充套件安裝方法 -->
+            <div class="boxBg-header">
+                <%- t("plugin.pluginInstallationMethod") %>
+            </div>
+            <div class="boxBg">
+                <%- t("plugin.pluginInstallationInstructions") %>
+            </div>
+        </div>
+
+    </div>
+
+
+    <%- await include("./_bottom.ejs"); %>
+
+    <%- await include("./_script.ejs"); %>
+
+</body>
+
+</html>

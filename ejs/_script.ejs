@@ -1,0 +1,30 @@
+<script src="/js/app.js"></script>
+
+<!-- 3D互動 -->
+<script src="/vender/vanilla-tilt.min.js"></script>
+
+<!-- 圖片檢視器 -->
+<script src="/vender/photoswipe/photoswipe.umd.min.js"></script>
+<script src="/vender/photoswipe/photoswipe-lightbox.umd.min.js"></script>
+<link rel="stylesheet" href="/vender/photoswipe/photoswipe.css">
+<script type="module">
+    var lightbox = new PhotoSwipeLightbox({
+        gallery: ".contentBox2",
+        children: ".item-imgbox",
+        // dynamic import is not supported in UMD version
+        pswpModule: PhotoSwipe,
+        wheelToZoom: true,
+    });
+    lightbox.init();
+</script>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-56186804-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-56186804-2');
+</script>
