@@ -332,7 +332,7 @@
 html {
   height: 100%;
   background-color: rgb(0, 11, 29);
-  background-image: url(/img/bg.jpg);
+  background-image: url(../img/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -483,7 +483,7 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
 }
 .menu-lang .item[active=true] {
-  background-image: url(/img/svg/acceptMedium.svg);
+  background-image: url(../img/svg/acceptMedium.svg);
   background-size: 20px;
   background-position: 10px 10px;
   background-repeat: no-repeat;

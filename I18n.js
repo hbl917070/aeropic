@@ -488,10 +488,10 @@ export var langData = {
                 然後重新開啟Tiefsee。
                 <br><br>
                 <div> 從這裡可以開啟「Plugin」資料夾 </div>
-                <img src="/img/plugin/plugin-2.png" alt="How to open 「Plugin」 directory">
+                <img src="../img/plugin/plugin-2.png" alt="How to open 「Plugin」 directory">
                 <br><br>
                 <div>安裝完成後的示意圖</div>
-                <img src="/img/plugin/plugin-1.png" alt="Schematic">
+                <img src="../img/plugin/plugin-1.png" alt="Schematic">
             `,
             "en": `
                 The plugins downloaded here are ZIP files. Unzip and place them in the 'Plugin' folder
@@ -499,10 +499,10 @@ export var langData = {
                 Then restart Tiefsee.
                 <br><br>
                 <div> You can open the 'Plugin' folder from here </div>
-                <img src="/img/plugin/plugin-2.png" alt="How to open 「Plugin」 directory">
+                <img src="../img/plugin/plugin-2.png" alt="How to open 「Plugin」 directory">
                 <br><br>
                 <div>Schematic after installation</div>
-                <img src="/img/plugin/plugin-1.png" alt="Schematic">
+                <img src="../img/plugin/plugin-1.png" alt="Schematic">
             `,
         },
 
@@ -533,13 +533,13 @@ export var langData = {
                 },
                 text: {
                     "zh-TW": `
-                        <img src="/img/plugin/demo-monaco-editor.jpg" alt="monaco-editor demo">
+                        <img src="../img/plugin/demo-monaco-editor.jpg" alt="monaco-editor demo">
                         <br><br>
                         GitHub：<br>
                         <a class="link" href="https://github.com/microsoft/monaco-editor" target="_blank">https://github.com/microsoft/monaco-editor</a>
                     `,
                     "en": `
-                        <img src="/img/plugin/demo-monaco-editor.jpg" alt="monaco-editor demo">
+                        <img src="../img/plugin/demo-monaco-editor.jpg" alt="monaco-editor demo">
                         <br><br>
                         GitHub：<br>
                         <a class="link" href="https://github.com/microsoft/monaco-editor" target="_blank">https://github.com/microsoft/monaco-editor</a>
@@ -556,7 +556,7 @@ export var langData = {
                         點擊「下載」進入官網的下載中心，<br>
                         Web → SDK Downloads → WebViewer
                         <br><br>
-                        <img src="/img/plugin/demo-WebViewer.jpg" alt="WebViewer demo">
+                        <img src="../img/plugin/demo-WebViewer.jpg" alt="WebViewer demo">
                         <br><br>
                         WebViewer 是 PDFTron 的產品，官網有提供免費試用。
                         <br>
@@ -567,7 +567,7 @@ export var langData = {
                         Click 'Download' to go to the download center on the official website,<br>
                         Web → SDK Downloads → WebViewer
                         <br><br>
-                        <img src="/img/plugin/demo-WebViewer.jpg" alt="WebViewer demo">
+                        <img src="../img/plugin/demo-WebViewer.jpg" alt="WebViewer demo">
                         <br><br>
                         WebViewer is a product of PDFTron and the official website offers a free trial.
                         <br>

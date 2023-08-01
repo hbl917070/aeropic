@@ -38,7 +38,7 @@ gulp.task("scss", async () => {
 gulp.task("ejs", async () => {
     await sleep(1);
     let arLang = [
-        { lang: "en", dest: "./" },
+        //{ lang: "en", dest: "./" },
         { lang: "en", dest: "./en/" },
         { lang: "zh-TW", dest: "./zh-TW/" },
     ];
