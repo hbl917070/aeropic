@@ -87,7 +87,7 @@ class App {
 
                 //切換語言
                 item.addEventListener("click", () => {
-                    location.href = `/${dataLang}${pageName}`;
+                    location.href = `../${dataLang}${pageName}`;
                 })
             }
 

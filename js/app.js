@@ -56,7 +56,7 @@
             item.setAttribute("active", "true");
           }
           item.addEventListener("click", () => {
-            location.href = `/${dataLang}${pageName}`;
+            location.href = `../${dataLang}${pageName}`;
           });
         }
       }
