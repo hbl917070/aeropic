@@ -72,7 +72,6 @@
         }
       }
       function initIndex() {
-        console.log(isMobileDevice());
         if (isMobileDevice() === false) {
           VanillaTilt.init(document.querySelectorAll(".infoBox-link-btn"), {
             max: 10,
