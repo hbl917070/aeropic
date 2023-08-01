@@ -8,9 +8,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+/**  */
 function getDom(selectors: string) {
     return document.querySelector(selectors);
 }
+
+/** 檢測是否為手機 */
+function isMobileDevice() {
+    let mobileDevices = ["Android", "webOS", "iPhone", "iPad", "iPod", "BlackBerry", "Windows Phone"];
+    for (var i = 0; i < mobileDevices.length; i++) {
+        if (navigator.userAgent.match(mobileDevices[i])) {
+            return true;
+        }
+    }
+    return false;
+}
+
 
 class App {
     constructor() {
@@ -40,13 +53,13 @@ class App {
          * 
          */
         function initHearder() {
-
-            VanillaTilt.init(getDom(".header-content"), {
-                max: 3,
-                speed: 400,
-                //scale: 1.1
-            });
-
+            if (isMobileDevice() === false) {
+                VanillaTilt.init(getDom(".header-content"), {
+                    max: 3,
+                    speed: 400,
+                    //scale: 1.1
+                });
+            }
             //----------
 
             // 顯示或隱藏語言選單
@@ -97,22 +110,25 @@ class App {
          * 首頁
          */
         function initIndex() {
-            VanillaTilt.init(document.querySelectorAll(".infoBox-link-btn"), {
-                max: 10,
-                speed: 400,
-                //"full-page-listening": true,
-                scale: 1.05
-            });
-            VanillaTilt.init(document.querySelectorAll(".contentBox2 .item-img"), {
-                max: 3,
-                speed: 400,
-                scale: 1.05
-            });
-            VanillaTilt.init(document.querySelectorAll(".contentBox3 .item"), {
-                max: 10,
-                speed: 400,
-                //scale: 1.05
-            });
+            console.log(isMobileDevice())
+            if (isMobileDevice() === false) {
+                VanillaTilt.init(document.querySelectorAll(".infoBox-link-btn"), {
+                    max: 10,
+                    speed: 400,
+                    //"full-page-listening": true,
+                    scale: 1.05
+                });
+                VanillaTilt.init(document.querySelectorAll(".contentBox2 .item-img"), {
+                    max: 3,
+                    speed: 400,
+                    scale: 1.05
+                });
+                VanillaTilt.init(document.querySelectorAll(".contentBox3 .item"), {
+                    max: 10,
+                    speed: 400,
+                    //scale: 1.05
+                });
+            }
         }
 
         /**
@@ -147,7 +163,6 @@ class App {
                     }
                 })
             }
-
         }
 
         /**

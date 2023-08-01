@@ -6,6 +6,15 @@
   function getDom(selectors) {
     return document.querySelector(selectors);
   }
+  function isMobileDevice() {
+    let mobileDevices = ["Android", "webOS", "iPhone", "iPad", "iPod", "BlackBerry", "Windows Phone"];
+    for (var i = 0; i < mobileDevices.length; i++) {
+      if (navigator.userAgent.match(mobileDevices[i])) {
+        return true;
+      }
+    }
+    return false;
+  }
   var App = class {
     constructor() {
       let domHeader = getDom("#header");
@@ -25,11 +34,13 @@
         domBtnSupport.setAttribute("active", "true");
       }
       function initHearder() {
-        VanillaTilt.init(getDom(".header-content"), {
-          max: 3,
-          speed: 400
-          //scale: 1.1
-        });
+        if (isMobileDevice() === false) {
+          VanillaTilt.init(getDom(".header-content"), {
+            max: 3,
+            speed: 400
+            //scale: 1.1
+          });
+        }
         let domMenuLang = getDom("#menu-lang");
         let isShow = false;
         domBtnLang?.addEventListener("click", () => {
@@ -61,22 +72,25 @@
         }
       }
       function initIndex() {
-        VanillaTilt.init(document.querySelectorAll(".infoBox-link-btn"), {
-          max: 10,
-          speed: 400,
-          //"full-page-listening": true,
-          scale: 1.05
-        });
-        VanillaTilt.init(document.querySelectorAll(".contentBox2 .item-img"), {
-          max: 3,
-          speed: 400,
-          scale: 1.05
-        });
-        VanillaTilt.init(document.querySelectorAll(".contentBox3 .item"), {
-          max: 10,
-          speed: 400
-          //scale: 1.05
-        });
+        console.log(isMobileDevice());
+        if (isMobileDevice() === false) {
+          VanillaTilt.init(document.querySelectorAll(".infoBox-link-btn"), {
+            max: 10,
+            speed: 400,
+            //"full-page-listening": true,
+            scale: 1.05
+          });
+          VanillaTilt.init(document.querySelectorAll(".contentBox2 .item-img"), {
+            max: 3,
+            speed: 400,
+            scale: 1.05
+          });
+          VanillaTilt.init(document.querySelectorAll(".contentBox3 .item"), {
+            max: 10,
+            speed: 400
+            //scale: 1.05
+          });
+        }
       }
       function initPlugin() {
         let ar = document.querySelectorAll(".plugin-item .plugin-moreBtn");

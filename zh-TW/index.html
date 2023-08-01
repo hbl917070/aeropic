@@ -2,11 +2,36 @@
 <html lang="zh-TW">
 
 <head>
-    <meta charset="UTF-8">
+    <link rel="alternate" hreflang="en" href="https://hbl917070.github.io/aeropic/en/index.html" />
+    <link rel="alternate" hreflang="zh-TW" href="https://hbl917070.github.io/aeropic/zh-TW/index.html" />
+
+    <script>
+    // 取得瀏覽器語言
+    function getBrowserLang() {
+        let browserLang = navigator.language.toLowerCase();
+        if (browserLang == "zh" || browserLang.indexOf("zh-") === 0) {
+            return "zh-TW";
+        }
+        return "en";
+    }
+    var pathName = location.pathname; // 網址路徑，例如 /aeropic/zh-TW/index.html
+    // 如果網址不帶語言，則轉址
+    if (pathName.includes("/zh-TW/") || pathName.includes("/en/")) {} else {
+        var pageName = pathName.split("/").pop(); // 頁面名稱，例如 index.html
+        location.replace(getBrowserLang() + "/" + pageName);
+    }
+</script>
+
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title> Tiefsee 圖片檢視器 </title>
 <meta name="Description" content="Tiefsee 是一款適用於 Windows 的開源圖片檢視器，具有強大的功能和易用性" />
 <meta name="KeyWords" content="Tiefsee 圖片檢視器, 看圖程式, 漫畫檢視器" />
+
+<!-- 分享網頁時使用的資料 -->
+<meta property="og:title" content="Tiefsee 圖片檢視器" />
+<meta property="og:description" content="Tiefsee 是一款適用於 Windows 的開源圖片檢視器，具有強大的功能和易用性" />
+<meta property="og:image" content="https://hbl917070.github.io/aeropic/img/index/filePanel.jpg" />
 
 <!-- 瀏覽器圖示 -->
 <link rel="Shortcut Icon" type="image/x-icon" href="../img/tiefseeLogo.png" />
