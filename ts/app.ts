@@ -66,14 +66,14 @@ class App {
             let domMenuLang = getDom("#menu-lang") as HTMLElement;
             let isShow = false;
 
-            domBtnLang?.addEventListener("click", () => {
+            domBtnLang?.addEventListener("pointerdown", () => {
                 setTimeout(() => {
                     domBtnLang?.setAttribute("hover", "true");
                     domMenuLang?.setAttribute("active", "true");
                     isShow = true;
                 }, 1);
             })
-            window.addEventListener("click", (e) => {
+            window.addEventListener("pointerdown", (e) => {
                 if (isShow) {
                     domBtnLang?.setAttribute("hover", "");
                     domMenuLang?.setAttribute("active", "");

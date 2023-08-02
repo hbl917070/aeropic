@@ -463,13 +463,14 @@ body {
   overflow: hidden;
   opacity: 0;
   transform: translateY(-10px);
-  transition: all 0.3s;
+  transition: all 0.2s;
   pointer-events: none;
 }
 .menu-lang[active=true] {
   opacity: 1;
   transform: translateY(0px);
   pointer-events: initial;
+  padding: 10px 0;
 }
 .menu-lang .item {
   height: 35px;

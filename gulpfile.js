@@ -54,11 +54,14 @@ gulp.task("ejs", async () => {
         for (let j = 0; j < arSrc.length; j++) {
             const src = arSrc[j];
 
+            let urlRoot = '.'.repeat(dest.match(/[/]/g).length);
+
             gulp.src(src)
                 .pipe(ejs({
                     readFile: readFile,
                     lang: lang,
-                    t: (key, value) => { return i18n.t(key, value, lang) }
+                    root: urlRoot,
+                    t: (key, value) => { return i18n.t(key, value, lang) },
                 }, { async: true }))
                 .pipe(rename({ extname: ".html" })) //修改輸出的副檔名
                 .pipe(gulp.dest(dest))
