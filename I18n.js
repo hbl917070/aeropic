@@ -485,7 +485,7 @@ export var langData = {
             "zh-TW": `
                 在這裡下載的擴充套件是 ZIP 檔，解壓縮後放到「Plugin」資料夾內
                 <br>
-                然後重新開啟Tiefsee。
+                然後重新開啟 Tiefsee。
                 <br><br>
                 <div> 從這裡可以開啟「Plugin」資料夾 </div>
                 <img src="../img/plugin/plugin-2.png" alt="How to open 「Plugin」 directory">
@@ -554,8 +554,12 @@ export var langData = {
                 text: {
                     "zh-TW": `
                         點擊「下載」進入官網的下載中心，<br>
-                        Web → SDK Downloads → WebViewer
-                        <br><br>
+                        建議下載 8.12 版，其他新的版本並未測試過與 Tiefsee 的相容性。<br>
+                        <br>
+                        Web → Older Versions → Version 8.12<br>
+                        <br>
+                        ※ 解壓縮後如果資料夾名稱是「WebViewer-8.12.0」，則將其改成「WebViewer」<br>
+                        <br>
                         <img src="../img/plugin/demo-WebViewer.jpg" alt="WebViewer demo">
                         <br><br>
                         WebViewer 是 PDFTron 的產品，官網有提供免費試用。
@@ -564,14 +568,16 @@ export var langData = {
                         <a class="link" href="https://www.pdftron.com" target="_blank">https://www.pdftron.com</a>
                     `,
                     "en": `
-                        Click 'Download' to go to the download center on the official website,<br>
-                        Web → SDK Downloads → WebViewer
-                        <br><br>
+                        Click "Download" to enter the official website's download center.<br>
+                        It is recommended to download version 8.12, as other newer versions have not been tested for compatibility with Tiefsee.<br>
+                        <br>
+                        Web → Older Versions → Version 8.12<br>
+                        <br>
+                        ※ After unzipping, if the folder name is "WebViewer-8.12.0", change it to "WebViewer".<br>
+                        <br>
                         <img src="../img/plugin/demo-WebViewer.jpg" alt="WebViewer demo">
                         <br><br>
-                        WebViewer is a product of PDFTron and the official website offers a free trial.
-                        <br>
-                        If you need a PDFTron license, please visit:
+                        WebViewer is a product of PDFTron, and their official website provides a free trial. If you need a license for PDFTron, please visit:<br>
                         <a class="link" href="https://www.pdftron.com" target="_blank">https://www.pdftron.com</a>
                     `,
                 },
