@@ -338,14 +338,26 @@ export var langData = {
                         讀取圖片內的附加資訊：<br>
                         <ul>
                             <li>EXIF 資訊，並以 Google Map 顯示拍攝地點</li>
-                            <li>AI 繪圖參數 (支援 SD webUI、NovelAI)</li>
+                            <li>AI 繪圖參數，支援</li>
+                            <ul>
+                                <li><a target="_blank" class="link" href="https://github.com/AUTOMATIC1111/stable-diffusion-webui"> A1111 (Stable Diffusion web UI) </li>
+                                <li><a target="_blank" class="link" href="https://novelai.net/"> NovelAI </a></li>
+                                <li><a target="_blank" class="link" href="https://github.com/comfyanonymous/ComfyUI"> ComfyUI </a></li>
+                                <li><a target="_blank" class="link" href="https://github.com/invoke-ai/InvokeAI"> InvokeAI </a></li>
+                            </ul>
                         </ul>
                     `,
                     "en": `
                         Read additional information from the image:<br>
                         <ul>
                             <li>EXIF information and display shooting location with Google Map</li>
-                            <li>AI drawing parameters (supports SD webUI and NovelAI)</li>
+                            <li>AI drawing parameters, supports</li>
+                            <ul>
+                                <li><a target="_blank" class="link" href="https://github.com/AUTOMATIC1111/stable-diffusion-webui"> A1111 (Stable Diffusion web UI) </li>
+                                <li><a target="_blank" class="link" href="https://novelai.net/"> NovelAI </a></li>
+                                <li><a target="_blank" class="link" href="https://github.com/comfyanonymous/ComfyUI"> ComfyUI </a></li>
+                                <li><a target="_blank" class="link" href="https://github.com/invoke-ai/InvokeAI"> InvokeAI </a></li>
+                            </ul>
                         </ul>
                     `,
                 },
