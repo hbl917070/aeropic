@@ -344,6 +344,7 @@ export var langData = {
                                 <li><a target="_blank" class="link" href="https://novelai.net/"> NovelAI </a></li>
                                 <li><a target="_blank" class="link" href="https://github.com/comfyanonymous/ComfyUI"> ComfyUI </a></li>
                                 <li><a target="_blank" class="link" href="https://github.com/invoke-ai/InvokeAI"> InvokeAI </a></li>
+                                <li><a target="_blank" class="link" href="https://github.com/Stability-AI/StableSwarmUI"> StableSwarmUI </a></li>
                             </ul>
                         </ul>
                     `,
@@ -357,6 +358,7 @@ export var langData = {
                                 <li><a target="_blank" class="link" href="https://novelai.net/"> NovelAI </a></li>
                                 <li><a target="_blank" class="link" href="https://github.com/comfyanonymous/ComfyUI"> ComfyUI </a></li>
                                 <li><a target="_blank" class="link" href="https://github.com/invoke-ai/InvokeAI"> InvokeAI </a></li>
+                                <li><a target="_blank" class="link" href="https://github.com/Stability-AI/StableSwarmUI"> StableSwarmUI </a></li>
                             </ul>
                         </ul>
                     `,
@@ -576,7 +578,7 @@ export var langData = {
                         <br><br>
                         WebViewer 是 PDFTron 的產品，官網有提供免費試用。
                         <br>
-                        如果需要PDFTron的授權，請至：
+                        如果需要 PDFTron 的授權，請至：
                         <a class="link" href="https://www.pdftron.com" target="_blank">https://www.pdftron.com</a>
                     `,
                     "en": `
@@ -608,14 +610,14 @@ export var langData = {
         "description": {
             "zh-TW": `
                 Tiefsee 是一款適用於 Windows 的開源圖片檢視器，具有強大的功能和易用性。<br>
-                該專案採用 .NET 7 構建，以 C#、TypeScript、SCSS 和 EJS 進行開發，<br>
+                該專案採用 .NET 8 構建，以 C#、TypeScript、SCSS 和 EJS 進行開發，<br>
                 整個使用者界面都是使用 WebView2 渲染的，提供了流暢的使用體驗。<br><br>
         
                 運行最低需求：64位元的 Windows 10
             `,
             "en": `
                 Tiefsee is an open-source image viewer for Windows with powerful features and ease of use.<br>
-                The project is built with .NET 7 and developed using C#, TypeScript, SCSS, and EJS.<br>
+                The project is built with .NET 8 and developed using C#, TypeScript, SCSS, and EJS.<br>
                 The entire user interface is rendered using WebView2, providing a smooth user experience.<br><br>
         
                 Minimum requirements: 64-bit Windows 10
@@ -638,8 +640,8 @@ export var langData = {
                         <ul>
                             <li>商店版 與 免安裝版 功能上沒有差異</li>
                             <li>商店版 可以透過商店來進行更新，且刪除 Tiefsee 後不會留下任何資料</li>
-                            <li>免安裝版 需要安裝 <a class="link" target="_blank" href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0">.NET Desktop Runtime 7 (x64)</a> 才能運行</li>
-                            <li>免安裝版 可以使用「便攜模式」 ，在 Tiefsee.exe 旁邊新建一個 portableMode 資料夾，資料就都會儲存在裡面</li>
+                            <li>免安裝版 需要安裝 <a class="link" target="_blank" href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">.NET Desktop Runtime 8 (x64)</a> 才能運行</li>
+                            <li>免安裝版 可以使用「便攜模式」 ，在 Tiefsee.exe 旁邊新建一個 PortableMode 資料夾，資料就都會儲存在裡面</li>
                         </ul>
                         沒有特別需求的話，推薦使用商店版
                     `,
@@ -647,8 +649,8 @@ export var langData = {
                         <ul>
                             <li>There is no functional difference between the Store and Portable versions</li>
                             <li>The Store version can be updated through the store and will not leave any data after Tiefsee is deleted</li>
-                            <li>The Portable version requires the installation of <a class="link" target="_blank" href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0">.NET Desktop Runtime 7 (x64)</a> to run</li>
-                            <li>The Portable version can use 'portable mode' by creating a portableMode folder next to Tiefsee.exe, and all data will be stored inside</li>
+                            <li>The Portable version requires the installation of <a class="link" target="_blank" href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">.NET Desktop Runtime 8 (x64)</a> to run</li>
+                            <li>The Portable version can use 'portable mode' by creating a PortableMode folder next to Tiefsee.exe, and all data will be stored inside</li>
                         </ul>
                         If there are no special requirements, it is recommended to use the Store version
                     `,
@@ -679,7 +681,7 @@ export var langData = {
                         不過使用「搜圖」時，Tiefsee 會先把圖片上傳至
                         <a class="link" target="_blank" href="https://github.com/hbl917070/TiefseeSearchImageServer/blob/master/routes/imgSearch.js">暫存圖片的伺服器</a>，
                         然後才上傳至第三方的圖片搜尋引擎，<br>
-                        在伺服器上的圖片副本，會在60秒後永久刪除。
+                        在伺服器上的圖片副本，會在 60 秒後永久刪除。
                     `,
                     "en": `
                         Tiefsee does not collect any user data,<br>
