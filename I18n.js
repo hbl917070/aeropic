@@ -596,7 +596,26 @@ export var langData = {
                     `,
                 },
             },
-
+            "hdrfix": {
+                subTitle: {
+                    "zh-TW": `讓 JPEG XR (.jxr) 的 HDR 色彩更好的顯示<br>
+                        (將 HDR 色彩空間以 Hable 算法處理成 SDR 色彩空間)`,
+                    "en": `Let JPEG XR (.jxr) display HDR colors better<br>
+                        (Process HDR color space to SDR color space with Hable algorithm)`,
+                },
+                text: {
+                    "zh-TW": `
+                        <br>
+                        GitHub：<br>
+                        <a class="link" href="https://github.com/bvibber/hdrfix" target="_blank">https://github.com/bvibber/hdrfix</a>
+                    `,
+                    "en": `
+                        <br>
+                        GitHub：<br>
+                        <a class="link" href="https://github.com/bvibber/hdrfix" target="_blank">https://github.com/bvibber/hdrfix</a>
+                    `,
+                }
+            },
         },
     },
 
