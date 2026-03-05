@@ -1,6 +1,6 @@
-@import "./_index";
-@import "./_plugin";
-@import "./_support";
+@use "./_index";
+@use "./_plugin";
+@use "./_support";
 
 html {
   height: 100%;
