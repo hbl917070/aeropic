@@ -17,32 +17,40 @@
         <div class="infoBox">
             <div class="infoBox-content">
 
-                <div class="infoBox-title">
-                    <h1> Tiefsee </h1>
-                </div>
+                <div class="infoBox-main">
+                    <div class="infoBox-copy">
+                        <div class="infoBox-title">
+                            <h1> Tiefsee </h1>
+                        </div>
 
-                <div class="infoBox-text">
-                    <!-- 強大而易用的圖片檢視程式 -->
-                    <%- t("index.subTitle") %>
-                </div>
+                        <div class="infoBox-text">
+                            <!-- 強大而易用的圖片檢視程式 -->
+                            <%- t("index.subTitle") %>
+                        </div>
 
-                <!-- 已推出 {v} 版 -->
-                <div class="infoBox-ver"> <%- t("index.version", {v:"4.3.0"}) %> </div>
+                        <!-- 已推出 {v} 版 -->
+                        <div class="infoBox-ver"> <%- t("index.version", {v:"4.3.0"}) %> </div>
 
-                <div class="infoBox-links">
-                    <!-- 從商店獲取 Tiefsee -->
-                    <div class="infoBox-links-btns">
-                        <a class="infoBox-link-btn" href="https://apps.microsoft.com/store/detail/9N04QDXBNMCQ?launch=true&amp;mode=full" target="_blank">
-                            <img src="<%-root%>/img/svg/microsoftStore.svg" alt="Microsoft Store">
-                            <span> <%- t("index.getTiefsee") %> </span>
-                        </a>
+                        <div class="infoBox-links">
+                            <!-- 從商店獲取 Tiefsee -->
+                            <div class="infoBox-links-btns">
+                                <a class="infoBox-link-btn" href="https://apps.microsoft.com/store/detail/9N04QDXBNMCQ?launch=true&amp;mode=full" target="_blank">
+                                    <img src="<%-root%>/img/svg/microsoftStore.svg" alt="Microsoft Store">
+                                    <span> <%- t("index.getTiefsee") %> </span>
+                                </a>
+                            </div>
+                            <!-- 下載免安裝版 -->
+                            <a class="infoBox-link-link link" target="_blank" href="https://github.com/hbl917070/Tiefsee4/releases/download/4.3.0/Tiefsee.zip"> <%- t("index.downloadZip") %> </a>
+                            <!-- 更新說明 -->
+                            <a class="infoBox-link-link link" target="_blank" href="https://github.com/hbl917070/Tiefsee4/releases"> <%- t("index.updateNotes") %> </a>
+                            <!-- 查看舊版 3.0.2 -->
+                            <a class="infoBox-link-link link" target="_blank" href="<%-root%>/v3/index.html"> <%- t("index.viewOldVersion") %> </a>
+                        </div>
                     </div>
-                    <!-- 下載免安裝版 -->
-                    <a class="infoBox-link-link link" target="_blank" href="https://github.com/hbl917070/Tiefsee4/releases/download/4.3.0/Tiefsee.zip"> <%- t("index.downloadZip") %> </a>
-                    <!-- 更新說明 -->
-                    <a class="infoBox-link-link link" target="_blank" href="https://github.com/hbl917070/Tiefsee4/releases"> <%- t("index.updateNotes") %> </a>
-                    <!-- 查看舊版 3.0.2 -->
-                    <a class="infoBox-link-link link" target="_blank" href="<%-root%>/v3/index.html"> <%- t("index.viewOldVersion") %> </a>
+
+                    <div class="infoBox-visual" aria-hidden="true">
+                        <img class="infoBox-hero" src="<%-root%>/img/index/hero.png" alt="">
+                    </div>
                 </div>
 
             </div>
