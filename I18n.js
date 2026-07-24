@@ -442,11 +442,11 @@ export var langData = {
                 text: {
                     "zh-TW": `
                         支援：<br>
-                        sauceNAO, Yandex, Ascii2d, Google, Google Lens, Bing
+                        sauceNAO, Yandex, Ascii2d, Google, Bing
                     `,
                     "en": `
                         Supported:<br>
-                        sauceNAO, Yandex, Ascii2d, Google, Google Lens, Bing
+                        sauceNAO, Yandex, Ascii2d, Google, Bing
                     `,
                 },
             },
