@@ -406,6 +406,16 @@ export var langData = {
                     "en": `Drag images from a browser or Discord to Tiefsee to open`,
                 },
             },
+            "archivePreview": {
+                title: {
+                    "zh-TW": "壓縮檔預覽",
+                    "en": "Archive Preview",
+                },
+                text: {
+                    "zh-TW": `不需解壓縮即可直接查看壓縮檔內的圖片<br><br>支援：<br>zip、rar、7z、cbz、cbr、xz、bz2、gz、tar、tgz`,
+                    "en": `View images inside archives without extracting them.<br><br>Supported: <br>zip, rar, 7z, cbz, cbr, xz, bz2, gz, tar, tgz`,
+                },
+            },
 
 
             "supportFormats": {
